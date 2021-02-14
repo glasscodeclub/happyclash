@@ -1,0 +1,9 @@
+@import url("./common.css");
+
+.logininfo {
+    margin: 6rem auto;
+}
+
+#background {
+    bottom: 5rem;
+}

@@ -1,0 +1,48 @@
+<%- include("partials/header",{page:page ? page:null}) %>
+<%- include("partials/background") %>
+
+<div class="formpage">
+
+    <div id="backdiv">
+        <i onclick="window.location.href='/'" id="back" class="fas fa-arrow-left"></i>
+    </div>
+
+    <div id="headdiv">
+        <h1 id="heading">Welcome Back</h1>
+    </div>
+
+    <div id="subheaddiv">
+        <h6 id="subheading">Login into your already existing account</h6>
+    </div>
+
+    <div class="logininfo">
+        <form action="/login" method="POST">
+            <div class="infodiv">
+                <i class="far fa-user fieldicons"></i>
+                <input class="info" type="text" placeholder="Username">
+            </div>
+        
+            <div class="infodiv">
+                <i class="fas fa-unlock fieldicons"></i>
+                <input class="info" type="text" placeholder="Password">
+            </div>
+
+
+            <div class="formbutton">
+                <button type="submit" id="submit">Login</button>
+            </div>
+        </form>
+        <div class="alt">
+            Or Connect Using
+        </div>
+        <div class="altOptions">
+            <img class="pageicons" src="./img/google.jpg" alt="">
+            <img class="pageicons" src="./img/fb.jpg" alt="">
+        </div>
+        <div class="otheroption">
+            Don't have an account? <a class="otherlink" href="/signup">Sign Up</a>
+        </div>
+    </div>
+</div>
+
+<%- include("partials/footer") %>

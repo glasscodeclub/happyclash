@@ -1,0 +1,62 @@
+<%- include("partials/header",{page:page ? page:null}) %>
+<%- include("partials/background") %>
+
+<div class="formpage">
+
+    <div id="backdiv">
+        <i onclick="window.location.href='/'" id="back" class="fas fa-arrow-left"></i>
+    </div>
+
+    <div id="headdiv">
+        <h1 id="heading">Getting Started</h1>
+    </div>
+
+    <div id="subheaddiv">
+        <h6 id="subheading">Fill the details to create an account</h6>
+    </div>
+
+    <div class="signupinfo">
+        <form action="/signup" method="POST">
+            <div class="infodiv">
+                <i class="far fa-user fieldicons"></i>
+                <input class="info" type="text" placeholder="Username">
+            </div>
+        
+            <div class="infodiv">
+                <i class="far fa-envelope fieldicons"></i>
+                <input class="info" type="text" placeholder="Email">
+            </div>
+        
+            <div class="infodiv">
+                <i class="fas fa-phone-alt fieldicons"></i>
+                <input class="info" type="text" placeholder="Phone">
+            </div>
+        
+            <div class="infodiv">
+                <i class="fas fa-unlock fieldicons"></i>
+                <input class="info" type="text" placeholder="Password">
+            </div>
+        
+            <div class="infodiv">
+                <i class="fas fa-unlock fieldicons"></i>
+                <input class="info" type="text" placeholder="Confirm Password">
+            </div>
+
+            <div class="formbutton">
+                <button type="submit" id="submit">Sign Up</button>
+            </div>
+        </form>
+        <div class="alt">
+            Or Connect Using
+        </div>
+        <div class="altOptions">
+            <img class="pageicons" src="./img/google.jpg" alt="">
+            <img class="pageicons" src="./img/fb.jpg" alt="">
+        </div>
+        <div class="otheroption">
+            Already have an account? <a class="otherlink" href="/login">Login here</a>
+        </div>
+    </div>
+</div>
+
+<%- include("partials/footer") %>

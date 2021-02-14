@@ -1,0 +1,24 @@
+<%- include("partials/header",{page:page ? page:null}) %>
+
+<div class="formpage">
+    
+        <%- include("partials/background") %>
+        
+        <img src="./img/Circles.png" alt="" id="bgpics">
+        <i id="logo" class="far fa-smile-wink"></i>
+        
+        <h1 id="heading">Let's Get <b>Started</b></h1>
+    
+        <div class="formbutton">
+            <button type="submit" class="submit" onclick="window.location.href='/signup'">Sign Up</button>
+        </div>
+        
+    
+        <div class="formbutton">
+            <button type="submit" class="submit" onclick="window.location.href='/login'">Login</button>
+        </div>
+        
+
+</div>
+
+<%- include("partials/footer") %>

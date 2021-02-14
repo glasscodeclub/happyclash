@@ -1,0 +1,9 @@
+#background {
+    position: absolute;
+    max-width: 30rem;
+    z-index: -1;
+    right: -4.5rem;
+    top: -1rem;
+    display: inline;
+}
+
