@@ -5,11 +5,13 @@ var express                 = require("express"),
     User                    = require("./models/user"),
     LocalStrategy           = require("passport-local"),
     passportLocalMongoose   = require("passport-local-mongoose"),
-    routes                  = require("./routes/routes")
+    Authroutes                  = require("./routes/auth.routes"),
+    Homeroutes              =require("./routes/home.routes"), 
+    Dashboardroutes              =require("./routes/dashboard.routes")
     
 var app = express();
-
-mongoose.connect("mongodb://localhost/chatdb", {
+const port=5000;
+mongoose.connect("mongodb://localhost/happyclashdb", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useCreateIndex: true,
@@ -21,7 +23,7 @@ app.use(require("express-session")({
     secret:"Rusty is the best og in the worldpassport ",
     resave: false,
     saveUninitialized: false
-}));
+}));//env
 
 app.set('view engine','ejs');
 
@@ -33,8 +35,13 @@ passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
-app.use(routes);
+app.get('/',(req,res)=>{
+    res.redirect('/home');
+})
+app.use('/auth',Authroutes);
+app.use('/dashboard',Dashboardroutes);
+app.use('/home',Homeroutes);
 
-app.listen(3000, function(){
-    console.log("connect!");
+app.listen(port, function(){
+    console.log("connected on : ",port);
 });
