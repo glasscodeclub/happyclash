@@ -2,8 +2,8 @@
 var express = require("express");
 var router = express.Router();
 var passport = require("passport");
-var User = require("../models/user");
-var middlewares = require("../middlewares/auth");
+var User = require("../models/user.models");
+var middlewares = require("../middlewares/auth.middleware");
 
 
 router.get("/dashboard", middlewares.isLoggedIn, function(req, res){

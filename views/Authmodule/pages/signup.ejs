@@ -1,5 +1,5 @@
-<%- include("partials/header",{page:page ? page:null}) %>
-<%- include("partials/background") %>
+<%- include("../../partials/header",{page:page ? page:null}) %>
+<%- include("../../partials/background") %>
 
 <div class="formpage">
 
@@ -16,7 +16,7 @@
     </div>
 
     <div class="signupinfo">
-        <form action="/signup" method="POST">
+        <form action="/auth/signup" method="POST">
             <div class="infodiv">
                 <i class="far fa-user fieldicons"></i>
                 <input class="info" type="text" placeholder="Username">
@@ -50,13 +50,13 @@
             Or Connect Using
         </div>
         <div class="altOptions">
-            <img class="pageicons" src="./img/google.jpg" alt="">
-            <img class="pageicons" src="./img/fb.jpg" alt="">
+            <img class="pageicons" src="/img/google.jpg" alt="">
+            <img class="pageicons" src="/img/fb.jpg" alt="">
         </div>
         <div class="otheroption">
-            Already have an account? <a class="otherlink" href="/login">Login here</a>
+            Already have an account? <a class="otherlink" href="/auth/login">Login here</a>
         </div>
     </div>
 </div>
 
-<%- include("partials/footer") %>
+<%- include("../../partials/footer") %>
