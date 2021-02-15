@@ -2,12 +2,12 @@ var express                 = require("express"),
     mongoose                = require("mongoose"),
     passport                = require("passport"),
     bodyParser              = require("body-parser"),
-    User                    = require("./models/user"),
+    User                    = require("./models/user.models"),
     LocalStrategy           = require("passport-local"),
     passportLocalMongoose   = require("passport-local-mongoose"),
-    Authroutes                  = require("./routes/auth.routes"),
-    Homeroutes              =require("./routes/home.routes"), 
-    Dashboardroutes              =require("./routes/dashboard.routes")
+    Authroutes              = require("./routes/auth.routes"),
+    Homeroutes              = require("./routes/home.routes"), 
+    Dashboardroutes         = require("./routes/dashboard.routes")
     
 var app = express();
 const port=5000;

@@ -1,11 +1,11 @@
 var express = require("express");
 var router = express.Router();
 var passport = require("passport");
-var User = require("../models/user");
-var middlewares = require("../middlewares/auth");
+var User = require("../models/user.models");
+var middlewares = require("../middlewares/auth.middleware");
 
 router.get("/signup",function(req, res){
-    res.render("./authmodule/pages/signup",{page:"HappyClash SignUp"});
+    res.render("./Authmodule/pages/signup",{page:"HappyClash SignUp"});
 });
 
 
@@ -13,7 +13,7 @@ router.post("/signup", function(req, res){
 User.register(new User({username:req.body.username}),req.body.password, function(err, user){
         if(err){
             console.log(err);
-            return res.render('./authmodule/pages/signup',{page:"HappyClash SignUp"});
+            return res.render('./Authmodule/pages/signup',{page:"HappyClash SignUp"});
         }
         passport.authenticate("local")(req, res, function(){
             res.redirect("/dashboard");
