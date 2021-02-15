@@ -6,7 +6,7 @@ var User = require("../models/user.models");
 var middlewares = require("../middlewares/auth.middleware");
 
 
-router.get("/dashboard", middlewares.isLoggedIn, function(req, res){
+router.get("/", middlewares.isLoggedIn, function(req, res){
     res.render("./Dashboardmodule/pages/dashboard");
 })
 
