@@ -71,6 +71,17 @@
 
 .info:focus {
     outline: none;
+    background-color: rgb(241, 239, 239);
+}
+
+.error {
+    width: 70%;
+    text-align: center;
+    margin: 1rem auto;
+}
+
+.errordiv {
+    text-align: left;
 }
 
 .formbutton {

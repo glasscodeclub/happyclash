@@ -19,27 +19,46 @@
         <form action="/auth/signup" method="POST">
             <div class="infodiv">
                 <i class="far fa-user fieldicons"></i>
-                <input class="info" type="text" placeholder="Username">
+                <input onfocusout="displayError('username','username')" class="info" id="username" type="text" placeholder="Username" name="username" required>
+            </div>
+            <div class="error">
+                <div class="username errordiv"></div>
             </div>
         
             <div class="infodiv">
                 <i class="far fa-envelope fieldicons"></i>
-                <input class="info" type="text" placeholder="Email">
+                <input onfocusout="displayError('email','email')" class="info" id="email" type="email" placeholder="Email" name="email" required>
+            </div>
+            <div class="error">
+                <div class="email errordiv"></div>
             </div>
         
             <div class="infodiv">
                 <i class="fas fa-phone-alt fieldicons"></i>
-                <input class="info" type="text" placeholder="Phone">
+                <input onfocusout="displayError('phone','phone')" class="info" id="phone" type="tel" size="10" pattern="(7|8|9){1}[0-9]{9}" placeholder="Phone" name="phone" required>
+            </div>
+            <div class="error">
+                <div class="phone errordiv"></div>
             </div>
         
             <div class="infodiv">
                 <i class="fas fa-unlock fieldicons"></i>
-                <input class="info" type="text" placeholder="Password">
+                <input onfocusout="displayError('password','password')" class="info" id="password" type="password" placeholder="Password" minlength="8" maxlength="16" size="16" pattern="^(?=.{5,}$)(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W).*$" title="Password must follow the criteria:
+                1. atleast 8 characters long
+                2. atleast 1 uppercase letter
+                3. atleast 1 lowercase letter
+                4. atleast 1 special character" name="password" required>
+            </div>
+            <div class="error">
+                <div class="password errordiv"></div>
             </div>
         
             <div class="infodiv">
                 <i class="fas fa-unlock fieldicons"></i>
-                <input class="info" type="text" placeholder="Confirm Password">
+                <input onfocusout="displayError('confirm','confirm')" class="info" id="confirm" type="password" placeholder="Confirm Password" name="confirm" required>
+            </div>
+            <div class="error">
+                <div class="confirm errordiv"></div>
             </div>
 
             <div class="formbutton">
