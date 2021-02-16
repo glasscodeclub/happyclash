@@ -24,22 +24,26 @@
         
             <div class="infodiv">
                 <i class="far fa-envelope fieldicons"></i>
-                <input class="info" type="text" placeholder="Email">
+                <input class="info" type="email" placeholder="Email" name="email">
             </div>
         
             <div class="infodiv">
                 <i class="fas fa-phone-alt fieldicons"></i>
-                <input class="info" type="text" placeholder="Phone">
+                <input class="info" type="tel" pattern="{1}(7,8,9){9}[0-9]" placeholder="Phone" name="phone">
             </div>
         
             <div class="infodiv">
                 <i class="fas fa-unlock fieldicons"></i>
-                <input class="info" type="text" placeholder="Password" name="password">
+                <input class="info" type="password" placeholder="Password" minlength="8" maxlength="16" size="16" pattern="^(?=.{5,}$)(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W).*$" title="Password must follow the criteria:
+                1. atleast 8 characters long
+                2. atleast 1 uppercase letter
+                3. atleast 1 lowercase letter
+                4. atleast 1 special character " name="password">
             </div>
         
             <div class="infodiv">
                 <i class="fas fa-unlock fieldicons"></i>
-                <input class="info" type="text" placeholder="Confirm Password">
+                <input class="info" type="password" placeholder="Confirm Password" name="confirm">
             </div>
 
             <div class="formbutton">
