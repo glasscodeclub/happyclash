@@ -2,16 +2,36 @@ var express                 = require("express"),
     mongoose                = require("mongoose"),
     passport                = require("passport"),
     bodyParser              = require("body-parser"),
+    session                 = require("express-session"),
+    MongoStore              = require("connect-mongo")(session),
     User                    = require("./models/user.models"),
     LocalStrategy           = require("passport-local"),
     passportLocalMongoose   = require("passport-local-mongoose"),
     Authroutes              = require("./routes/auth.routes"),
     Homeroutes              = require("./routes/home.routes"), 
-    Dashboardroutes         = require("./routes/dashboard.routes")
+    Dashboardroutes         = require("./routes/dashboard.routes");
     
 var app = express();
-const port=5000;
-mongoose.connect("mongodb://localhost/happyclashdb", {
+const port = 5000;
+const dbUrl = process.env.DB_URL || "mongodb://localhost/happyclashdb";
+const secret = process.env.SECRET || "Rusty is the best dog in the worldpassport";
+
+const store = new MongoStore({
+    url: dbUrl,
+    secret,
+    touchAfter: 24 * 3600 
+});
+
+const sessionConfig = {
+    store,
+    name: 'session',
+    secret,
+    resave: false,
+    saveUninitialized: true
+};
+app.use(session(sessionConfig));
+
+mongoose.connect(dbUrl, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useCreateIndex: true,
@@ -19,11 +39,11 @@ mongoose.connect("mongodb://localhost/happyclashdb", {
 });
 
 app.use(bodyParser.urlencoded({extended:true}));
-app.use(require("express-session")({
-    secret:"Rusty is the best og in the worldpassport ",
-    resave: false,
-    saveUninitialized: false
-}));//env
+// app.use(require("express-session")({
+//     secret,
+//     resave: false,
+//     saveUninitialized: false
+// }));//env
 
 app.set('view engine','ejs');
 

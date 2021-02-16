@@ -1,3 +1,4 @@
+
 <%- include("./../../partials/header",{page:page ? page:null}) %>
 <%- include("./../../partials/background") %>
 
@@ -19,12 +20,22 @@
         <form action="/auth/login" method="POST">
             <div class="infodiv">
                 <i class="far fa-user fieldicons"></i>
-                <input class="info" type="text" placeholder="Username" name="username">
+                <div>
+                    <input onfocusout="displayError('username','username')" class="info" id="username" type="text" placeholder="Username" name="username" required>
+                </div>
+            </div>
+            <div class="error">
+                <div class="username errordiv"></div>
             </div>
         
             <div class="infodiv">
                 <i class="fas fa-unlock fieldicons"></i>
-                <input class="info" type="password" placeholder="Password" name="password">
+                <div>
+                    <input onfocusout="displayError('password','password')" class="info" id="password" type="password" placeholder="Password" name="password" required>
+                </div>
+            </div>
+            <div class="error">
+                <div class="password errordiv"></div>
             </div>
 
 
