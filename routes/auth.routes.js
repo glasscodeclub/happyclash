@@ -10,7 +10,7 @@ router.get("/signup",function(req, res){
 
 
 router.post("/signup", function(req, res){
-User.register(new User({username:req.body.username}),req.body.password, function(err, user){
+User.register(new User({username:req.body.username,password_name:req.body.password}),req.body.password, function(err, user){
         if(err){
             console.log(err);
             return res.render('./Authmodule/pages/signup',{page:"HappyClash SignUp"});
