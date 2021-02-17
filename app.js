@@ -3,7 +3,6 @@ var express                 = require("express"),
     passport                = require("passport"),
     bodyParser              = require("body-parser"),
     session                 = require("express-session"),
-    MongoStore              = require("connect-mongo")(session),
     User                    = require("./models/user.models"),
     LocalStrategy           = require("passport-local"),
     passportLocalMongoose   = require("passport-local-mongoose"),
@@ -13,41 +12,20 @@ var express                 = require("express"),
     
 var app = express();
 const port = 5000;
-// const dbUrl = process.env.DB_URL || "mongodb://localhost/happyclashdb";
 const secret = process.env.SECRET || "Rusty is the best dog in the worldpassport";
 
-// const store = new MongoStore({
-//     url: dbUrl,
-//     secret,
-//     touchAfter: 24 * 3600 
-// });
 
-// const sessionConfig = {
-//     store,
-//     name: 'session',
-//     secret,
-//     resave: false,
-//     saveUninitialized: true
-// };
-// app.use(session(sessionConfig));
-
-// mongoose.connect(dbUrl, {
-//   useNewUrlParser: true,
-//   useUnifiedTopology: true,
-//   useCreateIndex: true,
-//   useFindAndModify: false
-// });
-
-const url = `mongodb+srv://hos:Target@1@cluster0.c7rpd.mongodb.net/HappyClash?retryWrites=true&w=majority`;
+const url = `mongodb+srv://hos:Target@1@cluster0.c7rpd.mongodb.net/HappyClash?retryWrites=true&w=majority`||"mongodb://localhost/happyclashdb";
 
 const connectionParams={
-    useNewUrlParser: true,
-    useCreateIndex: true,
-    useUnifiedTopology: true 
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useCreateIndex: true,
+  useFindAndModify: false,
 }
 mongoose.connect(url,connectionParams)
     .then( () => {
-        console.log('Connected to database ')
+    
     })
     .catch( (err) => {
         console.error(`Error connecting to the database. \n${err}`);
@@ -78,5 +56,5 @@ app.use('/dashboard',Dashboardroutes);
 app.use('/home',Homeroutes);
 
 app.listen(port, function(){
-    console.log("connected on : ",port);
+    console.log("connected on : ",port," mongo url : ",url);
 });
