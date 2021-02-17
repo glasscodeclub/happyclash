@@ -13,37 +13,52 @@ var express                 = require("express"),
     
 var app = express();
 const port = 5000;
-const dbUrl = process.env.DB_URL || "mongodb://localhost/happyclashdb";
+// const dbUrl = process.env.DB_URL || "mongodb://localhost/happyclashdb";
 const secret = process.env.SECRET || "Rusty is the best dog in the worldpassport";
 
-const store = new MongoStore({
-    url: dbUrl,
-    secret,
-    touchAfter: 24 * 3600 
-});
+// const store = new MongoStore({
+//     url: dbUrl,
+//     secret,
+//     touchAfter: 24 * 3600 
+// });
 
-const sessionConfig = {
-    store,
-    name: 'session',
-    secret,
-    resave: false,
-    saveUninitialized: true
-};
-app.use(session(sessionConfig));
-
-mongoose.connect(dbUrl, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  useCreateIndex: true,
-  useFindAndModify: false
-});
-
-app.use(bodyParser.urlencoded({extended:true}));
-// app.use(require("express-session")({
+// const sessionConfig = {
+//     store,
+//     name: 'session',
 //     secret,
 //     resave: false,
-//     saveUninitialized: false
-// }));//env
+//     saveUninitialized: true
+// };
+// app.use(session(sessionConfig));
+
+// mongoose.connect(dbUrl, {
+//   useNewUrlParser: true,
+//   useUnifiedTopology: true,
+//   useCreateIndex: true,
+//   useFindAndModify: false
+// });
+
+const url = `mongodb+srv://hos:Target@1@cluster0.c7rpd.mongodb.net/HappyClash?retryWrites=true&w=majority`;
+
+const connectionParams={
+    useNewUrlParser: true,
+    useCreateIndex: true,
+    useUnifiedTopology: true 
+}
+mongoose.connect(url,connectionParams)
+    .then( () => {
+        console.log('Connected to database ')
+    })
+    .catch( (err) => {
+        console.error(`Error connecting to the database. \n${err}`);
+    })
+
+app.use(bodyParser.urlencoded({extended:true}));
+app.use(require("express-session")({
+    secret,
+    resave: false,
+    saveUninitialized: false
+}));//env
 
 app.set('view engine','ejs');
 
