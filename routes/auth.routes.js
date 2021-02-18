@@ -5,7 +5,7 @@ var User = require("../models/user.models");
 var middlewares = require("../middlewares/auth.middleware");
 
 router.get("/signup",function(req, res){
-    res.render("./Authmodule/pages/signup",{page:"HappyClash SignUp"});
+    res.render("./Authmodule/pages/signup",{page:"HappyClash SignUp",err:{value:true}});
 });
 
 
@@ -16,7 +16,7 @@ User.register(new User({username:req.body.username,
                         phone:req.body.phone}),req.body.password, function(err, user){
         if(err){
             console.log(err);
-            return res.render('./Authmodule/pages/signup',{page:"HappyClash SignUp"});
+            return res.render('./Authmodule/pages/signup',{page:"HappyClash SignUp",err:{value:true}});
         }
         passport.authenticate("local")(req, res, function(){
             res.redirect("/dashboard");
