@@ -1,9 +1,41 @@
-#background {
-    position: absolute;
-    max-width: 30rem;
-    z-index: -1;
-    right: -4.5rem;
-    top: -1rem;
-    display: inline;
+body {
+    background: url("../img/Background circles.png") no-repeat;
+    background-size: 75%;
+    background-clip: padding-box;
+    background-position-x: 50%;
+    background-position-y: 90%;
+    background-attachment: fixed;
 }
 
+@media only screen and (max-width:339px) {
+    body {
+        background: url("../img/Background circles.png") no-repeat;
+        background-size: 75%;
+        background-clip: padding-box;
+        background-position-x: 90%; 
+        background-position-y: 90%;
+        background-attachment: fixed;
+    }
+}
+
+@media only screen and (max-height:668px) {
+    body {
+        background: url("../img/Background circles.png") no-repeat;
+        background-size: 75%;
+        background-clip: padding-box;
+        background-position-x: 50%;
+        background-position-y: 90%;
+        background-attachment: fixed;
+    }
+}
+
+@media only screen and (max-width:339px) and (max-height:668px) {
+    body {
+        background: url("../img/Background circles.png") no-repeat;
+        background-size: 160%;
+        background-clip: padding-box;
+        background-position-x: 50%;
+        background-position-y: -170px;
+        background-attachment: fixed;
+    }
+}
