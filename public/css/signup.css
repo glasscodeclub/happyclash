@@ -3,3 +3,22 @@
 .signupinfo {
     margin: 3rem auto;
 }
+
+.alert {
+    margin: auto;
+    margin-top: 3rem;
+    text-align: right;
+    width: 50% !important;
+}
+
+.errmessage {
+    margin: auto;
+}
+
+.close {
+    float: right;
+}
+
+.close:after {
+    clear: both;
+}
