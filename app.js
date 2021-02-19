@@ -11,7 +11,7 @@ var express                 = require("express"),
     Dashboardroutes         = require("./routes/dashboard.routes");
     
 var app = express();
-const port = 5000;
+const port = 3000;
 const secret = process.env.SECRET || "Rusty is the best dog in the worldpassport";
 
 
