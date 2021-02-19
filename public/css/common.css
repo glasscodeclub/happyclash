@@ -133,6 +133,10 @@
     outline: none;
 }
 
+#submit:hover {
+    cursor: pointer;
+}
+
 .altOptions {
     text-align: center;
     margin: auto;

@@ -28,7 +28,7 @@
     <%}%>
 
     <div class="signupinfo">
-        <form action="/auth/signup" method="POST">
+        <form onsubmit="return checkPasswordEquality()" action="/auth/signup" method="POST">
             <div class="infodiv">
                 <i class="far fa-user fieldicons"></i>
                 <input onfocusout="displayError('username','username')" class="info" id="username" type="text" placeholder="Username" name="username" required>
@@ -69,13 +69,16 @@
             <div class="infodiv">
                 <i class="fas fa-unlock fieldicons"></i>
                 <input onfocusout="displayError('confirm','confirm')" class="info" id="confirm" type="password" placeholder="Confirm Password" name="confirm" required>
+                <!-- <div class="view">
+                    <i class="fas fa-eye"></i>
+                </div> -->
             </div>
             <div class="error">
                 <div class="confirm errordiv"></div>
             </div>
 
             <div class="formbutton">
-                <button type="submit" id="submit">Sign Up</button>
+                <button onclick="checkInputfields();" type="submit" id="submit">Sign Up</button>
             </div>
         </form>
         <div class="alt">
