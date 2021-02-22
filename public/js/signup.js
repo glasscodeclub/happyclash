@@ -1,5 +1,4 @@
 
-
 let k = true;
 let mytimer = setInterval(animate,500);
 
@@ -21,6 +20,10 @@ setTimeout(() => {
     clearInterval(mytimer);
 }, 4500);
 
+
+let body = document.getElementsByTagName('body');
+
+body.addEventListener('reload',removeMessage);
 
 function removeMessage() {
     let alert = document.querySelector(".alert");

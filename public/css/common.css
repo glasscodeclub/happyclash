@@ -1,14 +1,6 @@
 @import url("./background.css");
 
 
-.formpage {
-    width: 100%;
-    height: 100%;
-    overflow: visible;
-    margin: 4rem auto;
-    text-align: center;
-}
-
 #backdiv {
     margin-left: 0.8rem;
     padding: 0.2rem 0.4rem;
@@ -45,63 +37,48 @@
     font-weight: bolder;
 }
 
-.fieldicons {
-    float: left;
-    margin: 0.8rem;
+.form-group {
+    text-align: center;
+    margin: 3rem auto;
+    width: 100%;
 }
 
-.infodiv {
-    text-align: left;
-    margin: 1rem auto;
-    padding: 0.2rem 1rem;
-    border-radius: 5rem;
-    width: 50%;
-    background-color: white;
-    overflow: auto;
-    background-color: rgb(241, 239, 239);
-    flex-direction: column;
-    align-items: stretch;
-}
-
-@media only screen and (max-width: 339px) {
-    .infodiv {
-        text-align: left;
-        margin: 1rem auto;
-        padding: 0.2rem 1rem;
-        border-radius: 5rem;
-        width: 77%;
-        background-color: white;
-        overflow: auto;
-        background-color: rgb(241, 239, 239);
-        flex-direction: column;
-        align-items: stretch;
+@media screen and (min-height:950px) {
+    .form-group {
+        margin: 6.8rem auto;
     }
 }
 
-.info {
-    width: 80%;
-    margin: 0.5rem 0;
-    border-style: none;
-    float: left;
+.input-group {
+    text-align: center;
+    margin: 1rem auto;
+    padding: 0.2rem 1rem;
+    border-radius: 5rem;
+    width: 60%;
+    overflow: auto;
     background-color: rgb(241, 239, 239);
 }
 
-.info::after {
-    clear: both;
-}
-
-.info:focus {
-    outline: none;
-    background-color: rgb(241, 239, 239);
+.errordiv {
+    text-align: left;
 }
 
 .error {
-    width: 45%;
+    width: 60%;
     text-align: center;
     margin: 1rem auto;
 }
 
-@media only screen and (max-width:339px) {
+@media only screen and (max-width:500px) {
+    .input-group {
+        margin: 1rem auto;
+        padding: 0.5rem 0.75rem;
+        border-radius: 5rem;
+        width: 77%;
+        overflow: auto;
+        background-color: rgb(241, 239, 239);
+    }
+
     .error {
         width: 70%;
         text-align: center;
@@ -109,13 +86,44 @@
     }
 }
 
-.errordiv {
-    text-align: left;
+.input-group:focus {
+    outline: none;
+}
+
+.input-group-addon {
+    margin: 0.4rem 0.8rem;
+    vertical-align: baseline;
+}
+
+.form-control {
+    width: 80%;
+    margin: auto;
+    background-color: rgb(241, 239, 239);
+    outline: none;
+    border: none;
+}
+
+.form-control:focus {
+    box-shadow: inset 0 -1px 0 #ddd;
+    outline: none;
+    border: none;
+    background-color: rgb(241, 239, 239);
+}
+
+.forgotpass {
+    opacity: 0.7;
+    margin-top: 0.8rem;
+    margin-left: auto;
+    margin-bottom: auto;
+}
+
+.forgotpass:hover {
+    opacity: 1;
 }
 
 .formbutton {
     text-align: center;
-    margin: 1.5rem auto;
+    margin: auto;
 }
 
 .formbutton:focus {

@@ -8,6 +8,9 @@ function displayError(classname,idname) {
         emptyfield.innerHTML = "This field can't be empty";
         emptyfield.style.color = "red";
     }
+    else {
+        emptyfield.innerHTML = "";
+    }
 }
 
 
