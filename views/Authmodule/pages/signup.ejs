@@ -16,7 +16,7 @@
         <h6 id="subheading">Fill the details to create an account</h6>
     </div>
 
-    <%if(err["value"] == true) {%>
+    <%if(err.nameValue == true) {%>
         <div class="alert alert-danger fade-show d-flex justify-content-center">
             <div class="errmessage">
                 <strong>Username already exists!</strong>
@@ -25,50 +25,68 @@
                 <i class="fas fa-times" onclick="removeMessage()"></i>
             </div>
         </div>
+    <%}else if(err.emailValue == true) {%>
+        <div class="alert alert-danger fade-show d-flex justify-content-center">
+            <div class="errmessage">
+                <strong>Email ID already exists!</strong>
+            </div>
+            <div class="close">
+                <i class="fas fa-times" onclick="removeMessage()"></i>
+            </div>
+        </div>
+    <%}else if(err.phoneValue == true) {%>
+        <div class="alert alert-danger fade-show d-flex justify-content-center">
+            <div class="errmessage">
+                <strong>Phone No. already exists!</strong>
+            </div>
+            <div class="close">
+                <i class="fas fa-times" onclick="removeMessage()"></i>
+            </div>
+        </div>
     <%}%>
 
-    <div class="signupinfo">
-        <form onsubmit="return checkPasswordEquality()" action="/auth/signup" method="POST">
-            <div class="infodiv">
-                <i class="far fa-user fieldicons"></i>
-                <input onfocusout="displayError('username','username')" class="info" id="username" type="text" placeholder="Username" name="username" required>
+    <div class="form-group">
+        <form onsubmit="return checkPasswordEquality()" class="text-center" action="/auth/signup" method="POST">
+            <div class="input-group">
+                <span class="input-group-addon"><i class="far fa-user"></i></span>
+                <input onfocusout="displayError('username','username')" class="form-control" id="username" type="text" placeholder="Username" name="username" required>
             </div>
             <div class="error">
                 <div class="username errordiv"></div>
             </div>
         
-            <div class="infodiv">
-                <i class="far fa-envelope fieldicons"></i>
-                <input onfocusout="displayError('email','email')" class="info" id="email" type="email" placeholder="Email" name="email" required>
+            <div class="input-group">
+                <span class="input-group-addon"><i class="far fa-envelope"></i></span>
+                <input onfocusout="displayError('email','email')" class="form-control" id="email" type="email" placeholder="Email" name="email" required>
             </div>
             <div class="error">
                 <div class="email errordiv"></div>
             </div>
         
-            <div class="infodiv">
-                <i class="fas fa-phone-alt fieldicons"></i>
-                <input onfocusout="displayError('phone','phone')" class="info" id="phone" type="tel" size="10" pattern="(7|8|9){1}[0-9]{9}" placeholder="Phone" name="phone" required>
+            <div class="input-group">
+                <span class="input-group-addon"><i class="fas fa-phone-alt"></i></span>
+                <input onfocusout="displayError('phone','phone')" class="form-control" id="phone" type="tel" size="10" pattern="(7|8|9){1}[0-9]{9}" placeholder="Phone" name="phone" required>
             </div>
             <div class="error">
                 <div class="phone errordiv"></div>
             </div>
         
-            <div class="infodiv">
-                <i class="fas fa-unlock fieldicons"></i>
-                <input onfocusout="displayError('password','password')" class="info" id="password" type="password" placeholder="Password" name="password" required>
-                <!-- minlength="8" maxlength="16" size="16" pattern="^(?=.{5,}$)(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W).*$" title="Password must follow the criteria:
-                1. atleast 8 characters long
-                2. atleast 1 uppercase letter
-                3. atleast 1 lowercase letter
-                4. atleast 1 special character" -->
+            <div class="input-group">
+                <span class="input-group-addon"><i class="fas fa-unlock"></i></span>
+                <input onfocusout="displayError('password','password')" class="form-control" id="password" type="password" placeholder="Password" name="password" required>
             </div>
             <div class="error">
                 <div class="password errordiv"></div>
             </div>
+            <!-- minlength="8" maxlength="16" size="16" pattern="^(?=.{5,}$)(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W).*$" title="Password must follow the criteria:
+                1. atleast 8 characters long
+                2. atleast 1 uppercase letter
+                3. atleast 1 lowercase letter
+                4. atleast 1 special character" -->
         
-            <div class="infodiv">
-                <i class="fas fa-unlock fieldicons"></i>
-                <input onfocusout="displayError('confirm','confirm')" class="info" id="confirm" type="password" placeholder="Confirm Password" name="confirm" required>
+            <div class="input-group">
+                <span class="input-group-addon"><i class="fas fa-unlock"></i></span>
+                <input onfocusout="displayError('confirm','confirm')" class="form-control" id="confirm" type="password" placeholder="Confirm Password" name="confirm" required>
                 <!-- <div class="view">
                     <i class="fas fa-eye"></i>
                 </div> -->
@@ -78,7 +96,7 @@
             </div>
 
             <div class="formbutton">
-                <button onclick="checkInputfields();" type="submit" id="submit">Sign Up</button>
+                <button onclick="checkInputfields();" class="btn btn-dark" type="submit" id="submit">Sign Up</button>
             </div>
         </form>
         <div class="alt">
@@ -92,6 +110,8 @@
             Already have an account? <a class="otherlink" href="/auth/login">Login here</a>
         </div>
     </div>
+
+
 </div>
 
 <%- include("../../partials/footer") %>

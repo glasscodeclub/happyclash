@@ -16,31 +16,31 @@
         <h6 id="subheading">Login into your already existing account</h6>
     </div>
 
-    <div class="logininfo">
+    <div class="form-group">
         <form action="/auth/login" method="POST">
-            <div class="infodiv">
-                <i class="far fa-user fieldicons"></i>
-                <div>
-                    <input onfocusout="displayError('username','username')" class="info" id="username" type="text" placeholder="Username" name="username" required>
-                </div>
+
+            <div class="input-group">
+                <span class="input-group-addon"><i class="far fa-user"></i></span>
+                <input onfocusout="displayError('username','username')" class="form-control" id="username" type="text" placeholder="Username" name="username" required>
             </div>
             <div class="error">
                 <div class="username errordiv"></div>
             </div>
-        
-            <div class="infodiv">
-                <i class="fas fa-unlock fieldicons"></i>
-                <div>
-                    <input onfocusout="displayError('password','password')" class="info" id="password" type="password" placeholder="Password" name="password" required>
-                </div>
+
+            <div class="input-group">
+                <span class="input-group-addon"><i class="fas fa-unlock"></i></span>
+                <input onfocusout="displayError('password','password')" class="form-control" id="password" type="password" placeholder="Password" name="password" required>
             </div>
             <div class="error">
                 <div class="password errordiv"></div>
             </div>
 
+            <div class="forgotpass">
+                Forgot Password?
+            </div>
 
             <div class="formbutton">
-                <button type="submit" id="submit">Login</button>
+                <button onclick="checkInputfields();" class="btn btn-dark" type="submit" id="submit">Login</button>
             </div>
         </form>
         <div class="alt">
