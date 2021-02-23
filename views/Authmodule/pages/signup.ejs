@@ -15,7 +15,23 @@
     <div id="subheaddiv">
         <h6 id="subheading">Fill the details to create an account</h6>
     </div>
-
+    <%if(err.error){%>
+       <%if(err.error.keyPattern){%>
+                    <%if(err.error.keyPattern.email){%>
+                        <script>
+                            console.log('same email')
+                        </script>  
+                        <%}else{%>
+                        <script>
+                            console.log('same phone')
+                        </script>    
+                        <%}%>              
+        <%}else{%>
+         <script>
+             console.log('same username')
+         </script>    
+        <%}%>            
+    <%}%>    
     <%if(err.nameValue == true) {%>
         <div class="alert alert-danger fade-show d-flex justify-content-center">
             <div class="errmessage">

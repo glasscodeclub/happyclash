@@ -5,7 +5,7 @@ var User = require("../models/user.models");
 var middlewares = require("../middlewares/auth.middleware");
 
 router.get("/signup", function (req, res) {
-    res.render("./Authmodule/pages/signup", { page: "HappyClash SignUp", err: { value: false } });
+    res.render("./Authmodule/pages/signup", { page: "HappyClash SignUp", err: { value: false,error:null } });
 });
 
 
@@ -28,29 +28,29 @@ router.get("/signup", function (req, res) {
 // });
 
 router.post("/signup", async (req, res) => {
-    let username = req.body.username;
-    let password_name = req.body.password;
-    let email = req.body.email;
-    let phone = req.body.phone;
+    // let username = req.body.username;
+    // let password_name = req.body.password;
+    // let email = req.body.email;
+    // let phone = req.body.phone;
 
-    let sameUsername = await User.findOne({ username: username });
-    let sameEmail = await User.findOne({ email: email });
-    let samePhone = await User.findOne({ phone: phone });
-    let nameValue = false;
-    let emailValue = false;
-    let phoneValue = false;
+    // let sameUsername = await User.findOne({ username: username });
+    // let sameEmail = await User.findOne({ email: email });
+    // let samePhone = await User.findOne({ phone: phone });
+    // let nameValue = false;
+    // let emailValue = false;
+    // let phoneValue = false;
 
-    if (sameUsername) {
-        nameValue = true;
-    }
+    // if (sameUsername) {
+    //     nameValue = true;
+    // }
 
-    if (sameEmail) {
-        emailValue = true;
-    }
+    // if (sameEmail) {
+    //     emailValue = true;
+    // }
 
-    if (samePhone) {
-        phoneValue = true;
-    }
+    // if (samePhone) {
+    //     phoneValue = true;
+    // }
 
     User.register(new User({
         username,
@@ -64,7 +64,8 @@ router.post("/signup", async (req, res) => {
                 page: "HappyClash SignUp", err: { 
                     nameValue: nameValue, 
                     phoneValue: phoneValue, 
-                    emailValue: emailValue 
+                    emailValue: emailValue ,
+                    error:err,
                 } 
             });
         }
