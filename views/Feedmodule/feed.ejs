@@ -1,0 +1,49 @@
+<%- include("partials/header") %>
+
+<div class="container">
+
+    <div class="row">
+        <div class="col-sm-4 backdiv">
+            <div>
+                <i onclick="window.location.href='/'" class="fas fa-arrow-left back"></i>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <h1 class="challengeName">
+                Challenge Name
+            </h1>
+            <div class="challengesubtitle">
+                <h3>Challenge details</h3>
+            </div>
+        </div>
+        <div class="col-sm-4 profilediv">
+            <i class="far fa-user-circle profileicon"></i>
+        </div>
+    </div>
+
+    <div class="videoelements">
+        <video autoplay muted loop class="myvideo" controls>
+            <source src="/images and videos/sample.mp4" type="video/mp4">
+        </video>
+
+        <div class="d-flex flex-column bd-highlight activity">
+            <div>
+                <i class="fas fa-share activityicons"></i>
+            </div>
+            <div>
+                <i class="far fa-comments activityicons"></i>
+            </div>
+            <div>
+                <i class="fas fa-arrow-up activityicons"></i>
+            </div>
+            <div>
+                <i class="fas fa-arrow-down activityicons"></i>
+            </div>
+        </div>
+    </div>
+    
+    
+</div>
+
+
+<%- include("partials/footer") %>

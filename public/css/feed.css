@@ -1,50 +1,74 @@
-@import url("./background.css");
-
-.formpage {
-    margin: auto;
-    text-align: center;
-}
-
-.formbutton {
-    text-align: center;
-    margin: 1.5rem auto;
-}
-
-.formbutton:focus {
-    outline: none;
-}
-
-#bgpics {
-    margin: 1.4rem auto;
-    max-width: 24rem;
-    right: -1.5rem;
-    z-index: 0;
-    position: absolute;
-}
-
-#logo {
-    margin: 11.5rem auto;
-    margin-bottom: 6.8rem;
-    z-index: 1;
-    font-size: 6rem;
-    color: black;
-}
-
-#heading {
-    width: 65%;
-    margin: auto;
-    font-size: 2.6rem;
-    font-weight: bolder;
-    z-index: 2;
-}
-
-.submit {
-    padding: 0.35rem 3.5rem;
+body {
     background-color: black;
-    color: white;
-    border-radius: 5rem;
 }
 
-.submit:focus {
-    outline: none;
+.container {
+    width: 100%;
+    text-align: center;
+    margin: auto;
+} 
+
+.row {
+    margin-top: 4rem;
 }
+
+.backdiv {
+    text-align: left !important;
+    padding-left: 5rem !important;
+}
+
+.back {
+    color: white;
+    font-size: 9rem;
+}
+
+.challengeName {
+    color: white;
+    font-size: 5rem;
+}
+
+.challengesubtitle {
+    color: white;
+}
+
+.profilediv {
+    text-align: right !important;
+    padding-right: 5rem !important;
+}
+
+.profileicon {
+    font-size: 9rem;
+    color: white;
+}
+
+.myvideo {
+    position: fixed;
+    z-index: -1;
+    right: 0;
+    bottom: 0;
+    width: 100%; 
+    height: 100%;
+    vertical-align: middle;
+}
+
+.videoelements { 
+    position: relative;
+}
+
+.activity {
+    position: absolute;
+    width: 100%;
+    text-align: right;
+    padding: 4rem;
+    margin-top: 70rem;
+}
+
+.activityicons {
+    font-size: 8rem;
+    color: white;
+    margin-bottom: 7rem;
+}
+
+
+
+
