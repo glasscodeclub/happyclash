@@ -8,42 +8,45 @@ body {
     margin: auto;
 } 
 
+video {
+    object-fit: fill;
+}
+
 .row {
-    margin-top: 4rem;
+    margin-top: 1.4rem;
 }
 
 .backdiv {
     text-align: left !important;
-    padding-left: 5rem !important;
 }
 
 .back {
     color: white;
-    font-size: 9rem;
+    font-size: 2rem;
 }
 
 .challengeName {
     color: white;
-    font-size: 5rem;
+    font-size: 0.8rem;
 }
 
 .challengesubtitle {
     color: white;
+    font-size: 0.6rem;
 }
 
 .profilediv {
     text-align: right !important;
-    padding-right: 5rem !important;
 }
 
 .profileicon {
-    font-size: 9rem;
+    font-size: 2rem;
     color: white;
 }
 
 .myvideo {
-    position: fixed;
     z-index: -1;
+    position: fixed;
     right: 0;
     bottom: 0;
     width: 100%; 
@@ -59,16 +62,35 @@ body {
     position: absolute;
     width: 100%;
     text-align: right;
-    padding: 4rem;
-    margin-top: 70rem;
+    transform: translateY(-50%);
+    top: 50%;
+    padding: 0.4rem;
+    margin-top: 23rem;
 }
 
 .activityicons {
-    font-size: 8rem;
+    font-size: 2rem;
     color: white;
-    margin-bottom: 7rem;
+    margin-bottom: 1.7rem;
 }
 
+.progress{
+    height: 2px !important;
+    margin-top: 1rem;
+}
 
+.videoicons {
+    width: 100%;
+    text-align: center;
+    margin: 1rem auto;
+}
 
+.pause {
+    margin: auto 0.5rem;
+    font-size: 1.3rem;
+}
 
+.play {
+    margin: auto 0.5rem;
+    font-size: 1.3rem;
+}

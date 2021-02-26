@@ -1,5 +1,9 @@
 @import url("./background.css");
 
+.formpage {
+    text-align: center;
+    margin: auto;
+}
 
 #backdiv {
     margin-left: 0.8rem;
@@ -108,17 +112,6 @@
     outline: none;
     border: none;
     background-color: rgb(241, 239, 239);
-}
-
-.forgotpass {
-    opacity: 0.7;
-    margin-top: 0.8rem;
-    margin-left: auto;
-    margin-bottom: auto;
-}
-
-.forgotpass:hover {
-    opacity: 1;
 }
 
 .formbutton {
