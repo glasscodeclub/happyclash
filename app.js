@@ -11,7 +11,7 @@ var express                 = require("express"),
     Dashboardroutes         = require("./routes/dashboard.routes");
     
 var app = express();
-const port = 80;
+const port = 3000;
 const secret = process.env.SECRET || "Rusty is the best dog in the worldpassport";
 
 
@@ -51,6 +51,11 @@ passport.deserializeUser(User.deserializeUser());
 app.get('/',(req,res)=>{
     res.redirect('/home');
 })
+
+app.get('/feed',(req,res)=> {
+    res.render("Feedmodule/feed",{page:"Feed | HappyClash"});
+})
+
 app.use('/auth',Authroutes);
 app.use('/dashboard',Dashboardroutes);
 app.use('/home',Homeroutes);
