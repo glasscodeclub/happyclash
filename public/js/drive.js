@@ -1,6 +1,3 @@
-
-
-
 function createFolder() {
     let list = document.querySelector('.folderList');
 
