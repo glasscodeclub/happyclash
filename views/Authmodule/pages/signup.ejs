@@ -52,7 +52,7 @@
     <div class="form-group">
         <form onsubmit="return checkPasswordEquality()" class="text-center" action="/auth/signup" method="POST">
             <div class="input-group">
-                <span class="input-group-addon"><i class="far fa-user"></i></span>
+                <span class="input-group-addon"><i class="far fa-user icons"></i></span>
                 <input onfocusout="displayError('username','username')" class="form-control" id="username" type="text" placeholder="Username" name="username" required>
             </div>
             <div class="error">
@@ -60,7 +60,7 @@
             </div>
         
             <div class="input-group">
-                <span class="input-group-addon"><i class="far fa-envelope"></i></span>
+                <span class="input-group-addon"><i class="far fa-envelope icons"></i></span>
                 <input onfocusout="displayError('email','email')" class="form-control" id="email" type="email" placeholder="Email" name="email" required>
             </div>
             <div class="error">
@@ -68,7 +68,7 @@
             </div>
         
             <div class="input-group">
-                <span class="input-group-addon"><i class="fas fa-phone-alt"></i></span>
+                <span class="input-group-addon"><i class="fas fa-phone-alt icons"></i></span>
                 <input onfocusout="displayError('phone','phone')" class="form-control" id="phone" type="tel" size="10" pattern="(7|8|9){1}[0-9]{9}" placeholder="Phone" name="phone" required>
             </div>
             <div class="error">
@@ -76,24 +76,21 @@
             </div>
         
             <div class="input-group">
-                <span class="input-group-addon"><i class="fas fa-unlock"></i></span>
-                <input onfocusout="displayError('password','password')" class="form-control" id="password" type="password" placeholder="Password" name="password" required>
+                <span class="input-group-addon"><i class="fas fa-unlock icons"></i></span>
+                <input onfocusout="displayError('password','password')" class="form-control" id="password" type="password" placeholder="Password" name="password" minlength="8" maxlength="16" size="16" pattern="^(?=.{5,}$)(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W).*$" title="Password must follow the criteria:
+                1. atleast 8 characters long
+                2. atleast 1 uppercase letter
+                3. atleast 1 lowercase letter
+                4. atleast 1 special character" required>
             </div>
             <div class="error">
                 <div class="password errordiv"></div>
             </div>
-            <!-- minlength="8" maxlength="16" size="16" pattern="^(?=.{5,}$)(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W).*$" title="Password must follow the criteria:
-                1. atleast 8 characters long
-                2. atleast 1 uppercase letter
-                3. atleast 1 lowercase letter
-                4. atleast 1 special character" -->
+            
         
             <div class="input-group">
-                <span class="input-group-addon"><i class="fas fa-unlock"></i></span>
+                <span class="input-group-addon"><i class="fas fa-unlock icons"></i></span>
                 <input onfocusout="displayError('confirm','confirm')" class="form-control" id="confirm" type="password" placeholder="Confirm Password" name="confirm" required>
-                <!-- <div class="view">
-                    <i class="fas fa-eye"></i>
-                </div> -->
             </div>
             <div class="error">
                 <div class="confirm errordiv"></div>
