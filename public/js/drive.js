@@ -1,6 +1,3 @@
-
-
-
 function createFolder() {
     let list = document.querySelector('.folderList');
 
@@ -10,53 +7,44 @@ function createFolder() {
     let elementtext = document.createElement('input');
     elementtext.setAttribute('type','text');
     elementtext.setAttribute('class','createname');
-
-    let edit = document.createElement('button');
-    edit.setAttribute('class','edit');
-    let btntext = document.createTextNode('Edit name');
-    edit.appendChild(btntext);
+    elementtext.setAttribute('onfocusout','setName()');
+    elementtext.autofocus = true;
 
     let del = document.createElement('button');
     del.setAttribute('class','del');
+    del.setAttribute('onclick','deleteElement()');
     let deltext = document.createTextNode('Delete');
     del.appendChild(deltext);
 
     element.appendChild(elementtext);
-    element.appendChild(edit);
     element.appendChild(del);
     list.appendChild(element);
+
 }
 
-// let folder = document.querySelector('.folder');
-let createname = document.querySelector('.createname');
-
-if(createname != null) {
-    createname.addEventListener('focusout',()=> {
-        
+function editElement() {
+    let edit = window.event.target;
+    let element = edit.parentElement;
     
-        if(createname.value == null)
-        {
-            folder.innerHTML = '<div class="createname">Untitled</div>';
-        }
-        else
-        {
-            folder.innerHTML = '<div class="createname">' + createname.value + '</div>';
-        }
-    })
+    element.innerHTML = '<input type="text" class="createname" value="'+element.querySelector('.createname').textContent+'"><button class="del" onclick="deleteElement()">Delete</button>';
+    element.querySelector('.createname').select();
 }
 
-// let edit = document.querySelector('.edit');
+function setName() {
+    let setname = window.event.target;
+    let element = setname.parentElement;
 
-// edit.addEventListener('click',()=> {
-//     let createname = document.querySelector('.createname');
+    if(setname.value != null && setname.value != "") {
+        element.innerHTML = '<div class="createname">'+setname.value+'</div><button class="edit" onclick="editElement()">Edit</button><button class="del" onclick="deleteElement()">Delete</button>';
+    }
+    else {
+        element.innerHTML = '<div class="createname">'+'Untitled'+'</div><button class="edit" onclick="editElement()">Edit</button><button class="del" onclick="deleteElement()">Delete</button>';
+    }
+}
 
-//     createname.innerHTML = '<input type="text" class="createname" value=createname.value>';
-// })
+function deleteElement() {
+    let delelement = window.event.target;
+    let element = delelement.parentElement;
 
-// let del = document.querySelector('.del');
-
-// if(del && createname) {
-//     del.addEventListener('click',()=> {
-//         this.parent('div.folder').remove();
-//     })
-// }
+    element.remove();
+}
