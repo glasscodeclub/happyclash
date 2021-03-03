@@ -26,7 +26,7 @@ function editElement() {
     let edit = window.event.target;
     let element = edit.parentElement;
     
-    element.innerHTML = '<input type="text" class="createname" value="'+element.querySelector('.createname').textContent+'"><button class="del" onclick="deleteElement()">Delete</button>';
+    element.innerHTML = '<input type="text" class="createname" onfocusout="setName()" value="'+element.querySelector('.createname').textContent+'"><button class="del" onclick="deleteElement()">Delete</button>';
     element.querySelector('.createname').select();
 }
 
