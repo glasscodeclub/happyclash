@@ -35,12 +35,13 @@ video {
     font-size: 0.6rem;
 }
 
-.profilediv {
+.infodiv {
     text-align: right !important;
 }
 
-.profileicon {
-    font-size: 2rem;
+svg.infoicon {
+    max-width: 1.75rem !important;
+    padding-bottom: 0.6rem !important;
     color: white;
 }
 
@@ -68,9 +69,16 @@ video {
     margin-top: 23rem;
 }
 
-.activityicons {
-    font-size: 2rem;
+.number {
+    padding: 1rem !important;
+    padding-right: 0.4rem !important;
+    font-size: small;
     color: white;
+}
+
+.activityicons {
+    max-width: 80px !important;
+    color: white !important;
     margin-bottom: 1.7rem;
 }
 
