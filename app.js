@@ -60,8 +60,8 @@ app.get('/drive',(req,res)=> {
     res.render("Feedmodule/drive",{page:"HappyClash Drive"})
 })
 
-app.get('/feedhome',(req,res)=> {
-    res.render("Feedmodule/feedhome")
+app.get('/homefeed',(req,res)=> {
+    res.render("Feedmodule/feedhome",{page:"HappyClash homefeed"})
 })
 
 app.use('/auth',Authroutes);
