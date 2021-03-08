@@ -17,7 +17,6 @@ function displayError(classname,idname) {
 function checkInputfields() {
     let username = document.getElementById('username');
     let email = document.getElementById('email');
-    let phone = document.getElementById('phone');
     let password = document.getElementById('password');
     let confirm = document.getElementById('confirm');
 
@@ -27,10 +26,6 @@ function checkInputfields() {
 
     if(email.value == "" || email.value == null) {
         displayError('email','email');
-    }
-
-    if(phone.value == "" || phone.value == null) {
-        displayError('phone','phone');
     }
 
     if(password.value == "" || password.value == null) {

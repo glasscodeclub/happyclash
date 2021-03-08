@@ -27,14 +27,18 @@
                     </div>
                 </div>
             <%}else{%>
-                <div class="alert alert-danger alert-dismissible fade show d-flex justify-content-center">
-                    <div class="errmessage">
-                        <strong>Phone No. already exists!</strong>
-                    </div>
-                    <div class="close">
-                        <i class="fas fa-times" onclick="removeMessage()"></i>
-                    </div>
-                </div>
+                <%if(err.error.keyValue){%>
+                    <%if(err.error.keyValue.phone != null && err.error.keyValue.phone != ''){%>
+                        <div class="alert alert-danger alert-dismissible fade show d-flex justify-content-center">
+                            <div class="errmessage">
+                                <strong>Phone No. already exists!</strong>
+                            </div>
+                            <div class="close">
+                                <i class="fas fa-times" onclick="removeMessage()"></i>
+                            </div>
+                        </div>       
+                    <%}%>    
+                <%}%>
             <%}%>              
         <%}else{%>
             <div class="alert alert-danger alert-dismissible fade show d-flex justify-content-center">
@@ -69,7 +73,7 @@
         
             <div class="input-group">
                 <span class="input-group-addon"><i class="fas fa-phone-alt icons"></i></span>
-                <input onfocusout="displayError('phone','phone')" class="form-control" id="phone" type="tel" size="10" pattern="(7|8|9){1}[0-9]{9}" placeholder="Phone" name="phone" required>
+                <input class="form-control" id="phone" type="tel" size="10" pattern="(7|8|9){1}[0-9]{9}" placeholder="Phone" name="phone">
             </div>
             <div class="error">
                 <div class="phone errordiv"></div>
@@ -100,13 +104,13 @@
                 <button onclick="checkInputfields();" class="btn btn-dark" type="submit" id="submit">Sign Up</button>
             </div>
         </form>
-        <div class="alt">
+        <!-- <div class="alt">
             Or Connect Using
         </div>
         <div class="altOptions">
             <img class="pageicons" src="/img/google.jpg" alt="">
             <img class="pageicons" src="/img/fb.jpg" alt="">
-        </div>
+        </div> -->
         <div class="otheroption">
             Already have an account? <a class="otherlink" href="/auth/login">Login here</a>
         </div>
