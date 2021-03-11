@@ -1,3 +1,4 @@
+
 var express                 = require("express"),
     mongoose                = require("mongoose"),
     passport                = require("passport"),
@@ -52,10 +53,6 @@ app.get('/',(req,res)=>{
     res.redirect('/home');
 })
 
-
-
-
-
 app.get('/feed',(req,res)=> {
     res.render("Feedmodule/feed",{page:"Feed | HappyClash"});
 })
@@ -64,20 +61,13 @@ app.get('/drive',(req,res)=> {
     res.render("Feedmodule/drive",{page:"HappyClash Drive"})
 })
 
-app.get('/feedhome',(req,res)=> {
-    res.render("Feedmodule/feedhome")
+app.get('/homefeed',(req,res)=> {
+    res.render("Feedmodule/feedhome",{page:"HappyClash homefeed"})
 })
 
 app.get('/library',(req,res)=> {
     res.render("Feedmodule/library");
 })
-
-
-
-
-
-
-
 
 app.use('/auth',Authroutes);
 app.use('/dashboard',Dashboardroutes);
