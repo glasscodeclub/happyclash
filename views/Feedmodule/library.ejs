@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <script src="https://kit.fontawesome.com/2635296004.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="/js/bottomnavbar.js" type="text/javascript"></script>
+    <script src="/js/library.js" type="text/javascript"></script>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/library.css"> 
@@ -30,27 +32,51 @@
         <div class="row videorow">
             <%for(let i=0;i<count;i++){%>
                 <div class="col-4 videodiv">
-                    <video muted class="myvideo">
+                    <video muted controls class="myvideo">
                         <source src="/img/sample.mp4" type="video/mp4">
                     </video>
+                    <div class="play">
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                        width="24" height="24"
+                        viewBox="0 0 172 172"
+                        style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#ffffff"><path d="M40.8374,14.73226c-8.21402,0.32497 -15.75407,7.02638 -15.75407,16.05501v110.42546c0,12.03818 13.41155,19.93655 23.94255,14.10238l99.64746,-55.21273c10.83399,-6.00312 10.83399,-22.20164 0,-28.20475l-99.64746,-55.21273c-2.63275,-1.45854 -5.45047,-2.06096 -8.18848,-1.95264zM40.96338,25.32129c0.92662,-0.00398 1.89789,0.23623 2.84847,0.76286l99.65446,55.21273c3.93651,2.18122 3.93651,7.22503 0,9.40625l-99.65446,55.21273c-3.80233,2.10649 -7.97851,-0.3583 -7.97851,-4.70312v-110.42546c0,-2.17241 1.04171,-3.87066 2.56152,-4.76611c0.75991,-0.44773 1.6419,-0.69589 2.56852,-0.69987z"></path></g></g></svg>
+                    </div>
                 </div>
                 <div class="col-4 videodiv">
-                    <video muted class="myvideo">
+                    <video muted controls class="myvideo">
                         <source src="/img/sample.mp4" type="video/mp4">
                     </video>
+                    <div class="play">
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                        width="24" height="24"
+                        viewBox="0 0 172 172"
+                        style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#ffffff"><path d="M40.8374,14.73226c-8.21402,0.32497 -15.75407,7.02638 -15.75407,16.05501v110.42546c0,12.03818 13.41155,19.93655 23.94255,14.10238l99.64746,-55.21273c10.83399,-6.00312 10.83399,-22.20164 0,-28.20475l-99.64746,-55.21273c-2.63275,-1.45854 -5.45047,-2.06096 -8.18848,-1.95264zM40.96338,25.32129c0.92662,-0.00398 1.89789,0.23623 2.84847,0.76286l99.65446,55.21273c3.93651,2.18122 3.93651,7.22503 0,9.40625l-99.65446,55.21273c-3.80233,2.10649 -7.97851,-0.3583 -7.97851,-4.70312v-110.42546c0,-2.17241 1.04171,-3.87066 2.56152,-4.76611c0.75991,-0.44773 1.6419,-0.69589 2.56852,-0.69987z"></path></g></g></svg>
+                    </div>
                 </div>
                 <div class="col-4 videodiv">
-                    <video muted class="myvideo">
+                    <video muted controls class="myvideo">
                         <source src="/img/sample.mp4" type="video/mp4">
                     </video>
+                    <div class="play">
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                        width="24" height="24"
+                        viewBox="0 0 172 172"
+                        style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#ffffff"><path d="M40.8374,14.73226c-8.21402,0.32497 -15.75407,7.02638 -15.75407,16.05501v110.42546c0,12.03818 13.41155,19.93655 23.94255,14.10238l99.64746,-55.21273c10.83399,-6.00312 10.83399,-22.20164 0,-28.20475l-99.64746,-55.21273c-2.63275,-1.45854 -5.45047,-2.06096 -8.18848,-1.95264zM40.96338,25.32129c0.92662,-0.00398 1.89789,0.23623 2.84847,0.76286l99.65446,55.21273c3.93651,2.18122 3.93651,7.22503 0,9.40625l-99.65446,55.21273c-3.80233,2.10649 -7.97851,-0.3583 -7.97851,-4.70312v-110.42546c0,-2.17241 1.04171,-3.87066 2.56152,-4.76611c0.75991,-0.44773 1.6419,-0.69589 2.56852,-0.69987z"></path></g></g></svg>
+                    </div>
                 </div>
             <%}%>
             <%if(num%3){%>
                 <%for(let i=0;i<num%3;i++){%>
                     <div class="col-4 videodiv">
-                        <video muted class="myvideo">
+                        <video muted controls class="myvideo">
                             <source src="/img/sample.mp4" type="video/mp4">
                         </video>
+                    </div>
+                    <div class="play">
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                        width="24" height="24"
+                        viewBox="0 0 172 172"
+                        style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#ffffff"><path d="M40.8374,14.73226c-8.21402,0.32497 -15.75407,7.02638 -15.75407,16.05501v110.42546c0,12.03818 13.41155,19.93655 23.94255,14.10238l99.64746,-55.21273c10.83399,-6.00312 10.83399,-22.20164 0,-28.20475l-99.64746,-55.21273c-2.63275,-1.45854 -5.45047,-2.06096 -8.18848,-1.95264zM40.96338,25.32129c0.92662,-0.00398 1.89789,0.23623 2.84847,0.76286l99.65446,55.21273c3.93651,2.18122 3.93651,7.22503 0,9.40625l-99.65446,55.21273c-3.80233,2.10649 -7.97851,-0.3583 -7.97851,-4.70312v-110.42546c0,-2.17241 1.04171,-3.87066 2.56152,-4.76611c0.75991,-0.44773 1.6419,-0.69589 2.56852,-0.69987z"></path></g></g></svg>
                     </div>
                 <%}%>    
             <%}%>

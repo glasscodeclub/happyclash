@@ -1,3 +1,9 @@
+body {
+    width: 100%;
+    height: 100%;
+    touch-action: manipulation;
+}
+
 .head {
     position: absolute;
     text-align: center !important;
@@ -74,6 +80,14 @@
 }
 
 .myvideo {
+    position: relative;
     width: 100%;
     height: 100%;
+    z-index: 0;
 }
+
+.play {
+    position: absolute;
+    z-index: 1;
+}
+
