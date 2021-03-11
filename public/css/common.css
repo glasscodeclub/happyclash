@@ -19,7 +19,7 @@
 }
 
 #back {
-    font-size: 1.5rem;
+    font-size: 1.5rem !important;
 }
 
 #backdiv::after {
@@ -119,17 +119,6 @@
     cursor: pointer;
 }
 
-/* .altOptions {
-    text-align: center;
-    margin: auto;
-    width: 50%;
-}
-
-.pageicons {
-    max-width: 1.5rem;
-    margin: 1rem 0.5rem;
-} */
-
 .otherlink {
     font-weight: bolder;
 }
@@ -173,11 +162,6 @@
         margin: 1.2rem auto;
         margin-bottom: 0.5rem;
     }
-/* 
-    .pageicons {
-        max-width: 1rem;
-        margin: 0.5rem 0.3rem;
-    } */
 
     .form-group {
         text-align: center;
@@ -200,12 +184,12 @@
         margin: 0.7rem auto;
     }
 
-    #subheaddiv {
-        margin-top: 0.5rem;
-    }
-
     #heading {
         font-size: 2.35rem;
+    }
+
+    #subheaddiv {
+        margin-top: 0.5rem;
     }
 
     .icons {
@@ -229,19 +213,9 @@
         margin: 1rem auto;
     }
 
-    #submit {
-        padding: 0.35rem 3.2rem;
-        font-size: 0.85rem;
-    }
-
     .otheroption {
         margin: auto !important;
     }
-
-    /* .pageicons {
-        margin: 0.75rem 0.4rem;
-        max-width: 1rem !important;
-    } */
 
     .form-group {
         margin: 3.5rem auto !important;
@@ -262,7 +236,6 @@
     }
 
     .otheroption {
-        /* font-size: smaller; */
         margin: 1rem auto !important;
     }
     
@@ -276,45 +249,7 @@
         margin: 0.6rem auto;
         font-size: smaller;
     }
-/* 
-    .altOptions {
-        margin: auto !important;
-    } */
 }
-
-/* @media only screen and (min-width:1001px) {
-    #heading {
-        font-size: 0.9rem !important;
-    }
-
-    #subheaddiv {
-        margin: auto !important;
-    }
-    
-    #subheading {
-        font-size: smaller;
-    }
-
-    .form-group {
-        text-align: center;
-        margin: 0.9rem auto !important;
-        width: 100%;
-    }
-
-    #submit {
-        padding: 0.1rem 1.75rem;
-    }
-
-    .formbutton {
-        margin: 1.2rem auto;
-        margin-bottom: 0.5rem;
-    }
-
-    .pageicons {
-        max-width: 0.8rem;
-        margin: 0.05rem 0.2rem !important;
-    }
-} */
 
 .errordiv {
     text-align: left;

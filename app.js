@@ -52,6 +52,10 @@ app.get('/',(req,res)=>{
     res.redirect('/home');
 })
 
+
+
+
+
 app.get('/feed',(req,res)=> {
     res.render("Feedmodule/feed",{page:"Feed | HappyClash"});
 })
@@ -63,6 +67,17 @@ app.get('/drive',(req,res)=> {
 app.get('/feedhome',(req,res)=> {
     res.render("Feedmodule/feedhome")
 })
+
+app.get('/library',(req,res)=> {
+    res.render("Feedmodule/library");
+})
+
+
+
+
+
+
+
 
 app.use('/auth',Authroutes);
 app.use('/dashboard',Dashboardroutes);
