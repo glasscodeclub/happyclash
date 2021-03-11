@@ -1,3 +1,4 @@
+
 var express                 = require("express"),
     mongoose                = require("mongoose"),
     passport                = require("passport"),
@@ -62,6 +63,10 @@ app.get('/drive',(req,res)=> {
 
 app.get('/homefeed',(req,res)=> {
     res.render("Feedmodule/feedhome",{page:"HappyClash homefeed"})
+})
+
+app.get('/library',(req,res)=> {
+    res.render("Feedmodule/library");
 })
 
 app.use('/auth',Authroutes);
