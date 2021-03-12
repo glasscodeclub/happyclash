@@ -55,3 +55,51 @@
   }
 
 
+.pl{
+  padding-left: 12px!important;
+  padding-right: 12px!important;
+}
+
+.w{
+  max-width: 100px;
+  /* text-align:center; */
+  /* display: inline; */
+  vertical-align:middle;
+}
+
+.vid{
+  margin-left:35px;
+  /* height: 800px; */
+  margin-right: 35px;
+}
+
+#bc{
+  background-image: linear-gradient(to right, #c7357e,#c795c7);
+  border:1px solid pink;
+  border-radius: 10px;
+  margin-left:20px;
+}
+
+#cb{
+  /* background-color:blue; */
+  background-image: linear-gradient(to right, #357EC7,#95B9C7);
+  border:1px solid blue;
+  border-radius: 10px;
+  margin-left:20px;
+}
+
+#br{
+  max-width: 30px;
+  max-height: 30px;
+  /* align-self: right; */
+  display: inline;
+}
+
+.fontsize{
+  font-size: 10px;
+}
+
+#car1{
+  margin-left:10px;
+  /* padding-right: 0px !important; */
+}
