@@ -6,7 +6,7 @@ body {
 footer {
     position: fixed !important;
     background-size: auto !important;
-    background-color: rgb(214, 214, 214);
+    background-color: #EFEFEF;
     width: 100% !important;
     height: 3.55rem !important;
     bottom: 0 !important;
