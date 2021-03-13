@@ -74,16 +74,16 @@
 }
 
 #bc{
-  background-image: linear-gradient(to right, #c7357e,#c795c7);
-  border:1px solid pink;
+  background-image: linear-gradient(to right,rgba(66, 134, 214, 0.9),rgba(89, 191, 248, 0.3));
+  border:1px solid rgba(89, 191, 248, 0.3);
   border-radius: 10px;
   margin-left:20px;
 }
 
 #cb{
   /* background-color:blue; */
-  background-image: linear-gradient(to right, #357EC7,#95B9C7);
-  border:1px solid blue;
+  background-image: linear-gradient(to right,rgba(228, 77, 77, 0.9),rgba(255, 137, 137, 0.3));
+  border:1px solid rgba(255, 137, 137, 0.3);
   border-radius: 10px;
   margin-left:20px;
 }
