@@ -1,11 +1,10 @@
 body {
     width: 100%;
     height: 100%;
-    touch-action: manipulation;
+    touch-action: manipulation !important;
 }
 
 .head {
-    position: absolute;
     text-align: center !important;
     margin: auto;
     bottom: 0.75rem;
@@ -37,8 +36,8 @@ body {
 
 #heading {
     width: 65%;
-    margin: auto;
-    font-size: 2.6rem;
+    margin: 0.5rem auto;
+    font-size: 2.6rem !important;
     font-weight: bolder;
 }
 
@@ -71,23 +70,56 @@ body {
     width: 100% !important;
     height: auto !important;
     margin: auto 0.25rem !important;
+    top: 13% !important;
     padding-bottom: 16% !important;
 }
 
 .videodiv {
     text-align: center !important;
-    margin: 1rem auto !important;
+    margin: 0.75rem auto !important;
+    overflow: hidden !important;
+    vertical-align: middle !important;
 }
 
 .myvideo {
-    position: absolute;
+    position: relative;
     width: 100%;
     height: 100%;
     z-index: 0;
 }
 
+.videoplay {
+    width: 30% !important;
+    height: 30% !important;
+    margin-top: 28% !important;
+    margin-right: 1% !important;
+}
+
+.videodots {
+    width: 17% !important;
+    height: 17% !important;
+    float: right !important;
+    margin-top: 8% !important;
+    margin-right: 26% !important;
+}
+
 .play {
     position: absolute;
+    text-align: center;
+    vertical-align: middle !important;
+    margin: auto;
+    padding: 50% auto;
+    width: 80%;
+    height: 100%;
+    z-index: 1;
+}
+
+.threedots {
+    position: absolute;
+    text-align: center;
+    margin: auto;
+    width: 100%;
+    height: 100%;
     z-index: 1;
 }
 

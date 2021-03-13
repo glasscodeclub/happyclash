@@ -1,9 +1,10 @@
 body {
     width: 100%;
     height: 100%;
+    touch-action: manipulation !important;
 }
 
-footer {
+.bottomnav {
     position: fixed !important;
     background-size: auto !important;
     background-color: #EFEFEF;
@@ -31,3 +32,11 @@ footer {
 .bottomicons {
     max-width: 25px !important;
 }
+
+/* g {
+    filter: drop-shadow(8px 8px 10px 10px black) !important;
+} */
+
+/* .bottomiconslg {
+    box-shadow: 0 0.5rem 1rem black !important;
+} */
