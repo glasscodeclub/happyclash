@@ -69,6 +69,10 @@ app.get('/library',(req,res)=> {
     res.render("Feedmodule/library");
 })
 
+app.get('/profile',(req,res)=> {
+    res.render("Profilemodule/profile");
+})
+
 app.use('/auth',Authroutes);
 app.use('/dashboard',Dashboardroutes);
 app.use('/home',Homeroutes);
