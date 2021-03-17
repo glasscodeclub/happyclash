@@ -49,9 +49,12 @@
   
 
   #bor{
-    margin-left: 80px;
-    width:200px;
+    /* margin-left: ; */
+    width:40%;
     box-shadow: gray;
+    /* position: fixed; */
+    text-align: center;
+    margin: auto;
   }
 
 

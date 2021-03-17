@@ -6,11 +6,9 @@ var VideoSchema = new mongoose.Schema({
         type:String,
         unique:true,
     },
-    videourl:{
-        type:String,
-        unique:true,
-    },
-    
+    path:String,
+    title:String,
+    description:String,
 });
 
 VideoSchema.plugin(passportLocalMongoose);

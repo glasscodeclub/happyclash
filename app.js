@@ -10,6 +10,8 @@ var express                 = require("express"),
     Authroutes              = require("./routes/auth.routes"),
     Homeroutes              = require("./routes/home.routes"), 
     Dashboardroutes         = require("./routes/dashboard.routes");
+    Uploadroutes            = require("./routes/upload.routes");
+
     
 var app = express();
 const port = 3000;
@@ -73,9 +75,11 @@ app.get('/profile',(req,res)=> {
     res.render("Profilemodule/profile");
 })
 
+
 app.use('/auth',Authroutes);
 app.use('/dashboard',Dashboardroutes);
 app.use('/home',Homeroutes);
+app.use('/upload',Uploadroutes);
 
 app.listen(port, function(){
     console.log("connected on : ",port," mongo url : ",url);
