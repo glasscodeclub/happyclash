@@ -1,0 +1,260 @@
+@import url("./background.css");
+
+@font-face {
+    font-family: America;
+    src: url('/font-family/America.ttf');
+}
+
+.pageimgsdiv {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    text-align: center;
+    margin: auto;
+}
+
+.pageimgs {
+    margin: auto;
+    width: 95%;
+    height: 95%;
+}
+
+.formpage {
+    position: absolute;
+    text-align: center;
+    margin: auto;
+    bottom: 0.75rem;
+    left: 0;
+    right: 0;
+    top: 58%;
+}
+
+#headdiv {
+    text-align: center;
+    margin: 1.3rem auto;
+}
+
+#heading {
+    width: 85%;
+    margin: auto;
+    font-size: 2.2rem !important;
+    font-weight: 900;
+    font-family: America;
+    font-style: normal;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.firsthead,
+.secondhead {
+    background: linear-gradient(357.55deg, #7C49F6 21.82%, #E55ABD 49.61%, #FEDF67 79.82%);
+    color:transparent;
+    -webkit-background-clip: text;
+    background-clip: text; 
+    padding: 0.05rem !important;
+}
+
+/* #subheaddiv {
+    margin: 0.5rem auto;
+} */
+
+#subheading {
+    font-size: 0.95rem;
+    font-family: Tahoma;
+    font-style: normal;
+    font-weight: normal;
+}
+
+.formbuttondiv {
+    margin: 1.7rem !important;
+}
+
+.formbutton {
+    text-align: center;
+    margin: 1rem auto !important;
+    margin-bottom: 1rem;
+}
+
+.formbutton:focus {
+    outline: none;
+}
+
+.submit {
+    padding: 0.22rem 3.5rem;
+    font-size: 0.8rem;
+    font-family: Jost;
+    font-style: normal;
+    font-weight: normal;
+    background: linear-gradient(81.23deg, #7C49F6 9.3%, #FF53B7 51.61%, #FFD458 97.6%);
+    color: black !important;
+    border-radius: 5rem;
+    border: none;
+    outline: none;
+}
+
+.submit:focus {
+    outline: none !important;
+}
+
+.submit:hover {
+    cursor: pointer !important;
+}
+
+@media only screen and (max-width:250px),
+       only screen and (max-height:400px) {
+    body {
+        background-size: 170%;
+        background-position-y: -50px;
+    }
+
+    .formpage {
+        top: 58%;
+    }
+}
+
+@media only screen and (min-width:251px) and (max-width:500px) {
+    body {
+        background-size: 150%;
+        background-position-y: -69px;
+    }
+
+    .pageimgs {
+        width: 90%;
+        height: 86%;
+    }
+
+    .formpage {
+        top: 60%;
+    }
+}
+
+@media only screen and (min-width:251px) and (max-width:500px) {
+    body {
+        background-size: 150%;
+        background-position-y: -69px;
+    }
+
+    .pageimgs {
+        width: 90%;
+        height: 86%;
+    }
+
+    .formpage {
+        top: 56%;
+    }
+}
+
+@media only screen and (min-width:501px) and (max-width:650px) {
+    body {
+        background-size: 90%;
+        background-position-y: -50px;
+    }
+
+    .pageimgs {
+        width: 55%;
+        height: 55%;
+    }
+
+    .formpage {
+        top: 45%;
+    }
+}
+
+@media only screen and (min-width:651px) and (max-width:1000px) {
+    body {
+        background-size: 65%;
+        background-position-y: -40px;
+    }
+
+    .pageimgs {
+        width: 43%;
+        height: 43%;
+    }
+
+    .formpage {
+        top: 34%;
+    }
+}
+
+@media only screen and (min-width:600px) and (max-height:400px) {
+    body {
+        background-size: 50%;
+        background-position-y: -40px;
+    }
+
+    .pageimgs {
+        width: 31%;
+        height: 30%;
+    }
+
+    .formpage {
+        top: 45%;
+    }
+}
+
+@media only screen and (min-width:1001px) {
+    body {
+        background-size: 45%;
+        background-position-y: -80px;
+    }
+
+    .pageimgs {
+        width: 28%;
+        height: 28%;
+    }
+
+    .formpage {
+        top: 40%;
+    }
+}
+
+@media only screen and (max-width:250px) and (max-height:400px) {
+    #heading {
+        font-size: 1.7rem;
+    }
+
+    /* #subheaddiv {
+        margin: 0.3rem auto;
+    } */
+    
+    #subheading {
+        font-size: smaller;
+    }
+
+    .submit {
+        padding: 0.1rem 1.75rem;
+    }
+
+    .formbutton {
+        margin: 1.2rem auto;
+        margin-bottom: 0.5rem;
+    }
+}
+
+@media only screen and (max-width:500px) {
+    #headdiv {
+        text-align: center;
+        margin: 0.7rem auto;
+    }
+
+    #heading {
+        font-size: 2.35rem;
+    }
+
+    /* #subheaddiv {
+        margin-top: 0.5rem;
+    } */
+
+    .formbutton {
+        text-align: center;
+        margin: 1.65rem auto;
+        margin-bottom: 0.6rem;
+    }
+
+    .submit {
+        padding: 0.4rem 2.6rem;
+        background-color: black;
+        color: white;
+        border-radius: 5rem;
+        white-space: normal;
+    }
+}

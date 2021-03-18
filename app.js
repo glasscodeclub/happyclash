@@ -53,6 +53,10 @@ app.get('/',(req,res)=>{
     res.redirect('/home');
 })
 
+app.get('/start',(req,res)=> {
+    res.render("Feedmodule/start");
+})
+
 app.get('/feed',(req,res)=> {
     res.render("Feedmodule/feed",{page:"Feed | HappyClash"});
 })

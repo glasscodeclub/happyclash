@@ -1,5 +1,6 @@
 
-@media only screen and (max-width:250px) and (max-height:400px) {
+@media only screen and (max-width:250px),
+       only screen and (max-height:400px) {
     body {
         background: url("../img/Background circles.png") no-repeat;
         background-size: 170%;
