@@ -1,3 +1,8 @@
+@font-face {
+    font-family: America;
+    src: url('/font-family/America.ttf');
+}
+
 body {
     background-color: black;
 }
@@ -26,13 +31,23 @@ video {
 }
 
 .challengeName {
+    font-family: America;
+    font-style: normal;
+    font-weight: normal;
+    background-image: linear-gradient(180deg, #7A49F7 0%, #E55DBA 47.92%, #FFDE66 100%);
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text; 
     color: white;
-    font-size: 0.8rem;
+    font-size: 1.5rem;
 }
 
 .challengesubtitle {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
     color: white;
-    font-size: 0.6rem;
+    font-size: 0.8rem;
 }
 
 .infodiv {
@@ -63,7 +78,7 @@ svg.infoicon {
 
 .activity {
     position: fixed;
-    width: 100%;
+    width: 50%;
     text-align: right;
     transform: translateY(-80%);
     top: 80%;
@@ -81,9 +96,17 @@ svg.infoicon {
 .activityicons {
     max-width: 2rem !important;
     color: white !important;
-    margin-bottom: 1.4rem;
+    margin-bottom: 1.9rem;
 }
-/* 
+
+.embedicons {
+    position: fixed;
+    bottom: 3%;
+    text-align: center;
+    margin: auto;
+    width: 90%;
+}
+
 .progress{
     height: 2px !important;
     margin-top: 1rem;
@@ -96,11 +119,25 @@ svg.infoicon {
 }
 
 .pause {
-    margin: auto 0.5rem;
+    background-color: linear-gradient(180deg, #FEE16B 0%, #E660B8 53.12%, #7749F8 100%);
+    margin: auto 0.35rem;
     font-size: 1.3rem;
 }
 
 .play {
-    margin: auto 0.5rem;
+    background-color: linear-gradient(180deg, #FEE16B 0%, #E660B8 53.12%, #7749F8 100%);
+    margin: auto 0.35rem;
     font-size: 1.3rem;
-} */
+}
+
+.joinclashdiv {
+    position: fixed;
+    bottom: 16.8%;
+    left: 3.2%;
+}
+
+.joinclashtxt {
+    font-weight: bolder;
+    font-size: 0.75rem;
+    color: white;
+}
