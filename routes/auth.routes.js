@@ -36,7 +36,7 @@ router.get("/login", function (req, res) {
 })
 
 router.post("/login", passport.authenticate("local", {
-    successRedirect: "/dashboard",
+    successRedirect: "/upload",
     failureRedirect: "/auth/login"
 }), function (req, res) {
     res.send("User is " + req.user.id);
