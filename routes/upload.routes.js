@@ -1,11 +1,13 @@
 const express = require('express');
 var router = express.Router();
 const multer = require("multer");
-// var middlewares = require("../middlewares/auth.middleware");
+const { isLoggedIn } = require('../middlewares/auth.middleware');
+ var middlewares = require("../middlewares/auth.middleware");
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-        cb(null, "uploads/public")
+        //assume exists path dir else use fs-extra
+        cb(null, "upload/"+req.user.username+"/public")
     },
     filename: function (req, file, cb) {
         const parts = file.mimetype.split("/");
@@ -14,12 +16,12 @@ const storage = multer.diskStorage({
 })
 const upload = multer({storage});
 
-router.get("/", function(req, res){
+router.get("/",isLoggedIn, function(req, res){
     res.render("Uploadmodule/upload");
 })
 
 
-router.post("/", upload.single("image"), (req, res) => {
+router.post("/", isLoggedIn,upload.single('videoFile'), (req, res) => {
     res.send("image got saved");
 })
 
