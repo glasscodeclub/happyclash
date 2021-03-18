@@ -1,7 +1,9 @@
 .p1{
     width:130px;
     height: 130px; 
-    margin-left:20px;
+    /* margin-left:20px; */
+    /* margin:auto; */
+    text-align: center;
 }
 
 .n1{
