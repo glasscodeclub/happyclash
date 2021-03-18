@@ -37,22 +37,30 @@
         <div class="row videorow">
             <%for(let i=0;i<count;i++){%>
                 <div class="col-4 videodiv">
-                    <div class="threedots">
-                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="15" height="15"
-                            viewBox="0 0 172 172" style=" fill:#000000;" class="videodots">
-                            <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1"
-                                stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10"
-                                stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none"
-                                font-size="none" text-anchor="none" style="mix-blend-mode: normal">
-                                <path d="M0,172v-172h172v172z" fill="none"></path>
-                                <g fill="#ffffff">
-                                    <path
-                                        d="M86,21.5c-7.91608,0 -14.33333,6.41725 -14.33333,14.33333c0,7.91608 6.41725,14.33333 14.33333,14.33333c7.91608,0 14.33333,-6.41725 14.33333,-14.33333c0,-7.91608 -6.41725,-14.33333 -14.33333,-14.33333zM86,71.66667c-7.91608,0 -14.33333,6.41725 -14.33333,14.33333c0,7.91608 6.41725,14.33333 14.33333,14.33333c7.91608,0 14.33333,-6.41725 14.33333,-14.33333c0,-7.91608 -6.41725,-14.33333 -14.33333,-14.33333zM86,121.83333c-7.91608,0 -14.33333,6.41725 -14.33333,14.33333c0,7.91608 6.41725,14.33333 14.33333,14.33333c7.91608,0 14.33333,-6.41725 14.33333,-14.33333c0,-7.91608 -6.41725,-14.33333 -14.33333,-14.33333z">
-                                    </path>
+                    <div class="dropdown">
+                        <div class="threedots">
+                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="15" height="15"
+                                viewBox="0 0 172 172" style=" fill:#000000;" class="dropdown-toggle videodots" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1"
+                                    stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10"
+                                    stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none"
+                                    font-size="none" text-anchor="none" style="mix-blend-mode: normal">
+                                    <path d="M0,172v-172h172v172z" fill="none"></path>
+                                    <g fill="#ffffff">
+                                        <path
+                                            d="M86,21.5c-7.91608,0 -14.33333,6.41725 -14.33333,14.33333c0,7.91608 6.41725,14.33333 14.33333,14.33333c7.91608,0 14.33333,-6.41725 14.33333,-14.33333c0,-7.91608 -6.41725,-14.33333 -14.33333,-14.33333zM86,71.66667c-7.91608,0 -14.33333,6.41725 -14.33333,14.33333c0,7.91608 6.41725,14.33333 14.33333,14.33333c7.91608,0 14.33333,-6.41725 14.33333,-14.33333c0,-7.91608 -6.41725,-14.33333 -14.33333,-14.33333zM86,121.83333c-7.91608,0 -14.33333,6.41725 -14.33333,14.33333c0,7.91608 6.41725,14.33333 14.33333,14.33333c7.91608,0 14.33333,-6.41725 14.33333,-14.33333c0,-7.91608 -6.41725,-14.33333 -14.33333,-14.33333z">
+                                        </path>
+                                    </g>
                                 </g>
-                            </g>
-                        </svg>
+                            </svg>
+                        </div>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                          <a class="dropdown-item" href="#">Playback speed</a>
+                          <a class="dropdown-item" href="#">Video Quality</a>
+                          <a class="dropdown-item" href="#">Full Screen</a>
+                        </div>
                     </div>
+                    
                     <div class="play">
                         <img src="/img/Play.svg" width="24" height="24" class="videoplay">
                     </div>

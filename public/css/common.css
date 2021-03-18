@@ -43,13 +43,11 @@
     font-weight: bold;
     font-family: America;
     font-style: normal;
-    /* background-image: linear-gradient(357.55deg, #7C49F6 21.82%, #E55ABD 49.61%, #FEDF67 79.82%); */
     background: linear-gradient(357.55deg, #7C49F6 21.82%, #E55ABD 49.61%, #FEDF67 79.82%);
     color:transparent;
     -webkit-background-clip: text;
     background-clip: text; 
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    /* background-color: linear-gradient(357.55deg, #7C49F6 21.82%, #E55ABD 49.61%, #FEDF67 79.82%); */
 }
 
 #subheaddiv {
@@ -121,7 +119,7 @@
     outline: none;
 }
 
-#submit {
+.submit {
     padding: 0.22rem 3.5rem;
     font-size: 0.8rem;
     font-family: Jost;
@@ -132,11 +130,11 @@
     border-radius: 5rem;
 }
 
-#submit:focus {
+.submit:focus {
     outline: none;
 }
 
-#submit:hover {
+.submit:hover {
     cursor: pointer;
 }
 
@@ -175,7 +173,7 @@
         margin: 0.4rem 0.5rem;
     }
 
-    #submit {
+    .submit {
         padding: 0.1rem 1.75rem;
     }
 
@@ -248,7 +246,7 @@
         margin-bottom: 0.6rem;
     }
 
-    #submit {
+    .submit {
         padding: 0.4rem 2.6rem;
         background-color: black;
         color: white;
