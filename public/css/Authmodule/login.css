@@ -21,3 +21,7 @@
 .forgotpass:hover {
     opacity: 1;
 }
+
+.loginbtn {
+    padding: 0.2rem 2.8rem !important;
+}

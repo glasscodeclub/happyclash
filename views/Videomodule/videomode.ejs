@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://kit.fontawesome.com/2635296004.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="/css/Videomodule/videomode.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>
+        <%=page%>
+    </title>
+    <base href="/">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="previousdiv">
+            <img src="/img/previousvideo.svg" alt="" class="previousvideo">
+        </div>
+        <div class="row">
+            <div class="col-2 backdiv">
+                <div>
+                    <i onclick="window.location.href='/'" class="fas fa-arrow-left back"></i>
+                </div>
+            </div>
+            <div class="col-8">
+                <h6 class="challengeName">
+                    Challenge Name
+                </h6>
+                <div class="challengesubtitle">
+                    <p>Challenge details</p>
+                </div>
+            </div>
+            <div class="col-2 infodiv">
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                width="30" height="30"
+                viewBox="0 0 172 172"
+                style=" fill:#000000;" class="infoicon"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#ffffff"><path d="M86,6.88c-43.65603,0 -79.12,35.46397 -79.12,79.12c0,43.65603 35.46397,79.12 79.12,79.12c43.65603,0 79.12,-35.46397 79.12,-79.12c0,-43.65603 -35.46397,-79.12 -79.12,-79.12zM86,13.76c39.93779,0 72.24,32.30221 72.24,72.24c0,39.93779 -32.30221,72.24 -72.24,72.24c-39.93779,0 -72.24,-32.30221 -72.24,-72.24c0,-39.93779 32.30221,-72.24 72.24,-72.24zM86,37.84c-5.69958,0 -10.32,4.62042 -10.32,10.32c0,5.69958 4.62042,10.32 10.32,10.32c5.69958,0 10.32,-4.62042 10.32,-10.32c0,-5.69958 -4.62042,-10.32 -10.32,-10.32zM72.24,72.24v6.88h3.44h3.44v44.72h-3.44h-3.44v6.88h3.44h3.44h13.76h3.44h3.44v-6.88h-3.44h-3.44v-51.6h-3.44h-13.76z"></path></g></g></svg>
+            </div>
+        </div>
+
+        <div class="videoelements">
+            <video autoplay muted class="myvideo">
+                <source src="/img/sample.mp4" type="video/mp4">
+            </video>
+
+            <div class="d-flex flex-column bd-highlight activity">
+                <div class="d-flex flex-row-reverse">
+                    
+                    <div>
+                        <img src="/img/Share.svg" width="45" height="40" alt="" class="activityicons">
+                        
+                    </div>
+
+                    <div class="number">
+                        <span>5</span>
+                    </div>
+                </div>
+                <div class="d-flex flex-row-reverse">
+                    
+                    <div>
+                        <img src="/img/Comments.svg" width="45" height="40" alt="" class="activityicons">
+                    </div>
+                    <div class="number">
+                        <span>5</span>
+                    </div>
+                </div>
+                <div class="d-flex flex-row-reverse">
+                    
+                    <div>
+                        <img src="/img/Upvote.svg" width="45" height="40" alt="" class="activityicons">
+                    </div>
+                    <div class="number">
+                        <span>5</span>
+                    </div>
+                </div>
+                <div class="d-flex flex-row-reverse">
+                    
+                    <div>
+                        <img src="/img/Downvote.svg" width="45" height="40" alt="" class="activityicons">
+                    </div>
+                    <div class="number">
+                        <span>5</span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+
+        <div class="joinclashdiv">
+            <div class="joinclash">
+                <img src="/img/Plus Icon.svg" alt="" width="58" height="58" class="joinicon">
+            </div>
+            
+            <div class="joinclashtxt">
+                Join Clash    
+            </div>
+        </div>
+
+        <div class="embedicons">
+            <div class="progress">
+                <div class="progress-bar bg-white"></div>
+            </div>
+            <div class="videoicons">
+                <img src="/img/Pause.svg" alt="" width="22" height="22" class="pause">
+                <img src="/img/Play.svg" alt="" width="22" height="22" class="play">
+            </div>
+        </div>
+
+        <div class="nextdiv">
+            <img src="/img/nextvideo.svg" alt="" class="nextvideo">
+        </div>
+
+    </div>
+
+
+</body>
+
+</html>

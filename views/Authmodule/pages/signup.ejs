@@ -4,16 +4,21 @@
 
 <div class="formpage">
 
-    <div id="backdiv">
-        <i onclick="window.location.href='/'" id="back" class="fas fa-arrow-left"></i>
-    </div>
-
-    <div id="headdiv">
-        <h1 id="heading">Getting Started</h1>
+    <div class="row">
+        <div class="col-3">
+            <div id="backdiv">
+                <i onclick="window.location.href='/'" id="back" class="fas fa-arrow-left"></i>
+            </div>
+        </div>
+        <div class="col-6">
+            <div id="headdiv">
+                <img src="/img/happyclash_logo.svg" alt="" class="headicon" width="190" height="100">
+            </div>
+        </div>
     </div>
 
     <div id="subheaddiv">
-        <h6 id="subheading">Fill in the details to create an account</h6>
+        <h6 id="subheading">Discover the Clash World</h6>
     </div>
     <%if(err.error){%>
        <%if(err.error.keyPattern){%>
