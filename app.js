@@ -51,6 +51,10 @@ passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
 app.get('/',(req,res)=>{
+    res.render('Homemodule/pages/base');
+})
+
+app.get('/links',(req,res)=>{
     res.redirect('/home');
 })
 
@@ -76,6 +80,10 @@ app.get('/library',(req,res)=> {
 
 app.get('/profile',(req,res)=> {
     res.render("Profilemodule/profile");
+})
+
+app.get('/challenge',(req,res)=> {
+    res.render("Feedmodule/challenge");
 })
 
 app.use('/auth',Authroutes);
