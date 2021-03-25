@@ -12,11 +12,12 @@
     bottom: 0.75rem;
     left: 0;
     right: 0;
-    top: 0.75rem;
+    top: 0 !important;
 }
 
 #backdiv {
-    margin-left: 0.8rem;
+    margin-left: 1.1rem !important;
+    margin-top: 0.8rem !important;
     padding: 0.2rem 0.4rem;
     background-color: white;
     border-radius: 0.5rem;
@@ -24,7 +25,7 @@
 }
 
 #back {
-    font-size: 1.5rem !important;
+    font-size: 1.6rem !important;
 }
 
 #backdiv::after {
@@ -32,44 +33,42 @@
 }
 
 #headdiv {
-    text-align: center;
-    margin: 1.3rem auto;
+    text-align: center !important;
+    margin: 0.3rem auto !important;
 }
 
-#heading {
-    width: 65%;
-    margin: auto;
-    font-size: 3.7rem !important;
-    font-weight: bold;
+.headicon {
+    margin: auto !important;
+    width: 9rem !important;
+    height: 9rem !important;
+}
+
+#subheaddiv {
+    margin: 0.2rem auto !important;
+}
+
+#subheading {
+    font-size: 1.8rem;
+    font-weight: 600;
     font-family: America;
     font-style: normal;
     background: linear-gradient(357.55deg, #7C49F6 21.82%, #E55ABD 49.61%, #FEDF67 79.82%);
     color:transparent;
     -webkit-background-clip: text;
     background-clip: text; 
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
-
-#subheaddiv {
-    margin: 0.5rem auto;
-}
-
-#subheading {
-    font-size: 1.08rem;
-    font-family: Tahoma;
-    font-style: normal;
-    font-weight: normal;
 }
 
 .form-group {
     text-align: center;
-    margin: 1rem auto !important;
+    margin: 0.3rem auto !important;
     width: 100%;
+    left: 0;
+    right: 0;
 }
 
 @media screen and (min-height:950px) {
     .form-group {
-        margin: 6.8rem auto;
+        margin: 4.5rem auto;
     }
 }
 
@@ -78,7 +77,7 @@
     margin: 1rem auto;
     padding: 0.2rem 1rem;
     border-radius: 5rem;
-    width: 40%;
+    width: 48%;
     overflow: auto;
     background-color: white;
     box-shadow: 0 0.000025rem 1.2rem black;
@@ -92,6 +91,10 @@
 .input-group-addon {
     margin: 0.4rem 0.8rem;
     vertical-align: baseline;
+}
+
+.icons {
+    opacity: 0.5;
 }
 
 .form-control {
@@ -120,14 +123,14 @@
 }
 
 .submit {
-    padding: 0.22rem 3.5rem;
-    font-size: 0.8rem;
-    font-family: Jost;
-    font-style: normal;
-    font-weight: normal;
+    padding: 0.2rem 2.4rem !important;
+    /* font-size: 1rem; */
+    font-family: Jost !important;
+    font-style: normal !important;
+    font-weight: normal !important;
     background: linear-gradient(81.23deg, #7C49F6 9.3%, #FF53B7 51.61%, #FFD458 97.6%);
-    color: black !important;
-    border-radius: 5rem;
+    color: white !important;
+    border: 0;
 }
 
 .submit:focus {
@@ -138,22 +141,26 @@
     cursor: pointer;
 }
 
+.otheroption {
+    font-size: 1.04rem;
+    font-family: 'Jost', sans-serif;
+    font-weight: 2rem;
+    font-style: normal;
+    margin: 0.8rem auto;
+}
+
 .otherlink {
-    font-weight: bolder;
+    font-size: 1.08rem;
+    font-family: 'Jost', sans-serif;
+    font-weight: 900 !important;
+    font-style: normal;
 }
 
 .otherlink:hover {
     text-decoration: none;
 }
 
-.otheroption {
-    margin: 0.5rem auto;
-}
-
 @media only screen and (max-width:250px) and (max-height:400px) {
-    #heading {
-        font-size: 1.7rem;
-    }
 
     #subheaddiv {
         margin: 0.3rem auto;
@@ -174,7 +181,7 @@
     }
 
     .submit {
-        padding: 0.1rem 1.75rem;
+        padding: 0.09rem 1.58rem;
     }
 
     .formbutton {
@@ -184,12 +191,12 @@
 
     .form-group {
         text-align: center;
-        margin: 1.4rem auto !important;
+        margin: 0.6rem auto !important;
         width: 100%;
     }
 }
 
-@media only screen and (max-width:500px) {
+@media only screen and (min-width:251px) and (max-width:500px) {
     #backdiv {
         padding: 0.15rem 0.4rem;
     }
@@ -203,8 +210,9 @@
         margin: 0.7rem auto;
     }
 
-    #heading {
-        font-size: 2.35rem;
+    .headicon {
+        width: 8rem !important;
+        height: 8rem !important;
     }
 
     #subheaddiv {
@@ -217,7 +225,7 @@
 
     .input-group {
         margin: 1rem auto !important;
-        padding: 0.42rem 0.75rem !important;
+        padding: 0.25rem 0.68rem !important;
         width: 65%;
         box-shadow: 0 0 1.2rem black;
     }
@@ -233,11 +241,11 @@
     }
 
     .otheroption {
-        margin: auto !important;
+        margin: 0.2rem auto !important;
     }
 
     .form-group {
-        margin: 3.5rem auto !important;
+        margin: 0.5rem auto !important;
     }
 
     .formbutton {
@@ -247,15 +255,10 @@
     }
 
     .submit {
-        padding: 0.4rem 2.6rem;
+        padding: 0.18rem 2rem !important;
         background-color: black;
         color: white;
-        border-radius: 5rem;
         white-space: normal;
-    }
-
-    .otheroption {
-        margin: 1rem auto !important;
     }
     
     .errordiv {
@@ -267,6 +270,12 @@
         text-align: center;
         margin: 0.6rem auto;
         font-size: smaller;
+    }
+}
+
+@media only screen and (min-width: 950px) {
+    .form-group {
+        margin: 2.5rem auto !important;
     }
 }
 

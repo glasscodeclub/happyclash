@@ -51,23 +51,23 @@ passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
 app.get('/',(req,res)=>{
-    res.render('Homemodule/pages/base');
+    res.render('Homemodule/pages/start');
 })
 
 app.get('/links',(req,res)=>{
     res.redirect('/home');
 })
 
-app.get('/start',(req,res)=> {
-    res.render("Feedmodule/start");
-})
+// app.get('/start',(req,res)=> {
+//     res.render("Feedmodule/start");
+// })
 
-app.get('/feed',(req,res)=> {
-    res.render("Feedmodule/feed",{page:"Feed | HappyClash"});
+app.get('/videomode',(req,res)=> {
+    res.render("Videomodule/videomode",{page:"Video Mode"});
 })
 
 app.get('/drive',(req,res)=> {
-    res.render("Feedmodule/drive",{page:"HappyClash Drive"})
+    res.render("Drivemodule/drive",{page:"HappyClash Drive"})
 })
 
 app.get('/homefeed',(req,res)=> {
@@ -75,7 +75,7 @@ app.get('/homefeed',(req,res)=> {
 })
 
 app.get('/library',(req,res)=> {
-    res.render("Feedmodule/library");
+    res.render("Librarymodule/library");
 })
 
 app.get('/profile',(req,res)=> {
