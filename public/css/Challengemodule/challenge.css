@@ -1,0 +1,42 @@
+.div1{
+    font-size: 1.2rem;
+    margin-left: 1rem;
+}
+.challenge1{
+    background-color:#228D5A;
+    border: 1px solid #228D5A;
+    border-radius: 9px;
+}
+
+.p1{
+    color:white;
+    /* margin:0px!important; */
+    margin-top: 0.5rem;
+    margin-bottom: 0px!important;
+    text-align: center;
+}
+.p2{
+    color:white;
+    /* margin:0px!important; */
+    margin-top: 0px!important;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.p3{
+    margin: 0px!important;
+    font-size: 1.3rem;
+    font-family: Roboto;
+}
+.p4{
+    display: inline;
+    font-size: 0.8rem;
+    font-family: Roboto;
+    margin-right:1rem;
+}
+.p5{
+    display: inline;
+    font-size: 0.8rem;
+    font-family: Roboto;
+    margin:0px !important;
+}
