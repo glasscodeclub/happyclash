@@ -51,7 +51,7 @@ passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
 app.get('/',(req,res)=>{
-    res.render('Homemodule/pages/start');
+    res.render('Homemodule/start');
 })
 
 app.get('/links',(req,res)=>{

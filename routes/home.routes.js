@@ -7,7 +7,7 @@ var middlewares = require("../middlewares/auth.middleware");
 
 
 router.get("/", function(req, res){
-    res.render("./Homemodule/pages/home");
+    res.render("./Homemodule/home");
 })
 
 module.exports = router;

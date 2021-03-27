@@ -7,7 +7,7 @@ var middlewares = require("../middlewares/auth.middleware");
 
 
 router.get("/", middlewares.isLoggedIn, function(req, res){
-    res.render("./Dashboardmodule/pages/dashboard");
+    res.render("./Dashboardmodule/dashboard");
 })
 
 module.exports = router;
