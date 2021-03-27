@@ -8,7 +8,7 @@ const async=require("async")
 
 
 router.get("/signup", function (req, res) {
-    res.render("./Authmodule/pages/signup", { page: "HappyClash SignUp", err: { value: false,error:null } });
+    res.render("./Authmodule/signup", { page: "HappyClash SignUp", err: { value: false,error:null } });
 });
 
 router.post("/signup", async (req, res) => {
@@ -49,7 +49,7 @@ router.post("/signup", async (req, res) => {
         }
     ], err => {
         if (err) {
-            return res.render('./Authmodule/pages/signup', { 
+            return res.render('./Authmodule/signup', { 
                 page: "HappyClash SignUp", err: { 
                     error:err,
                 } 
@@ -66,7 +66,7 @@ router.post("/signup", async (req, res) => {
 });
 
 router.get("/login", function (req, res) {
-    res.render("./Authmodule/pages/login", { page: "HappyClash Login" });
+    res.render("./Authmodule/login", { page: "HappyClash Login" });
 })
 
 router.post("/login", passport.authenticate("local", {
