@@ -86,6 +86,10 @@ app.get('/challenge',(req,res)=> {
     res.render("Feedmodule/challenge");
 })
 
+app.get('/clashDetails',(req,res)=> {
+    res.render("Clashmodule/clashDetails");
+})
+
 app.use('/auth',Authroutes);
 app.use('/dashboard',Dashboardroutes);
 app.use('/home',Homeroutes);
