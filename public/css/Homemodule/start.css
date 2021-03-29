@@ -1,14 +1,22 @@
 @import url("../Bgmodule/background.css");
 
+
 @font-face {
     font-family: America;
     src: url('/font-family/America.ttf');
 }
 
+body {
+    background-attachment: scroll !important;
+    touch-action: manipulation !important;
+}
+
 .pageimgsdiv {
-    position: fixed;
     top: 0;
+    left: 0;
+    right: 0;
     width: 100%;
+    height: fit-content;
     text-align: center;
     margin: auto;
 }
@@ -20,7 +28,7 @@
 }
 
 .formpage {
-    position: absolute;
+    width: 100%;
     text-align: center;
     margin: auto;
     bottom: 0.75rem;
@@ -29,39 +37,59 @@
     top: 58%;
 }
 
-#headdiv {
+.happyclashdiv {
     text-align: center;
-    margin: 1.3rem auto;
+    margin: 1.35rem auto;
+    margin-bottom: 1.85rem !important;
 }
 
-#heading {
-    width: 85%;
-    margin: auto;
-    font-size: 2.2rem !important;
-    font-weight: 900;
+.happyclash {
+    width: 15rem !important;
+    height: auto;
+}
+
+hr {
+    background-color: #DEDEDE;
+}
+
+.subheaddiv {
+    width: 80% !important;
+    text-align: center !important;
+    margin: 1.2rem auto !important;
+}
+
+.col-6 {
+    border: 0.8px solid #DEDEDE !important;
+    text-align: center !important;
+}
+
+.hcinfodiv {
+    width: 85% !important;
+    text-align: center !important;
+    margin: auto !important;
+}
+
+.subheading {
+    font-size: 1.7rem;
     font-family: America;
     font-style: normal;
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
-
-.firsthead,
-.secondhead {
-    background: linear-gradient(357.55deg, #7C49F6 21.82%, #E55ABD 49.61%, #FEDF67 79.82%);
-    color:transparent;
+    font-weight: bolder;
+    background: linear-gradient(180deg, #7C49F6 0%, #E55ABD 47.92%, #FEDF67 100%);
+    color: transparent;
     -webkit-background-clip: text;
-    background-clip: text; 
-    padding: 0.05rem !important;
+    background-clip: text;
 }
 
-/* #subheaddiv {
-    margin: 0.5rem auto;
-} */
-
-#subheading {
-    font-size: 0.95rem;
-    font-family: Tahoma;
+.pagecontent {
+    font-size: 0.9rem !important;
+    font-family: Roboto;
     font-style: normal;
     font-weight: normal;
+    text-align: center;
+}
+
+.contenticons {
+    margin: 0.5rem auto !important;
 }
 
 .formbuttondiv {
@@ -79,14 +107,15 @@
 }
 
 .submit {
+    margin: 1rem auto;
     padding: 0.22rem 3.5rem;
     font-size: 0.8rem;
     font-family: Jost;
     font-style: normal;
     font-weight: normal;
     background: linear-gradient(81.23deg, #7C49F6 9.3%, #FF53B7 51.61%, #FFD458 97.6%);
-    color: black !important;
-    border-radius: 5rem;
+    color: white !important;
+    border-radius: 0.25rem !important;
     border: none;
     outline: none;
 }
@@ -97,6 +126,71 @@
 
 .submit:hover {
     cursor: pointer !important;
+}
+
+.collagediv {
+    width: 100% !important;
+    text-align: center;
+    margin: 1.2rem auto;
+    left: 0;
+    right: 0;
+    overflow-x: scroll;
+}
+
+#collage {
+    left: 0;
+    right: 0;
+    width: 150%;
+    opacity: 1;
+}
+
+/* #collage::-webkit-scrollbar {
+    display: none !important;
+} */
+
+.likediv {
+    text-align: right;
+    margin: 1rem auto !important;
+}
+
+.giftdiv {
+    margin: 1rem auto !important;
+}
+
+.heartdiv {
+    text-align: left;
+    margin: 1rem auto !important;
+}
+
+.firstline {
+    font-size: 2rem;
+    font-family: America;
+    font-weight: bolder;
+    font-style: normal;
+    margin: auto;
+    color: #FEDF67;
+}
+
+.secondline {
+    font-size: 2rem;
+    font-family: America;
+    font-weight: bolder;
+    font-style: normal;
+    margin: auto;
+    color: #E55ABD;
+}
+
+.thirdline {
+    font-size: 2rem;
+    font-family: America;
+    font-weight: bolder;
+    font-style: normal;
+    margin: auto;
+    color: #7C49F6;
+}
+
+.downloadapp {
+    margin: 2rem auto !important;
 }
 
 @media only screen and (max-width:250px),
@@ -205,18 +299,18 @@
     .formpage {
         top: 40%;
     }
+
+    .happyclash {
+        width: 20%;
+    }
 }
 
 @media only screen and (max-width:250px) and (max-height:400px) {
     #heading {
         font-size: 1.7rem;
     }
-
-    /* #subheaddiv {
-        margin: 0.3rem auto;
-    } */
     
-    #subheading {
+    .subheading {
         font-size: smaller;
     }
 
@@ -239,10 +333,6 @@
     #heading {
         font-size: 2.35rem;
     }
-
-    /* #subheaddiv {
-        margin-top: 0.5rem;
-    } */
 
     .formbutton {
         text-align: center;
