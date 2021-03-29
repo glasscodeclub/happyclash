@@ -30,6 +30,10 @@ body {
     font-size: 1.5rem !important;
 }
 
+#back:hover {
+    cursor: pointer;
+}
+
 #backdiv::after {
     clear: both;
 }
@@ -53,12 +57,6 @@ body {
     background-clip: text;
 }
 
-@media only screen and (max-width:250px) and (max-height:400px) {
-    /* #heading {
-        font-size: 1.7rem;
-    } */
-}
-
 @media only screen and (max-width:500px) {
     #backdiv {
         padding: 0.15rem 0.4rem;
@@ -73,9 +71,6 @@ body {
         margin: 0.7rem auto;
     }
 
-    /* #heading {
-        font-size: 2.35rem;
-    } */
 }
 
 .videorow {
@@ -100,6 +95,10 @@ body {
     z-index: 0;
 }
 
+.myvideo:hover {
+    cursor: pointer !important;
+}
+
 .videoplay {
     width: 30% !important;
     height: 30% !important;
@@ -107,12 +106,20 @@ body {
     margin-right: 1% !important;
 }
 
+.videoplay:hover {
+    cursor: pointer;
+}
+
 .videodots {
-    width: 17% !important;
-    height: 17% !important;
+    width: 15% !important;
+    height: 15% !important;
     float: right !important;
     margin-top: 8% !important;
     margin-right: 26% !important;
+}
+
+.threedots:hover {
+    cursor: pointer !important;
 }
 
 .play {

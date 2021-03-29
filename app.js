@@ -58,10 +58,6 @@ app.get('/links',(req,res)=>{
     res.redirect('/home');
 })
 
-// app.get('/start',(req,res)=> {
-//     res.render("Feedmodule/start");
-// })
-
 app.get('/videomode',(req,res)=> {
     res.render("Videomodule/videomode",{page:"Video Mode"});
 })

@@ -86,11 +86,12 @@
         
             <div class="input-group">
                 <span class="input-group-addon"><i class="fas fa-unlock icons"></i></span>
-                <input onfocusout="displayError('password','password')" class="form-control" id="password" type="password" placeholder="Password" name="password" minlength="8" maxlength="16" size="16" pattern="^(?=.{5,}$)(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W).*$" title="Password must follow the criteria:
+                <input onfocusout="displayError('password','password')" class="form-control" id="password" type="password" placeholder="Password" name="password" required>
+                <!-- minlength="8" maxlength="16" size="16" pattern="^(?=.{5,}$)(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W).*$" title="Password must follow the criteria:
                 1. atleast 8 characters long
                 2. atleast 1 uppercase letter
                 3. atleast 1 lowercase letter
-                4. atleast 1 special character" required>
+                4. atleast 1 special character" -->
             </div>
             <div class="error">
                 <div class="password errordiv"></div>
