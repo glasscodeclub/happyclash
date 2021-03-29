@@ -114,3 +114,53 @@
     color:#747474;
     margin:0px;
 }
+
+#p5{
+    margin:0px;
+}
+
+#p7{
+    margin:0px;
+    color:#747474;
+    font-family: Roboto;
+    font-size: 0.4375rem;
+}
+#p8{
+    margin:0px;
+    /* color:#747474; */
+    color:#000000;
+    font-family: Roboto;
+    font-size: 0.4375rem;
+}
+
+#p9{
+    margin: 0px;
+    color:#747474;
+    font-family: Roboto;
+    font-size: 0.4375rem;
+    display: inline;
+}
+
+#p10{
+    margin: 0px;
+    color:#747474;
+    font-family: Roboto;
+    font-size: 0.4375rem;
+    display: inline;
+}
+
+.mb{
+    margin-bottom: 1rem;
+}
+
+.p11{
+    margin: 0px;
+    color:#747474;
+    font-family: Roboto;
+    font-size: 0.4375rem;
+}
+
+.img2{
+    height: 40px !important;
+    width:40px!important;
+}
