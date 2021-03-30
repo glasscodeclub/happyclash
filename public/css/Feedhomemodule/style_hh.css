@@ -1,10 +1,13 @@
+.feedhomepage {
+  width: 100%;
+  text-align: center;
+  margin: auto;
+}
+
 #search{
     padding-top: 2%;
     padding-left: 30%;
 }
-/* .ch{
-    margin-top: 5%;
-} */
 
 .clashtypediv {
   margin: 1rem auto;
@@ -41,7 +44,7 @@
   margin: 1.25rem auto !important;
   padding: 0.2rem 1rem;
   border-radius: 5rem;
-  width: 80% !important;
+  width: 82% !important;
   overflow: auto;
   background-color: white;
   box-shadow: 0.05px 0.05px 1rem rgb(179, 179, 179);
@@ -78,6 +81,27 @@
 
 #inputSuccess2::-webkit-input-placeholder {
   font-size: 0.75rem !important;
+}
+
+.badge {
+  color: black !important;
+  font-size: x-small !important;
+  box-shadow: 0.2px 0.2px 0.5rem rgb(175, 175, 175);
+}
+
+.badgesdiv {
+  width: 95% !important;
+  text-align: center !important;
+  margin: 0.75rem auto !important;
+}
+
+.badges {
+  padding: 0.25rem !important;
+}
+
+#redisplay {
+  font-size: smaller;
+  margin: 0.8rem auto;
 }
 
 .navbar {

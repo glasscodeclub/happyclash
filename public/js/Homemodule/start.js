@@ -11,6 +11,5 @@ window.addEventListener('load', () => {
         }else{
             collage.scrollTo(0,collage.offsetTop);
         }
-        console.log(collage.scrollLeft);
     }, 15);
 });
