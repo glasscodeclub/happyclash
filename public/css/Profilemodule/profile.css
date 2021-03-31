@@ -1,18 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 .p1{
     width:130px;
     height: 130px; 
 
 }
 
+.submit {
+    margin-top: 1rem ;
+    /* padding: 0.22rem 3.5rem; */
+    font-size: 0.8rem;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    background: linear-gradient(81.23deg, #7C49F6 9.3%, #FF53B7 51.61%, #FFD458 97.6%);
+    color: white !important;
+    border-radius: 0.25rem !important;
+    border: none !important;
+    outline: none;
+}
+
 .n1{
-    text-align:center;
-    margin-top: 10px;
+    /* text-align:center; */
+    /* margin-top: 1px; */
+    margin:0px !important;
 }
 
 #n2{
     font-size: 10px;
-    text-align:center;
-    margin-top: 1px;
+    /* text-align:center; */
+    /* margin-top: 1px; */
     margin-bottom: 0px !important;
 }
 
@@ -26,8 +43,10 @@
 }
 
 .rp1{
-    font-size: 10px;
+    font-size: 1rem;
     text-align: center;
+    font-family: Roboto;
+    color:#7A7A7A;
     padding-top: 0px !important;
     padding-bottom: 0px !important;
     margin-bottom: 0px !important;
@@ -35,10 +54,53 @@
 }
 
 .rp2{
-    font-size: 20px;
+    font-size: 1.75rem;
     text-align: center;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    background: -webkit-linear-gradient(269.06deg, #FEDF67 -11.43%, #FF53B7 47.34%, #7C49F6 107.7%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     padding-top: 0px !important;
     padding-bottom: 0px !important;
     margin-bottom: 0px !important;
     margin-top: 0px !important;
+    /* background: linear-gradient(269.06deg, #FEDF67 -11.43%, #FF53B7 47.34%, #7C49F6 107.7%); */
+}
+
+.pp{
+    padding:0px !important;
+}
+
+#posts{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.5rem;;
+    text-align: center;
+    color: #000000;
+}
+
+#see{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1rem;
+    text-align: center;
+    color: #7A7A7A;
+}
+
+#follow{
+    margin:0px!important;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1rem;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.vid{
+    padding-bottom: 5rem !important;
 }
