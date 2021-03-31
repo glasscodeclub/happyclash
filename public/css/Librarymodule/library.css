@@ -111,14 +111,14 @@ body {
 }
 
 .videodots {
-    width: 15% !important;
-    height: 15% !important;
+    /* width:  !important;
+    height:  !important; */
     float: right !important;
     margin-top: 8% !important;
-    margin-right: 26% !important;
+    margin-right: 28% !important;
 }
 
-.threedots:hover {
+.videodots:hover {
     cursor: pointer !important;
 }
 
@@ -135,7 +135,7 @@ body {
 
 .threedots {
     position: absolute;
-    text-align: center;
+    text-align: right;
     margin: auto;
     width: 100%;
     height: 100%;

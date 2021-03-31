@@ -1,9 +1,9 @@
 @import url("../Bgmodule/background.css");
-
+/* 
 @font-face {
     font-family: America;
     src: url('/font-family/America.ttf');
-}
+} */
 
 .formpage {
     position: absolute;
@@ -16,7 +16,7 @@
 }
 
 #backdiv {
-    margin-left: 1.1rem !important;
+    margin-left: 0.8rem !important;
     margin-top: 0.8rem !important;
     padding: 0.2rem 0.4rem;
     background-color: white;
@@ -34,7 +34,8 @@
 
 #headdiv {
     text-align: center !important;
-    margin: 0.3rem auto !important;
+    margin: 0.5rem auto !important;
+    margin-bottom: 0.1rem !important;
 }
 
 .headicon {
@@ -44,13 +45,13 @@
 }
 
 #subheaddiv {
-    margin: 0.2rem auto !important;
+    margin: 0.8rem auto !important;
+    margin-bottom: 1.15rem !important;
 }
 
 #subheading {
-    font-size: 1.8rem;
-    font-weight: 600;
-    font-family: America;
+    font-size: 1.45rem;
+    font-family: Roboto;
     font-style: normal;
     background: linear-gradient(357.55deg, #7C49F6 21.82%, #E55ABD 49.61%, #FEDF67 79.82%);
     color:transparent;
@@ -162,9 +163,9 @@
 
 @media only screen and (max-width:250px) and (max-height:400px) {
 
-    #subheaddiv {
+    /* #subheaddiv {
         margin: 0.3rem auto;
-    }
+    } */
     
     #subheading {
         font-size: smaller;
@@ -215,9 +216,9 @@
         height: 8rem !important;
     }
 
-    #subheaddiv {
+    /* #subheaddiv {
         margin-top: 0.5rem;
-    }
+    } */
 
     .icons {
         font-size: 0.85rem;
