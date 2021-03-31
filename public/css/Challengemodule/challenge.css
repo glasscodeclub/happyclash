@@ -3,6 +3,8 @@
     src: url('/font-family/America.ttf');
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 .head {
     position:sticky;
     top:0px;
@@ -58,13 +60,15 @@
     background-color:#228D5A;
     border: 1px solid #228D5A;
     border-radius: 9px;
+    text-align: center;
 }
 
 .p1{
     color:white;
     /* margin:0px!important; */
+    font-size: 1rem;
     margin-top: 0.5rem;
-    margin-bottom: 0px!important;
+    margin-bottom: 0.5rem!important;
     text-align: center;
 }
 .p2{
@@ -91,4 +95,61 @@
     font-size: 0.8rem;
     font-family: Roboto;
     margin:0px !important;
+}
+
+#id{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1rem;
+    color: #000000;
+}
+
+
+@media only screen and (min-width:600px) and (max-width:800px) {
+    .p3{
+        font-size: 2rem !important;
+    }
+    .p1{
+        font-size: 2rem !important;
+    }
+    .p4{
+        font-size:1.2rem!important;
+    }
+    .p5{
+        font-size:1.2rem!important;
+    }
+    #play{
+        font-size: 2rem !important;
+    }
+    #heading{
+        font-size: 4rem !important;
+    }
+    #back{
+        font-size: 3rem !important;
+    }
+}
+
+@media only screen and (min-width:800px) and (max-width:1024px) {
+    .p3{
+        font-size: 3rem !important;
+    }
+    .p1{
+        font-size: 3rem !important;
+    }
+    .p4{
+        font-size:1.5rem!important;
+    }
+    .p5{
+        font-size:1.5rem!important;
+    }
+    #play{
+        font-size: 3rem !important;
+    }
+    #heading{
+        font-size: 5rem !important;
+    }
+    #back{
+        font-size:4rem!important;
+    }
 }
