@@ -115,7 +115,7 @@ body {
     height:  !important; */
     float: right !important;
     margin-top: 8% !important;
-    margin-right: 28% !important;
+    margin-right: 30% !important;
 }
 
 .videodots:hover {
@@ -142,3 +142,10 @@ body {
     z-index: 1;
 }
 
+@media only screen and (min-width:750px) {
+    .videodots {
+        margin-top: 6% !important;
+        margin-right: 15% !important;
+        font-size: 8rem !important;
+    }
+}
