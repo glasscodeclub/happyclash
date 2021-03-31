@@ -1,7 +1,11 @@
 @import url("./common.css");
 
+.loginback {
+    margin-left: 0.45rem !important;
+}
+
 .fg-login {
-    margin: 4.5rem auto !important;
+    margin: 3.8rem auto !important;
 }
 
 @media only screen and (max-width:250px) and (max-height:400px) {
@@ -10,18 +14,16 @@
     }
 }
 
-.forgotpass {
+#forgotpass {
     opacity: 0.7;
-    margin-top: 0.8rem;
-    margin-bottom: 0.8rem !important;
-    margin-left: auto;
-    margin-bottom: auto;
+    margin: 1.5rem auto !important;
 }
 
-.forgotpass:hover {
+#forgotpass:hover {
     opacity: 1;
 }
 
 .loginbtn {
     padding: 0.2rem 2.8rem !important;
 }
+

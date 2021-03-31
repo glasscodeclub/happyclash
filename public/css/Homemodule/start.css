@@ -9,6 +9,7 @@
 body {
     background-attachment: scroll !important;
     touch-action: manipulation !important;
+    overflow-x: hidden !important;
 }
 
 .pageimgsdiv {
@@ -53,7 +54,7 @@ hr {
 }
 
 .subheaddiv {
-    width: 80% !important;
+    width: 85% !important;
     text-align: center !important;
     margin: 1.2rem auto !important;
 }
@@ -70,8 +71,8 @@ hr {
 }
 
 .subheading {
-    font-size: 1.7rem;
-    font-family: America;
+    font-size: 1.35rem;
+    font-family: Roboto;
     font-style: normal;
     font-weight: bolder;
     background: linear-gradient(180deg, #7C49F6 0%, #E55ABD 47.92%, #FEDF67 100%);
@@ -81,7 +82,7 @@ hr {
 }
 
 .pagecontent {
-    font-size: 0.9rem !important;
+    font-size: 0.85rem !important;
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
@@ -134,7 +135,7 @@ hr {
     margin: 1.2rem auto;
     left: 0;
     right: 0;
-    overflow-x: scroll;
+    overflow: hidden;
 }
 
 #collage {
@@ -163,30 +164,40 @@ hr {
 }
 
 .firstline {
-    font-size: 2rem;
-    font-family: America;
+    font-size: 1.4rem;
+    font-family: Roboto;
     font-weight: bolder;
     font-style: normal;
+    background: linear-gradient(180deg, #7C49F6 0%, #E55ABD 47.92%, #FEDF67 100%);
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
     margin: auto;
-    color: #FEDF67;
+    margin-top: 2.5rem !important;
 }
 
 .secondline {
-    font-size: 2rem;
-    font-family: America;
+    font-size: 1.4rem;
+    font-family: Roboto;
     font-weight: bolder;
     font-style: normal;
+    background: linear-gradient(180deg, #7C49F6 0%, #E55ABD 47.92%, #FEDF67 100%);
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
     margin: auto;
-    color: #E55ABD;
 }
 
 .thirdline {
-    font-size: 2rem;
-    font-family: America;
+    font-size: 1.4rem;
+    font-family: Roboto;
     font-weight: bolder;
     font-style: normal;
+    background: linear-gradient(180deg, #7C49F6 0%, #E55ABD 47.92%, #FEDF67 100%);
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
     margin: auto;
-    color: #7C49F6;
 }
 
 .downloadapp {
