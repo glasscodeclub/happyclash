@@ -7,6 +7,23 @@
 }
 
 .submit {
+    width:7rem !important;
+    margin-top: 1rem ;
+    /* padding: 0.22rem 3.5rem; */
+    font-size: 0.8rem;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    background: linear-gradient(81.23deg, #7C49F6 9.3%, #FF53B7 51.61%, #FFD458 97.6%);
+    color: white !important;
+    border-radius: 0.25rem !important;
+    border: none !important;
+    outline: none;
+}
+
+.sub{
+    width:7rem !important;
+    /* font-size: 5rem !important; */
     margin-top: 1rem ;
     /* padding: 0.22rem 3.5rem; */
     font-size: 0.8rem;
@@ -22,8 +39,19 @@
 
 .n1{
     /* text-align:center; */
-    /* margin-top: 1px; */
-    margin:0px !important;
+    margin-top: 0.8rem;
+    /* margin:0px !important; */
+    margin-bottom: 0px !important;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.3rem;
+    text-align: center;
+    color: #000000;
+}
+
+.noti{
+    margin-left: 1.4rem !important;
 }
 
 #n2{
@@ -31,6 +59,12 @@
     /* text-align:center; */
     /* margin-top: 1px; */
     margin-bottom: 0px !important;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 0.8rem;
+    text-align: center;
+    color: #747474;
 }
 
 .br1{
@@ -92,6 +126,16 @@
 }
 
 #follow{
+    margin:0px!important;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1rem;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+#fol{
     margin:0px!important;
     font-family: Roboto;
     font-style: normal;
