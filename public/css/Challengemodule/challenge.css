@@ -61,6 +61,8 @@
     border: 1px solid #228D5A;
     border-radius: 9px;
     text-align: center;
+    margin:auto;
+    /* width:70%; */
 }
 
 .p1{
@@ -106,7 +108,31 @@
 }
 
 
-@media only screen and (min-width:600px) and (max-width:800px) {
+@media only screen and (min-width:280px) and (max-width:281px) {
+    .p3{
+        font-size: 1rem !important;
+    }
+    .p1{
+        font-size: 0.8rem !important;
+    }
+    .p4{
+        font-size:0.8rem!important;
+    }
+    .p5{
+        font-size:0.8rem!important;
+    }
+    #play{
+        font-size: 1rem !important;
+    }
+    #heading{
+        font-size: 2rem !important;
+    }
+    #back{
+        font-size: 2rem !important;
+    }
+}
+
+@media only screen and (min-width:540px) and (max-width:768px) {
     .p3{
         font-size: 2rem !important;
     }
@@ -151,5 +177,32 @@
     }
     #back{
         font-size:4rem!important;
+    }
+}
+
+@media only screen and (min-width:1025px){
+    .p3{
+        font-size: 3rem !important;
+    }
+    .p1{
+        font-size: 3rem !important;
+    }
+    .p4{
+        font-size:1.5rem!important;
+    }
+    .p5{
+        font-size:1.5rem!important;
+    }
+    #play{
+        font-size: 3rem !important;
+    }
+    #heading{
+        font-size: 4rem !important;
+    }
+    #back{
+        font-size:4rem!important;
+    }
+    .challenge1{
+        width:70%!important;
     }
 }
