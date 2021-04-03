@@ -13,7 +13,8 @@ body {
 }
 
 .pageimgsdiv {
-    top: 0;
+    position: relative;
+    top: 0; /**/
     left: 0;
     right: 0;
     width: 100%;
@@ -23,9 +24,25 @@ body {
 }
 
 .pageimgs {
-    margin: auto;
-    width: 95%;
-    height: 95%;
+    margin: 0.9rem auto;
+    width: 100%;/**/
+    height: 100%;/**/
+}
+
+#happyclashdiv {
+    position: absolute;
+    top: 17% !important;
+    width: 100% !important;
+    height: auto;
+    text-align: center !important;
+    margin: auto !important;
+    z-index: 10;
+}
+
+#happyclash {
+    width: 6rem;
+    height: 6rem;
+    margin: 1rem auto;
 }
 
 .formpage {
@@ -219,21 +236,30 @@ div#collagediv::-webkit-scrollbar {
     .formpage {
         top: 58%;
     }
+
+    #happyclashdiv {
+        top: 21.5% !important;
+    }
 }
 
-@media only screen and (min-width:251px) and (max-width:500px) {
+@media only screen and (max-width:250px),
+       only screen and (max-height:350px) {
     body {
-        background-size: 150%;
-        background-position-y: -69px;
-    }
-
-    .pageimgs {
-        width: 90%;
-        height: 86%;
+        background-size: 170%;
+        background-position-y: -50px;
     }
 
     .formpage {
-        top: 60%;
+        top: 58%;
+    }
+
+    #happyclashdiv {
+        top: 29% !important;
+    }
+
+    #happyclash {
+        width: 4.7rem;
+        height: 4.7rem;
     }
 }
 
@@ -244,19 +270,84 @@ div#collagediv::-webkit-scrollbar {
     }
 
     .pageimgs {
-        width: 90%;
-        height: 86%;
+        width: 94%;/**/
+        height: 90%;/**/
     }
 
     .formpage {
         top: 56%;
     }
+
+    #happyclashdiv {
+        top: 18.5% !important;
+    }
+
+    #happyclash {
+        width: 5.7rem;
+        height: 5.7rem;
+    }
 }
 
-@media only screen and (min-width:750px) {
-    .collage {
-        width: 85%;
-        height: 100%;
+@media only screen and (min-width:251px) and (max-width:300px) and (min-height:600px) {
+    #happyclashdiv {
+        top: 16% !important;
+    }
+
+    #happyclash {
+        width: 5.2rem;
+        height: 5.2rem;
+    }
+}
+
+@media only screen and (min-width: 300px) and (max-height: 600px) {
+    #happyclashdiv {
+        top: 22% !important;
+    }
+}
+
+@media only screen and (min-width: 325px) and (max-width: 365px) {
+    #happyclashdiv {
+        top: 20% !important;
+    }
+}
+
+@media only screen and (min-width: 325px) and (max-width: 370px) and (min-height: 600px) {
+    #happyclashdiv {
+        top: 20% !important;
+    }
+}
+
+@media only screen and (min-width: 365px) and (max-width: 400px) {
+    #happyclashdiv {
+        top: 22% !important;
+    }
+}
+
+/* @media only screen and (min-width: 364px) and (max-width: 400px) and (min-width:750px) {
+    #happyclashdiv {
+        top: 19% !important;
+    }
+} */
+
+@media only screen and (min-width: 400px) {
+    #happyclashdiv {
+        top: 23.5% !important;
+    }
+
+    #happyclash {
+        width: 6.6rem;
+        height: 6.6rem;
+    }
+}
+
+@media only screen and (min-width: 400px) and (min-height:750px) {
+    #happyclashdiv {
+        top: 20% !important;
+    }
+
+    #happyclash {
+        width: 6.6rem;
+        height: 6.6rem;
     }
 }
 
@@ -267,12 +358,48 @@ div#collagediv::-webkit-scrollbar {
     }
 
     .pageimgs {
-        width: 55%;
-        height: 55%;
+        width: 60%;/**/
+        height: 60%;/**/
     }
 
     .formpage {
         top: 45%;
+    }
+
+    #happyclashdiv {
+        top: 15% !important;
+        /**/
+    }
+
+    #happyclash {
+        width: 6rem !important;
+        height: 6rem !important;
+    }
+}
+
+@media only screen and (min-width:501px) and (max-width:650px) and (max-height: 400px) {
+
+    #happyclashdiv {
+        top: 24% !important;
+        /**/
+    }
+
+    #happyclash {
+        width: 4.4rem !important;
+        height: 4.4rem !important;
+    }
+}
+
+@media only screen and (min-width:501px) and (max-width:650px) and (max-height: 800px) {
+
+    #happyclashdiv {
+        top: 17.5% !important;
+        /**/
+    }
+
+    #happyclash {
+        width: 5.9rem !important;
+        height: 5.9rem !important;
     }
 }
 
@@ -283,12 +410,52 @@ div#collagediv::-webkit-scrollbar {
     }
 
     .pageimgs {
-        width: 43%;
-        height: 43%;
+        width: 47%;/**/
+        height: 47%;/**/
     }
 
     .formpage {
         top: 34%;
+    }
+
+    #happyclashdiv {
+        top: 12% !important;
+        /**/
+    }
+
+    #happyclash {
+        width: 6.75rem !important;
+        height: 6.75rem !important;
+    }
+}
+
+@media only screen and (min-width:750px) {
+    .collage {
+        width: 85%;
+        height: 100%;
+    }
+
+    #happyclashdiv {
+        top: 14.5% !important;
+        /**/
+    }
+
+    #happyclash {
+        width: 6.6rem !important;
+        height: 6.6rem !important;
+    }
+}
+
+@media only screen and (min-width:750px) and (min-height:1100px) {
+
+    #happyclashdiv {
+        top: 12% !important;
+        /**/
+    }
+
+    #happyclash {
+        width: 6.6rem !important;
+        height: 6.6rem !important;
     }
 }
 
@@ -299,12 +466,22 @@ div#collagediv::-webkit-scrollbar {
     }
 
     .pageimgs {
-        width: 31%;
-        height: 30%;
+        width: 35%;/**/
+        height: 35%;/**/
     }
 
     .formpage {
         top: 45%;
+    }
+
+    #happyclashdiv {
+        top: 22% !important;
+        /**/
+    }
+
+    #happyclash {
+        width: 4.6rem !important;
+        height: 4.6rem !important;
     }
 }
 
@@ -315,8 +492,8 @@ div#collagediv::-webkit-scrollbar {
     }
 
     .pageimgs {
-        width: 28%;
-        height: 28%;
+        width: 32%;/**/
+        height: 32%;/**/
     }
 
     .formpage {
@@ -325,6 +502,46 @@ div#collagediv::-webkit-scrollbar {
 
     .happyclash {
         width: 20%;
+    }
+
+    #happyclashdiv {
+        top: 20% !important;
+    }
+
+    #happyclash {
+        width: 7rem !important;
+        height: 7rem !important;
+    }
+}
+
+@media only screen and (min-width:1001px) and (min-height:850px) and (max-height: 1100px) {
+
+    #happyclashdiv {
+        top: 17% !important;
+    }
+
+    #happyclash {
+        width: 7rem !important;
+        height: 7rem !important;
+    }
+}
+
+@media only screen and (min-width:1001px) and (min-height:1101px) {
+
+    #happyclashdiv {
+        top: 9% !important;
+    }
+
+    #happyclash {
+        width: 6.6rem !important;
+        height: 6.6rem !important;
+    }
+}
+
+@media only screen and (min-width:1300px) and (min-height:850px) {
+
+    #happyclashdiv {
+        top: 20% !important;
     }
 }
 
@@ -369,5 +586,12 @@ div#collagediv::-webkit-scrollbar {
         color: white;
         border-radius: 5rem;
         white-space: normal;
+    }
+}
+
+@media only screen and (min-width:375px) and (max-width: 376px) and (min-height:800px) {
+
+    #happyclashdiv {
+        top: 19% !important;
     }
 }
