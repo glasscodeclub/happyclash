@@ -18,6 +18,7 @@ body {
 
 .naviconslg,
 .navicons {
+    position: relative;
     width: 100% !important;
     text-align: center !important;
     vertical-align: middle !important;
@@ -26,12 +27,14 @@ body {
     word-wrap: normal;
 }
 
-#libraryicon {
+.bottomlinks {
     width: 100% !important; 
 }
 
 #notifs {
     position: relative;
+    text-align: center;
+    margin: auto;
 }
 
 #noOfNotifs {
@@ -45,18 +48,41 @@ body {
     font-weight: 700;
     margin: auto;
     margin-bottom: 50%;
-    right: 2%;
+    right: 29%;
 }
 
 .bottomicons {
     max-width: 25px !important;
+    color: blue !important;
 }
 
 #currentpage {
+    position: absolute;
+    width: 100% !important;
+    height: 100%;
+    text-align: left !important;
+    margin: auto !important;
     vertical-align: baseline !important;
     padding: 0 !important;
-    font-size: 12.5px;
-    top: 99%;
-    bottom: 0 !important;
+    font-size: 25px !important;
+    margin-top: 0.1rem !important;
+    margin-left: 0.5rem !important;
+    z-index: 10;
 }
+
+@media only screen and (min-width:520px) {
+
+    #noOfNotifs {
+        right: 42%;
+    }
+}
+
+@media only screen and (min-width:520px) and (max-width:550px),
+       only screen and (min-width:600px) {
+
+    #noOfNotifs {
+        right: 38%;
+    }
+}
+
 

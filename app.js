@@ -75,7 +75,7 @@ app.get('/library',(req,res)=> {
 })
 
 app.get('/profile',(req,res)=> {
-    res.render("Profilemodule/profile");
+    res.render("Profilemodule/profile",{url:req.url});
 })
 
 app.get('/challenge',(req,res)=> {
