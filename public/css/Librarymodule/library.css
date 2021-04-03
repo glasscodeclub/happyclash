@@ -47,10 +47,9 @@ body {
 #heading {
     width: 65%;
     margin: 0.5rem auto;
-    font-size: 2.6rem !important;
-    font-family: America;
+    font-size: 2.2rem !important;
+    font-family: Roboto;
     font-style: normal;
-    font-weight: bold;
     background: linear-gradient(180deg, #7C49F6 0%, #E55ABD 47.92%, #FEDF67 100%);
     color: transparent;
     -webkit-background-clip: text;
@@ -116,6 +115,7 @@ body {
     float: right !important;
     margin-top: 8% !important;
     margin-right: 30% !important;
+    font-size: 5rem !important;
 }
 
 .videodots:hover {

@@ -10,7 +10,7 @@ var express                 = require("express"),
     Authroutes              = require("./routes/auth.routes"),
     Homeroutes              = require("./routes/home.routes"), 
     Dashboardroutes         = require("./routes/dashboard.routes");
-    Uploadroutes         = require("./routes/upload.routes");
+    Uploadroutes            = require("./routes/upload.routes");
     
 var app = express();
 const port = 3000;
@@ -62,16 +62,16 @@ app.get('/videomode',(req,res)=> {
     res.render("Videomodule/videomode",{page:"Video Mode"});
 })
 
-app.get('/drive',(req,res)=> {
-    res.render("Drivemodule/drive",{page:"HappyClash Drive"})
-})
+// app.get('/drive',(req,res)=> {
+//     res.render("Drivemodule/drive",{page:"HappyClash Drive"})
+// })
 
 app.get('/homefeed',(req,res)=> {
-    res.render("Feedmodule/feedhome",{page:"HappyClash homefeed"})
+    res.render("Feedmodule/feedhome",{page:"HappyClash homefeed",url:req.url})
 })
 
 app.get('/library',(req,res)=> {
-    res.render("Librarymodule/library");
+    res.render("Librarymodule/library",{url:req.url});
 })
 
 app.get('/profile',(req,res)=> {

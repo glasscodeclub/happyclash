@@ -129,25 +129,30 @@ hr {
     cursor: pointer !important;
 }
 
-.collagediv {
+div#collagediv {
     width: 100% !important;
+    height: 100% !important;
     text-align: center;
     margin: 1.2rem auto;
     left: 0;
     right: 0;
-    overflow: hidden;
+    overflow-x: scroll !important;
+    overflow-y: hidden;
+    white-space: nowrap;
+    scroll-behavior: smooth !important;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
 }
 
-#collage {
-    left: 0;
-    right: 0;
-    width: 150%;
-    opacity: 1;
+div#collagediv::-webkit-scrollbar {
+    display: none;
 }
 
-/* #collage::-webkit-scrollbar {
-    display: none !important;
-} */
+.collage {
+    width: 200%;
+    height: 100%;
+    transform-origin: 50% 50% -500px;
+}
 
 .likediv {
     text-align: right;
@@ -245,6 +250,13 @@ hr {
 
     .formpage {
         top: 56%;
+    }
+}
+
+@media only screen and (min-width:750px) {
+    .collage {
+        width: 85%;
+        height: 100%;
     }
 }
 
