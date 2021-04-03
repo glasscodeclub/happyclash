@@ -1,17 +1,28 @@
 <footer class="fixed-bottom bottomnav">
     <div class="row">
         <div class="col navicons" id="homefeed">
-            <a href="/homefeed"><img src="https://img.icons8.com/fluent-systems-regular/24/000000/home.png"
+            <%if(url == '/homefeed'){%>
+                <span id="currentpage">.</span>
+                <span class="bottomlinks">
+                    <a href="/homefeed"><img src="/img/Colored-home.png"
                     class="bottomicons" /></a>
-            <!-- <%if(url == '/homefeed'){%>
-                <p id="currentpage">.</p>    
-            <%}%> -->
+                </span>   
+            <%}else{%>
+                <span class="bottomlinks">
+                    <a href="/homefeed"><img src="https://img.icons8.com/fluent-systems-regular/24/000000/home.png"
+                    class="bottomicons" /></a>
+                </span>
+            <%}%>
+            
         </div>
         <div class="col navicons" id="search">
-            <a href=""><img src="https://img.icons8.com/ios-glyphs/50/000000/search.png" class="bottomicons" /></a>
-            <!-- <%if(url == '/search'){%>
-                <p id="currentpage">.</p>    
-            <%}%> -->
+            <%if(url == '/search'){%>
+                <span id="currentpage">.</span>    
+            <%}%>
+            <span class="bottomlinks">
+                <a href=""><img src="https://img.icons8.com/ios-glyphs/50/000000/search.png" class="bottomicons" /></a>
+            </span>
+            
         </div>
         <div class="col navicons">
             <a href="/">
@@ -19,20 +30,33 @@
             </a>
         </div>
         <div class="col navicons" id="library">
-            <span id="libraryicon"><a href="/library"><img src="/img/Library.png" class="bottomicons" /></a></span>
-            <!-- <%if(url == '/library'){%>
-                <p id="currentpage">.</p>    
-            <%}%> -->
+            <%if(url == '/library'){%>
+                <span id="currentpage">.</span>    
+                <span class="bottomlinks">
+                    <a href="/library"><img src="/img/Colored-library.png" class="bottomicons" /></a>
+                </span>
+            <%}else{%>
+                <span class="bottomlinks">
+                    <a href="/library"><img src="/img/Library.png" class="bottomicons" /></a>
+                </span>
+            <%}%>
         </div>
         <div class="col navicons" id="notifs">
-            <a href="/profile"><img src="https://img.icons8.com/cotton/64/000000/person-male--v2.png" class="bottomicons" id="profilenotif" /></a>
-            <%n = 10%>
+            <%if(url == '/profile'){%>
+                <span id="currentpage">.</span>   
+                <span class="bottomlinks">
+                    <a href="/profile"><img src="/img/Colored-notifs.png" class="bottomicons" /></a>
+                </span> 
+            <%}else{%>
+                <span class="bottomlinks">
+                    <a href="/profile"><img src="/img/Notifs.png" class="bottomicons" /></a>
+                </span>    
+            <%}%> 
+            
+            <%n = 3%>
             <%if(n > 0) {%>
                 <span id="noOfNotifs"><%=n%></span>    
             <%}%>
-            <!-- <%if(url == '/notifs'){%>
-                <p id="currentpage">.</p>    
-            <%}%>  -->
         </div>
     </div>
 </footer>
