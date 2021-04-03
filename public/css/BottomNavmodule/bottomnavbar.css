@@ -30,16 +30,15 @@ body {
     width: 100% !important; 
 }
 
-#profilenotif {
-    /* position: relative; */
-    z-index: 0;
+#notifs {
+    position: relative;
 }
 
 #noOfNotifs {
-    position: fixed;
+    position: absolute;
     width: 0.9rem !important;
     height: 0.9rem !important;
-    z-index: 1;
+    z-index: 10;
     border-radius: 50%;
     background: linear-gradient(357.55deg, #7C49F6 21.82%, #E55ABD 49.61%, #FEDF67 79.82%);
     font-size: x-small;
