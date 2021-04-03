@@ -1,15 +1,13 @@
-let i = 0;
-
 window.addEventListener('load', () => {
     const collage = document.getElementById('collagediv');
-    const collageScrollWidth = collage.scrollWidth;
+    const collageScrollWidth = collage.offsetWidth;
+    console.log(collageScrollWidth);
 
     self.setInterval(() => {
-        if (collage.scrollLeft !== collageScrollWidth) {
+        if (collage.scrollLeft < Math.floor(collageScrollWidth)) {
             collage.scrollBy(10,0);
-            i++;
         }else{
-            collage.scrollTo(0,collage.offsetTop);
+            collage.scrollTo(0,0);
         }
-    }, 15);
+    }, 220);
 });
