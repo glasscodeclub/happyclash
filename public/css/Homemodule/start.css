@@ -514,6 +514,18 @@ div#collagediv::-webkit-scrollbar {
     }
 }
 
+@media only screen and (min-width:1001px) and (min-height:700px) {
+
+    #happyclashdiv {
+        top: 18% !important;
+    }
+
+    #happyclash {
+        width: 6rem !important;
+        height: 6rem !important;
+    }
+}
+
 @media only screen and (min-width:1001px) and (min-height:850px) and (max-height: 1100px) {
 
     #happyclashdiv {
@@ -535,6 +547,18 @@ div#collagediv::-webkit-scrollbar {
     #happyclash {
         width: 6.6rem !important;
         height: 6.6rem !important;
+    }
+}
+
+@media only screen and (min-width:1300px) and (min-height:700px) {
+
+    #happyclashdiv {
+        top: 27% !important;
+    }
+
+    #happyclash {
+        width: 7.5rem !important;
+        height: 7.5rem !important;
     }
 }
 
