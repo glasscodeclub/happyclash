@@ -25,6 +25,7 @@ const connectionParams={
   useCreateIndex: true,
   useFindAndModify: false,
 }
+
 mongoose.connect(url,connectionParams)
     .then( () => {
     
@@ -79,11 +80,11 @@ app.get('/profile',(req,res)=> {
 })
 
 app.get('/challenge',(req,res)=> {
-    res.render("Feedmodule/challenge");
+    res.render("Feedmodule/challenge",{url:req.url});
 })
 
 app.get('/clashDetails',(req,res)=> {
-    res.render("Clashmodule/clashDetails");
+    res.render("Clashmodule/clashDetails",{url:req.url});
 })
 
 app.use('/auth',Authroutes);
