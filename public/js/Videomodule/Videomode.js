@@ -27,42 +27,27 @@ function joinClash() {
     console.log('Join clash button was hit');
 }
 
-// function checkEvents() {
-//     let target = window.event.target;
-//     let play = document.getElementsByClassName('play');
-//     let pause = document.getElementsByClassName('pause');
-//     let like = document.getElementsByClassName('like');
-//     let dislike = document.getElementsByClassName('dislike');
-//     let comment = document.getElementsByClassName('comment');
-//     let share = document.getElementsByClassName('share');
-//     let joinclash = document.getElementsByClassName('joinicon');
+window.addEventListener('load',()=> {
+    const myvideo = document.querySelector('.myvideo');
 
-//     if(target === play) {
-//         console.log('Play icon was hit.');
-//     }
+    myvideo.pause();
+})
+
+let isPlaying = false;
+
+function pauseAndplayVideo() {
     
-//     else if(target === pause) {
-//         console.log('Pause icon was hit.');
-//     }
+    const myvideo = document.querySelector('.myvideo');
+    const videoplay = document.querySelector('#videoplay');
 
-//     else if(target === share) {
-//         console.log('Share button was hit.');
-//     }
+    if(isPlaying === false) {
+        myvideo.play();
+        isPlaying = true;
+        videoplay.style.display = 'none';
+    }else{
+        myvideo.pause();
+        isPlaying = false;
+        videoplay.style.display = 'block';
+    }
 
-//     else if(target === like) {
-//         console.log('Like button was hit.');
-//     }
-
-//     else if(target === dislike) {
-//         console.log('Dislike button was hit.');
-//     }
-
-//     else if(target === comment) {
-//         console.log('Comment button was hit.');
-//     }
-
-//     else if(target === joinclash) {
-//         console.log('Join clash button was hit');
-//     }
-
-// }
+}

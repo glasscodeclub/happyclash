@@ -150,7 +150,7 @@ div#collagediv {
     width: 100% !important;
     height: 100% !important;
     text-align: center;
-    margin: 1.2rem auto;
+    margin: 1.75rem auto;
     left: 0;
     right: 0;
     overflow-x: scroll !important;
@@ -166,8 +166,8 @@ div#collagediv::-webkit-scrollbar {
 }
 
 .collage {
-    width: 200%;
-    height: 100%;
+    width: 250%;
+    height: 110%;
     transform-origin: 50% 50% -500px;
 }
 
@@ -323,12 +323,6 @@ div#collagediv::-webkit-scrollbar {
     }
 }
 
-/* @media only screen and (min-width: 364px) and (max-width: 400px) and (min-width:750px) {
-    #happyclashdiv {
-        top: 19% !important;
-    }
-} */
-
 @media only screen and (min-width: 400px) {
     #happyclashdiv {
         top: 23.5% !important;
@@ -430,9 +424,14 @@ div#collagediv::-webkit-scrollbar {
 }
 
 @media only screen and (min-width:750px) {
+
+    div#collagediv {
+        margin: 3rem auto !important;
+    }
+
     .collage {
-        width: 85%;
-        height: 100%;
+        width: 130%;
+        height: 130%;
     }
 
     #happyclashdiv {
