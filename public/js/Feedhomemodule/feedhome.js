@@ -1,6 +1,8 @@
 
 
 function changeColor() {
+    var cl = window.event.target.innerHTML;
+    console.log(cl+" button is clicked!");
     let public = document.getElementById('public');
     let friends = document.getElementById('friends');
 
@@ -25,4 +27,10 @@ function changeColor() {
     plain.style.background = 'white';
     plain.style.color = 'black';
     plain.style.boxShadow = '0.1rem 0.1rem 0.5rem grey';
+}
+
+
+function Console_log() {
+    var cl= window.event.target.innerHTML;
+    console.log(cl + " icon is clicked!");
 }
