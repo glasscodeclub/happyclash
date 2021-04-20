@@ -110,7 +110,7 @@
 
 @media only screen and (min-width:280px) and (max-width:281px) {
     .p3{
-        font-size: 1rem !important;
+        font-size: 0.9rem !important;
     }
     .p1{
         font-size: 0.8rem !important;
@@ -129,6 +129,12 @@
     }
     #back{
         font-size: 2rem !important;
+    }
+}
+
+@media (min-width: 320px) and (max-width: 355px){
+    .p3{
+        font-size: 1.1rem !important;
     }
 }
 
