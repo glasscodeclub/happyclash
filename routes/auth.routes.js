@@ -14,24 +14,24 @@ router.get("/signup", function (req, res) {
 router.post("/signup", async (req, res) => {
    if(req.body){
     async.parallel([
-        cb=> {
-            fs.mkdir("./upload/"+req.body.username+"/public", { recursive: true }, function(err) {
-                if (err) {
-                    return cb(err)
-                } else {
-                    return cb();
-                }
-              })
-        },
-        cb=> {
-            fs.mkdir("./upload/"+req.body.username+"/private", { recursive: true }, function(err) {
-                if (err) {
-                    return cb(err)
-                } else {
-                    return cb();
-                }
-              })
-        },
+        // cb=> {
+        //     fs.mkdir("./upload/"+req.body.username+"/public", { recursive: true }, function(err) {
+        //         if (err) {
+        //             return cb(err)
+        //         } else {
+        //             return cb();
+        //         }
+        //       })
+        // },
+        // cb=> {
+        //     fs.mkdir("./upload/"+req.body.username+"/private", { recursive: true }, function(err) {
+        //         if (err) {
+        //             return cb(err)
+        //         } else {
+        //             return cb();
+        //         }
+        //       })
+        // },
         cb => {
             User.register(new User({
                 username: req.body.username,
