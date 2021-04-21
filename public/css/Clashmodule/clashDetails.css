@@ -44,7 +44,7 @@
 #heading {
     width: 65%;
     margin: 0.5rem auto;
-    font-size: 1.75rem !important;
+    font-size: 2.5rem !important;
     font-family: America;
     font-style: normal;
     font-weight: bold;
@@ -186,12 +186,35 @@
 }
 
 .img2{
-    height: 3rem !important;
-    width:3rem!important;
+    height: 3.5rem !important;
+    width: 5rem!important;
+}
+
+.a1{
+    text-decoration: none;
+    color: gray;
+}
+
+.sub-comment img{
+    width: 4.2rem !important;
+    height: 2.9rem !important;
+}
+
+.sub-comment div:nth-of-type(2){
+    font-size: .8em;
 }
 
 .last{
     margin-bottom: 4rem!important;
+}
+
+.last div{
+    text-align: center;
+    margin-bottom: 6px;
+}
+
+.last img{
+    width: 4.2rem;
 }
 
 /* If you need font-style as italic uncomment below code */
@@ -281,10 +304,13 @@
         font-size: 2.2em !important;
     }
     #p4{
-        font-size: 2em !important;
+        font-size: 1.7em !important;
     }
-    #p5, #p2{
+    #p2{
         font-size: 1.2em !important;
+    }
+    #p5{
+        font-size: 1em !important;
     }
     .rp2{
         font-size: 1.5em !important;
@@ -293,7 +319,7 @@
         font-size: 1.2em;
     }
     .participants, .comment-header{
-        font-size: 1.4em !important;
+        font-size: 1.1em !important;
     }
     #p3, #p8, #p9, #p10{
         font-size: 1em;
