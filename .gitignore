@@ -3,3 +3,4 @@ node_modules/
 public/videos/
 upload/
 video/
+.DS_Store
