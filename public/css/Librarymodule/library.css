@@ -19,6 +19,7 @@ body {
 }
 
 #backdiv {
+  margin-top: 20px;
   margin-left: 0.8rem;
   padding: 0.2rem 0.4rem;
   background-color: white;
@@ -27,6 +28,7 @@ body {
 }
 
 #rightdiv {
+  margin-top: 20px;
   margin-right: 0.8rem;
   padding: 0.2rem 0.4rem;
   background-color: white;
@@ -54,8 +56,6 @@ body {
 }
 
 #heading {
-  width: 65%;
-  margin: 0.5rem auto;
   font-size: 2.2rem !important;
   font-family: Roboto;
   font-style: normal;

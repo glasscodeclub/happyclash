@@ -25,7 +25,7 @@
 
 <body>
     
-    <div class="head">
+    <div style="display: flex;">
         <div id="backdiv">
             <i onclick="window.location.href='/'" id="back" class="fas fa-arrow-left"></i>
         </div>
@@ -39,48 +39,58 @@
         </div>
     </div>
 
-        <%let num=15;%>
+        <%let num=18;%>
         <%let count=Math.floor(num/3);%>
 
         <div class="row videorow">
             <%for(let i=0;i<count;i++){%>
                 <div class="col-4 videodiv">
-                    <div class="threedots">
-                         <img src="/img/threedots.png" alt="" width="3" height="12" class="videodots" onclick="displayPopUp(this)">
+                    <div style="position: relative;">
+                        <a href="/videomode">
+                            <video class="myvideo">
+                                <source src="/img/sample.mp4" type="video/mp4">
+                                Video not available at the moment
+                            </video>
+                        </a>
+                        <div style="position: absolute;top: 50%;left:50%;transform: translate(-50%,-50%);">
+                            <img src="/img/Play.svg" width=35" height="35" onclick="playVideo(this)">
+                        </div>
+                        <div style="position: absolute;top:5px;right:10px">
+                         <img src="/img/threedots.png" alt="" width="3" height="12" onclick="displayPopUp(this)">
+                        </div>
                     </div>
-                    <div class="play">
-                        <img src="/img/Play.svg" width="24" height="24" class="videoplay" onclick="playVideo(this)">
-                    </div>
-                    <a href="/videomode">
-                        <video class="myvideo"> 
-                            <source src="/img/sample.mp4" type="video/mp4">
-                            Video not available at the moment
-                        </video>
-                    </a>
                 </div>
                 <div class="col-4 videodiv">
-                    <div class="threedots">
-                        <img src="/img/threedots.png" alt="" width="3" height="12" class="videodots" onclick="displayPopUp(this)">
+                    <div style="position: relative;">
+                        <a href="/videomode">
+                            <video class="myvideo">
+                                <source src="/img/sample.mp4" type="video/mp4">
+                                Video not available at the moment
+                            </video>
+                        </a>
+                        <div style="position: absolute;top: 50%;left:50%;transform: translate(-50%,-50%);">
+                            <img src="/img/Play.svg" width=35" height="35" onclick="playVideo(this)">
+                        </div>
+                        <div style="position: absolute;top:5px;right:10px">
+                         <img src="/img/threedots.png" alt="" width="3" height="12" onclick="displayPopUp(this)">
+                        </div>
                     </div>
-                    <div class="play">
-                        <img src="/img/Play.svg" width="24" height="24" class="videoplay" onclick="playVideo(this)">
-                    </div>
-                    <video muted class="myvideo" onclick="window.location.href='/videomode'"> 
-                        <source src="/img/sample.mp4" type="video/mp4">
-                        Video not available at the moment
-                    </video>
                 </div>
                 <div class="col-4 videodiv">
-                    <div class="threedots">
-                        <img src="/img/threedots.png" alt="" width="3" height="12" class="videodots" onclick="displayPopUp(this)">
+                    <div style="position: relative;">
+                        <a href="/videomode">
+                            <video class="myvideo">
+                                <source src="/img/sample.mp4" type="video/mp4">
+                                Video not available at the moment
+                            </video>
+                        </a>
+                        <div style="position: absolute;top: 50%;left:50%;transform: translate(-50%,-50%);">
+                            <img src="/img/Play.svg" width=35" height="35" onclick="playVideo(this)">
+                        </div>
+                        <div style="position: absolute;top:5px;right:10px">
+                         <img src="/img/threedots.png" alt="" width="3" height="12" onclick="displayPopUp(this)">
+                        </div>
                     </div>
-                    <div class="play">
-                        <img src="/img/Play.svg" width="24" height="24" class="videoplay" onclick="playVideo(this)">
-                    </div>
-                    <video muted class="myvideo" onclick="window.location.href='/videomode'"> 
-                        <source src="/img/sample.mp4" type="video/mp4">
-                        Video not available at the moment
-                    </video>
                 </div>
                 <%}%>
                     <%if(num%3){%>
