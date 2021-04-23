@@ -88,6 +88,10 @@ app.get('/clashDetails',(req,res)=> {
     res.render("Clashmodule/clashDetails",{url:req.url});
 })
 
+app.get('/participants',(req,res)=> {
+    res.render("Clashmodule/participants",{url:req.url});
+})
+
 app.use('/auth',Authroutes);
 app.use('/dashboard',Dashboardroutes);
 app.use('/home',Homeroutes);
