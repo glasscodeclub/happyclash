@@ -414,3 +414,9 @@
         margin-top: 1rem;
     }
 }
+
+@media (min-width: 280px) and (max-width:767px){
+    .clash-details{
+        font-size: .8em;
+    }
+}
