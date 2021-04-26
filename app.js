@@ -92,6 +92,9 @@ app.get('/clashDetails',(req,res)=> {
 app.get('/participants',(req,res)=> {
     res.render("Clashmodule/participants",{url:req.url});
 })
+app.get('/comments',(req,res)=> {
+    res.render("Clashmodule/clashComments",{url:req.url});
+})
 
 app.use('/auth',Authroutes);
 app.use('/dashboard',Dashboardroutes);
