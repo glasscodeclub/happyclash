@@ -1,0 +1,231 @@
+@font-face {
+  font-family: America;
+  src: url("/font-family/America.ttf");
+}
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+.head {
+  position: fixed;
+  z-index: 1;
+  top: 0px !important;
+  background-color: white;
+  text-align: center !important;
+  margin: auto;
+  /* margin-top:0px !important; */
+  left: 0;
+  right: 0;
+  /* top: 0.75rem; */
+}
+
+#backdiv {
+  margin-top: 1.4rem !important;
+  margin-left: 1rem !important;
+  padding: 0.2rem 0.4rem;
+  background-color: white;
+  border-radius: 0.5rem;
+  float: left;
+}
+
+#back {
+  font-size: 1.5rem !important;
+}
+
+#backdiv::after {
+  clear: both;
+}
+
+#headdiv {
+  text-align: center;
+  /* margin:0px!important; */
+  margin: 1.3rem auto;
+  vertical-align: middle;
+  margin-bottom: 0.5rem !important;
+}
+
+#heading {
+  width: 65%;
+  margin: 0.5rem auto;
+  font-size: 2.5rem !important;
+  font-family: America;
+  font-style: normal;
+  font-weight: bold;
+  background: linear-gradient(180deg, #7c49f6 0%, #e55abd 47.92%, #fedf67 100%);
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  /* margin-bottom: 0px !important; */
+}
+#searchSpace {
+  margin-top: 108.797px;
+}
+.input-group {
+  text-align: center;
+  margin: 1.25rem auto !important;
+  padding: 0.2rem 1rem;
+  border-radius: 5rem;
+  width: 82% !important;
+  overflow: auto;
+  background-color: white;
+  box-shadow: 0.05px 0.05px 1rem rgb(179 179 179);
+}
+.form-control {
+  width: 100%;
+  margin: auto;
+  background-color: white;
+  /* outline: none; */
+  border: none;
+}
+#inputSuccess2::-webkit-input-placeholder {
+  font-size: 0.75rem !important;
+}
+
+
+/* Comments */
+
+#p7 {
+  margin: 0px;
+  color: #747474;
+  font-family: Roboto;
+  font-size: 0.7rem;
+}
+#p8 {
+  margin: 0px;
+  /* color:#747474; */
+  color: #000000;
+  font-family: Roboto;
+  font-size: 0.7rem;
+}
+
+#p9 {
+  margin: 0px;
+  color: #747474;
+  font-family: Roboto;
+  font-size: 0.7rem;
+  display: inline;
+}
+
+#p10 {
+  margin: 0px;
+  color: #747474;
+  font-family: Roboto;
+  font-size: 0.7rem;
+  display: inline;
+}
+
+.mb {
+  padding-top: 1rem;
+  margin-bottom: 1rem;
+  border-top: 1px solid #dedede;
+  /* border-bottom: 1px solid #dedede; */
+}
+.sub-comment {
+  padding-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  border-top: none;
+}
+
+.p11 {
+  margin: 0px;
+  color: #747474;
+  font-family: Roboto;
+  font-size: 0.7rem;
+}
+
+.img2 {
+  height: 3.5rem !important;
+  width: 5rem !important;
+}
+
+.a1 {
+  text-decoration: none;
+  color: gray;
+}
+
+.sub-comment img {
+  width: 4.2rem !important;
+  height: 2.9rem !important;
+}
+
+.sub-comment div:nth-of-type(2) {
+  font-size: 0.8em;
+}
+
+/* If you need font-style as italic uncomment below code */
+
+/* #p4, #p5, #p7{
+    font-style: italic;
+}
+
+.participants, .comment-header{
+    font-style: italic;
+} */
+
+@media (max-width: 281px) {
+  .img2 {
+    width: 4.1rem !important;
+    height: 2.8rem !important;
+  }
+  .sub-comment div:nth-of-type(2),
+  .sub-comment div:nth-of-type(2) > * {
+    font-size: 0.6rem !important;
+    padding-left: 0 !important;
+  }
+}
+@media (min-width: 281px) and (max-width: 376px) {
+  .img2 {
+    height: 2.5rem !important;
+    width: 4rem !important;
+  }
+  .sub-comment img {
+    width: 4rem !important;
+    height: 2.5rem !important;
+  }
+  .sub-comment div:nth-of-type(2),
+  .sub-comment div:nth-of-type(2) > * {
+    font-size: 0.6rem !important;
+    padding-left: 0 !important;
+  }
+}
+
+@media (min-width: 410px) and (max-width: 767px) {
+  .img2 {
+    height: 3rem !important;
+    width: 4.5rem !important;
+  }
+  .sub-comment div:nth-of-type(2),
+  .sub-comment div:nth-of-type(2) > * {
+    font-size: 0.65rem !important;
+    padding-left: 0 !important;
+  }
+}
+
+@media (min-width: 768px) {
+  #p8,
+  #p9,
+  #p10,
+  .p11 {
+    font-size: 1em;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1025px) {
+  .sub-comment div:nth-of-type(2),
+  .sub-comment div:nth-of-type(2) > * {
+    font-size: 1.1rem !important;
+    padding-left: 0 !important;
+  }
+  .comments div > div {
+    font-size: 1.3rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .comments {
+    padding-left: 3em;
+  }
+}
+
+@media only screen and (min-width: 375px) and (max-width: 1024px) {
+  .p11 {
+    margin-top: 1rem;
+  }
+}
