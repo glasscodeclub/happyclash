@@ -6,8 +6,8 @@ var User = require("../models/user.models");
 var middlewares = require("../middlewares/auth.middleware");
 
 
-router.get("/", function(req, res){
-    res.render("./careermodule/career");
+router.get("/", function (req, res) {
+    res.render("./careermodule/career", { url: req.url });
 })
 
 module.exports = router;
