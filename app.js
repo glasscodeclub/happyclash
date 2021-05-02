@@ -10,10 +10,11 @@ var express                 = require("express"),
     Authroutes              = require("./routes/auth.routes"),
     Homeroutes              = require("./routes/home.routes"), 
     Dashboardroutes         = require("./routes/dashboard.routes"),
-    Videoroutes             =require("./routes/video.routes"), 
+    Videoroutes             = require("./routes/video.routes"), 
     Uploadroutes            = require("./routes/upload.routes"),
-    Careerroutes            =require("./routes/career.routes"),
-    Notoficationroutes      = require("./routes/notification.routes")
+    Careerroutes            = require("./routes/career.routes"),
+    Notoficationroutes      = require("./routes/notification.routes"),
+    Adminroutes             = require("./routes/admin.routes")
     
 var app = express();
 const port = 3000;
@@ -103,7 +104,8 @@ app.use('/home',Homeroutes);
 app.use('/upload',Uploadroutes);
 app.use('/video',Videoroutes);
 app.use('/career', Careerroutes);
-app.use("/notification", Notoficationroutes)
+app.use("/notification", Notoficationroutes);
+app.use("/admin", Adminroutes)
 
 app.listen(port, function(){
     console.log("connected on : ",port," mongo url : ",url);

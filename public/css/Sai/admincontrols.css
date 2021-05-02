@@ -1,0 +1,146 @@
+@font-face {
+    font-family: America;
+    src: url('/font-family/America.ttf');
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+.head {
+    position:sticky;
+    top:0px;
+    background-color:white;
+    text-align: center !important;
+    margin: auto;
+    bottom: 0.75rem;
+    left: 0;
+    right: 0;
+    /* top: 0.75rem; */
+}
+
+#backdiv {
+    margin-left: 0.8rem;
+    padding: 0.2rem 0.4rem;
+    background-color: white;
+    border-radius: 0.5rem;
+    float: left;
+}
+
+#back {
+    font-size: 1.5rem !important;
+}
+
+#backdiv::after {
+    clear: both;
+}
+
+#headdiv {
+    text-align: center;
+    margin: 1.3rem auto;
+    vertical-align: middle;
+}
+
+#heading {
+    width: 65%;
+    margin: 0.5rem auto;
+    font-size: 2.6rem !important;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    background: linear-gradient(180deg, #7C49F6 0%, #E55ABD 47.92%, #FEDF67 100%);
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+.div1{
+    font-size: 1.8rem;
+    margin-left: 1rem;
+}
+.challenge1{
+    /* background-color:#228D5A;
+    border: 1px solid #228D5A; */
+    border-radius: 9px;
+    text-align: center;
+    margin:auto;
+    /* width:70%; */
+}
+
+.p1{
+    color:white;
+    /* margin:0px!important; */
+    font-size: 1rem;
+    font-weight: 600;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem!important;
+    text-align: center;
+}
+
+.p3{
+    margin: 0px!important;
+    font-size: 1.1rem;
+    font-family: Roboto;
+}
+
+#id{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1rem;
+    color: #000000;
+}
+
+
+@media only screen and (min-width:280px) and (max-width:281px) {
+    .p3{
+        font-size: 0.9rem !important;
+    }
+    .p1{
+        font-size: 0.7rem !important;
+    }
+    .div1{
+        margin-left: 0;
+    }
+    #play{
+        font-size: 1.1rem !important;
+    }
+    #heading{
+        font-size: 1.15rem !important;
+    }
+    #back{
+        font-size: 1rem !important;
+    }
+}
+
+@media (min-width: 320px) and (max-width: 415px){
+    .p1{
+        font-size: .9rem;
+    }
+    .p3{
+        font-size: .9rem !important;
+        padding-left: 10px;
+    }
+    .div1{
+        font-size: 1.1em;
+    }
+    #heading{
+        font-size: 1.3em !important;
+    }
+    #back{
+        font-size: 1.1rem !important;
+    }
+}
+
+@media only screen and (min-width:540px) and (max-width:768px) {
+    .p1{
+        font-size: 1rem !important;
+    }
+    #play{
+        font-size: 1.5rem !important;
+    }
+    #heading{
+        font-size: 2rem !important;
+    }
+    #back{
+        font-size: 1.5rem !important;
+    }
+}
