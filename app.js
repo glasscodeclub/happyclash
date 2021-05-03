@@ -98,6 +98,12 @@ app.get('/comments',(req,res)=> {
     res.render("Clashmodule/clashComments",{url:req.url});
 })
 
+//Kushagra
+
+app.get('/reportClash', (req, res)=>{
+    res.render("Kushagra/reportClash",{url:req.url});
+})
+
 app.use('/auth',Authroutes);
 app.use('/dashboard',Dashboardroutes);
 app.use('/home',Homeroutes);
