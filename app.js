@@ -14,7 +14,8 @@ var express                 = require("express"),
     Uploadroutes            = require("./routes/upload.routes"),
     Careerroutes            = require("./routes/career.routes"),
     Notoficationroutes      = require("./routes/notification.routes"),
-    Adminroutes             = require("./routes/admin.routes")
+    Adminroutes             = require("./routes/admin.routes"),
+    Resultroutes            = require("./routes/result.routes")
     
 var app = express();
 const port = 3000;
@@ -111,7 +112,8 @@ app.use('/upload',Uploadroutes);
 app.use('/video',Videoroutes);
 app.use('/career', Careerroutes);
 app.use("/notification", Notoficationroutes);
-app.use("/admin", Adminroutes)
+app.use("/admin", Adminroutes);
+app.use("/results", Resultroutes)
 
 app.listen(port, function(){
     console.log("connected on : ",port," mongo url : ",url);
