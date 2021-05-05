@@ -1,95 +1,330 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
     <title>Settings</title>
 
-    <script src="https://kit.fontawesome.com/2635296004.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="/css/BottomNavmodule/bottomnavbar.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
-        crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/2635296004.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="/css/BottomNavmodule/bottomnavbar.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+      crossorigin="anonymous"
+    ></script>
 
     <!-- Custom css -->
-    <link rel="stylesheet" href="/css/Sai/admincontrols.css">
+    <link rel="stylesheet" href="/css/Sai/admincontrols.css" />
 
     <!-- Custom js -->
     <script src="/js/Sai/admincontrols.js"></script>
-</head>
+  </head>
 
-<body>
-
+  <body>
     <div class="head">
-        <div id="backdiv">
-            <i onclick="window.location.href='/'" id="back" class="fas fa-arrow-left"></i>
-        </div>
+      <div id="backdiv">
+        <i
+          onclick="window.location.href='/'"
+          id="back"
+          class="fas fa-arrow-left"
+        ></i>
+      </div>
 
-        <div id="headdiv">
-            <h1 id="heading">Administrator Settings</h1>
-        </div>
+      <div id="headdiv">
+        <h1 id="heading">Administrator Settings</h1>
+      </div>
     </div>
 
-    <div class="container" style="margin-bottom: 4em;">
-        <hr>
+    <div class="container" style="margin-bottom: 4em">
+      <hr />
+      <div class="div1">
+        <p id="play">Ongoing Clashes</p>
+      </div>
+      <div class="row">
+        <div class="col-3 challenge1">
+          <p class="p1 btn btn-success" onclick="challenge(this)">
+            Song Challenge
+          </p>
+        </div>
+        <div class="col-8">
+          <p class="p3">Created on: 5 March 2021</p>
+          <p class="p3">Participants: 102</p>
+          <p class="p3">Clash till: 20 April 2021</p>
+        </div>
+      </div>
+      <div id="song-details" style="display: block">
         <div class="div1">
-            <p id="play">Ongoing Clashes</p>
+          <div style="font-size: 0.7rem; color: grey" class="mt-4 mb-1">
+            Clash details
+          </div>
+          <div style="font-size: 0.9rem; line-height: 1.2rem">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas
+            debitis fuga aspernatur unde, in nesciunt, laborum voluptatibus
+            nobis consectetur dolorum enim quisquam porro delectus minus
+            <div style="font-size: 0.7rem; color: grey" class="mt-4">
+              Ends on
+            </div>
+            <div style="font-size: 0.9rem">15/05/2021</div>
+          </div>
         </div>
-        <div class="row">
-            <div class="col-3 challenge1">
-                <p class="p1 btn btn-success" onclick="challenge(this)">Song Challenge</p>
-            </div>
-            <div class="col-8">
-                <p class="p3">Created on: 5 March 2021</p>
-                <p class="p3">Participants: 102</p>
-                <p class="p3">Clash till: 20 April 2021</p>
-            </div>
-        </div>
-        <br>
-        <div class="row">
-            <div class="col-3 challenge1">
-                <p class="p1 btn btn-success" onclick="challenge(this)">Old School Song Challenge</p>
-            </div>
-            <div class="col-8">
-                <p class="p3">Created on: 11 March 2021</p>
-                <p class="p3">Participants: 39</p>
-                <p class="p3">Clash till: 25 April 2021</p>
-            </div>
-        </div>
-        <hr>
+        <hr />
         <div class="div1">
-            <p id="play">Previous Clashes</p>
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+            "
+          >
+            <div style="font-size: 0.85rem">Your Video</div>
+            <div>
+              <button
+                style="
+                  color: white;
+                  background-color: red;
+                  font-size: 0.7rem;
+                  border: none;
+                "
+              >
+                Delete
+              </button>
+            </div>
+          </div>
+          <div class="row mt-4">
+            <div class="col" style="text-align: center; position: relative">
+              <img
+                class="vid"
+                style="height: 70vh; width: 90vw; position: relative"
+                src="https://s3-alpha-sig.figma.com/img/6ef4/0d39/15190984843b6f0f3e0980aee083e327?Expires=1620604800&Signature=GaOVP7v3NBVDnjKmU~n73B8Y~QG051XzJ-TadufITgk88tiCZkdRdYnnl0b2mfV8jav0huMbnkXsgA-WfyyadpzgSezvInmC-oLFfvRshs-hh0Uovx8Vnu06VdmyQHdr5gz2zhzinlQIC-1yzaURMoEeUuArhHCMZzK3DqUBG2trXAYfGKrx9ryEBLoMeDYDu2LXiV8~9Vu7gJoDhG1MW0w~uaH3mBtwXH10R0SoI~BmcYPcZ52JP6VgtJCQToH6vFAJrUDPJcFtJzP-LXKWRBSARSyfHKepBrLnP7wfog10lvephcQ6Xv~~Gt37bApg9Xno-R1DcvTkLNe2bPzrIg__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA"
+                alt="Img"
+              />
+              <div
+                style="
+                  position: absolute;
+                  top: 10px;
+                  left: 30px;
+                  font-size: 0.8rem;
+                  color: white;
+                "
+              >
+                Rank 12/20
+              </div>
+              <div
+                style="
+                  position: absolute;
+                  top: 10px;
+                  right: 30px;
+                  font-size: 0.8rem;
+                  color: white;
+                "
+              >
+                1:20
+              </div>
+              <div
+                style="
+                  position: absolute;
+                  bottom: 140px;
+                  left: 30px;
+                  font-size: 0.9rem;
+                  color: white;
+                "
+              >
+                2h ago
+              </div>
+              <div
+                style="
+                  position: absolute;
+                  bottom: 100px;
+                  left: 30px;
+                  font-size: 1.7rem;
+                  background: -webkit-linear-gradient(
+                    45deg,
+                    #924bec,
+                    #e552c4,
+                    #ffbf7b
+                  );
+                  -webkit-background-clip: text;
+                  background-clip: text;
+                  -webkit-text-fill-color: transparent;
+                "
+              >
+                Piano Challenge
+              </div>
+              <div
+                style="
+                  position: absolute;
+                  bottom: 80px;
+                  left: 30px;
+                  font-size: 0.8rem;
+                  color: white;
+                "
+              >
+                Started by John doe
+              </div>
+              <div
+                style="
+                  position: absolute;
+                  top: 50%;
+                  left: 50%;
+                  transform: translate(-50%, -50%);
+                "
+              >
+                <img
+                  src="/img/Play.svg"
+                  width="50"
+                  height="50"
+                  onclick="console.log(this)"
+                />
+              </div>
+              <div
+                style="
+                  position: absolute;
+                  bottom: 20px;
+                  left: 30px;
+                  right: 30px;
+                  display: flex;
+                  font-size: 0.8rem;
+                  justify-content: space-between;
+                  color: white;
+                "
+              >
+                <div>96 Likes</div>
+                <div>40 Comments</div>
+                <div>20 Participants</div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="row">
-            <div class="col-3 challenge1">
-                <p class="p1 btn btn-success" onclick="challenge(this)">Dance Challenge</p>
+        <hr />
+        <div class="div1">
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+            "
+          >
+            <div style="display: flex; align-items: center">
+              <div style="font-size: 0.9rem">Participants (70)</div>
+              <div style="font-size: 0.7rem; color: grey; margin-left: 10px">
+                See All >
+              </div>
             </div>
-            <div class="col-8">
-                <p class="p3">Created on: 5 March 2021</p>
-                <p class="p3">Participants: 102</p>
-                <p class="p3">Clash till: 20 April 2021</p>
+            <div style="font-size: 2rem">+</div>
+          </div>
+          <div>
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+              "
+            >
+              <div style="text-align: center">
+                <img style="width: 15vw" src="img/profile.png" class="p1" />
+                <h6 style="font-size: 0.6rem">Jane Cooper</h6>
+              </div>
+              <div style="text-align: center">
+                <img style="width: 15vw" src="img/profile1.png" class="p1" />
+                <h6 style="font-size: 0.6rem">Jane Cooper</h6>
+              </div>
+              <div style="text-align: center">
+                <img style="width: 15vw" src="img/profile2.png" class="p1" />
+                <h6 style="font-size: 0.6rem">Jane Cooper</h6>
+              </div>
+              <div style="text-align: center">
+                <img style="width: 15vw" src="img/profile3.png" class="p1" />
+                <h6 style="font-size: 0.6rem">Jane Cooper</h6>
+              </div>
+              <div style="text-align: center">
+                <img style="width: 15vw" src="img/profile4.png" class="p1" />
+                <h6 style="font-size: 0.6rem">Jane Cooper</h6>
+              </div>
             </div>
+            <div
+              class="mt-4 mb-2"
+              style="
+                display: flex;
+                align-items: center;
+                justify-content: center;
+              "
+            >
+              <button
+                style="
+                  background: linear-gradient(
+                    81.23deg,
+                    #7c49f6 9.3%,
+                    #ff53b7 51.61%,
+                    #ffd458 97.6%
+                  );
+                  border: none;
+                "
+                class="btn btn-dark submit"
+              >
+                Save Changes
+              </button>
+            </div>
+          </div>
         </div>
-        <br>
-        <div class="row">
-            <div class="col-3 challenge1">
-                <p class="p1 btn btn-success" onclick="challenge(this)">Painting Challenge</p>
-            </div>
-            <div class="col-8">
-                <p class="p3">Created on: 11 March 2021</p>
-                <p class="p3">Participants: 39</p>
-                <p class="p3">Clash till: 25 April 2021</p>
-            </div>
+      </div>
+      <br />
+      <div class="row">
+        <div class="col-3 challenge1">
+          <p class="p1 btn btn-success" onclick="challenge(this)">
+            Old School Song Challenge
+          </p>
         </div>
-        <br>
+        <div class="col-8">
+          <p class="p3">Created on: 11 March 2021</p>
+          <p class="p3">Participants: 39</p>
+          <p class="p3">Clash till: 25 April 2021</p>
+        </div>
+      </div>
+      <hr />
+      <div class="div1">
+        <p id="play">Previous Clashes</p>
+      </div>
+      <div class="row">
+        <div class="col-3 challenge1">
+          <p class="p1 btn btn-success" onclick="challenge(this)">
+            Dance Challenge
+          </p>
+        </div>
+        <div class="col-8">
+          <p class="p3">Created on: 5 March 2021</p>
+          <p class="p3">Participants: 102</p>
+          <p class="p3">Clash till: 20 April 2021</p>
+        </div>
+      </div>
+      <br />
+      <div class="row">
+        <div class="col-3 challenge1">
+          <p class="p1 btn btn-success" onclick="challenge(this)">
+            Painting Challenge
+          </p>
+        </div>
+        <div class="col-8">
+          <p class="p3">Created on: 11 March 2021</p>
+          <p class="p3">Participants: 39</p>
+          <p class="p3">Clash till: 25 April 2021</p>
+        </div>
+      </div>
+      <br />
     </div>
 
     <%- include("../BottomNavmodule/bottomnavbar") %>
-</body>
-
+  </body>
 </html>
