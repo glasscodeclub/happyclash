@@ -44,7 +44,7 @@
 #heading {
     width: 65%;
     margin: 0.5rem auto;
-    font-size: 1.75rem !important;
+    font-size: 2.5rem !important;
     font-family: America;
     font-style: normal;
     font-weight: bold;
@@ -63,6 +63,12 @@
     font-size: 0.5rem !important;
     background-color: white;
 }
+
+.details{
+    text-align: center;
+    margin-top: 6em;
+}
+
 #p1{
     margin:0px !important;
     font-size:0.7rem !important;
@@ -186,13 +192,28 @@
 }
 
 .img2{
-    height: 3rem !important;
-    width:3rem!important;
+    height: 3.5rem !important;
+    width: 5rem!important;
+}
+
+.a1{
+    text-decoration: none;
+    color: gray;
+}
+
+.sub-comment img{
+    width: 4.2rem !important;
+    height: 2.9rem !important;
+}
+
+.sub-comment div:nth-of-type(2){
+    font-size: .8em;
 }
 
 .last{
     margin-bottom: 4rem!important;
 }
+
 
 
 /* POPUP SECTION */
@@ -306,8 +327,210 @@
 }
   
 /* POPUP SECTION END */
+
+.last div{
+    text-align: center;
+    margin-bottom: 6px;
+}
+
+.last img{
+    width: 4.2rem;
+}
+
+/* If you need font-style as italic uncomment below code */
+
+/* #p4, #p5, #p7{
+    font-style: italic;
+}
+
+.participants, .comment-header{
+    font-style: italic;
+} */
+
+@media (max-width: 281px){
+    #heading{
+        font-size: 1.3rem !important;
+    }
+    #back{
+        font-size: 1rem !important;
+    }
+    #backdev{
+        margin-top: 1.2rem !important;
+    }
+    #p1{
+        font-size: 1.05em !important;
+    }
+    #p2{
+        margin-top: 1.1em;
+    }
+    #p4{
+        font-size: 1.3em !important;
+    }
+    #p5{
+        font-size: .7em;
+    }
+    #img1{
+        height: 4rem;
+    }
+    .img2{
+        width: 4.1rem !important;
+        height: 2.8rem !important;
+    }
+    .sub-comment div:nth-of-type(2), .sub-comment div:nth-of-type(2) > *{
+        font-size: .6rem !important;
+        padding-left: 0 !important;
+    }
+    .details{
+        margin-top: 4em;
+    }
+    .rp2{
+        font-size: 1.2em !important;
+    }
+    .rp1{
+        font-size: .8em;
+    }
+    .participants, .comment-header{
+        font-size: 0.7em;
+    }
+    .last img{
+        width: 3.1rem;
+    }
+    .p11{
+        font-size: .57rem;
+    }
+}
+
+@media (min-width: 281px) and (max-width: 376px){
+    #back{
+        font-size: 1.1rem !important;
+    }
+    #heading{
+        font-size: 1.5rem !important;
+    }
+    #p4{
+        font-size: 1.5em !important;
+    }
+    #p5{
+        font-size: .7em !important;
+    }
+    .details{
+        margin-top: 4.5em;
+    }
+    .rp2{
+        font-size: 1.1em !important;
+    }
+    .rp1, .participants, .comment-header{
+        font-size: 0.8em;
+    }
+    .img2{
+        height: 2.5rem !important;
+        width: 4rem!important;
+    }
+    .sub-comment img {
+        width: 4rem !important;
+        height: 2.5rem !important;
+    }
+    .sub-comment div:nth-of-type(2), .sub-comment div:nth-of-type(2) > *{
+        font-size: .6rem !important;
+        padding-left: 0 !important;
+    }
+    .last img {
+        width: 3rem;
+    }
+    .p11{
+        font-size: .56rem;
+    }
+}
+
+@media (min-width: 320px) and (max-width: 321px){
+    #p1{
+        font-size: 0.67rem !important;
+    }
+}
+
+@media (min-width: 410px) and (max-width: 767px){
+    #heading{
+        font-size: 1.9rem !important;
+    }
+    #back{
+        font-size: 1.2rem !important;
+    }
+    #p4{
+        font-size: 1.8em !important;
+    }
+    #p7, #p5{
+        font-size: .9em;
+    }
+    .details{
+        margin-top: 5em;
+    }
+    .img2 {
+        height: 3rem !important;
+        width: 4.5rem!important;
+    }
+    .sub-comment div:nth-of-type(2), .sub-comment div:nth-of-type(2) > *{
+        font-size: .65rem !important;
+        padding-left: 0 !important;
+    }
+    .last img{
+        width: 3.2rem;
+    }
+}
+
+@media (min-width: 768px){
+    #p1{
+        font-size: 2.2em !important;
+    }
+    #p4{
+        font-size: 2em !important;
+    }
+    #p2{
+        font-size: 1.2em !important;
+    }
+    #p5{
+        font-size: 1.1em !important;
+    }
+    .rp2{
+        font-size: 1.5em !important;
+    }
+    .rp1, #p7{
+        font-size: 1.2em;
+    }
+    .participants, .comment-header{
+        font-size: 1.47em !important;
+    }
+    #p3, #p8, #p9, #p10, .p11{
+        font-size: 1em;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1025px){
+    .sub-comment div:nth-of-type(2), .sub-comment div:nth-of-type(2) > *{
+        font-size: 1.1rem !important;
+        padding-left: 0 !important;
+    }
+    .comments div > div{
+        font-size: 1.3rem;
+    }
+}
+
+@media (min-width: 1024px){
+    .participants, .comment-header{
+        font-size: 1.2em !important;
+    }
+    .comments{
+        padding-left: 3em;
+    }
+}
+
 @media only screen and (min-width:375px) and (max-width:1024px) {
     .p11{
         margin-top: 1rem;
+    }
+}
+
+@media (min-width: 280px) and (max-width:767px){
+    .clash-details{
+        font-size: .8em;
     }
 }

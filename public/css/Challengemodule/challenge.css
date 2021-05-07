@@ -53,12 +53,12 @@
 }
 
 .div1{
-    font-size: 1.2rem;
+    font-size: 2rem;
     margin-left: 1rem;
 }
 .challenge1{
-    background-color:#228D5A;
-    border: 1px solid #228D5A;
+    /* background-color:#228D5A;
+    border: 1px solid #228D5A; */
     border-radius: 9px;
     text-align: center;
     margin:auto;
@@ -69,6 +69,7 @@
     color:white;
     /* margin:0px!important; */
     font-size: 1rem;
+    font-weight: 600;
     margin-top: 0.5rem;
     margin-bottom: 0.5rem!important;
     text-align: center;
@@ -83,19 +84,18 @@
 
 .p3{
     margin: 0px!important;
-    font-size: 1.3rem;
+    font-size: 1.4rem;
+    font-family: Roboto;
+}
+.p4, .p5{
+    display: inline;
+    font-size: 1.1rem;
     font-family: Roboto;
 }
 .p4{
-    display: inline;
-    font-size: 0.8rem;
-    font-family: Roboto;
-    margin-right:1rem;
+    margin-right: 1rem;
 }
 .p5{
-    display: inline;
-    font-size: 0.8rem;
-    font-family: Roboto;
     margin:0px !important;
 }
 
@@ -110,99 +110,77 @@
 
 @media only screen and (min-width:280px) and (max-width:281px) {
     .p3{
-        font-size: 1rem !important;
+        font-size: 0.9rem !important;
     }
     .p1{
-        font-size: 0.8rem !important;
+        font-size: 0.7rem !important;
     }
-    .p4{
-        font-size:0.8rem!important;
+    .p4, .p5{
+        font-size:0.7rem!important;
     }
-    .p5{
-        font-size:0.8rem!important;
+    .div1{
+        margin-left: 0;
     }
     #play{
-        font-size: 1rem !important;
+        font-size: 1.1rem !important;
+        font-weight: 500;
     }
     #heading{
-        font-size: 2rem !important;
+        font-size: 1.7rem !important;
     }
     #back{
-        font-size: 2rem !important;
+        font-size: 1.1rem !important;
+    }
+}
+
+@media (min-width: 320px) and (max-width: 376px){
+    .p1{
+        font-size: .9rem;
+    }
+    .p3{
+        font-size: 1rem !important;
+    }
+    .p4, .p5{
+        font-size: .8rem;
+    }
+    .div1{
+        font-size: 1.6em;
+        margin-left: 0;
+    }
+    #heading{
+        font-size: 1.9em !important;
     }
 }
 
 @media only screen and (min-width:540px) and (max-width:768px) {
     .p3{
-        font-size: 2rem !important;
+        font-size: 1.6rem !important;
     }
     .p1{
-        font-size: 2rem !important;
+        font-size: 1rem !important;
     }
-    .p4{
-        font-size:1.2rem!important;
-    }
-    .p5{
+    .p4, .p5{
         font-size:1.2rem!important;
     }
     #play{
         font-size: 2rem !important;
     }
     #heading{
-        font-size: 4rem !important;
+        font-size: 3rem !important;
     }
     #back{
-        font-size: 3rem !important;
+        font-size: 1.7rem !important;
     }
 }
 
-@media only screen and (min-width:800px) and (max-width:1024px) {
-    .p3{
-        font-size: 3rem !important;
-    }
-    .p1{
-        font-size: 3rem !important;
-    }
-    .p4{
-        font-size:1.5rem!important;
-    }
-    .p5{
-        font-size:1.5rem!important;
-    }
-    #play{
-        font-size: 3rem !important;
-    }
+@media (min-width: 1024px){
     #heading{
-        font-size: 5rem !important;
+        font-size: 4.5em !important;
     }
     #back{
-        font-size:4rem!important;
+        font-size: 2em !important;
     }
-}
-
-@media only screen and (min-width:1025px){
-    .p3{
-        font-size: 3rem !important;
-    }
-    .p1{
-        font-size: 3rem !important;
-    }
-    .p4{
-        font-size:1.5rem!important;
-    }
-    .p5{
-        font-size:1.5rem!important;
-    }
-    #play{
-        font-size: 3rem !important;
-    }
-    #heading{
-        font-size: 4rem !important;
-    }
-    #back{
-        font-size:4rem!important;
-    }
-    .challenge1{
-        width:70%!important;
+    .div1{
+        font-size: 2.3em;
     }
 }

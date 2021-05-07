@@ -9,8 +9,14 @@ var express                 = require("express"),
     passportLocalMongoose   = require("passport-local-mongoose"),
     Authroutes              = require("./routes/auth.routes"),
     Homeroutes              = require("./routes/home.routes"), 
-    Dashboardroutes         = require("./routes/dashboard.routes");
-    Uploadroutes            = require("./routes/upload.routes");
+    Dashboardroutes         = require("./routes/dashboard.routes"),
+    Videoroutes             = require("./routes/video.routes"), 
+    Uploadroutes            = require("./routes/upload.routes"),
+    Careerroutes            = require("./routes/career.routes"),
+    Notoficationroutes      = require("./routes/notification.routes"),
+    Adminroutes             = require("./routes/admin.routes"),
+    Resultroutes            = require("./routes/result.routes"),
+    Searchroutes            = require("./routes/search.routes")
     
 var app = express();
 const port = 3000;
@@ -87,10 +93,34 @@ app.get('/clashDetails',(req,res)=> {
     res.render("Clashmodule/clashDetails",{url:req.url});
 })
 
+app.get('/participants',(req,res)=> {
+    res.render("Clashmodule/participants",{url:req.url});
+})
+app.get('/comments',(req,res)=> {
+    res.render("Clashmodule/clashComments",{url:req.url});
+})
+
+//Kushagra
+
+app.get('/reportClash', (req, res)=>{
+    res.render("Kushagra/reportClash",{url:req.url});
+})
+app.get('/createNewClash', (req, res)=>{
+    res.render("Kushagra/newClash",{url:req.url});
+})
+
+
+
 app.use('/auth',Authroutes);
 app.use('/dashboard',Dashboardroutes);
 app.use('/home',Homeroutes);
 app.use('/upload',Uploadroutes);
+app.use('/video',Videoroutes);
+app.use('/career', Careerroutes);
+app.use("/notification", Notoficationroutes);
+app.use("/admin", Adminroutes);
+app.use("/results", Resultroutes)
+app.use("/search", Searchroutes)
 
 app.listen(port, function(){
     console.log("connected on : ",port," mongo url : ",url);

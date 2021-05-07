@@ -1,151 +1,160 @@
 @font-face {
-    font-family: America;
-    src: url('/font-family/America.ttf');
+  font-family: America;
+  src: url("/font-family/America.ttf");
 }
 
 body {
-    width: 100%;
-    height: 100%;
-    touch-action: manipulation !important;
+  width: 100%;
+  height: 100%;
+  touch-action: manipulation !important;
 }
 
 .head {
-    text-align: center !important;
-    margin: auto;
-    bottom: 0.75rem;
-    left: 0;
-    right: 0;
-    top: 0.75rem;
+  text-align: center !important;
+  margin: auto;
+  bottom: 0.75rem;
+  left: 0;
+  right: 0;
+  top: 0.75rem;
 }
 
 #backdiv {
-    margin-left: 0.8rem;
-    padding: 0.2rem 0.4rem;
-    background-color: white;
-    border-radius: 0.5rem;
-    float: left;
+  margin-top: 20px;
+  margin-left: 0.8rem;
+  padding: 0.2rem 0.4rem;
+  background-color: white;
+  border-radius: 0.5rem;
+  float: left;
+}
+
+#rightdiv {
+  margin-top: 20px;
+  margin-right: 0.8rem;
+  padding: 0.2rem 0.4rem;
+  background-color: white;
+  border-radius: 0.5rem;
+  float: right;
 }
 
 #back {
-    font-size: 1.5rem !important;
+  font-size: 1.5rem !important;
 }
 
 #back:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
-#backdiv::after {
-    clear: both;
+#backdiv::after,
+#rightdiv::after {
+  clear: both;
 }
 
 #headdiv {
-    text-align: center;
-    margin: 1.3rem auto;
-    vertical-align: middle;
+  text-align: center;
+  margin: 1.3rem auto;
+  vertical-align: middle;
 }
 
 #heading {
-    width: 65%;
-    margin: 0.5rem auto;
-    font-size: 2.2rem !important;
-    font-family: Roboto;
-    font-style: normal;
-    background: linear-gradient(180deg, #7C49F6 0%, #E55ABD 47.92%, #FEDF67 100%);
-    color: transparent;
-    -webkit-background-clip: text;
-    background-clip: text;
+  font-size: 2.2rem !important;
+  font-family: Roboto;
+  font-style: normal;
+  background: linear-gradient(180deg, #7c49f6 0%, #e55abd 47.92%, #fedf67 100%);
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
 }
 
-@media only screen and (max-width:500px) {
-    #backdiv {
-        padding: 0.15rem 0.4rem;
-    }
-    
-    #back {
-        font-size: 1rem;
-    }
+@media only screen and (max-width: 500px) {
+  #backdiv,
+  #rightdiv {
+    padding: 0.15rem 0.4rem;
+  }
 
-    #headdiv {
-        text-align: center;
-        margin: 0.7rem auto;
-    }
+  #back {
+    font-size: 1rem;
+  }
 
+  #headdiv {
+    text-align: center;
+    margin: 0.7rem auto;
+  }
 }
 
 .videorow {
-    width: 100% !important;
-    height: auto !important;
-    margin: auto 0.25rem !important;
-    top: 13% !important;
-    padding-bottom: 16% !important;
+  width: 100% !important;
+  height: auto !important;
+  margin: auto 0.25rem !important;
+  top: 13% !important;
+  padding-bottom: 16% !important;
 }
 
 .videodiv {
-    text-align: center !important;
-    margin: 0.75rem auto !important;
-    overflow: hidden !important;
-    vertical-align: middle !important;
+  text-align: center !important;
+  margin: 0.75rem auto !important;
+  overflow: hidden !important;
+  vertical-align: middle !important;
 }
 
 .myvideo {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
 }
 
 .myvideo:hover {
-    cursor: pointer !important;
+  cursor: pointer !important;
 }
 
 .videoplay {
-    width: 30% !important;
-    height: 30% !important;
-    margin-top: 28% !important;
-    margin-right: 1% !important;
+  width: 30% !important;
+  height: 30% !important;
+  margin-top: 28% !important;
+  margin-right: 1% !important;
 }
 
 .videoplay:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .videodots {
-    /* width:  !important;
+  /* width:  !important;
     height:  !important; */
-    float: right !important;
-    margin-top: 8% !important;
-    margin-right: 30% !important;
-    font-size: 5rem !important;
+  float: right !important;
+  margin-top: 8% !important;
+  margin-right: 30% !important;
+  font-size: 5rem !important;
 }
 
 .videodots:hover {
-    cursor: pointer !important;
+  cursor: pointer !important;
 }
 
 .play {
-    position: absolute;
-    text-align: center;
-    vertical-align: middle !important;
-    margin: auto;
-    padding: 50% auto;
-    width: 80%;
-    height: 100%;
-    z-index: 1;
+  position: absolute;
+  text-align: center;
+  vertical-align: middle !important;
+  margin: auto;
+  padding: 50% auto;
+  width: 80%;
+  height: 100%;
+  z-index: 1;
 }
 
 .threedots {
-    position: absolute;
-    text-align: right;
-    margin: auto;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
+  position: absolute;
+  text-align: right;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
 }
 
-@media only screen and (min-width:750px) {
-    .videodots {
-        margin-top: 6% !important;
-        margin-right: 15% !important;
-        font-size: 10rem !important;
-    }
+@media only screen and (min-width: 750px) {
+  .videodots {
+    margin-top: 6% !important;
+    margin-right: 15% !important;
+    font-size: 10rem !important;
+  }
 }

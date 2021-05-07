@@ -1,4 +1,16 @@
 
+function toPrevVideo(){
+    console.log("Previous video button was hit");
+}
+
+function toNextVideo(){
+    console.log("Next video button was hit");
+}
+
+function iButton(){
+    console.log("i button was hit");
+}
+
 function countShares() {
     console.log('Share button was hit.');
 }
@@ -17,10 +29,26 @@ function countDislikes() {
 
 function playVideo() {
     console.log('Play icon was hit.');
+    const myvideo = document.querySelector('.myvideo');
+    const videoplay = document.querySelector('#videoplay');
+
+    if(isPlaying === false) {
+        myvideo.play();
+        isPlaying = true;
+        videoplay.style.display = 'none';
+    }
 }
 
 function pauseVideo() {
     console.log('Pause icon was hit.');
+    const myvideo = document.querySelector('.myvideo');
+    const videoplay = document.querySelector('#videoplay');
+
+    if(isPlaying === true) {
+        myvideo.pause();
+        isPlaying = false;
+        videoplay.style.display = 'block';
+    }
 }
 
 function joinClash() {

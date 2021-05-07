@@ -1,116 +1,239 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-  	<title>Profile page</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
-        <script src="https://kit.fontawesome.com/2635296004.js" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="/css/Profilemodule/profile.css">
-        <link rel="stylesheet" href="/css/Feedhomemodule/style_hh.css">
-        <link rel="stylesheet" href="/css/Librarymodule/library.css">
-		<link rel="stylesheet" href="/css/BottomNavmodule/bottomnavbar.css"> 
-		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    <title>Profile page</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <script
+      src="https://kit.fontawesome.com/2635296004.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="/css/Profilemodule/profile.css" />
+    <link rel="stylesheet" href="/css/Feedhomemodule/style_hh.css" />
+    <link rel="stylesheet" href="/css/Librarymodule/library.css" />
+    <link rel="stylesheet" href="/css/BottomNavmodule/bottomnavbar.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+      crossorigin="anonymous"
+    ></script>
+    <script src="/js/Profilemodule/profile.js" type="text/javascript"></script>
   </head>
   <body>
-    
-    <div class="container" style="margin-top: 10px; margin-bottom: 5px; text-align: center;">
-        <div class="row">
-            <div class="col-3">
-                <div class="head">
-                    <div id="backdiv">
-                        <i onclick="window.location.href='/'" id="back" class="fas fa-arrow-left"></i>
-                    </div>
-                </div>
-            </div>
-            <div class="col-6" style="text-align: center;">
-                <img src="img/profile3.png" class="p1">
-                <h6 class="n1">Jane Cooper</h6>
-                <p id="n2">New York, USA </p>
-            </div>
-            <div class="col-3">
-                <i class="fa fa-bell-o fa-2x noti" aria-hidden="true"></i>
+    <div
+      class="container"
+      style="margin-top: 10px; margin-bottom: 5px; text-align: center"
+    >
+      <div class="row">
+        <div class="col-3">
+          <div class="head">
+            <div id="backdiv">
+              <i
+                onclick="window.location.href='/'"
+                id="back"
+                class="fas fa-arrow-left"
+              ></i>
             </div>
           </div>
+        </div>
+        <div class="col-6" style="text-align: center">
+          <img src="img/profile3.png" class="p1" />
+          <h6 class="n1">Jane Cooper</h6>
+          <p id="n2">New York, USA</p>
+        </div>
+        <div class="col-3" style="display: flex">
+          <i
+            class="fa fa-cog fa-2x"
+            onclick="settingsClick(this)"
+            aria-hidden="true"
+          ></i>
+          <i
+            class="fa fa-bell-o fa-2x"
+            onclick="bellClick(this)"
+            style="margin-left: 10px"
+            aria-hidden="true"
+          ></i>
+        </div>
+      </div>
     </div>
     <div>
-        <div class="row">
-            <div class="col-6" style="text-align:right;">
-                <button class="btn btn-dark submit" onclick="window.location.href='#'"><p id="follow">Carrer</p></button>
-            </div>
-            <div class="col-6">
-                <div class="col-6" style="text-align:left;">
-                    <button class="btn btn-dark sub" onclick="window.location.href='#'"><p id="fol">Edit Profile</p></button>
-                </div>
-            </div>
+      <div class="row">
+        <div class="col-6" style="text-align: right">
+          <button class="btn btn-dark submit" onclick="careerClick(this)">
+            <p id="follow">Carrer</p>
+          </button>
         </div>
-        
-    </div>
-    <div class="container" style="margin-top: 30px; margin-bottom: 5px;">
-        <div class="row">
-            <div class="col pp">
-                <h6 class="rp2">543</h6>
-                <p class="rp1">Followers</p>
-            </div>
-            <div class="col pp"> 
-                <h6 class="rp2">34</h6>
-                <p class="rp1">Following</p>
-            </div>
-            <div class="col pp">
-                <h6 class="rp2">18</h6>
-                <p class="rp1">Videos</p>
-            </div>
-            <div class="col pp">
-                <h6 class="rp2">3</h6>
-                <p class="rp1">Clash Won</p>
-            </div>
+        <div class="col-6">
+          <div class="col-6" style="text-align: left">
+            <button class="btn btn-dark sub" onclick="editClick(this)">
+              <p id="fol">Edit Profile</p>
+            </button>
           </div>
-    </div>
-    <div class="container" style="margin-top: 20px; margin-bottom: 5px;">
-        <div class="row">
-            <div class="col-3">
-                <h4 id="posts">Posts</h4>
-            </div>
-            <div class="col-5"></div>
-            <div class="col-4">
-                <a href="#"><p id="see">See All   <i class="fa fa-chevron-right" aria-hidden="true"></i></p></a>
-            </div>
         </div>
+      </div>
+    </div>
+    <div class="container" style="margin-top: 30px; margin-bottom: 5px">
+      <div class="row">
+        <div class="col pp">
+          <h6 class="rp2">543</h6>
+          <p class="rp1">Followers</p>
+        </div>
+        <div class="col pp">
+          <h6 class="rp2">34</h6>
+          <p class="rp1">Following</p>
+        </div>
+        <div class="col pp">
+          <h6 class="rp2">18</h6>
+          <p class="rp1">Videos</p>
+        </div>
+        <div class="col pp">
+          <h6 class="rp2">3</h6>
+          <p class="rp1">Clash Won</p>
+        </div>
+      </div>
+    </div>
+    <div class="container" style="margin-top: 20px; margin-bottom: 5px">
+      <div class="row">
+        <div class="col-3">
+          <h4 id="posts">Posts</h4>
+        </div>
+        <div class="col-5"></div>
+        <div class="col-4">
+          <a href="#" onclick="seeAll(this)"
+            ><p id="see">
+              See All <i class="fa fa-chevron-right" aria-hidden="true"></i></p
+          ></a>
+        </div>
+      </div>
     </div>
 
-    <div id="carouselExampleDark" class="carousel carousel-dark slide mt" data-bs-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active" data-bs-interval="36000000">
-              <div class="row">
-                  <div class="col" style="text-align: center;">
-                    <video controls width="310" class="vid">
-                        <source src="videos/vid1.mp4"type="video/webm">
-                    </video>
-                  </div>
+    <div
+      id="carouselExampleDark"
+      class="carousel carousel-dark slide mt"
+      data-bs-ride="carousel"
+    >
+      <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="36000000">
+          <div class="row">
+            <div class="col" style="text-align: center">
+              <img
+                class="vid"
+                style="height: 80vh; position: relative"
+                src="https://s3-alpha-sig.figma.com/img/6ef4/0d39/15190984843b6f0f3e0980aee083e327?Expires=1620604800&Signature=GaOVP7v3NBVDnjKmU~n73B8Y~QG051XzJ-TadufITgk88tiCZkdRdYnnl0b2mfV8jav0huMbnkXsgA-WfyyadpzgSezvInmC-oLFfvRshs-hh0Uovx8Vnu06VdmyQHdr5gz2zhzinlQIC-1yzaURMoEeUuArhHCMZzK3DqUBG2trXAYfGKrx9ryEBLoMeDYDu2LXiV8~9Vu7gJoDhG1MW0w~uaH3mBtwXH10R0SoI~BmcYPcZ52JP6VgtJCQToH6vFAJrUDPJcFtJzP-LXKWRBSARSyfHKepBrLnP7wfog10lvephcQ6Xv~~Gt37bApg9Xno-R1DcvTkLNe2bPzrIg__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA"
+                alt="Img"
+              />
+              <div
+                style="
+                  position: absolute;
+                  top: 10px;
+                  left: 30px;
+                  font-size: 0.8rem;
+                  color: white;
+                "
+              >
+                Rank 12/20
               </div>
-          </div>
-          <div class="carousel-item" data-bs-interval="36000000">
-            <div class="row">
-                <div class="col" style="text-align: center;">
-                  <video controls width="310" class="vid">
-                      <source src="videos/vid2.mov"type="video/webm">
-                  </video>
-                </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="row">
-                <div class="col" style="text-align: center;">
-                  <video controls width="310" class="vid">
-                      <source src="videos/vid3.mov"type="video/webm">
-                  </video>
-                </div>
+              <div
+                style="
+                  position: absolute;
+                  top: 10px;
+                  right: 30px;
+                  font-size: 0.8rem;
+                  color: white;
+                "
+              >
+                1:20
+              </div>
+              <div
+                style="
+                  position: absolute;
+                  bottom: 200px;
+                  left: 30px;
+                  font-size: 0.9rem;
+                  color: white;
+                "
+              >
+                2h ago
+              </div>
+              <div
+                style="
+                  position: absolute;
+                  bottom: 160px;
+                  left: 30px;
+                  font-size: 1.7rem;
+                  background: -webkit-linear-gradient(
+                    45deg,
+                    #924bec,
+                    #e552c4,
+                    #ffbf7b
+                  );
+                  -webkit-background-clip: text;
+                  background-clip: text;
+                  -webkit-text-fill-color: transparent;
+                "
+              >
+                Piano Challenge
+              </div>
+              <div
+                style="
+                  position: absolute;
+                  bottom: 140px;
+                  left: 30px;
+                  font-size: 0.8rem;
+                  color: white;
+                "
+              >
+                Started by John doe
+              </div>
+              <div
+                style="
+                  position: absolute;
+                  top: 50%;
+                  left: 50%;
+                  transform: translate(-50%, -100%);
+                "
+              >
+                <img
+                  src="/img/Play.svg"
+                  width="50"
+                  height="50"
+                  onclick="console.log(this)"
+                />
+              </div>
+              <div
+                style="
+                  position: absolute;
+                  bottom: 90px;
+                  left: 30px;
+                  right: 30px;
+                  display: flex;
+                  font-size: 0.8rem;
+                  justify-content: space-between;
+                  color: white;
+                "
+              >
+                <div>96 Likes</div>
+                <div>40 Comments</div>
+                <div>20 Participants</div>
+              </div>
+              <!-- <video class="vid">
+                <source src="/img/video.mp4" type="video/mp4" />
+              </video> -->
             </div>
           </div>
         </div>
+      </div>
     </div>
-		<%- include("../BottomNavmodule/bottomnavbar") %>
-
+    <%- include("../BottomNavmodule/bottomnavbar") %>
   </body>
 </html>

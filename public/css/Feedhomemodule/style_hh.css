@@ -4,9 +4,9 @@
   margin: auto;
 }
 
-#search{
-    padding-top: 2%;
-    padding-left: 30%;
+#search {
+  padding-top: 2%;
+  padding-left: 30%;
 }
 
 .clashtypediv {
@@ -22,15 +22,20 @@
 }
 
 .clashtype {
-    font-size: smaller;
-    border-radius: 0.25rem !important;
+  font-size: smaller;
+  border-radius: 0.25rem !important;
 }
 
 #public {
-    background: linear-gradient(81.23deg, #7C49F6 9.3%, #FF53B7 51.61%, #FFD458 97.6%);
-    color: white;
-    border: none;
-    outline: none;;
+  background: linear-gradient(
+    81.23deg,
+    #7c49f6 9.3%,
+    #ff53b7 51.61%,
+    #ffd458 97.6%
+  );
+  color: white;
+  border: none;
+  outline: none;
 }
 
 #friends {
@@ -105,46 +110,46 @@
 }
 
 .navbar {
-    overflow: hidden;
-    background-color:gray;
-    position: fixed; /* Set the navbar to fixed position */
-    bottom: 0; /* Position the navbar at the top of the page */
-    width: 100%; /* Full width */
-    /* height: 40px; */
-    /* margin-top: 40px; */
-  }
-  
-  /* Links inside the navbar */
-  .navbar a {
-    float: left;
-    display: block;
-    color: black;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-  }
-  
-  /* Change background on mouse-over */
-  .navbar a:hover {
-    background: #ddd;
-    color: black;
-  }
+  overflow: hidden;
+  background-color: gray;
+  position: fixed; /* Set the navbar to fixed position */
+  bottom: 0; /* Position the navbar at the top of the page */
+  width: 100%; /* Full width */
+  /* height: 40px; */
+  /* margin-top: 40px; */
+}
 
-  .header img {
-    float: left !important;
-    width: 50px!important;
-    height: 50px;
-    background: #555;
-  }
-  
-  .header h2 {
-    position: relative;
-    top: 18px;
-    left: 10px;
-  }
+/* Links inside the navbar */
+.navbar a {
+  float: left;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
 
-.jcc{
-  text-align:center;
+/* Change background on mouse-over */
+.navbar a:hover {
+  background: #ddd;
+  color: black;
+}
+
+.header img {
+  float: left !important;
+  width: 50px !important;
+  height: 50px;
+  background: #555;
+}
+
+.header h2 {
+  position: relative;
+  top: 18px;
+  left: 10px;
+}
+
+.jcc {
+  text-align: center;
   margin: auto;
 }
 
@@ -157,8 +162,10 @@
 }
 
 #profilevideo {
-    text-align: center !important;
-    margin: auto !important;
+  text-align: center !important;
+  position: relative;
+  /* height: 70vh; */
+  width: 100%;
 }
 
 #timeleft {
@@ -166,25 +173,20 @@
   margin-top: 0.9rem;
 }
 
-
-  
-
-  #bor{
-
-    box-shadow: gray;
-  }
-
-
-.pl{
-  padding-left: 12px!important;
-  padding-right: 12px!important;
+#bor {
+  box-shadow: gray;
 }
 
-.w{
+.pl {
+  padding-left: 12px !important;
+  padding-right: 12px !important;
+}
+
+.w {
   max-width: 100px;
   /* text-align:center; */
   /* display: inline; */
-  vertical-align:middle;
+  vertical-align: middle;
 }
 /* 
 .viddiv {
@@ -193,41 +195,46 @@
   margin: auto !important;
 } */
 
-.vid{
+.vid {
   text-align: center;
-  width: 80%;
-  height: 41vh;
-  min-height: 100%;
-  margin: auto 2rem !important;
+  width: 90%;
 }
 
-#bc{
-  background-image: linear-gradient(to right,rgba(66, 134, 214, 0.9),rgba(89, 191, 248, 0.3));
-  border:1px solid rgba(89, 191, 248, 0.3);
+#bc {
+  background-image: linear-gradient(
+    to right,
+    rgba(66, 134, 214, 0.9),
+    rgba(89, 191, 248, 0.3)
+  );
+  border: 1px solid rgba(89, 191, 248, 0.3);
   border-radius: 10px;
-  margin-left:20px;
+  margin-left: 20px;
 }
 
-#cb{
+#cb {
   /* background-color:blue; */
-  background-image: linear-gradient(to right,rgba(228, 77, 77, 0.9),rgba(255, 137, 137, 0.3));
-  border:1px solid rgba(255, 137, 137, 0.3);
+  background-image: linear-gradient(
+    to right,
+    rgba(228, 77, 77, 0.9),
+    rgba(255, 137, 137, 0.3)
+  );
+  border: 1px solid rgba(255, 137, 137, 0.3);
   border-radius: 10px;
-  margin-left:20px;
+  margin-left: 20px;
 }
 
-#br{
+#br {
   max-width: 30px;
   max-height: 30px;
   /* align-self: right; */
   display: inline;
 }
 
-.fontsize{
+.fontsize {
   font-size: 10px;
 }
 
-#car1{
-  margin-left:10px;
+#car1 {
+  margin-left: 10px;
   /* padding-right: 0px !important; */
 }

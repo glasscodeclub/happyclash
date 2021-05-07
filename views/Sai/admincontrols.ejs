@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>Settings</title>
+
+    <script
+      src="https://kit.fontawesome.com/2635296004.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="/css/BottomNavmodule/bottomnavbar.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Custom css -->
+    <link rel="stylesheet" href="/css/Sai/admincontrols.css" />
+
+    <!-- Custom js -->
+    <script src="/js/Sai/admincontrols.js"></script>
+  </head>
+
+  <body>
+    <div class="head">
+      <div id="backdiv">
+        <i
+          onclick="window.location.href='/'"
+          id="back"
+          class="fas fa-arrow-left"
+        ></i>
+      </div>
+
+      <div id="headdiv">
+        <h1 id="heading">Administrator Settings</h1>
+      </div>
+    </div>
+
+    <div class="container" style="margin-bottom: 4em">
+      <hr />
+      <div class="div1">
+        <p id="play">Ongoing Clashes</p>
+      </div>
+      <div class="row">
+        <div class="col-3 challenge1">
+          <p class="p1 btn btn-success" onclick="challenge(this,1)">
+            Song Challenge
+          </p>
+        </div>
+        <div class="col-8">
+          <p class="p3">Created on: 5 March 2021</p>
+          <p class="p3">Participants: 102</p>
+          <p class="p3">Clash till: 20 April 2021</p>
+        </div>
+      </div>
+      <div id="song-details-1"></div>
+      <div id="suggest-popup-1"></div>
+      <br />
+      <div class="row">
+        <div class="col-3 challenge1">
+          <p class="p1 btn btn-success" onclick="challenge(this,2)">
+            Old School Song Challenge
+          </p>
+        </div>
+        <div class="col-8">
+          <p class="p3">Created on: 11 March 2021</p>
+          <p class="p3">Participants: 39</p>
+          <p class="p3">Clash till: 25 April 2021</p>
+        </div>
+      </div>
+      <div id="song-details-2"></div>
+      <div id="suggest-popup-2"></div>
+      <hr />
+      <div class="div1">
+        <p id="play">Previous Clashes</p>
+      </div>
+      <div class="row">
+        <div class="col-3 challenge1">
+          <p class="p1 btn btn-success" onclick="challenge(this,3)">
+            Dance Challenge
+          </p>
+        </div>
+        <div class="col-8">
+          <p class="p3">Created on: 5 March 2021</p>
+          <p class="p3">Participants: 102</p>
+          <p class="p3">Clash till: 20 April 2021</p>
+        </div>
+      </div>
+      <div id="song-details-3"></div>
+      <div id="suggest-popup-3"></div>
+      <br />
+      <div class="row">
+        <div class="col-3 challenge1">
+          <p class="p1 btn btn-success" onclick="challenge(this,4)">
+            Painting Challenge
+          </p>
+        </div>
+        <div class="col-8">
+          <p class="p3">Created on: 11 March 2021</p>
+          <p class="p3">Participants: 39</p>
+          <p class="p3">Clash till: 25 April 2021</p>
+        </div>
+      </div>
+      <div id="song-details-4"></div>
+      <div id="suggest-popup-4"></div>
+      <br />
+    </div>
+
+    <%- include("../BottomNavmodule/bottomnavbar") %>
+  </body>
+</html>

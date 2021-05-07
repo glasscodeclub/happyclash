@@ -1,0 +1,162 @@
+@font-face {
+    font-family: America;
+    src: url('/font-family/America.ttf');
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+.head {
+    position:sticky;
+    top:0px;
+    background-color:white;
+    text-align: center !important;
+    margin: auto;
+    bottom: 0.75rem;
+    left: 0;
+    right: 0;
+    /* top: 0.75rem; */
+}
+
+#backdiv {
+    margin-top: 1.5em;
+    margin-left: 0.5rem;
+    padding: 0.2rem 0.4rem;
+    background-color: white;
+    border-radius: 0.5rem;
+    float: left;
+}
+
+#back {
+    font-size: 1.5rem !important;
+}
+
+#backdiv::after {
+    clear: both;
+}
+
+#input{
+    border-radius: 40px;
+    box-shadow: 0px 1px 7.000000476837158px 0px #00000026;
+}
+
+#input span{
+    background-color: white;
+    border: none;
+    border-radius: 40px;
+}
+
+#input span img{
+    width: 40px;
+}
+
+#input input{
+    border: none;
+    border-radius: 40px;
+}
+
+.col{
+    text-align: center;
+}
+
+.play {
+    margin: 0.5rem;
+    font-size: 1.6rem !important;
+    font-family: Roboto, sans-serif;
+}
+
+.play span i{
+    font-size: .8em;
+}
+
+.recent{
+    border: 1px solid #000000;
+    border-radius: 100px;
+    width: fit-content;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: 5px;
+}
+
+.recent span{
+    padding-right: .5em;
+}
+
+.new{
+    background: #96E069;
+    border-radius: 1.89603px;
+    font-weight: bold;
+    margin: 10px;
+    padding: 5px;
+}
+
+.new:hover, .recent span:nth-of-type(1):hover{
+    cursor: pointer;
+}
+
+@media only screen and (min-width:280px) and (max-width:281px) {
+    .play{
+        font-size: 1rem !important;
+    }
+    .recent span{
+        font-size: .855em;
+    }
+    .new span{
+        font-size: .8em;
+    }
+    #heading{
+        font-size: 1.7rem !important;
+    }
+    #back{
+        font-size: 1rem !important;
+    }
+}
+
+@media (min-width: 320px) and (max-width: 415px){
+    .play{
+        font-size: 1.3em !important;
+    }
+    .new span{
+        font-size: 1em;
+    }
+    .recent span{
+        font-size: .755em;
+    }
+    #heading{
+        font-size: 1.7em !important;
+    }
+    #back{
+        font-size: 1.1rem !important;
+    }
+}
+
+@media (min-width: 360px) and (max-width: 413px){
+    .recent{
+        width: auto;
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+@media only screen and (min-width:540px) and (max-width:768px) {
+    .play{
+        font-size: 1.3rem !important;
+    }
+    .new span{
+        font-size: 1em;
+    }
+    .recent span{
+        font-size: .8em;
+    }
+    #heading{
+        font-size: 2rem !important;
+    }
+    #back{
+        font-size: 1.5rem !important;
+    }
+}
+
+@media (min-width: 540px) and (max-width: 541px){
+    .new span{
+        font-size: .7em;
+    }
+}
