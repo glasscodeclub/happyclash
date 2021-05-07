@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Search</title>
+
+    <script src="https://kit.fontawesome.com/2635296004.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/BottomNavmodule/bottomnavbar.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+        crossorigin="anonymous"></script>
+
+    <!-- Custom css -->
+    <link rel="stylesheet" href="/css/Sai/search.css">
+
+    <!-- Custom js -->
+    <script src="/js/Sai/search.js"></script>
+</head>
+
+<body>
+    <div class="head">
+        <div id="backdiv">
+            <i onclick="window.location.href='/'" id="back" class="fas fa-arrow-left"></i>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <div class="input-group my-3" id="input" align='center'>
+                    <span class="input-group-text" id="basic-addon1">
+                        <img src="/img/logo.png" alt="logo">
+                    </span>
+                    <input type="text" class="form-control" onchange="input(this)" placeholder="Search"
+                        aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" style="margin-bottom: 5em;">
+        <div class="play">
+            Recent searches:
+        </div>
+        <div class="row" style="margin-left: .5rem;">
+            <div class="col">
+                <div class="recent">
+                    <span onclick="remove(this)"> <i class="fas fa-times"></i> </span>
+                    <span> Songs </span>
+                </div>
+            </div>
+            <div class="col">
+                <div class="recent">
+                    <span onclick="remove(this)"> <i class="fas fa-times"></i> </span>
+                    <span> Act </span>
+                </div>
+            </div>
+            <div class="col">
+                <div class="recent">
+                    <span onclick="remove(this)"> <i class="fas fa-times"></i> </span>
+                    <span> Singing </span>
+                </div>
+            </div>
+        </div>
+        <div class="play d-flex justify-content-between mt-4">
+            <span> New Clashes this week: </span>
+            <span> <i class="fas fa-filter"></i> </span>
+        </div>
+        <div class="row">
+            <div class="col new" onclick="newClash(this)">
+                <span> Magic </span>
+            </div>
+            <div class="col new" onclick="newClash(this)" style="background: #91CCFB;">
+                <span> Mimicry </span>
+            </div>
+            <div class="col new" onclick="newClash(this)" style="background: #9CCEE8;">
+                <span> Guitar </span>
+            </div>
+            <div class="col new" onclick="newClash(this)" style="background: #CBAEFF;">
+                <span> Painting </span>
+            </div>
+            <div class="col new" onclick="newClash(this)" style="background: #FF8080E5;">
+                <span> Football Tricks </span>
+            </div>
+        </div>
+    </div>
+
+    <%- include("../BottomNavmodule/bottomnavbar") %>
+</body>
+
+</html>
