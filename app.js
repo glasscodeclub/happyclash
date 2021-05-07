@@ -105,6 +105,11 @@ app.get('/comments',(req,res)=> {
 app.get('/reportClash', (req, res)=>{
     res.render("Kushagra/reportClash",{url:req.url});
 })
+app.get('/createNewClash', (req, res)=>{
+    res.render("Kushagra/newClash",{url:req.url});
+})
+
+
 
 app.use('/auth',Authroutes);
 app.use('/dashboard',Dashboardroutes);
