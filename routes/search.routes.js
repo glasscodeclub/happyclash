@@ -5,4 +5,8 @@ router.get("/", (req, res) => {
     res.render("./Sai/search", { url: req.url })
 })
 
+router.get("/keyword", (req, res) => {
+    res.render("./Sai/searchkeyword", { url: req.url })
+})
+
 module.exports = router;
