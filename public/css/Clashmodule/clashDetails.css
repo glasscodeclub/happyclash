@@ -237,7 +237,7 @@
 
 .popup{
     width:500px;
-    height: 350px;
+    height: 400px;
     max-width:80%;
     position:fixed;
     top:50%;
@@ -283,16 +283,18 @@
     background: linear-gradient(81.23deg, #7C49F6 9.3%, #FF53B7 51.61%, #FFD458 97.6%);
     position: relative;
     left: 185px;
+    padding-bottom: 25px;
     margin: 20px 15px -10px;
     text-align: center;
     border-radius:5px;
-    height:30px;
-    width:60px;
+    height:25px;
+    width:50px;
 
 }
 
 .send-button button{
     border: none;
+    font-size: 0.8rem;
     color: #fff;
     font-weight: bold;
     text-transform: capitalize;
@@ -325,7 +327,74 @@
     font-size: 1rem;
     font-weight: 400;
 }
+
+.suggested-profile{
+    margin-top: 10px;
+    width:55px;
+    height:55px;
+}
+
+.user-name{
+    font-size: 0.6rem ;
+    width: 55px;
+    text-align:center;
+    margin-top:9px;
+    font-weight:400;
+    font-family: "Roboto", sans-serif;
+}
+
+.see-all-button{
+    outline: none;
+    background: none;
+    border: none;
+}
+
   
+/* POPUP SECTION END */
+
+/* POPUP SECTION FOR SELECT ALL */
+.select-followers{
+    display:flex;
+    font-family: "Roboto", sans-serif;
+    margin: 18px 9px;
+}
+
+.follower-title{
+    font-weight: 400;
+}
+
+.select-all{
+    background:none;
+    border: none;
+    outline:none;
+    font-size: 0.7rem;
+    box-shadow: 0px 0px 15px rgba(0,0,0,0.2);
+    margin-left: 9px;
+    font-weight: 400;
+}
+
+.user-info{
+    margin-top: 18px;
+    font-size:0.9rem;
+}
+
+.user-info .user-email{
+    margin-top:-15px;
+    font-size:0.8rem;
+    color:#6A6A6A;
+}
+
+.selected{
+    display:flex;
+    opacity: 0;
+    justify-content:center;
+    align-items:center;
+}
+
+.selected.select{
+    opacity:1;
+}
+
 /* POPUP SECTION END */
 
 .last div{

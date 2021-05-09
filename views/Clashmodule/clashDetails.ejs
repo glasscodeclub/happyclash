@@ -42,11 +42,11 @@
 
         <div class="container" style="margin-bottom: 5em !important;">
 
-            <div class="details">
+            <!-- <div class="details">
                 <a href="#" class="btn btn-light br1" tabindex="-1" role="button" aria-disabled="true" onclick="suggestClash()">
                     <p id="p1">Suggest Clash</p>
                 </a>
-            </div>
+            </div> -->
             
             <div class="container" style="margin-top: 1rem;">
                 <div class="row">
@@ -225,10 +225,37 @@
         <div class="popup-body">
             <div class="suggested">
                 Suggested
+                <div class="row profiles">
+                    <% for(var i=0; i<5; i++){ %>
+                        <%- include("userimg") %>
+                    <% } %> 
+                    <div class="suggested-friends col">
+                        <button class="see-all-button" data-target="#see-all" >
+                            <img src="/img/see-all-user.png" alt="profile" class="suggested-profile">
+                            <p class="user-name">See All ></p>
+                        </button>
+                         
+                    </div>                    
+                </div>
             </div>
         </div>
       </div>
 
+      <div class="popup" id="see-all">
+        <div class="popup-header">
+            <button data-close-button-follow class="close-button">&times;</button>
+            <div class="select-followers">
+                <div class="follower-title">Your Followers</div>
+                <button class="select-all" onclick="selectAll()">Select All</button>
+            </div>
+        </div>
+        <div class="popup-body">
+            <% for(var i = 0; i<4; i++){ %>
+                <%- include("followers") %>
+           <% } %>
+            
+        </div>
+      </div>
 
       <!-- OVERLAY -->
       <div id="overlay"></div>
