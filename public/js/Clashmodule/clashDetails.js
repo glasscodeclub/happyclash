@@ -51,30 +51,37 @@ function closeModalFollow(modal){
 }
 
 
-// For Selecting the followers button
-
-// const followers = document.querySelectorAll("[data-select]")
-
-// followers.forEach(follower => {
-//     follower.addEventListener("click", ()=> {
-//         console.log(follower.dataset.select)
-//         const check = document.querySelector(follower.dataset.select)
-//         select(check)
-//     })
-// })
-
-// function select(check){
-//     check.classList.toggle('select')
-// }
-
 function select(e){
     const checkbox = e.querySelector(".selected")
     checkbox.classList.toggle('select')
 }
 
 function selectAll(){
+    const e = document.getElementById("select-all")
+    const profiles = document.querySelectorAll('[data-friends]')
+
+    profiles.forEach(profile => {
+        const image = profile.getElementsByClassName("selected-profile")
+        const name = profile.getElementsByClassName("user-name")
+        toggleclass(image[0],name[0])
+    })
+   
+    e.classList.toggle('select-all')
+    e.classList.toggle('all-selected')
+    if(e.classList.contains('all-selected'))
+    {
+        e.innerHTML = "All Selected";
+    }
+    else if(e.classList.contains('select-all')){
+        e.innerHTML = "Select All";
+    }
     const select = document.querySelectorAll(".selected")
     select.forEach( select => {
         select.classList.toggle('select')
     } )
+}
+
+function toggleclass(image, name){
+    image.classList.toggle('active')
+    name.classList.toggle('active')
 }
