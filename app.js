@@ -108,6 +108,9 @@ app.get('/reportClash', (req, res)=>{
 app.get('/createNewClash', (req, res)=>{
     res.render("Kushagra/newClash",{url:req.url});
 })
+app.get('/addParticipants', (req, res)=>{
+    res.render("Kushagra/addParticipants",{url:req.url});
+})
 
 
 
