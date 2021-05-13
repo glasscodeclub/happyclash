@@ -15,6 +15,8 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
             crossorigin="anonymous"></script>
+
+        
     </head>
     <body>
 
@@ -27,8 +29,53 @@
                 <p id="heading">Add Participants</p>
             </div>
         </div>
+
+        <div class="top">
+            <div class="choose-friends">
+                <p>Choose Friends to add:</p>
+    
+                <input type="search" class="search-box" placeholder="Username/Email/Phone" >
+
+                <button class="send-button"> Send </button>
+            </div>
+        </div>
+        <hr>
+
+        <div class="followers">
+            <div class="select-followers">
+                <div class="follower-title">Your Followers</div>
+                <div class="see-all" data-target = "#see-all">See all ></div>
+            </div>
+            <div class="body">
+                <% for(var i = 0; i<4; i++){ %>
+                    <%- include("../partials/followers") %>
+                <% } %>
+            </div>
+        </div>
+
+        <div class="continue-btn">
+            <button>Continue</button>
+        </div>
+
+        <!-- POPUPS -->
+        <div class="popup" id="see-all">
+            <div class="popup-header">
+                <button data-close-button class="close-button">&times;</button>
+                <div class="select-followers">
+                    <div class="follower-title">Your Followers</div>
+                    <button  id="select-all" class="select-all" onclick="selectAll()">Select All</button>
+                </div>
+            </div>
+            <div class="popup-body">
+                <% for(var i = 0; i<4; i++){ %>
+                    <%- include("../partials/followers") %>
+               <% } %>
+                
+            </div>
+          </div>
+        <div id="overlay"> </div>
         <%- include("../BottomNavmodule/bottomnavbar") %>
     </body>
-
+    <script src="./js/Kushagra/addParticipants.js"></script>    
 
 </html>        
