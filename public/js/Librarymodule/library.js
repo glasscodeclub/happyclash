@@ -16,3 +16,59 @@ window.addEventListener("load", () => {
     videoplay.style.display = "none";
   }
 });
+
+
+
+// POPUP FOR UPLOADING FUNCTIONALITY
+
+const openPopup = document.querySelectorAll("[data-target]")
+const closePopup = document.querySelectorAll("[data-close-button]")
+const overlay = document.getElementById("overlay")
+
+openPopup.forEach(popup =>{
+  popup.addEventListener('click', () => {
+    const pop = document.querySelector(popup.dataset.target)
+    openPop(pop)
+  })
+})
+
+closePopup.forEach(popup =>{
+  popup.addEventListener('click', () => {
+    const pop = popup.closest(".popup-uploading")
+    closePop(pop)
+  })
+})
+
+overlay.addEventListener('click', () => {
+  const pop = document.querySelector(".popup-uploading.active")
+  closePop(pop)
+})
+
+function openPop(pop){
+  if(pop == null) return;
+  pop.classList.add("active")
+  overlay.classList.add("active")
+}
+
+function closePop(pop){
+  if(pop == null) return;
+  pop.classList.remove("active")
+  overlay.classList.remove("active")
+}
+
+
+
+// POPUP FOR CONTROL OPTIONS FUNCTIONANLITY
+
+closePopup.forEach(popup =>{
+  popup.addEventListener('click', () => {
+    const pop = popup.closest(".popup-play")
+    console.log(pop)
+    closePop(pop)
+  })
+})
+
+overlay.addEventListener('click', () => {
+  const pop = document.querySelector(".popup-play.active")
+  closePop(pop)
+})
