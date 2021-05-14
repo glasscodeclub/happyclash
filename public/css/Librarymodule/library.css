@@ -151,6 +151,132 @@ body {
   z-index: 1;
 }
 
+/* START POPUP FOR UPLOADING */
+
+#overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  opacity: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 5;
+  pointer-events:none;
+}
+
+#overlay.active{
+  opacity:1;
+  transition: 200ms ease-in-out;
+  pointer-events: all;
+}
+
+.popup-uploading {
+  position: fixed;
+  bottom: 57px;
+  z-index:10;
+  background-color:#fff;
+  width: 100%;
+  font-family: "Roboto", sans-serif;
+  transform: scale(0);
+}
+
+.popup-uploading.active{
+  position: fixed;
+  bottom: 57px;
+  z-index:10;
+  background-color:#fff;
+  width: 100%;
+  font-family: "Roboto", sans-serif;
+  transform: scale(1);
+  transition: 200ms ease-in-out;
+}
+
+.popup-header{
+  padding:3% 5% 5%;
+  font-size:1.5rem;
+  display:flex;
+  justify-content: space-between;
+}
+
+.close-button {
+  font-size:1.7rem;
+  font-weight:bold;
+}
+
+.popup-body{
+  padding:5%;
+  font-size: 2rem;
+}
+
+.options{
+  margin: 0% 20% 10%;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* END POPUP FOR UPLOADING */
+
+/* START POPUP FOR PLAY OPTIONS */
+
+.popup-play{
+  position:absolute;
+  top: 50%;
+  left: 50%;
+  transform:translate(-50%, -50%) scale(0);
+  z-index: 10;
+  background-color: #fff;
+  width: 240px;
+  font-weight: normal;
+  font-style: normal;
+  border-radius: 6px;
+}
+.popup-play.active{
+  position:absolute;
+  top: 50%;
+  left: 50%;
+  transform:translate(-50%, -50%) scale(1);
+  transition: 200ms ease-in-out;
+}
+
+.play-header{
+  display: flex;
+  justify-content:space-between;
+  font-size: 1.5rem;    
+  padding: 3% 5% 0%;
+  font-weight: 400;
+}
+
+.title{
+  font-family: "Roboto", sans-serif;
+}
+
+.close-button-play{
+  font-size:1.7rem;
+  font-weight: bold;
+  margin-top: -5px;
+}
+
+.play-body{
+  padding: 0% 5% 2%;
+}
+
+.control{
+  margin: 10px 0px;
+  font-size: 1.2rem ;
+}
+
+.control i {
+  margin-right: 15px ;
+}
+
+.control span{
+  /* font-family: Roboto, sans-serif; */
+  font-weight: 400;
+}
+
+/* END POPUP FOR PLAY OPTIONS */
+
 @media only screen and (min-width: 750px) {
   .videodots {
     margin-top: 6% !important;
