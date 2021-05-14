@@ -109,7 +109,10 @@ app.get('/createNewClash', (req, res)=>{
     res.render("Kushagra/newClash",{url:req.url});
 })
 
-
+// Sai Ganesh
+app.get("/songs", (req, res) => {
+    res.render("Sai/songs", {url: req.url})
+})
 
 app.use('/auth',Authroutes);
 app.use('/dashboard',Dashboardroutes);
