@@ -112,7 +112,10 @@ app.get('/addParticipants', (req, res)=>{
     res.render("Kushagra/addParticipants",{url:req.url});
 })
 
-
+// Sai Ganesh
+app.get("/songs", (req, res) => {
+    res.render("Sai/songs", {url: req.url})
+})
 
 app.use('/auth',Authroutes);
 app.use('/dashboard',Dashboardroutes);
