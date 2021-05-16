@@ -50,10 +50,23 @@ function closeModalFollow(modal){
     modal.classList.remove('active')
 }
 
+// FOR SELECTING ALL AND INDIVIDUALS
 
 function select(e){
-    const checkbox = e.querySelector(".selected")
-    checkbox.classList.toggle('select')
+    if(e.classList.contains("suggested-friends"))
+    {
+        const img = e.querySelector(".selected-profile")
+        const name = e.querySelector(".user-name")
+        img.classList.toggle("active")
+        name.classList.toggle("active")
+    }
+    else if(e.dataset.select == ".selected")
+    {
+        const checkbox = e.querySelector(".selected")
+    
+        checkbox.classList.toggle('select')
+    }
+    
 }
 
 function selectAll(){
