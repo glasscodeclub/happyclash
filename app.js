@@ -8,15 +8,14 @@ var express                 = require("express"),
     LocalStrategy           = require("passport-local"),
     passportLocalMongoose   = require("passport-local-mongoose"),
     Authroutes              = require("./routes/auth.routes"),
-    Homeroutes              = require("./routes/home.routes"), 
-    Dashboardroutes         = require("./routes/dashboard.routes"),
     Videoroutes             = require("./routes/video.routes"), 
     Uploadroutes            = require("./routes/upload.routes"),
     Careerroutes            = require("./routes/career.routes"),
-    Notoficationroutes      = require("./routes/notification.routes"),
-    Adminroutes             = require("./routes/admin.routes"),
-    Resultroutes            = require("./routes/result.routes"),
-    Searchroutes            = require("./routes/search.routes")
+    Searchroutes            = require("./routes/search.routes"),
+    Libraryroutes           =require("./routes/library.routes"),
+    Homeroutes              =require("./routes/home.routes"),
+    ClashDetailsroutes      =require("./routes/ClashDetails.routes"),
+    createclashroute        =require("./routes/createclash.routes")
     
 var app = express();
 const port = 3000;
@@ -58,75 +57,25 @@ passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
 app.get('/',(req,res)=>{
-    res.render('Homemodule/start');
+    res.render('Authmodule/start');
 })
 
 app.get('/links',(req,res)=>{
-    res.redirect('/home');
+    res.render('Authmodule/links');
 })
 
-app.get('/videomode',(req,res)=> {
-    res.render("Videomodule/videomode",{page:"Video Mode"});
-})
 
-// app.get('/drive',(req,res)=> {
-//     res.render("Drivemodule/drive",{page:"HappyClash Drive"})
-// })
 
-app.get('/homefeed',(req,res)=> {
-    res.render("Feedmodule/feedhome",{page:"HappyClash homefeed",url:req.url})
-})
+app.use('/auth',Authroutes);//
+app.use("/library",Libraryroutes);//
+app.use("/home",Homeroutes);//
+app.use("/Clashdetails",ClashDetailsroutes)//
+app.use('/career', Careerroutes);//
+app.use("/createclash",createclashroute)//
+app.use("/search", Searchroutes)//
 
-app.get('/library',(req,res)=> {
-    res.render("Librarymodule/library",{url:req.url});
-})
-
-app.get('/profile',(req,res)=> {
-    res.render("Profilemodule/profile",{url:req.url});
-})
-
-app.get('/challenge',(req,res)=> {
-    res.render("Feedmodule/challenge",{url:req.url});
-})
-
-app.get('/clashDetails',(req,res)=> {
-    res.render("Clashmodule/clashDetails",{url:req.url});
-})
-
-app.get('/participants',(req,res)=> {
-    res.render("Clashmodule/participants",{url:req.url});
-})
-app.get('/comments',(req,res)=> {
-    res.render("Clashmodule/clashComments",{url:req.url});
-})
-
-//Kushagra
-
-app.get('/reportClash', (req, res)=>{
-    res.render("Kushagra/reportClash",{url:req.url});
-})
-app.get('/createNewClash', (req, res)=>{
-    res.render("Kushagra/newClash",{url:req.url});
-})
-app.get('/addParticipants', (req, res)=>{
-    res.render("Kushagra/addParticipants",{url:req.url});
-})
-
-// Sai Ganesh
-app.get("/songs", (req, res) => {
-    res.render("Sai/songs", {url: req.url})
-})
-
-app.use('/auth',Authroutes);
-app.use('/dashboard',Dashboardroutes);
-app.use('/home',Homeroutes);
 app.use('/upload',Uploadroutes);
 app.use('/video',Videoroutes);
-app.use('/career', Careerroutes);
-app.use("/notification", Notoficationroutes);
-app.use("/admin", Adminroutes);
-app.use("/results", Resultroutes)
-app.use("/search", Searchroutes)
 
 app.listen(port, function(){
     console.log("connected on : ",port," mongo url : ",url);

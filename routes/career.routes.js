@@ -12,5 +12,16 @@ router.get("/", function (req, res) {
 router.get("/edit", function(req, res){
     res.render("./careermodule/editProfile", {url: req.url});
 })
-
+router.get('/profile',(req,res)=> {
+    res.render("./Careermodule/profile",{url:req.url});
+})
+router.get('/notification',(req,res)=> {
+    res.render("./Careermodule/notification",{url:req.url});
+})
+router.get("/admincontrols", (req, res) => {
+    res.render("./Careermodule/admincontrols", { url: req.url })
+})
+router.get("/results", (req, res) => {
+    res.render("./Careermodule/results", { url: req.url })
+})
 module.exports = router;
