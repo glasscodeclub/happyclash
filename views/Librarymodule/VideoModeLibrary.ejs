@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script
+      src="https://kit.fontawesome.com/2635296004.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="/js/Homemodule/Videomode.js"></script>
+
+    <link rel="stylesheet" href="/css/Homemodule/videomode.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Video Mode Library</title>
+    <base href="/" />
+  </head>
+
+  <body>
+    <div class="container">
+      <!-- <div class="previousdiv">
+        <img
+          src="/img/previousvideo.svg"
+          alt=""
+          class="previousvideo allicons"
+          onclick="toPrevVideo()"
+        />
+      </div> -->
+      <div class="row">
+        <div class="col-2 backdiv">
+          <i
+            onclick="window.location.href='/library'"
+            class="fas fa-arrow-left back allicons"
+          ></i>
+        </div>
+
+        <div class="threedots" data-target="#play-options">
+            <img src="/img/threedots.svg">
+        </div>
+
+      <div class="videoelements">
+        <video class="myvideo" onclick="pauseAndplayVideo()">
+          <source src="/video/sample" type="video/mp4" />
+        </video>
+
+        <div id="playicon" class="col-12">
+          <img
+            src="/img/Play.svg"
+            width="24"
+            height="24"
+            id="videoplay"
+            onclick="playVideo()"
+            data-image
+          />
+        </div>
+
+      <div class="embedicons">
+        <div class="progress">
+          <div class="progress-bar bg-white"></div>
+        </div>
+        <div class="videoicons">
+          <img
+            src="/img/Pause.svg"
+            alt=""
+            width="22"
+            height="22"
+            class="pause allicons"
+            onclick="pauseVideo()"
+          />
+          <img
+            src="/img/Play.svg"
+            alt=""
+            width="22"
+            height="22"
+            class="play allicons"
+            onclick="playVideo()"
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- POPUP FOR VIDEO OPTIONS -->
+
+    <div class="popup-play" id="play-options">
+        <div class="play-header">
+            <div class="title">What to do: </div>
+            <div class="close-button-play" data-close-button>&times;</div>
+        </div>
+        <div class="play-body">
+            <!-- <div class="control"> 
+                <i class="fas fa-play"></i><span>Play</span>
+            </div> -->
+            <div class="control"> 
+                <i class="far fa-trash-alt"></i><span>Delete</span>
+            </div>
+            <div class="control"> 
+                <i class="fas fa-download"></i><span>Save to Gallery</span>
+            </div> 
+        </div>
+    </div>
+
+    <!-- POPUP END -->
+
+    <!-- OVERLAY -->
+    <div id="overlay"></div>
+    <!-- OVERLAY END -->
+  </body>
+
+</html>
