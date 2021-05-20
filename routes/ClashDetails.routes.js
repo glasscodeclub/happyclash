@@ -10,6 +10,10 @@ router.get("/notadmin", (req, res) => {
     res.render("ClashDetailsmodule/clashDetailsNotAdmin", {url:req.url})
 })
 
+router.get("/wheninvited", (req, res) => {
+    res.render("ClashDetailsmodule/clashDetailsWhenInvited", {url: req.url})
+})
+
 router.get('/participants',(req,res)=> {
     res.render("ClashDetailsmodule/participants",{url:req.url});
 })
