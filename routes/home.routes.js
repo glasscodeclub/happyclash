@@ -19,4 +19,8 @@ router.get('/challenge',(req,res)=> {
 router.get("/songs", (req, res) => {
     res.render("homemodule/songs", {url: req.url})
 })
+
+router.get("/videomodeprivate", (req, res) => {
+    res.render("homemodule/videomodeprivate", {url: req.url})
+})
 module.exports = router;
