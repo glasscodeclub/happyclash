@@ -18,6 +18,10 @@ router.get("/public", (req, res) => {
     res.render("ClashDetailsmodule/clashDetailsPublic", { url: req.url })
 })
 
+router.get("/profile", (req, res) => {
+    res.render("ClashDetailsmodule/profile", { url: req.url })
+})
+
 router.get('/participants', (req, res) => {
     res.render("ClashDetailsmodule/participants", { url: req.url });
 })
