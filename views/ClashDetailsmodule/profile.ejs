@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Profile page</title>
+
+    <script src="https://kit.fontawesome.com/2635296004.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/BottomNavmodule/bottomnavbar.css">
+    <!-- <link rel="stylesheet" href="/css/Profilemodule/profile.css">  -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/ClashDetailsmodule/profile.css">
+</head>
+
+<body>
+    <div class="container" style="margin-bottom: 5em !important;">
+        <div id="backdiv">
+            <i onclick="window.location.href='/links'" class="fas fa-arrow-left"></i>
+        </div>
+        <center>
+            <img src="/img/profile3.png" alt="profile">
+            <h2>Wade Warren</h2>
+            <p>wadewarren28</p>
+            <p>California, USA</p>
+            <button onclick="follow()">Follow</button>
+        </center>
+        <br>
+        <div class="container" style="margin-bottom: 10px; margin-top:5px;">
+            <div class="row">
+                <div class="col" style="padding:0px !important;">
+                    <h6 class="rp2">345</h6>
+                    <p class="rp1">Followers</p>
+                </div>
+                <div class="col" style="padding:0px !important;">
+                    <h6 class="rp2">134</h6>
+                    <p class="rp1">Following</p>
+                </div>
+                <div class="col" style="padding:0px !important;">
+                    <h6 class="rp2">78</h6>
+                    <p class="rp1">Videos</p>
+                </div>
+                <div class="col" style="padding:0px !important;">
+                    <h6 class="rp2">53</h6>
+                    <p class="rp1">Clash Won</p>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="container">
+            <div class="row comment-header">
+                <div class="col d-flex justify-content-center align-items-center">
+                    <p style="margin-bottom: 0;">Posts</p>
+                </div>
+                <div class="col d-flex justify-content-center align-items-center">
+                    <a href="#" onclick="seeAllPosts(this)">See All&nbsp;&nbsp;<i class="fas fa-angle-right"></i> </a>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="container">
+            <div class="row">
+                <div class="col d-flex justify-content-center mb-3">
+                    <video width="400px">
+                        <source src="/Video/sample" type="video/mp4">
+                    </video>
+                    <div class="overlay d-flex justify-content-between flex-column">
+                        <div class="d-flex justify-content-between">
+                            <p>Rank 3/40</p>
+                            <p>1:20</p>
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <img src="/img/Play.svg" alt="play" onclick="playVideo(this)">
+                        </div>
+                        <div>
+                            <p>2h ago</p>
+                            <h2 class="mb-0">Dance Challenge</h2>
+                            <p>Started by Wade Warren</p>
+                            <div class="d-flex justify-content-around mt-3">
+                                <p>72 Likes</p>
+                                <p>23 Comments</p>
+                                <p>40 Participants</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <%- include("../BottomNavmodule/bottomnavbar") %>
+    <script src="/js/ClashDetailsmodule/profile.js"></script>
+</body>
+
+</html>
