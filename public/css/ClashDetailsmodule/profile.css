@@ -1,0 +1,147 @@
+@font-face {
+    font-family: America;
+    src: url('/font-family/America.ttf');
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+#backdiv{
+    float: left;
+    margin-top: 1em;
+    font-size: 1.2em;
+}
+
+center img{
+    width: 130px;
+    height: 130px;
+    margin: 10px auto;
+}
+
+center p{
+    margin-bottom: 0;
+    color: #747474;
+}
+
+center p:nth-of-type(2){
+    margin-bottom: revert;
+}
+
+center button{
+    background: linear-gradient(81.23deg, #7C49F6 9.3%, #FF53B7 51.61%, #FFD458 97.6%);
+    box-shadow: 0px 1px 7px rgba(0, 0, 0, .15);
+    border-style: none;
+    border-radius: 3px;
+    color: #fff;
+    font-weight: bold;
+    padding: 5px;
+    width: 7em;
+}
+
+.rp1{
+    font-size: 1rem;
+    text-align: center;
+    font-family: Roboto;
+    color:#7A7A7A;
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+    margin-bottom: 0px !important;
+    margin-top: 0px !important;
+}
+
+.rp2{
+    font-size: 2rem !important;
+    text-align: center;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+    margin-bottom: 0px !important;
+    margin-top: 0px !important;
+    background: -webkit-linear-gradient(269.06deg, #FEDF67 -11.43%, #FF53B7 47.34%, #7C49F6 107.7%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.comment-header p{
+    font-size: 1.5em;
+}
+
+.comment-header a{
+    text-decoration: none;
+    color: #747474;
+}
+
+video{
+    border-radius: .8em;
+    border: 1.49px solid #E8E8E8;
+    box-shadow: -4.472218990325928px 4.472218990325928px 14.907395362854004px 0px #00000040;
+}
+
+.overlay{
+    padding: 15px;
+    width: 400px;
+    height: 500px;
+    position: absolute;
+    z-index: 1;
+    color: white;
+}
+
+.overlay p{
+    margin-bottom: 0;
+}
+
+.overlay h2{
+    font-weight: bold;
+    background: -webkit-linear-gradient(269.06deg, #FEDF67 -11.43%, #FF53B7 47.34%, #7C49F6 107.7%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.overlay div:nth-of-type(2) img{
+    width: 2.5em;
+    cursor: pointer;
+}
+
+@media (min-width: 280px) and (max-width: 321px){
+    center img{
+        width: 100px;
+        height: 100px;
+    }
+    center button{
+        font-size: .8em;
+    }
+    video{
+        width: 250px;
+    }
+    .rp1{
+        font-size: .9em;
+    }
+    .rp2{
+        font-size: 1.5em !important;
+    }
+    .overlay{
+        width: 250px;
+        height: 320px;
+        font-size: .75em;
+    }
+    .overlay div:nth-of-type(2) img{
+        width: 2em;
+    }
+}
+
+@media (min-width: 321px) and (max-width: 1024px){
+    video{
+        width: 300px;
+    }
+    .overlay{
+        width: 300px;
+        height: 370px;
+        font-size: .8em;
+    }
+    .overlay div:nth-of-type(2) img{
+        width: 2em;
+    }
+}
