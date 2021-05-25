@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= page%></title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+        crossorigin="anonymous"></script>
+    <script
+    src="https://kit.fontawesome.com/2635296004.js"
+    crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="/css/BottomNavmodule/bottomnavbar.css">
+    <!-- CUSTOM CSS -->
+    <link rel="stylesheet" href="/css/homemodule/selectedPlaylist.css">
+
+    <!-- CUSTOM SCRIPTS -->
+    <script src="/js/homemodule/selectedPlayist.js"></script>
+
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap"
+      rel="stylesheet"
+    />
+
+</head>
+<body>
+    <div class="col-2 backdiv">
+        <i
+          onclick="window.location.href='/home/challenge'"
+          class="fas fa-arrow-left back allicons"
+        ></i>
+    </div>
+
+    <div class="col-4 challengediv">
+          
+        <p class="videoRank">#1/15</p>
+      
+      <h6 class="challengeName">Challenge Name</h6>
+      <div class="challengesubtitle">
+        <p>Challenge details</p>
+      </div>
+    </div>
+
+    <div class="infodiv" onclick="info()">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8.00004 1.33334C4.32404 1.33334 1.33337 4.32401 1.33337 8.00001C1.33337 11.676 4.32404 14.6667 8.00004 14.6667C11.676 14.6667 14.6667 11.676 14.6667 8.00001C14.6667 4.32401 11.676 1.33334 8.00004 1.33334ZM8.00004 13.3333C5.05937 13.3333 2.66671 10.9407 2.66671 8.00001C2.66671 5.05934 5.05937 2.66668 8.00004 2.66668C10.9407 2.66668 13.3334 5.05934 13.3334 8.00001C13.3334 10.9407 10.9407 13.3333 8.00004 13.3333Z" fill="white"/>
+            <path d="M7.33337 7.33332H8.66671V11.3333H7.33337V7.33332ZM7.33337 4.66666H8.66671V5.99999H7.33337V4.66666Z" fill="white"/>
+        </svg>
+    </div>
+    
+    <div class="expand-vid" onclick="expand()">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M4.37105 7.62899C4.30073 7.55869 4.20536 7.51919 4.10592 7.51919C4.00649 7.51919 3.91112 7.55869 3.8408 7.62899L0.768799 10.701V8.62499C0.768799 8.52553 0.72929 8.43015 0.658964 8.35982C0.588638 8.2895 0.493255 8.24999 0.393799 8.24999C0.294343 8.24999 0.19896 8.2895 0.128634 8.35982C0.0583076 8.43015 0.0187988 8.52553 0.0187988 8.62499V11.6062C0.0187988 11.7057 0.0583076 11.8011 0.128634 11.8714C0.19896 11.9417 0.294343 11.9812 0.393799 11.9812H3.37505C3.4745 11.9812 3.56989 11.9417 3.64021 11.8714C3.71054 11.8011 3.75005 11.7057 3.75005 11.6062C3.75005 11.5068 3.71054 11.4114 3.64021 11.3411C3.56989 11.2707 3.4745 11.2312 3.37505 11.2312H1.29905L4.37105 8.15924C4.44135 8.08891 4.48084 7.99355 4.48084 7.89411C4.48084 7.79468 4.44135 7.69931 4.37105 7.62899ZM7.62905 7.62899C7.69937 7.55869 7.79474 7.51919 7.89417 7.51919C7.99361 7.51919 8.08898 7.55869 8.1593 7.62899L11.2313 10.701V8.62499C11.2313 8.52553 11.2708 8.43015 11.3411 8.35982C11.4115 8.2895 11.5068 8.24999 11.6063 8.24999C11.7058 8.24999 11.8011 8.2895 11.8715 8.35982C11.9418 8.43015 11.9813 8.52553 11.9813 8.62499V11.6062C11.9813 11.7057 11.9418 11.8011 11.8715 11.8714C11.8011 11.9417 11.7058 11.9812 11.6063 11.9812H8.62505C8.52559 11.9812 8.43021 11.9417 8.35988 11.8714C8.28956 11.8011 8.25005 11.7057 8.25005 11.6062C8.25005 11.5068 8.28956 11.4114 8.35988 11.3411C8.43021 11.2707 8.52559 11.2312 8.62505 11.2312H10.701L7.62905 8.15924C7.55875 8.08891 7.51925 7.99355 7.51925 7.89411C7.51925 7.79468 7.55875 7.69931 7.62905 7.62899ZM7.62905 4.37099C7.69937 4.44129 7.79474 4.48078 7.89417 4.48078C7.99361 4.48078 8.08898 4.44129 8.1593 4.37099L11.2313 1.29899V3.37499C11.2313 3.47444 11.2708 3.56983 11.3411 3.64015C11.4115 3.71048 11.5068 3.74999 11.6063 3.74999C11.7058 3.74999 11.8011 3.71048 11.8715 3.64015C11.9418 3.56983 11.9813 3.47444 11.9813 3.37499V0.393738C11.9813 0.294282 11.9418 0.198899 11.8715 0.128573C11.8011 0.0582466 11.7058 0.0187378 11.6063 0.0187378H8.62505C8.52559 0.0187378 8.43021 0.0582466 8.35988 0.128573C8.28956 0.198899 8.25005 0.294282 8.25005 0.393738C8.25005 0.493194 8.28956 0.588577 8.35988 0.658903C8.43021 0.729229 8.52559 0.768738 8.62505 0.768738H10.701L7.62905 3.84074C7.55875 3.91106 7.51925 4.00643 7.51925 4.10586C7.51925 4.2053 7.55875 4.30066 7.62905 4.37099ZM4.37105 4.37099C4.30073 4.44129 4.20536 4.48078 4.10592 4.48078C4.00649 4.48078 3.91112 4.44129 3.8408 4.37099L0.768799 1.29899V3.37499C0.768799 3.47444 0.72929 3.56983 0.658964 3.64015C0.588638 3.71048 0.493255 3.74999 0.393799 3.74999C0.294343 3.74999 0.19896 3.71048 0.128634 3.64015C0.0583076 3.56983 0.0187988 3.47444 0.0187988 3.37499V0.393738C0.0187988 0.294282 0.0583076 0.198899 0.128634 0.128573C0.19896 0.0582466 0.294343 0.0187378 0.393799 0.0187378H3.37505C3.4745 0.0187378 3.56989 0.0582466 3.64021 0.128573C3.71054 0.198899 3.75005 0.294282 3.75005 0.393738C3.75005 0.493194 3.71054 0.588577 3.64021 0.658903C3.56989 0.729229 3.4745 0.768738 3.37505 0.768738H1.29905L4.37105 3.84074C4.44135 3.91106 4.48084 4.00643 4.48084 4.10586C4.48084 4.2053 4.44135 4.30066 4.37105 4.37099Z" fill="white"/>
+            </svg>
+            
+    </div>
+
+    <div class="video-div">
+        <video class="myvideo">
+            <source  src="/video/sample" type="video/mp4">
+        </video>
+    </div>
+    <div class="video-progress">
+       <img src="/img/Status bar.png" alt="">         
+    </div>
+
+    <div class="join-clash" onclick="joinclash()">
+        <svg width="41" height="42" viewBox="0 0 41 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g filter="url(#filter0_d)">
+            <circle cx="20" cy="19" r="10" fill="url(#paint0_linear)"/>
+            </g>
+            <path d="M20.1695 23.7406V18.6836M20.1695 18.6836V13.6265M20.1695 18.6836H24.9153M20.1695 18.6836H15.4238" stroke="white" stroke-width="1.52956" stroke-linecap="round"/>
+            <defs>
+            <filter id="filter0_d" x="-0.553991" y="0.79134" width="41.108" height="41.108" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
+            <feOffset dy="2.34533"/>
+            <feGaussianBlur stdDeviation="5.277"/>
+            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+            </filter>
+            <linearGradient id="paint0_linear" x1="20" y1="9" x2="20" y2="29" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#FCEC7A"/>
+            <stop offset="0.442708" stop-color="#FD53B8" stop-opacity="0.9991"/>
+            <stop offset="1" stop-color="#864AF1"/>
+            </linearGradient>
+            </defs>
+            </svg>
+            
+    </div>
+
+    <div class="video-controls">
+        <div class="like controls" onclick="likeclash()">
+            <div class="like-btn">
+                <svg width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18 6H12.388L13.511 2.633C13.713 2.025 13.611 1.351 13.236 0.831C12.861 0.311 12.253 0 11.612 0H10C9.703 0 9.422 0.132 9.231 0.36L4.531 6H2C0.897 6 0 6.897 0 8V17C0 18.103 0.897 19 2 19H15.307C15.7139 18.9986 16.1108 18.8738 16.4452 18.6421C16.7797 18.4103 17.0359 18.0825 17.18 17.702L19.937 10.351C19.9789 10.2387 20.0002 10.1198 20 10V8C20 6.897 19.103 6 18 6ZM2 8H4V17H2V8ZM18 9.819L15.307 17H6V7.362L10.468 2H11.614L10.052 6.683C10.0013 6.83331 9.98715 6.99355 10.0107 7.15043C10.0343 7.3073 10.095 7.45629 10.1877 7.58504C10.2803 7.71379 10.4024 7.8186 10.5436 7.89076C10.6849 7.96293 10.8414 8.00037 11 8H18V9.819Z" fill="black"/>
+                </svg>
+            </div>
+            <div class="like-no">
+                <p>72</p>
+            </div>    
+        </div>
+
+        <div class="dislike controls" onclick="dislikeclash()">
+            <div class="display-btn">
+                <svg width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18 0H4.693C4.28611 0.0013509 3.88922 0.126159 3.55478 0.357923C3.22035 0.589686 2.96413 0.917492 2.82 1.298L0.0630013 8.649C0.0211408 8.76128 -0.000198357 8.88017 1.38939e-06 9V11C1.38939e-06 12.103 0.897001 13 2 13H7.612L6.49 16.367C6.38997 16.6676 6.36264 16.9877 6.41027 17.301C6.4579 17.6142 6.57913 17.9117 6.764 18.169C7.14 18.689 7.746 19 8.388 19H10C10.297 19 10.578 18.868 10.769 18.64L15.469 13H18C19.103 13 20 12.103 20 11V2C20 0.897 19.103 0 18 0ZM9.531 17H8.386L9.948 12.316C9.99804 12.1657 10.0117 12.0058 9.98781 11.8492C9.96392 11.6926 9.9032 11.544 9.81064 11.4155C9.71807 11.287 9.59631 11.1823 9.45538 11.1101C9.31444 11.0379 9.15837 11.0001 9 11H2V9.181L4.693 2H14V11.638L9.531 17ZM16 11V2H18L18.001 11H16Z" fill="black"/>
+                </svg>                    
+            </div>
+            <div class="dislike-no">
+                <p>2</p>
+            </div>
+        </div>
+
+        <div class="pause controls">
+            <svg width="19" height="33" viewBox="0 0 19 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect y="0.36908" width="6.00111" height="32.0059" fill="url(#paint0_linear)"/>
+                <rect x="12.9498" y="0.369072" width="6.00111" height="32.0059" fill="url(#paint1_linear)"/>
+                <defs>
+                <linearGradient id="paint0_linear" x1="3.00056" y1="0.36908" x2="3.00056" y2="32.375" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#FEE16B"/>
+                <stop offset="0.53125" stop-color="#E660B8"/>
+                <stop offset="1" stop-color="#7749F8"/>
+                </linearGradient>
+                <linearGradient id="paint1_linear" x1="15.9504" y1="0.369072" x2="15.9504" y2="32.375" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#FEE16B"/>
+                <stop offset="0.53125" stop-color="#E660B8"/>
+                <stop offset="1" stop-color="#7749F8"/>
+                </linearGradient>
+                </defs>
+                </svg>
+                
+        </div>
+
+        <div class="play display controls">
+            <img src="/img/Play.svg" alt="">
+                
+        </div>
+
+        <div class="comments controls" onclick="comment()">
+            <div class="comment-btn">
+                <svg width="23" height="20" viewBox="0 0 23 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0.497437 0V12.5H3.62244V16.4797L4.89197 15.4539L8.57869 12.5H16.1224V0H0.497437ZM2.05994 1.5625H14.5599V10.9375H8.04119L7.82166 11.1086L5.18494 13.2078V10.9375H2.05994V1.5625ZM17.6849 3.125V4.6875H20.8099V14.0625H17.6849V16.3328L14.8287 14.0625H8.96931L7.01619 15.625H14.2912L19.2474 19.6047V15.625H22.3724V3.125H17.6849Z" fill="black"/>
+                    </svg>                    
+            </div>
+            <div class="comment-no">
+                <p>23</p>
+            </div>
+        </div>
+
+        <div class="share controls" onclick="share()">
+            <div class="share-btn">
+                <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2.70164 21.44H0.372455V9.79687C0.370319 9.00151 0.554258 8.21667 0.909571 7.50507C1.39199 6.4405 2.1707 5.53734 3.15268 4.90349C4.13465 4.26964 5.27835 3.93192 6.44712 3.93067H12.5467V0H14.4388L21.7511 7.31238L14.4128 14.6507H12.5467V10.72H8.57973C7.74996 10.722 6.94347 10.9946 6.28256 11.4963C5.62165 11.998 5.14237 12.7015 4.91738 13.5002L2.70164 21.44ZM6.44712 5.36C5.55125 5.36096 4.67468 5.62041 3.92261 6.10722C3.17054 6.59403 2.57492 7.28751 2.20723 8.10445L2.19418 8.13188C1.93452 8.64839 1.8001 9.21877 1.80179 9.79687V19.3471L3.54066 13.1161C3.8502 12.0171 4.50965 11.0491 5.41901 10.3587C6.32836 9.66841 7.43803 9.29343 8.57973 9.29067H13.976V13.0661L19.7298 7.31238L13.976 1.5586V5.36H6.44712Z" fill="black"/>
+                    </svg>                    
+            </div>
+            <div class="share-no">
+                <p>8</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="similar-playlist">
+        <!-- POPUP SHOWING MORE SONGS IN PLAYLIST -->
+     
+            <div class="popup-playlist active" id="popup">
+                <div class="close-btn" data-close-btn >&times;</div>
+                <h6>More videos in this playlist:</h6>
+                <% for(var i=1; i<=5; i++){ %>
+                    <div class=" challenge-songs">
+                        <div class="  challenge-name">
+                            <div class="song-name">
+                                song challenge
+                            </div>
+                        </div>
+                        <div class=" challenge-details ">
+                            <div class="challenge-title">song challenge video #<%= i %></div>
+                            <div class="votes">votes: 350</div>
+                            <div class="comments-count">comments: 113</div>
+                        </div>
+                    </div>
+                    <hr class="hr-inside-popup">
+                <% } %>    
+        
+            </div>
+        <!-- POPUP END -->
+        <hr class="hr-pop active" id="hr-pop">
+        <h3>Similar Playlist: </h3>
+        <!-- SIMILAR PLAYLIST -->
+       
+            <% for(var i=0; i<5; i++){ %>
+                <div class="similar-playlist-table">
+                    <div class="similar-song">
+                        <p class="song-name simi-song">Song name</p>
+                    </div>
+                    <div class="similar-details">
+                        <div class="creator-name">created by: jenne wilson</div>
+                        <div class="created-on">created on: 10 May 2021</div>
+                        <div class="participants">Participants: 39</div>
+                        <div class="clash-till">Clash till: 10 june 2021</div>
+                    </div>
+                </div>
+                <hr class="hr-outside">
+            <%}%>
+        <!-- </div> -->
+    </div>
+    <div class="bottom">
+        <%- include("../BottomNavmodule/bottomnavbar") %>
+    </div>
+</body>
+</html>

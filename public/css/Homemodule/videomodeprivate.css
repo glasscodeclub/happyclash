@@ -1,0 +1,228 @@
+/* @font-face {
+    font-family: America;
+    src: url('/font-family/America.ttf');
+} */
+
+body {
+    background-color: black;
+  }
+  
+  .container {
+    width: 100%;
+    text-align: center;
+    margin: auto;
+  }
+  
+  .previousdiv {
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    text-align: center;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+  
+  .previousvideo {
+    left: 50%;
+    margin: 0.7rem auto;
+  }
+  
+  .allicons:hover {
+    cursor: pointer;
+  }
+  
+  video {
+    object-fit: fill;
+  }
+  
+  .row {
+    margin-top: 1.4rem;
+  }
+  
+  .backdiv {
+    width: 100%;
+    text-align: left !important;
+  }
+  
+  .back {
+    color: white;
+    font-size: 1.75rem;
+  }
+  
+  .challengediv {
+    width: 100%;
+  }
+  
+  .challengeName {
+    font-family: Roboto;
+    font-style: normal;
+    background: linear-gradient(180deg, #7c49f6 0%, #e55abd 47.92%, #fedf67 100%);
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    font-size: 1.35rem;
+    margin: 0.25rem auto;
+    margin-bottom: 0.25rem !important;
+  }
+  
+  .videoRank {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    color: white;
+    font-size: 0.65rem;
+    margin: 0.25rem auto;
+    margin-bottom: 0rem !important;
+  }
+  
+  .challengesubtitle {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    color: white;
+    font-size: 0.65rem;
+  }
+  
+  .infodiv {
+    width: 100%;
+    text-align: right !important;
+  }
+  
+  svg.infoicon {
+    margin-top: 0 !important;
+    max-width: 1.3rem !important;
+    padding-bottom: 0.6rem !important;
+    color: white;
+  }
+  
+  .myvideo {
+    z-index: -1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
+  }
+  
+  .videoelements {
+    position: relative;
+  }
+  
+  /* #playicon {
+      display: table;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      text-align: center;
+      vertical-align: middle !important;
+      padding: 50% auto !important;
+      width: 100% !important;
+      height: 100% !important;
+      z-index: 10;
+  } */
+  
+  #videoplay {
+    /* margin: 30%; */
+    position: fixed;
+    top: 44% !important;
+    bottom: 44% !important;
+    right: 42% !important;
+    left: 42% !important;
+    vertical-align: middle;
+    display: inline-block;
+    width: 4rem;
+    height: 4rem;
+    /* margin: auto !important;
+      margin-top: 50%;
+      margin-bottom: 50%; */
+  }
+  
+  .activity {
+    position: fixed;
+    width: 50%;
+    text-align: right;
+    transform: translateY(-80%);
+    top: 80%;
+    padding: 0.2rem !important;
+    right: 0.75rem;
+  }
+  
+  .number {
+    padding: 1rem !important;
+    padding-right: 0.7rem !important;
+    font-size: small;
+    color: white;
+  }
+  
+  .activityicons {
+    max-width: 2rem !important;
+    color: white !important;
+    margin-bottom: 1.9rem;
+  }
+  
+  .embedicons {
+    position: fixed;
+    bottom: 3%;
+    text-align: center;
+    margin: auto !important;
+    width: 90%;
+    left: 5% !important;
+    right: 5% !important;
+  }
+  
+  .progress {
+    height: 2px !important;
+    margin-top: 1rem;
+  }
+  
+  .videoicons {
+    width: 100%;
+    text-align: center;
+    margin: 1rem auto;
+  }
+  
+  .pause {
+    background-color: linear-gradient(
+      180deg,
+      #fee16b 0%,
+      #e660b8 53.12%,
+      #7749f8 100%
+    );
+    margin: auto 0.35rem;
+    font-size: 1.3rem;
+  }
+  
+  .play {
+    background-color: linear-gradient(
+      180deg,
+      #fee16b 0%,
+      #e660b8 53.12%,
+      #7749f8 100%
+    );
+    margin: auto 0.35rem;
+    font-size: 1.3rem;
+  }
+  
+  .nextdiv {
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    text-align: center;
+    margin: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  
+  .nextvideo {
+    left: 50%;
+    margin: 0.7rem auto;
+  }
+  

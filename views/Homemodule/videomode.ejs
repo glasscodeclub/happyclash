@@ -20,7 +20,7 @@
     />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap"
       rel="stylesheet"
     />
 
@@ -41,7 +41,7 @@
       <div class="row">
         <div class="col-2 backdiv">
           <i
-            onclick="window.location.href='/library'"
+            onclick="window.location.href='/home/homefeed'"
             class="fas fa-arrow-left back allicons"
           ></i>
         </div>
@@ -176,7 +176,7 @@
         </div>
       </div>
 
-      <div class="joinclashdiv">
+      <div class="joinclashdiv" data-target="#popup-joinclash">
         <div class="joinclash">
           <img
             src="/img/Plus Icon.svg"
@@ -184,7 +184,6 @@
             width="58"
             height="58"
             class="joinicon allicons"
-            onclick="joinClash()"
           />
         </div>
 
@@ -224,5 +223,30 @@
         />
       </div>
     </div>
+
+    <!-- POPUP TO JOIN CLASH -->
+
+    <div class="popup" id="popup-joinclash">
+      <div class="popup-header">
+        <div class="close-btn" data-close-btn>&times;</div>
+        <div class="title">Would you like to Join the clash: </div>
+      </div>
+      <div class="popup-body">
+        <strong>Dance Challenge</strong>
+        <div class="yes-no">
+          <div class="yes-btn">
+            <button class="bttn" onclick="yes()">Yes</button>
+          </div>
+          <div class="no-btn">
+            <div class="bttn"data-close-btn>No</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- POPUP END -->
+
+    <div id="overlay"></div>
+
   </body>
 </html>
