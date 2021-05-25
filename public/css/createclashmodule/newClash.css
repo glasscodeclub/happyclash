@@ -130,7 +130,7 @@ option {
   padding: 3px;
 }
 
-.modal-dialog {
+#uploadModal .modal-dialog {
   align-items: flex-end;
   text-align: center;
   margin: auto;
@@ -146,4 +146,23 @@ option {
   color: #5a5a5a;
   font-size: .8em;
   cursor: pointer;
+}
+
+#saveModal .modal-body{
+  text-align: center;
+}
+
+.btns{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.btns button{
+  padding: 3px;
+  border: none;
+  background-color: white;
+  width: 100px;
+  border-radius: 4px;
+  font-weight: bold;
+  box-shadow: 0px 1px 7px 0px #00000026;
 }
