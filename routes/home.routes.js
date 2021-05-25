@@ -21,6 +21,10 @@ router.get("/songs", (req, res) => {
 })
 
 router.get("/videomodeprivate", (req, res) => {
-    res.render("homemodule/videomodeprivate", {url: req.url})
+    res.render("homemodule/videomodeprivate", {page:"VideoModePrivate",url: req.url})
+})
+
+router.get("/selectedPlaylist", (req, res) => {
+    res.render("homemodule/selectedPlaylist", {page:"Selected Playlist",url: req.url})
 })
 module.exports = router;

@@ -241,3 +241,93 @@ svg.infoicon {
   left: 50%;
   margin: 0.7rem auto;
 }
+
+
+/* POPUP CSS BEGINS */
+
+#overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 5;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  pointer-events: none;
+  opacity: 0;
+}
+
+#overlay.active{
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 5;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  pointer-events: all; 
+  opacity: 1;
+  transition: 250ms ease-in-out;
+}
+
+.popup{
+  width:80%;
+  font-family: "Roboto", sans-serif;
+  padding:5px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform:translate(-50%, -50%) scale(0);
+  background-color:white;
+  z-index: 10;
+  border-radius:6px;
+}
+
+.popup.active{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform:translate(-50%, -50%) scale(1);
+  transition: 250ms ease-in-out;
+}
+
+.popup-header .close-btn{
+  display: block;
+  position: relative;
+  bottom:5px;
+  right:5px;
+  font-size:1.3rem;
+  font-weight: bold;
+  text-align: right;
+
+}
+
+.popup-header .title{
+  position: relative;
+  bottom:12px;
+  text-align:center;
+}
+
+.popup-body{
+  text-align:center;
+}
+.popup-body strong{
+  font-size: 23px;
+}
+.popup-body .bttn{
+  box-shadow:0 0 5px rgba(0, 0, 0, 0.2);
+  border-radius:6px;
+  font-size:14px;
+  width: 63px;
+  background: none;
+  outline: none;
+  border: none;
+}
+
+.popup-body .yes-no{
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
+  margin: 10px auto;
+}
+/* POPUP CSS ENDS */

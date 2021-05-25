@@ -51,10 +51,6 @@ function pauseVideo() {
     }
 }
 
-function joinClash() {
-    console.log('Join clash button was hit');
-}
-
 window.addEventListener('load',()=> {
     const myvideo = document.querySelector('.myvideo');
 
@@ -78,48 +74,4 @@ function pauseAndplayVideo() {
         videoplay.style.display = 'block';
     }
 
-}
-
-
-window.addEventListener('load',() => {
-
-    const openPopup = document.querySelectorAll("[data-target]")
-    const closePopup = document.querySelectorAll("[data-close-btn]")
-    const overlay = document.getElementById("overlay")
-
-    openPopup.forEach(popup =>{
-    popup.addEventListener('click', () => {
-        const pop = document.querySelector(popup.dataset.target)
-        openPop(pop)
-    })
-    })
-
-    closePopup.forEach(popup =>{
-    popup.addEventListener('click', () => {
-        const pop = popup.closest(".popup")
-        closePop(pop)
-    })
-    })
-
-    overlay.addEventListener('click', () => {
-    const pop = document.querySelector(".popup.active")
-    closePop(pop)
-    })
-
-    function openPop(pop){
-    if(pop == null) return;
-    pop.classList.add("active")
-    overlay.classList.add("active")
-    }
-
-    function closePop(pop){
-    if(pop == null) return;
-    pop.classList.remove("active")
-    overlay.classList.remove("active")
-    }
-
-})
-
-function yes() {
-    console.log("Yes button was hit!")
 }

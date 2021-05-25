@@ -1,0 +1,284 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* html,body
+{
+    width: 105.07%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden; 
+} */
+
+body{
+    margin-bottom: 70px;
+    font-family: "Roboto", sans-serif;
+}
+
+p{
+    margin-bottom: 0 !important;
+}
+
+.backdiv{
+    position: absolute;
+    top:8px;
+    left:12px;
+    color: #fff;
+}
+
+.challengediv {
+    position: absolute;
+    left: 38px;
+    z-index: 2;
+    /* width: 100%; */
+    display: inline-block;
+}
+  
+.challengeName {
+    font-family: Roboto;
+    font-style: normal;
+    background: linear-gradient(180deg, #7c49f6 0%, #e55abd 47.92%, #fedf67 100%);
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    font-size: 1rem;
+    margin: 0.25rem auto;
+    margin-bottom: 0.25rem !important;
+}
+
+.videoRank {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    color: white;
+    font-size: 0.45rem;
+    margin: 0.25rem auto;
+    margin-bottom: 0rem !important;
+}
+
+.challengesubtitle {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    color: white;
+    font-size: 0.55rem;
+}
+  
+
+.video-div{
+    height: 200px ;
+    width: 100%;background-color: #000;
+}
+video{
+    object-fit: scale-down;
+}
+
+.myvideo{
+    position: relative;
+    height: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+
+}
+.infodiv {
+    position: absolute;
+    right: 30px;
+    z-index: 3;
+}
+
+.expand-vid{
+    position: absolute;
+    right: 10px;
+    z-index: 3;
+}
+
+.join-clash{
+    position: absolute;
+    top: 145px;
+}
+
+.video-controls{
+    display: flex;
+    background-color: #F0F0F0;
+    padding: 10px 15px;
+    justify-content: space-between;
+}
+
+.video-progress{
+    position:absolute;
+    top: 185px;
+    width: 100%;
+}
+.video-progress svg{
+    width: 100%;
+}
+.pause{
+    position: absolute;
+    transform: scale(0);
+    width:40px;
+}
+.play{
+    position: absolute;
+    transform: scale(0);
+    width:40px;
+}
+.pause svg{
+    height: 40px;
+}
+
+.play img{
+    height: 40px;
+}
+
+.similar-playlist{
+    padding: 12px;
+}
+
+.popup-playlist{
+    background-color: #F5F5F5;
+    padding: 10px 0px;
+    height: 240px;
+    overflow: scroll;
+    position: absolute;
+    border-radius: 5px;
+    overflow-x: hidden;
+    transform:scale(0);
+}
+
+#popup>h6, .close-btn{
+    margin-bottom: 12px;
+    padding:0px 16px;
+}
+
+
+
+.hr-inside-popup{
+    width: 100%;
+    margin: 7px 0px;
+    background: #C4C4C4;
+}
+
+.hr-outside{
+    background: #C4C4C4;
+    height: 2px !important;
+    position: relative;
+    margin: 16px -12px;
+}
+
+.close-btn{
+    position: relative;
+    text-align: right;
+    margin: -10px 5px -14px;
+    font-size: 1.3rem;
+    right: -8px;
+    font-weight: bold;
+}
+
+.challenge-songs{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    /* grid-auto-rows: 20px; */
+    grid-gap: 10px;
+    padding: 0px 16px;
+}
+
+.song-name{
+    text-transform: capitalize;
+    width: 100%;
+    text-align: center;
+    padding: 6px 20px;
+    border-radius: 9px;
+    color: #fff;
+    background: #67A3A3;
+}
+
+.simi-song{
+    background: none;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    max-height: 50px;
+}
+
+.challenge-details{
+    text-transform: capitalize;
+}
+
+.votes, .comments-count{
+    font-size: 0.65rem;
+    color: #818181;
+    /* text-transform:capitalize; */
+}
+
+.similar-playlist-table{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 10px;
+}
+
+.similar-song{
+    text-transform: capitalize;
+    text-align: center;
+    padding: 6px 20px;
+    border-radius: 9px;
+    color: #fff;
+    background: #67A3A3;
+    height:fit-content;
+    align-self: center;
+
+}
+
+.similar-details{
+    text-transform: capitalize;
+}
+
+.similar-song>p{
+    padding: 0;
+}
+
+.created-on, .participants, .clash-till{
+    font-size: 0.65rem;
+    color: #818181;
+    /* text-transform:capitalize; */
+}
+
+.pause.display{
+    position:static;
+    transform: scale(1);
+}
+
+.play.display{
+    position:static;
+    transform: scale(1);
+}
+
+.controls:not(.play):not(.pause){
+    position:relative;
+    margin: auto;
+}
+
+.popup-playlist.active{
+    background-color: #F5F5F5;
+    padding: 10px 0px;
+    height: 240px;
+    overflow: scroll;
+    border-radius: 5px;
+    overflow-x: hidden;
+    transform: scale(1);
+    position: static;
+    transition: 250ms ease-in-out;
+}
+
+.hr-pop{
+    position: absolute;
+    opacity: 0;
+}
+
+.hr-pop.active{
+    background: #C4C4C4;
+    height: 2px !important;
+    position: relative;
+    opacity: .25;
+    margin: 16px -12px;
+}
