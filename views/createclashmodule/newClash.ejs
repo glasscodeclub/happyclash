@@ -52,14 +52,13 @@
   <div id="form-div">
     <form method="POST">
       <div class="form-group">
-        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Clash Title">
+        <input type="text" class="form-control" placeholder="Clash Title">
       </div>
       <div class="form-group">
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
-          placeholder="Enter Clash Description"></textarea>
+        <textarea class="form-control" rows="3" placeholder="Enter Clash Description"></textarea>
       </div>
       <div class="form-group">
-        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Clash Ends">
+        <input type="text" class="form-control" placeholder="Clash Ends">
       </div>
       <div class="form-group">
         <select class="form-control" id="exampleFormControlSelect1">
@@ -73,18 +72,23 @@
         </select>
       </div>
       <div class="form-group">
-        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Keywords">
+        <input type="text" class="form-control" placeholder="Keywords">
       </div>
       <div class="upload">
         <button type="button" data-bs-toggle="modal" data-bs-target="#uploadModal">
           Upload
         </button>
       </div>
+      <div class="upload">
+        <button type="button" data-bs-toggle="modal" data-bs-target="#saveModal">
+          Save
+        </button>
+      </div>
       <button type="submit" class="btn btn-primary sub save">Start Clash</button>
     </form>
   </div>
 
-  <!-- Modal -->
+  <!-- Upload Modal -->
   <div class="modal fade" id="uploadModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
@@ -108,6 +112,22 @@
                 <p>Gallery</p>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Save modal -->
+  <div class="modal fade" id="saveModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-body">
+          <h6>Do you want to save this video in your Library?</h6>
+          <br>
+          <div class="btns">
+            <button onclick="yes()">Yes</button>
+            <button onclick="no()" data-bs-dismiss="modal">No</button>
           </div>
         </div>
       </div>

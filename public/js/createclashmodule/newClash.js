@@ -12,3 +12,11 @@ function uploadViaGallery(e) {
     console.log(e);
     console.log("Upload via Gallery");
 }
+
+function yes() {
+    console.log("Saved to library...");
+}
+
+function no() {
+    console.log("denied to save in library...");
+}
