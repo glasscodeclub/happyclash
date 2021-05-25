@@ -139,9 +139,11 @@ option {
 .fa, .fas {
   font-weight: 900;
   font-size: 2em;
+  cursor: pointer;
 }
 
 .fas + p{
   color: #5a5a5a;
   font-size: .8em;
+  cursor: pointer;
 }
