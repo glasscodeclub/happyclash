@@ -1,0 +1,233 @@
+*{
+    padding:0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+#overlay{
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: 200ms ease-in-out;
+    position:fixed;
+    opacity:0; 
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    pointer-events:none;
+    z-index: 5;
+  }
+  
+#overlay.active{
+    opacity:1;
+    pointer-events: all;
+}
+
+.career-popup{
+    width:500px;
+    height: 400px;
+    max-width:80%;
+    position:fixed;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out;
+    border-radius:5px;
+    background-color:white;
+    z-index:10;
+    overflow: hidden;
+}
+
+.career-popup.active{
+    transform:translate(-50%, -50%) scale(1);
+}
+
+.popup-header{
+    padding: 10px 15px;
+}
+
+.title{
+    font-size:1.5rem;
+    font-weight:400;
+    text-align: center;
+    font-family: "roboto", sans-serif;
+    text-transform:capitalize;
+}
+
+.title p {
+    font-size:0.75rem;
+    
+}
+
+.search-bar{
+    border-radius: 20px;
+    font-size:0.8rem;
+    border: none;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+}
+
+.send-button{
+    background: linear-gradient(81.23deg, #7C49F6 9.3%, #FF53B7 51.61%, #FFD458 97.6%);
+    position: relative;
+    left: 185px;
+    padding-bottom: 25px;
+    margin: 20px 15px -10px;
+    text-align: center;
+    border-radius:5px;
+    height:25px;
+    width:50px;
+
+}
+
+.send-button button{
+    border: none;
+    font-size: 0.8rem;
+    color: #fff;
+    font-weight: bold;
+    text-transform: capitalize;
+    font-family: roboto, sans-serif;
+    outline:none;
+    background: none;
+}
+
+.close-button{
+    border:none;
+    position:absolute;
+    right: 10px;
+    top: 0;
+    /* padding:5px; */
+    display: inline-block;
+    background:none;
+    outline:none;
+    font-size:1.5rem;
+    font-weight:bold;
+}
+
+.popup-body{
+    padding: 10px 15px;
+    font-size: 1.2rem;
+}
+
+.suggested{
+    margin-left: 15px;
+    margin-top: -10px;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.suggested-profile{
+    width:55px;
+    height:55px;
+    z-index: 1;
+}
+
+.selected-profile{
+    margin-top: -45px;
+    opacity: 0.7;
+    display: none;
+    position: relative;
+    z-index: 2;
+    left: -4px;
+    top: -18px;
+    width: 64px;
+    height: 64px;
+}
+
+.selected-profile.active{
+    margin-top: -45px;
+    opacity: 0.7;
+    display: inline-block;
+    position: relative;
+    z-index: 2;
+    left: -4px;
+    top: -18px;
+    width: 64px;
+    height: 64px;
+}
+
+.user-name{
+    font-size: 0.6rem ;
+    width: 55px;
+    text-align:center;
+    margin-top:7px;
+    font-weight:400;
+    font-family: "Roboto", sans-serif;
+}
+
+.user-name.active{
+    font-size: 0.6rem ;
+    width: 55px;
+    text-align:center;
+    margin-top:-16px;
+    font-weight:400;
+    font-family: "Roboto", sans-serif;
+}
+
+.see-all-users{
+    font-size: 0.6rem ;
+    width: 55px;
+    text-align:center;
+    margin-top:6px;
+    font-weight:400;
+    font-family: "Roboto", sans-serif;
+}
+
+.see-all-button{
+    outline: none;
+    background: none;
+    border: none;
+}
+
+  
+.select-followers{
+    display:flex;
+    font-family: "Roboto", sans-serif;
+    margin: 18px 9px;
+}
+
+.follower-title{
+    font-weight: 400;
+}
+
+.select-all{
+    background:none;
+    border: none;
+    outline:none;
+    font-size: 0.7rem;
+    box-shadow: 0px 0px 15px rgba(0,0,0,0.2);
+    margin-left: 9px;
+    font-weight: 400;
+}
+
+.all-selected{
+    background:none;
+    border: none;
+    outline:none;
+    font-size: 0.7rem;
+    background: linear-gradient(81.23deg, #7C49F6 9.3%, #FF53B7 51.61%, #FFD458 97.6%);
+    box-shadow: 0px 0px 15px rgba(0,0,0,0.2);
+    color: #fff;
+    margin-left: 9px;
+    font-weight: 400;
+}
+
+.user-info{
+    margin-top: 18px;
+    font-size:0.9rem;
+}
+
+.user-info .user-email{
+    margin-top:-15px;
+    font-size:0.8rem;
+    color:#6A6A6A;
+}
+
+.selected{
+    display:flex;
+    opacity: 0;
+    justify-content:center;
+    align-items:center;
+}
+
+.selected.select{
+    opacity:1;
+}

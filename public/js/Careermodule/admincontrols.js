@@ -165,7 +165,7 @@ function challenge(e, id) {
         See All >
       </div>
     </div>
-    <div onclick="addParticipants(this,${id})" style="font-size: 2rem">+</div>
+    <div data-target-add="#add-friends" onclick="test()"  style="font-size: 2rem">+</div>
   </div>
   <div>
     <div
@@ -232,135 +232,135 @@ function challenge(e, id) {
   }
 }
 
-function addParticipants(e, id) {
-  console.log(e);
-  const div = document.createElement("div");
-  div.innerHTML = `<div
-  onclick="addParticipants(this,${id})"
-  style="
-    z-index: 10;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.7);
-  "
->
-  <div
-    style="
-      height: 50vh;
-      width: 80vw;
-      background: white;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      border-radius: 5px;
-      position: relative;
-    "
-  >
-    <div style="padding: 15px 15px 0px 15px">
-      <div
-        style="
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-        "
-      >
-        <div>Choose friends to add:</div>
-        <div onclick="addParticipants(this,${id})" style="font-weight: bold; font-weight: 5rem">x</div>
-      </div>
-      <div class="mt-2">
-        <input
-          type="text"
-          placeholder="Username/Email/Phone"
-          style="width: 100%; border: none; border-radius: 100px"
-        />
-      </div>
-      <div
-        class="mt-3"
-        style="
-          display: flex;
-          align-items: center;
-          justify-content: flex-end;
-        "
-      >
-        <button
-          onclick="console.log(this)"
-          style="
-            background: linear-gradient(
-              81.23deg,
-              #7c49f6 9.3%,
-              #ff53b7 51.61%,
-              #ffd458 97.6%
-            );
-            border: none;
-            width: 15vw;
-            height: 20px;
-            padding: 0;
-            font-size: 0.7rem;
-          "
-          class="btn btn-dark submit"
-        >
-          Send
-        </button>
-      </div>
-    </div>
-    <hr />
-    <div style="padding: 0px 15px">
-      <div>Suggested</div>
-      <div
-        style="
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-        "
-      >
-        <div onclick="console.log(this)" style="text-align: center">
-          <img style="width: 15vw" src="img/profile.png" class="p1" />
-          <h6 style="font-size: 0.6rem">Jane Cooper</h6>
-        </div>
-        <div onclick="console.log(this)" style="text-align: center">
-          <img style="width: 15vw" src="img/profile1.png" class="p1" />
-          <h6 style="font-size: 0.6rem">Jane Cooper</h6>
-        </div>
-        <div onclick="console.log(this)" style="text-align: center">
-          <img style="width: 15vw" src="img/profile2.png" class="p1" />
-          <h6 style="font-size: 0.6rem">Jane Cooper</h6>
-        </div>
-      </div>
-      <div
-        style="
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-        "
-      >
-        <div onclick="console.log(this)" style="text-align: center">
-          <img style="width: 15vw" src="img/profile.png" class="p1" />
-          <h6 style="font-size: 0.6rem">Jane Cooper</h6>
-        </div>
-        <div onclick="console.log(this)" style="text-align: center">
-          <img style="width: 15vw" src="img/profile1.png" class="p1" />
-          <h6 style="font-size: 0.6rem">Jane Cooper</h6>
-        </div>
-        <div onclick="console.log(this)" style="text-align: center">
-          <img style="width: 15vw" src="img/profile2.png" class="p1" />
-          <h6 style="font-size: 0.6rem">Jane Cooper</h6>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>`;
+// function addParticipants(e, id) {
+//   console.log(e);
+//   const div = document.createElement("div");
+//   div.innerHTML = `<div
+//   onclick="addParticipants(this,${id})"
+//   style="
+//     z-index: 10;
+//     position: fixed;
+//     top: 0;
+//     left: 0;
+//     right: 0;
+//     bottom: 0;
+//     background: rgba(0, 0, 0, 0.7);
+//   "
+// >
+//   <div
+//     style="
+//       height: 50vh;
+//       width: 80vw;
+//       background: white;
+//       top: 50%;
+//       left: 50%;
+//       transform: translate(-50%, -50%);
+//       border-radius: 5px;
+//       position: relative;
+//     "
+//   >
+//     <div style="padding: 15px 15px 0px 15px">
+//       <div
+//         style="
+//           display: flex;
+//           align-items: center;
+//           justify-content: space-between;
+//         "
+//       >
+//         <div>Choose friends to add:</div>
+//         <div onclick="addParticipants(this,${id})" style="font-weight: bold; font-weight: 5rem">x</div>
+//       </div>
+//       <div class="mt-2">
+//         <input
+//           type="text"
+//           placeholder="Username/Email/Phone"
+//           style="width: 100%; border: none; border-radius: 100px"
+//         />
+//       </div>
+//       <div
+//         class="mt-3"
+//         style="
+//           display: flex;
+//           align-items: center;
+//           justify-content: flex-end;
+//         "
+//       >
+//         <button
+//           onclick="console.log(this)"
+//           style="
+//             background: linear-gradient(
+//               81.23deg,
+//               #7c49f6 9.3%,
+//               #ff53b7 51.61%,
+//               #ffd458 97.6%
+//             );
+//             border: none;
+//             width: 15vw;
+//             height: 20px;
+//             padding: 0;
+//             font-size: 0.7rem;
+//           "
+//           class="btn btn-dark submit"
+//         >
+//           Send
+//         </button>
+//       </div>
+//     </div>
+//     <hr />
+//     <div style="padding: 0px 15px">
+//       <div>Suggested</div>
+//       <div
+//         style="
+//           display: flex;
+//           align-items: center;
+//           justify-content: space-between;
+//         "
+//       >
+//         <div onclick="console.log(this)" style="text-align: center">
+//           <img style="width: 15vw" src="img/profile.png" class="p1" />
+//           <h6 style="font-size: 0.6rem">Jane Cooper</h6>
+//         </div>
+//         <div onclick="console.log(this)" style="text-align: center">
+//           <img style="width: 15vw" src="img/profile1.png" class="p1" />
+//           <h6 style="font-size: 0.6rem">Jane Cooper</h6>
+//         </div>
+//         <div onclick="console.log(this)" style="text-align: center">
+//           <img style="width: 15vw" src="img/profile2.png" class="p1" />
+//           <h6 style="font-size: 0.6rem">Jane Cooper</h6>
+//         </div>
+//       </div>
+//       <div
+//         style="
+//           display: flex;
+//           align-items: center;
+//           justify-content: space-between;
+//         "
+//       >
+//         <div onclick="console.log(this)" style="text-align: center">
+//           <img style="width: 15vw" src="img/profile.png" class="p1" />
+//           <h6 style="font-size: 0.6rem">Jane Cooper</h6>
+//         </div>
+//         <div onclick="console.log(this)" style="text-align: center">
+//           <img style="width: 15vw" src="img/profile1.png" class="p1" />
+//           <h6 style="font-size: 0.6rem">Jane Cooper</h6>
+//         </div>
+//         <div onclick="console.log(this)" style="text-align: center">
+//           <img style="width: 15vw" src="img/profile2.png" class="p1" />
+//           <h6 style="font-size: 0.6rem">Jane Cooper</h6>
+//         </div>
+//       </div>
+//     </div>
+//   </div>
+// </div>`;
 
-  if (popupElem[id]) {
-    document.getElementById(`suggest-popup-${id}`).removeChild(popupElem[id]);
-    popupElem[id] = null;
-  } else {
-    document.getElementById(`suggest-popup-${id}`).appendChild(div);
-    popupElem[id] = div;
-  }
-}
+//   if (popupElem[id]) {
+//     document.getElementById(`suggest-popup-${id}`).removeChild(popupElem[id]);
+//     popupElem[id] = null;
+//   } else {
+//     document.getElementById(`suggest-popup-${id}`).appendChild(div);
+//     popupElem[id] = div;
+//   }
+// }
 
 
 
