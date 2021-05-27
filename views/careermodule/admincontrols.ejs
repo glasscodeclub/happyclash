@@ -28,9 +28,10 @@
 
     <!-- Custom css -->
     <link rel="stylesheet" href="/css/Careermodule/admincontrols.css" />
-
+    <link rel="stylesheet" href="/css/Careermodule/careerPopup.css">
     <!-- Custom js -->
     <script src="/js/Careermodule/admincontrols.js"></script>
+    
   </head>
 
   <body>
@@ -118,8 +119,62 @@
       <br />
     </div>
 
-    <%- include("../BottomNavmodule/bottomnavbar") %>
-  </body>
-  <script src="/js/ClashDetailsmodule/clashDetails.js"></script>
+    <!-- POPUP FOR ADDING FRIENDS -->
+    
+    <!-- POPUP SECTION -->
+    <div class="career-popup" id="add-friends">
+      <div class="popup-header">
+          <button data-close-button class="close-button">&times;</button>
+          <div class="title">Choose friends to add:</div>
+          <div class="search-bar">
+              <input type="search" class="form-control search-bar " placeholder="Username/Email/Phone">
+          </div>
+          <div class="send-button">
+              <button >send</button>
+          </div>
+          
+      </div>
+      <div class="popup-body">
+          <div class="suggested">
+              Suggested
+              <div class="row profiles">
+                  <% for(var i=0; i<5; i++){ %>
+                      <%- include("../partials/userimg") %>
+                  <% } %> 
+                  <div class="suggested-friends col">
+                      <button class="see-all-button" data-target-see="#see-all" >
+                          <img src="/img/see-all-user.png" alt="profile" class="suggested-profile">
+                          <p class="see-all-users">See All ></p>
+                      </button>
+                       
+                  </div>                    
+              </div>
+          </div>
+      </div>
+    </div>
 
+    <div class="career-popup" id="see-all">
+      <div class="popup-header">
+          <button data-close-button-follow class="close-button">&times;</button>
+          <div class="select-followers">
+              <div class="follower-title">Your Followers</div>
+              <button  id="select-all" class="select-all" onclick="selectAll()">Select All</button>
+          </div>
+      </div>
+      <div class="popup-body">
+          <% for(var i = 0; i<4; i++){ %>
+              <%- include("../partials/followers") %>
+         <% } %>
+          
+      </div>
+    </div>
+
+    <!-- OVERLAY -->
+    <div id="overlay"></div>
+
+    <!-- POPUP END  -->
+
+    <%- include("../BottomNavmodule/bottomnavbar") %>
+  </body> 
+  <script src="/js/Careermodule/careerPopup.js"></script>
 </html>
