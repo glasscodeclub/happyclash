@@ -65,6 +65,11 @@ function closeSee(pop){
 }
 
 
+function send(){
+    console.log("send button was clicked")
+}
+
+
 // FOR SELECTING ALL AND INDIVIDUALS
 function select(e){
     if(e.classList.contains("suggested-friends"))
@@ -111,3 +116,4 @@ function toggleclass(image, name){
     image.classList.toggle('active')
     name.classList.toggle('active')
 }
+

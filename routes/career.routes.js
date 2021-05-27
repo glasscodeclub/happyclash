@@ -24,4 +24,9 @@ router.get("/admincontrols", (req, res) => {
 router.get("/results", (req, res) => {
     res.render("./Careermodule/results", { url: req.url })
 })
+
+router.get("/congratulations", (req, res) => {
+    res.render("./Careermodule/congratulations", { url: req.url })
+})
+
 module.exports = router;
