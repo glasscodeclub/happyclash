@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
+body{
+  margin-bottom: 60px;
+}
+
 .p1 {
   width: 130px;
   height: 130px;
