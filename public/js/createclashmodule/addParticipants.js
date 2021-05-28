@@ -1,3 +1,13 @@
+function send(e) {
+    console.log(e);
+    console.log("Clicked on send...");
+}
+
+function Continue(e) {
+    console.log(e);
+    console.log("Clicked on continue button...");
+}
+
 // To select each checkbox on click
 // passed this pointer as argument to select only perticular followers
 
