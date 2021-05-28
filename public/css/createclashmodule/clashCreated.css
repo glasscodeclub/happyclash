@@ -1,0 +1,377 @@
+@font-face {
+    font-family: America;
+    src: url('/font-family/America.ttf');
+}
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+#p1{
+    font-size: 2em;
+    font-weight: bold;
+    background: linear-gradient(269.06deg, #FEDF67 -11.43%, #FF53B7 47.34%, #7C49F6 107.7%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#p4{
+    font-family: Roboto;
+    font-size: 0.8rem!important;
+    color:#747474;
+    margin:0px;
+}
+
+.p5{
+    margin:0px;
+}
+
+.p11{
+    margin: 0px;
+    color:#747474;
+    font-family: Roboto;
+    font-size: 0.7rem;
+}
+
+.a1{
+    text-decoration: none;
+    color: gray;
+}
+
+.last{
+    margin-bottom: 2rem!important;
+}
+
+.done{
+    text-align: center;
+}
+
+.done button{
+    color: white;
+    width: 5.5em;
+    padding: 5px;
+    border: none;
+    background: linear-gradient(81.23deg, #7C49F6 9.3%, #FF53B7 51.61%, #FFD458 97.6%);
+    box-shadow: 0px 0.49746328592300415px 3.4822428226470947px 0px #00000026;
+    border-radius: 4.32354px;
+}
+
+/* POPUP SECTION */
+#overlay{
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: 200ms ease-in-out;
+    position:fixed;
+    opacity:0; 
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    pointer-events:none;
+    z-index: 5;
+  }
+  
+#overlay.active{
+    opacity:1;
+    pointer-events: all;
+}
+
+.popup{
+    width:500px;
+    height: 400px;
+    max-width:80%;
+    position:fixed;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out;
+    border-radius:5px;
+    background-color:white;
+    z-index:10;
+    overflow: hidden;
+}
+
+.popup.active{
+    transform:translate(-50%, -50%) scale(1);
+}
+
+.popup-header{
+    /* border-bottom:2px solid black; */
+    padding: 10px 15px;
+}
+
+.title{
+    font-size:1.5rem;
+    font-weight:400;
+    text-align: center;
+    font-family: "roboto", sans-serif;
+    text-transform:capitalize;
+}
+
+.title p {
+    font-size:0.75rem;
+    
+}
+
+.search-bar{
+    border-radius: 20px;
+    font-size:0.8rem;
+    border: none;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+}
+
+.send-button{
+    background: linear-gradient(81.23deg, #7C49F6 9.3%, #FF53B7 51.61%, #FFD458 97.6%);
+    position: relative;
+    left: 185px;
+    padding-bottom: 25px;
+    margin: 20px 15px -10px;
+    text-align: center;
+    border-radius:5px;
+    height:25px;
+    width:50px;
+
+}
+
+.send-button button{
+    border: none;
+    font-size: 0.8rem;
+    color: #fff;
+    font-weight: bold;
+    text-transform: capitalize;
+    font-family: roboto, sans-serif;
+    outline:none;
+    background: none;
+}
+
+.close-button{
+    border:none;
+    position:absolute;
+    right: 0;
+    top: 0;
+    /* padding:5px; */
+    display: inline-block;
+    background:none;
+    outline:none;
+    font-size:1.5rem;
+    font-weight:bold;
+}
+
+.popup-body{
+    padding: 10px 15px;
+    font-size: 1.2rem;
+}
+
+.suggested{
+    margin-left: 15px;
+    margin-top: -10px;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.suggested-profile{
+    /* margin-top: 10px; */
+    /* margin-top: -10px; */
+    width:55px;
+    height:55px;
+    z-index: 1;
+}
+
+.selected-profile{
+    margin-top: -45px;
+    opacity: 0.7;
+    display: none;
+    position: relative;
+    z-index: 2;
+    left: -4px;
+    top: -18px;
+    width: 64px;
+    height: 64px;
+}
+
+.selected-profile.active{
+    margin-top: -45px;
+    opacity: 0.7;
+    display: inline-block;
+    position: relative;
+    z-index: 2;
+    left: -4px;
+    top: -18px;
+    width: 64px;
+    height: 64px;
+}
+
+.user-name{
+    font-size: 0.6rem ;
+    width: 55px;
+    text-align:center;
+    margin-top:7px;
+    font-weight:400;
+    font-family: "Roboto", sans-serif;
+}
+
+.user-name.active{
+    font-size: 0.6rem ;
+    width: 55px;
+    text-align:center;
+    margin-top:-16px;
+    font-weight:400;
+    font-family: "Roboto", sans-serif;
+}
+
+.see-all-users{
+    font-size: 0.6rem ;
+    width: 55px;
+    text-align:center;
+    margin-top:6px;
+    font-weight:400;
+    font-family: "Roboto", sans-serif;
+}
+
+.see-all-button{
+    outline: none;
+    background: none;
+    border: none;
+}
+
+  
+/* POPUP SECTION END */
+
+/* POPUP SECTION FOR SELECT ALL */
+.select-followers{
+    display:flex;
+    font-family: "Roboto", sans-serif;
+    margin: 18px 9px;
+}
+
+.follower-title{
+    font-weight: 400;
+}
+
+.select-all{
+    background:none;
+    border: none;
+    outline:none;
+    font-size: 0.7rem;
+    box-shadow: 0px 0px 15px rgba(0,0,0,0.2);
+    margin-left: 9px;
+    font-weight: 400;
+}
+
+.all-selected{
+    background:none;
+    border: none;
+    outline:none;
+    font-size: 0.7rem;
+    background: linear-gradient(81.23deg, #7C49F6 9.3%, #FF53B7 51.61%, #FFD458 97.6%);
+    box-shadow: 0px 0px 15px rgba(0,0,0,0.2);
+    color: #fff;
+    margin-left: 9px;
+    font-weight: 400;
+}
+
+.user-info{
+    margin-top: 18px;
+    font-size:0.9rem;
+}
+
+.user-info .user-email{
+    margin-top:-15px;
+    font-size:0.8rem;
+    color:#6A6A6A;
+}
+
+.selected{
+    display:flex;
+    opacity: 0;
+    justify-content:center;
+    align-items:center;
+}
+
+.selected.select{
+    opacity:1;
+}
+
+/* POPUP SECTION END */
+
+.last div{
+    text-align: center;
+    margin-bottom: 6px;
+}
+
+.last img{
+    width: 4.2rem;
+}
+
+@media (max-width: 281px){
+    #p4{
+        font-size: 1.3em !important;
+    }
+    .p5{
+        font-size: .7em;
+    }
+    .participants{
+        font-size: 0.7em;
+    }
+    .last img{
+        width: 3.1rem;
+    }
+    .p11{
+        font-size: .57rem;
+    }
+}
+
+@media (min-width: 281px) and (max-width: 376px){
+    #p4{
+        font-size: 1.5em !important;
+    }
+    .p5{
+        font-size: .7em !important;
+    }
+    .participants{
+        font-size: 0.8em;
+    }
+    .last img {
+        width: 3rem;
+    }
+    .p11{
+        font-size: .56rem;
+    }
+}
+
+@media (min-width: 410px) and (max-width: 767px){
+
+    #p4{
+        font-size: 1.8em !important;
+    }
+    .p5{
+        font-size: .9em;
+    }
+    .last img{
+        width: 3.2rem;
+    }
+}
+
+@media (min-width: 768px){
+    #p4{
+        font-size: 2em !important;
+    }
+    .p5{
+        font-size: 1.1em !important;
+    }
+    .participants{
+        font-size: 1.47em !important;
+    }
+    .p11{
+        font-size: 1em;
+    }
+}
+
+@media (min-width: 1024px){
+    .participants{
+        font-size: 1.2em !important;
+    }
+}
+
+@media only screen and (min-width:375px) and (max-width:1024px) {
+    .p11{
+        margin-top: 1rem;
+    }
+}
