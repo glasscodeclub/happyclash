@@ -1,0 +1,209 @@
+body{
+    font-family: "Roboto", sans-serif;
+}
+
+select{
+         -webkit-appearance: none;
+         -moz-appearance: none;
+        -o-appearance: none;
+        appearance: none;  
+        background:none;
+        /* display: none; */
+        font-family: 'FontAwesome';
+        content: '\f078';
+        background-color: #fff!important;
+  }
+
+
+
+input[type="date"] , input[type="time"]{
+    position: relative;
+    /* padding: 10px; */
+  }
+
+.filter input,.filter  select{
+    height:fit-content;
+    max-width: 113px;
+    width:-webkit-fill-available;
+    font-size:0.9rem;
+    margin: 10px;
+    border:1px solid #DEDEDE;
+    outline:none;
+    background:#fff;
+}
+
+input[type=date]::-webkit-datetime-edit {
+    color: transparent;
+}
+
+input.active::-webkit-datetime-edit{
+    color: black !important;
+}
+
+input[type=date]:focus::-webkit-datetime-edit {
+    color: black;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+   
+    color: transparent;
+    background: none;
+    z-index: 1;
+}
+
+select option{
+    background:#fff;
+    padding:5px;
+}
+
+  input[type="date"]:before {
+    color: transparent;
+    background: none;
+    display: block;
+    font-family: 'FontAwesome';
+    content: '\f078';
+    /* This is the calendar icon in FontAwesome */
+    width: 15px;
+    height: 20px;
+    position: absolute;
+    /* top: 12px; */
+    right: 6px;
+    color: #909090;
+  }
+
+  input[type=time]::-webkit-datetime-edit {
+      color:transparent;
+  }
+
+  input[type=time]:focus::-webkit-datetime-edit {
+    color: black !important;
+}
+
+
+  input[type=time]::-webkit-calendar-picker-indicator {
+    color: transparent;
+    background: none;
+    display: block;
+    z-index: 1;
+ }
+
+ input[type="time"]:before {
+    color: transparent;
+    background: none;
+    display: block;
+    font-family: 'FontAwesome';
+    content: '\f078';
+    /* This is the calendar icon in FontAwesome */
+    width: 15px;
+    height: 20px;
+    position: absolute;
+    /* top: 12px; */
+    right: 6px;
+    color: #909090;
+  }
+
+#overlay{
+    position:fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 5;
+    opacity:0;
+    background-color:rgba(0,0,0,0.5);
+    pointer-events: none;
+}
+
+#overlay.active{
+    opacity: 1;
+    transition:200ms ease-in-out;
+    pointer-events:all;
+}
+
+  .filter{
+      position: fixed;
+      background:#fff;
+      top: 50%;
+      left:50%;
+      width:88%;
+      z-index: 10;
+      padding:5%;
+      border-radius:4px;
+      font-family:"Roboto", sans-serif; 
+      text-transform: capitalize;
+      transform: translate(-50%, -50%) scale(0);
+  }
+
+  .filter.active{
+    top: 50%;
+    left:50%;
+    transform: translate(-50%, -50%) scale(1);
+    transition: 200ms ease-in-out;
+  }
+  .title{
+      text-align:center;
+      font-size:1.2rem;
+  }
+
+  .close-btn{
+      font-size:1.5rem;
+      position:absolute;
+      top:0;
+      right: 15px;
+      font-weight: bold;
+  }
+
+  .sortby, .date, .duration{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 15px;
+      grid-row-gap: 15px ;
+  }
+
+  .sortby-option{
+    position: relative;
+    width: 100%;
+}
+
+.sortby-option:after{
+    /* color: transparent; */
+    background: none;
+    display: block;
+    font-family: 'FontAwesome';
+    content: '\f078';
+    /* This is the calendar icon in FontAwesome */
+    width: 15px;
+    height: 20px;
+    position: absolute;
+    top: 10px;
+    right: 17px;
+    color: #909090;
+    pointer-events: none;
+}
+
+.filter-head{
+    padding-bottom: 40px;
+}
+
+.name{
+    color: #7B7B7B;
+    font-size: 0.9rem;
+    justify-self: baseline;
+    align-self: center;
+}
+
+.apply{
+    padding-top: 16px;
+    text-align: center;
+}
+
+.apply>button{
+    text-transform: capitalize;
+    background: none;
+    outline: none;
+    border:none;
+    font-size:0.9rem;
+    width: 45%;
+    border-radius:4px;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2)
+}

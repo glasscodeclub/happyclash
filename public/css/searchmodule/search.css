@@ -5,6 +5,10 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
+body{
+    margin-bottom: 60px;
+}
+
 .head {
     position:sticky;
     top:0px;
