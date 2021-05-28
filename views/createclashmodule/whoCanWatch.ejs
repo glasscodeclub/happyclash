@@ -50,7 +50,7 @@
                     <h6>Choose Friends to add:</h6>
                     <input type="search" class="form-control my-3" placeholder="Username/Email/Phone">
                     <div style="display: flex; justify-content: flex-end; margin-top: 1em;">
-                        <button style="width: 5em;"> Send </button>
+                        <button style="width: 5em;" onclick="send(this)"> Send </button>
                     </div>
                 </div>
             </div>
@@ -81,14 +81,14 @@
                     <p style="color: #7B7B7B; font-size: .9em;">Anyone with the link can view</p>
                     <input type="search" class="form-control my-3" placeholder="https://happyClash.com/customLink">
                     <div style="display: flex; justify-content: flex-end; margin-top: 1em;">
-                        <button style="width: 5em;" class="get_link"> Get Link </button>
+                        <button style="width: 5em;" class="get_link" onclick="getLink(this)"> Get Link </button>
                     </div>
                 </div>
             </div>
         </div>
 
         <div class="continue-btn">
-            <button>Start Clash</button>
+            <button onclick="startClash(this)">Start Clash</button>
         </div>
 
         <!-- POPUPS -->
@@ -111,6 +111,7 @@
 
     <%- include("../BottomNavmodule/bottomnavbar") %>
     <script src="/js/createclashmodule/addParticipants.js"></script>
+    <script src="/js/createclashmodule/whoCanWatch.js"></script>
 </body>
 
 </html>
