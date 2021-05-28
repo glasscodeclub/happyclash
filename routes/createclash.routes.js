@@ -18,4 +18,8 @@ router.get('/addParticipants', (req, res) => {
     res.render("createclashmodule/addParticipants", { url: req.url });
 })
 
+router.get("/whocanwatch", (req, res) => {
+    res.render("createclashmodule/whoCanWatch", { url: req.url })
+})
+
 module.exports = router;

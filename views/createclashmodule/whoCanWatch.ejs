@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Add Participants</title>
+    <title>Who Can Watch</title>
 
     <script src="https://kit.fontawesome.com/2635296004.js" crossorigin="anonymous"></script>
 
@@ -18,7 +18,7 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/css/BottomNavmodule/bottomnavbar.css">
-    <link rel="stylesheet" href="/css/createclashmodule/addParticipants.css">
+    <link rel="stylesheet" href="/css/createclashmodule/whoCanWatch.css">
 </head>
 
 <body>
@@ -28,12 +28,23 @@
         </div>
 
         <div id="headdiv">
-            <p id="heading">Add Participants</p>
+            <p id="heading">Who Can Watch?</p>
         </div>
     </div>
 
     <div class="container" style="margin-bottom: 5.5rem !important;">
-        <div class="choose-friends container" style="margin-top: 5em;">
+        <div class="container everyone">
+            <div class="row d-flex justify-content-center" onclick="select(this)">
+                <div class="col" align='center'>
+                    <p style="margin-bottom: 0;">Everyone</p>
+                </div>
+                <div class="col selected select">
+                    <i class=" far fa-check-square"></i>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="choose-friends container my-4">
             <div class="row justify-content-center">
                 <div class="col-md-6">
                     <h6>Choose Friends to add:</h6>
@@ -45,7 +56,6 @@
             </div>
         </div>
         <hr>
-
         <div class="followers">
             <div class="row my-3">
                 <div class="col">
@@ -63,9 +73,22 @@
                 <% } %>
             </div>
         </div>
+        <hr>
+        <div class="choose-friends container" style="margin-top: 2em; margin-bottom: 2.5em;">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <h5 style="margin-bottom: 0;">Get Shareable Link:</h5>
+                    <p style="color: #7B7B7B; font-size: .9em;">Anyone with the link can view</p>
+                    <input type="search" class="form-control my-3" placeholder="https://happyClash.com/customLink">
+                    <div style="display: flex; justify-content: flex-end; margin-top: 1em;">
+                        <button style="width: 5em;" class="get_link"> Get Link </button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <div class="continue-btn">
-            <button>Continue</button>
+            <button>Start Clash</button>
         </div>
 
         <!-- POPUPS -->
@@ -88,7 +111,6 @@
 
     <%- include("../BottomNavmodule/bottomnavbar") %>
     <script src="/js/createclashmodule/addParticipants.js"></script>
-
 </body>
 
 </html>
