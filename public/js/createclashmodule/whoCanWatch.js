@@ -3,11 +3,6 @@ function send(e) {
     console.log("You clicked on send ...");
 }
 
-function seeAll(e) {
-    console.log(e);
-    console.log("You clicked on seeAll...");
-}
-
 function getLink(e) {
     console.log(e);
     console.log("You clicked on getlink button...");
