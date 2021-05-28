@@ -22,6 +22,14 @@ function pauseVideo() {
     }
 }
 
+function del(){
+  console.log('Delete icon was hit.');
+}
+
+function save(){
+  console.log('Save icon was hit')
+}
+
 window.addEventListener('load',()=> {
     const myvideo = document.querySelector('.myvideo');
 
@@ -34,15 +42,21 @@ function pauseAndplayVideo() {
     
     const myvideo = document.querySelector('.myvideo');
     const videoplay = document.querySelector('#videoplay');
+    const playbtn = document.querySelector(".playbtn");
+    const pausebtn = document.querySelector(".pausebtn");
 
     if(isPlaying === false) {
         myvideo.play();
         isPlaying = true;
         videoplay.style.display = 'none';
+        playbtn.classList.remove("active")
+        pausebtn.classList.add("active")
     }else{
         myvideo.pause();
         isPlaying = false;
         videoplay.style.display = 'block';
+        playbtn.classList.add("active")
+        pausebtn.classList.remove("active")
     }
 
 }

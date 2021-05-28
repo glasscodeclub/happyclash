@@ -6,6 +6,24 @@ function playVideo(element) {
   window.location.href = "/videomode";
 }
 
+function play(){
+  console.log("Play button was clicked")
+}
+
+function del(){
+  console.log("delete button was clicked")
+}
+
+function download(){
+  console.log("download button was clicked")
+} 
+
+function capture(){
+  console.log("capture button was clicked")
+}
+
+
+
 window.addEventListener("load", () => {
   const myvideo = document.getElementsByClassName("myvideo");
   const videodots = document.querySelector(".videodots");
