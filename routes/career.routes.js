@@ -29,4 +29,9 @@ router.get("/congratulations", (req, res) => {
     res.render("./Careermodule/congratulations", { url: req.url })
 })
 
+router.get("/post", (req, res) => {
+    res.render("./Careermodule/post", { page:"Post" , url: req.url })
+})
+
+
 module.exports = router;
