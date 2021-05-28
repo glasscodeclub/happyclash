@@ -122,6 +122,22 @@ body {
     position: relative;
   }
   
+.pausebtn{
+  opacity:0;
+}
+
+.playbtn{
+  opacity:0;
+}
+
+.pausebtn.active{
+  opacity:1;
+}
+
+.playbtn.active{
+  opacity: 1;
+}
+
   /* #playicon {
       display: table;
       position: fixed;

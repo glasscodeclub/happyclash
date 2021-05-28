@@ -11,7 +11,7 @@ window.addEventListener('load', ()=> {
     const play = document.querySelector(".play")
     const pause = document.querySelector(".pause")
 
-    console.log(challenges)
+    video.play()
 
     challenges.forEach(challenge => {
         if(count%2 === 0){
@@ -26,7 +26,6 @@ window.addEventListener('load', ()=> {
     background.forEach(back => {
         i= Math.random() * (3-0) + 0;
         i = Math.floor(i)
-        console.log(i);
         back.style["background"] = arr[i];
     })
 
@@ -46,16 +45,10 @@ window.addEventListener('load', ()=> {
     closePopupBtn.forEach(btn => {
         btn.addEventListener('click', ()=>{
             const pop = btn.closest(".popup-playlist")
-            console.log(pop)
             closehr(hr)
             closePop(pop)
         })
     })
-
-    console.log(pause)
-    console.log(play) 
-    console.log(video)
-    console.log(closePopupBtn)
 })
 
 
@@ -111,5 +104,3 @@ function closehr(hr){
 }
 
 // WORKING OF POPUP
-
-console.log(closePopupBtn)
