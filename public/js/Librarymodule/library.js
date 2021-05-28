@@ -72,3 +72,11 @@ overlay.addEventListener('click', () => {
   const pop = document.querySelector(".popup-play.active")
   closePop(pop)
 })
+
+function upload(){
+
+}
+
+function optionUpload(){
+
+}

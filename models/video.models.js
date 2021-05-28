@@ -1,19 +1,16 @@
 var mongoose = require("mongoose");
-var passportLocalMongoose = require("passport-local-mongoose");
+
 
 var VideoSchema = new mongoose.Schema({
-    videoid:{
+    username:{
         type:String,
         unique:true,
     },
-    videourl:{
-        type:String,
-        unique:true,
-    },
-    
+    videoName:{
+        type:String
+    }
 });
 
-VideoSchema.plugin(passportLocalMongoose);
 
 module.exports = mongoose.model("Video",VideoSchema);
 
