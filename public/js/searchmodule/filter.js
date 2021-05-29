@@ -28,6 +28,10 @@ openFilter.forEach(filter=>{
 closeFilter.forEach(filter=>{
     filter.addEventListener('click', ()=> {
         const fil = filter.closest(".filter.active")
+        if(filter.type === "submit")
+        {
+            console.log("Filters Applied")
+        }
         close(fil)
     })
 })
