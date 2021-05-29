@@ -20,10 +20,6 @@
     <link rel="stylesheet" href="/css/Careermodule/post.css">
     
 
-
-    <!-- CUSTOM JS -->
-    <script src="/js/Careermodule/post.js"></script>
-
     <title><%=page%></title>
 </head>
 <body>
@@ -42,15 +38,18 @@
     
         <div class="post-video">
             <div class="post-details">
-                <div class="play-btn" onclick="play()">
-                    <img src="/img/Play.svg" alt="play">
+                <div class="check">
+                    <div class="play-btn">
+                        <img src="/img/Play.svg" alt="play">
+                    </div>
+    
+                    <div class="rank">rank 12/20</div>
+                    <div class="time">0:20</div>
+                    <video class="post" muted>
+                        <source src="/video/sample" type="video/mp4">
+                    </video>
                 </div>
-
-                <div class="rank">rank 12/20</div>
-                <div class="time">0:20</div>
-                <video class="post">
-                    <source src="/video/sample" type="video/mp4">
-                </video>
+                
 
                 <div class="challenge-details">
                     <div class="time-since">2h ago</div>
@@ -73,4 +72,8 @@
 
     <%- include("../BottomNavmodule/bottomnavbar")%>
 </body>
+
+<!-- CUSTOM JS -->
+<script src="/js/Careermodule/post.js"></script>
+
 </html>

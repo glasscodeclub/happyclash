@@ -36,20 +36,17 @@ function challenge(e, id) {
           font-size: 0.7rem;
           border: none;
         "
-        onclick="console.log(this)"
+        onclick="del()"
       >
         Delete
       </button>
     </div>
   </div>
   <div class="row mt-4">
-    <div class="col" style="text-align: center; position: relative">
-      <img
-        class="vid"
-        style="height: 70vh; width: 90vw; position: relative"
-        src="https://s3-alpha-sig.figma.com/img/6ef4/0d39/15190984843b6f0f3e0980aee083e327?Expires=1620604800&Signature=GaOVP7v3NBVDnjKmU~n73B8Y~QG051XzJ-TadufITgk88tiCZkdRdYnnl0b2mfV8jav0huMbnkXsgA-WfyyadpzgSezvInmC-oLFfvRshs-hh0Uovx8Vnu06VdmyQHdr5gz2zhzinlQIC-1yzaURMoEeUuArhHCMZzK3DqUBG2trXAYfGKrx9ryEBLoMeDYDu2LXiV8~9Vu7gJoDhG1MW0w~uaH3mBtwXH10R0SoI~BmcYPcZ52JP6VgtJCQToH6vFAJrUDPJcFtJzP-LXKWRBSARSyfHKepBrLnP7wfog10lvephcQ6Xv~~Gt37bApg9Xno-R1DcvTkLNe2bPzrIg__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA"
-        alt="Img"
-      />
+    <div class="col" style="text-align: center; position: relative; ">
+      <video style = "position: relative; width:100%; right: 6px">
+        <source src="/video/sample" type="video/mp4" />
+      </video>
       <div
         style="
           position: absolute;
@@ -125,7 +122,7 @@ function challenge(e, id) {
           src="/img/Play.svg"
           width="50"
           height="50"
-          onclick="console.log(this)"
+          onclick="play()"
         />
       </div>
       <div
@@ -176,23 +173,23 @@ function challenge(e, id) {
       "
     >
       <div onclick="console.log(this)" style="text-align: center">
-        <img style="width: 15vw" src="img/profile.png" class="p1" />
+        <img style="width: 15vw" src="/img/profile.png" class="p1" />
         <h6 style="font-size: 0.6rem">Jane Cooper</h6>
       </div>
       <div onclick="console.log(this)" style="text-align: center">
-        <img style="width: 15vw" src="img/profile1.png" class="p1" />
+        <img style="width: 15vw" src="/img/profile1.png" class="p1" />
         <h6 style="font-size: 0.6rem">Jane Cooper</h6>
       </div>
       <div onclick="console.log(this)" style="text-align: center">
-        <img style="width: 15vw" src="img/profile2.png" class="p1" />
+        <img style="width: 15vw" src="/img/profile2.png" class="p1" />
         <h6 style="font-size: 0.6rem">Jane Cooper</h6>
       </div>
       <div onclick="console.log(this)" style="text-align: center">
-        <img style="width: 15vw" src="img/profile3.png" class="p1" />
+        <img style="width: 15vw" src="/img/profile3.png" class="p1" />
         <h6 style="font-size: 0.6rem">Jane Cooper</h6>
       </div>
       <div onclick="console.log(this)" style="text-align: center">
-        <img style="width: 15vw" src="img/profile4.png" class="p1" />
+        <img style="width: 15vw" src="/img/profile4.png" class="p1" />
         <h6 style="font-size: 0.6rem">Jane Cooper</h6>
       </div>
     </div>
@@ -230,6 +227,14 @@ function challenge(e, id) {
     document.getElementById(`song-details-${id}`).appendChild(div);
     divElem[id] = div;
   }
+}
+
+function play(){
+  console.log("Play button was clicked")
+}
+
+function del(){
+  console.log("Delete button was clicked")
 }
 
 // function addParticipants(e, id) {

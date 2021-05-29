@@ -47,13 +47,14 @@ body{
 }
 
 #heading {
-    width: 65%;
+    /* width: 65%; */
+    position:relative;
     margin: 0.8rem auto 0.4rem;
     font-size: 2rem !important;
     font-family: Roboto;
     font-style: normal;
     font-weight: bold;
-    background: linear-gradient(180deg, #7C49F6 0%, #E55ABD 47.92%, #FEDF67 100%);
+    background: linear-gradient(90deg, #7C49F6 -4%, #E55ABD 28.92%, #FEDF67 37%);
     color: transparent;
     -webkit-background-clip: text;
     background-clip: text;
