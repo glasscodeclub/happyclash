@@ -112,8 +112,15 @@
                 </div>
                 <div class="popup-body">
                     <div class="options">
-                        <i class="fas fa-camera" onclick="capture()"></i> 
-                        <i class="fas fa-photo-video" onclick="window.location.href='/upload'"></i>
+                        <div class="camera">
+                            <i class="fas fa-camera" onclick="capture()"></i> 
+                            <p>Camera</p>
+                        </div>
+                        <div class="gallery">
+                            <i class="fas fa-photo-video" onclick="window.location.href='/upload'"></i>
+                            <p>Gallery</p>
+                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -136,7 +143,7 @@
                         <i class="far fa-trash-alt" ></i><span>Delete</span>
                     </div>
                     <div class="control" onclick="download()"> 
-                        <i class="fas fa-download" ></i><span>Download</span>
+                        <i class="fas fa-download" ></i><span>Save to Gallery</span>
                     </div>
                     
                     

@@ -275,6 +275,12 @@ body {
   font-weight: 400;
 }
 
+.camera p, .gallery p{
+  font-size:0.8rem;
+  margin-left: -5px;
+  color: #5A5A5A;
+}
+
 /* END POPUP FOR PLAY OPTIONS */
 
 @media only screen and (min-width: 750px) {
