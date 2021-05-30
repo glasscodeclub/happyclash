@@ -39,6 +39,11 @@ body {
     z-index: 10;
 }
 
+#happyclashdiv img {
+    width: 37%;
+    height: 35%;
+}
+
 #happyclash {
     width: 6rem;
     height: 6rem;
@@ -92,7 +97,7 @@ hr {
     font-family: Roboto;
     font-style: normal;
     font-weight: bolder;
-    background: linear-gradient(180deg, #7C49F6 0%, #E55ABD 47.92%, #FEDF67 100%);
+    background: linear-gradient(90deg, #7C49F6 0%, #E55ABD 47.92%, #FEDF67 100%);
     color: transparent;
     -webkit-background-clip: text;
     background-clip: text;
@@ -128,7 +133,7 @@ hr {
     margin: 1rem auto;
     padding: 0.22rem 3.5rem;
     font-size: 0.8rem;
-    font-family: Jost;
+    font-family: 'Roboto';
     font-style: normal;
     font-weight: normal;
     background: linear-gradient(81.23deg, #7C49F6 9.3%, #FF53B7 51.61%, #FFD458 97.6%);
@@ -190,7 +195,7 @@ div#collagediv::-webkit-scrollbar {
     font-family: Roboto;
     font-weight: bolder;
     font-style: normal;
-    background: linear-gradient(180deg, #7C49F6 0%, #E55ABD 47.92%, #FEDF67 100%);
+    background: linear-gradient(90deg, #7C49F6 0%, #E55ABD 47.92%, #FEDF67 100%);
     color: transparent;
     -webkit-background-clip: text;
     background-clip: text;
@@ -203,7 +208,7 @@ div#collagediv::-webkit-scrollbar {
     font-family: Roboto;
     font-weight: bolder;
     font-style: normal;
-    background: linear-gradient(180deg, #7C49F6 0%, #E55ABD 47.92%, #FEDF67 100%);
+    background: linear-gradient(90deg, #7C49F6 0%, #E55ABD 47.92%, #FEDF67 100%);
     color: transparent;
     -webkit-background-clip: text;
     background-clip: text;
@@ -215,7 +220,7 @@ div#collagediv::-webkit-scrollbar {
     font-family: Roboto;
     font-weight: bolder;
     font-style: normal;
-    background: linear-gradient(180deg, #7C49F6 0%, #E55ABD 47.92%, #FEDF67 100%);
+    background: linear-gradient(90deg, #7C49F6 0%, #E55ABD 47.92%, #FEDF67 100%);
     color: transparent;
     -webkit-background-clip: text;
     background-clip: text;
@@ -363,6 +368,11 @@ div#collagediv::-webkit-scrollbar {
     #happyclashdiv {
         top: 15% !important;
         /**/
+    }
+
+    #happyclashdiv img {
+        width: 37%;
+        height: 35%;
     }
 
     #happyclash {

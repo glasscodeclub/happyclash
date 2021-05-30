@@ -53,9 +53,10 @@
     font-size: 1.45rem;
     font-family: Roboto;
     font-style: normal;
-    background: linear-gradient(357.55deg, #7C49F6 21.82%, #E55ABD 49.61%, #FEDF67 79.82%);
+    background: linear-gradient(90deg, #7C49F6 21.82%, #E55ABD 49.61%, #FEDF67 89.82%);
     color:transparent;
     -webkit-background-clip: text;
+    font-weight: bold;
     background-clip: text; 
 }
 
@@ -75,13 +76,13 @@
 
 .input-group {
     text-align: center;
+    filter: drop-shadow(0px 3.55359px 13.326px rgba(0, 0, 0, 0.06));
     margin: 1rem auto;
     padding: 0.2rem 1rem;
     border-radius: 5rem;
     width: 48%;
     overflow: auto;
     background-color: white;
-    box-shadow: 0 0.000025rem 1.2rem black;
 }
 
 .input-group:focus {
@@ -126,7 +127,7 @@
 .submit {
     padding: 0.2rem 2.4rem !important;
     /* font-size: 1rem; */
-    font-family: Jost !important;
+    font-family: 'Roboto' !important;
     font-style: normal !important;
     font-weight: normal !important;
     background: linear-gradient(81.23deg, #7C49F6 9.3%, #FF53B7 51.61%, #FFD458 97.6%);
@@ -144,10 +145,11 @@
 
 .otheroption {
     font-size: 1.04rem;
-    font-family: 'Jost', sans-serif;
-    font-weight: 2rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight:2rem;
+    color:#8C8C8C;
     font-style: normal;
-    margin: 0.8rem auto;
+    margin: 1.8rem auto;
 }
 
 .otherlink {
@@ -169,11 +171,14 @@
     
     #subheading {
         font-size: smaller;
+        background: linear-gradient(90deg, #7C49F6 21.82%, #E55ABD 49.61%, #FEDF67 79.82%);
     }
     
     .input-group {
         margin: 0 auto !important;
         padding: 0 0.6rem !important;
+        filter: drop-shadow(0px 3.55359px 13.326px rgba(0, 0, 0, 0.06));
+
         width: 65%;
     }
 
@@ -183,6 +188,7 @@
 
     .submit {
         padding: 0.09rem 1.58rem;
+        font-family: 'Roboto', sans-serif;
     }
 
     .formbutton {
@@ -228,7 +234,11 @@
         margin: 1rem auto !important;
         padding: 0.25rem 0.68rem !important;
         width: 65%;
-        box-shadow: 0 0 1.2rem black;
+        filter: drop-shadow(0px 3.55359px 13.326px rgba(0, 0, 0, 0.06));
+    }
+
+    .input-group i{
+        color:#A7A7A7;
     }
 
     .form-control {
@@ -241,9 +251,9 @@
         margin: 1rem auto;
     }
 
-    .otheroption {
+    /* .otheroption {
         margin: 0.2rem auto !important;
-    }
+    } */
 
     .form-group {
         margin: 0.5rem auto !important;
@@ -260,6 +270,7 @@
         background-color: black;
         color: white;
         white-space: normal;
+        font-family: 'Roboto', sans-serif;
     }
     
     .errordiv {
