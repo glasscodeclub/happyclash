@@ -12,3 +12,9 @@ window.addEventListener('load', () => {
         collage.scrollBy(5,0);
     }, 100);
 });
+
+function download(){
+    console.log("download btn was clicked")
+    // window.location.href='/'
+    
+}

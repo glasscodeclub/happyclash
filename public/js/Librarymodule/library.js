@@ -15,7 +15,7 @@ function del(){
 }
 
 function download(){
-  console.log("download button was clicked")
+  console.log("Save to Gallery was clicked")
 } 
 
 function capture(){
