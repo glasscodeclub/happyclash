@@ -21,7 +21,7 @@ var app = express();
 const port = 3000;
 const secret = process.env.SECRET || "Rusty is the best dog in the worldpassport";
 
-
+//mongo URL
 const url = `mongodb+srv://hos:Target@1@cluster0.c7rpd.mongodb.net/HappyClash?retryWrites=true&w=majority`||"mongodb://localhost/happyclashdb";
 
 const connectionParams={
