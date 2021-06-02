@@ -4,16 +4,25 @@ body {
     touch-action: manipulation !important;
 }
 
+
+
 .bottomnav {
     position: fixed !important;
-    background-size: auto !important;
     background-color: #EFEFEF;
     width: 100% !important;
-    height: 3.55rem !important;
-    bottom: 0 !important;
+    height: 2.55rem !important;
+    bottom: 0px !important;
     left: 0 !important;
     right: 0 !important;
     padding: 0.3rem auto !important;
+}
+
+.hcl img{
+    width: 42px;
+    margin: 0;
+    filter: drop-shadow(0px 0px 9px rgba(0, 0, 0, 0.2));
+    height: auto;
+    margin-top: -9px;
 }
 
 .naviconslg,
@@ -22,7 +31,7 @@ body {
     width: 100% !important;
     text-align: center !important;
     vertical-align: middle !important;
-    margin: auto !important;
+    margin: 9px 0px !important;
     padding: 0 !important;
     word-wrap: normal;
 }

@@ -4,14 +4,6 @@
     box-sizing: border-box;
 }
 
-/* html,body
-{
-    width: 105.07%;
-    margin: 0px;
-    padding: 0px;
-    overflow-x: hidden; 
-} */
-
 body{
     margin-bottom: 70px;
     font-family: "Roboto", sans-serif;
