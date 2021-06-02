@@ -58,11 +58,12 @@ video {
 .challengeName {
   font-family: Roboto;
   font-style: normal;
-  background: linear-gradient(180deg, #7c49f6 0%, #e55abd 47.92%, #fedf67 100%);
+  font-weight: bolder;
+  background: linear-gradient(90deg, #7c49f6 0%, #e55abd 47%, #fedf67 100%);
   color: transparent;
   -webkit-background-clip: text;
   background-clip: text;
-  font-size: 1.35rem;
+  font-size: 1.55rem;
   margin: 0.25rem auto;
   margin-bottom: 0.25rem !important;
 }
@@ -73,21 +74,24 @@ video {
   font-weight: normal;
   color: white;
   font-size: 0.65rem;
-  margin: 0.25rem auto;
+  margin: 0.58rem auto;
   margin-bottom: 0rem !important;
 }
 
 .challengesubtitle {
   font-family: Roboto;
+  text-transform: capitalize;
   font-style: normal;
   font-weight: normal;
   color: white;
-  font-size: 0.65rem;
+  font-size: 0.7rem;
 }
 
 .infodiv {
-  width: 100%;
-  text-align: right !important;
+  position: absolute;
+  right: 15px;
+  top: 20px;
+  z-index: 3;
 }
 
 svg.infoicon {
@@ -113,21 +117,6 @@ svg.infoicon {
   position: relative;
 }
 
-/* #playicon {
-    display: table;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    text-align: center;
-    vertical-align: middle !important;
-    padding: 50% auto !important;
-    width: 100% !important;
-    height: 100% !important;
-    z-index: 10;
-} */
-
 #videoplay {
   /* margin: 30%; */
   position: fixed;
@@ -139,9 +128,6 @@ svg.infoicon {
   display: inline-block;
   width: 4rem;
   height: 4rem;
-  /* margin: auto !important;
-    margin-top: 50%;
-    margin-bottom: 50%; */
 }
 
 .activity {
@@ -163,8 +149,9 @@ svg.infoicon {
 
 .joinclashdiv {
   position: fixed;
-  bottom: 16.8%;
+  bottom: 17.8%;
   left: 3.2%;
+  text-align: center;
 }
 
 .joinicon {
@@ -174,6 +161,7 @@ svg.infoicon {
 .joinclashtxt {
   font-weight: bolder;
   font-size: 0.75rem;
+  margin-top:-8px;
   color: white;
 }
 

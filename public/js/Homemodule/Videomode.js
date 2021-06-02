@@ -7,7 +7,7 @@ function toNextVideo(){
     console.log("Next video button was hit");
 }
 
-function iButton(){
+function info(){
     console.log("i button was hit");
 }
 

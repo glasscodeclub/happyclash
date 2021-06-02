@@ -24,9 +24,13 @@ function changeColor() {
 
   plain.style.background = "white";
   plain.style.color = "black";
-  plain.style.boxShadow = "0.1rem 0.1rem 0.5rem grey";
+  plain.style.boxShadow = "0px 1px 7px rgba(0, 0, 0, 0.15)";
 }
 
 function badgeClick(elem) {
   console.log(this);
+}
+
+function reload(){
+  console.log("Reload button was hit")
 }
