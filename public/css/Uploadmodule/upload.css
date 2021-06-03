@@ -73,6 +73,18 @@ form{
     font-size:14px;
 }
 
+#backdiv{
+    position: absolute;
+    margin-left: 0.8rem !important;
+    margin-top: 0.8rem !important;
+    width:fit-content;
+    padding: 2px 10px;
+    background-color: white;
+    border-radius: 0.5rem;
+    float: left;
+    font-size: 1.6rem;
+}
+
 .upload{
     background: linear-gradient(90deg, #7C49F6 9.3%, #FF53B7 51.61%, #FFD458 97.6%);
     box-shadow: 0px 0.527919px 3.69543px rgba(0, 0, 0, 0.15);
