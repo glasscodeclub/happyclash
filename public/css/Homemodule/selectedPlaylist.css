@@ -24,6 +24,7 @@ p{
     position: absolute;
     left: 38px;
     z-index: 2;
+    top:8px;
     /* width: 100%; */
     display: inline-block;
 }
@@ -31,11 +32,12 @@ p{
 .challengeName {
     font-family: Roboto;
     font-style: normal;
-    background: linear-gradient(180deg, #7c49f6 0%, #e55abd 47.92%, #fedf67 100%);
+    background: linear-gradient(90deg, #7c49f6 0%, #e55abd 47.92%, #fedf67 100%);
     color: transparent;
     -webkit-background-clip: text;
     background-clip: text;
     font-size: 1rem;
+    font-weight: bolder;
     margin: 0.25rem auto;
     margin-bottom: 0.25rem !important;
 }
@@ -52,6 +54,8 @@ p{
 
 .challengesubtitle {
     font-family: Roboto;
+    text-transform: capitalize; 
+    font-weight: bold;
     font-style: normal;
     font-weight: normal;
     color: white;
@@ -94,7 +98,7 @@ video{
 .video-controls{
     display: flex;
     background-color: #F0F0F0;
-    padding: 10px 15px;
+    padding: 10px 20px;
     justify-content: space-between;
 }
 
@@ -108,16 +112,27 @@ video{
 }
 .pause{
     position: absolute;
+    display:none;
     transform: scale(0);
     width:40px;
 }
 .play{
     position: absolute;
+    display:none;
     transform: scale(0);
     width:40px;
 }
 .pause svg{
     height: 40px;
+}
+
+.h3-title{
+    font-size:1.19rem;
+    font-weight:400;
+}
+
+.simi-play-parent{
+    padding: 0 15px;
 }
 
 .play img{
@@ -130,11 +145,12 @@ video{
 
 .popup-playlist{
     background-color: #F5F5F5;
+    border: 1px solid #E2E2E2;
+    border-radius: 5px;
     padding: 10px 0px;
     height: 240px;
     overflow: scroll;
     position: absolute;
-    border-radius: 5px;
     overflow-x: hidden;
     transform:scale(0);
 }
@@ -156,7 +172,7 @@ video{
     background: #C4C4C4;
     height: 2px !important;
     position: relative;
-    margin: 16px -12px;
+    margin: 16px -27px;
 }
 
 .close-btn{
@@ -176,7 +192,7 @@ video{
     padding: 0px 16px;
 }
 
-.song-name{
+.song-name:not(.simi-song){
     text-transform: capitalize;
     width: 100%;
     text-align: center;
@@ -184,6 +200,7 @@ video{
     border-radius: 9px;
     color: #fff;
     background: #67A3A3;
+    box-shadow: 0px 3.79207px 14.2203px rgba(0, 0, 0, 0.15);
 }
 
 .simi-song{
@@ -218,6 +235,7 @@ video{
     background: #67A3A3;
     height:fit-content;
     align-self: center;
+    box-shadow: 0px 3.79207px 14.2203px rgba(0, 0, 0, 0.15);
 
 }
 
@@ -236,18 +254,28 @@ video{
 }
 
 .pause.display{
-    position:static;
+    position:relative;
+    padding-left: 10px;
+    display:block;
     transform: scale(1);
 }
 
 .play.display{
     position:static;
+    display:block;
     transform: scale(1);
 }
 
 .controls:not(.play):not(.pause){
-    position:relative;
-    margin: auto;
+    position: relative;
+    margin-top: 2px;
+    text-align: center;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.controls p{
+    margin-top: 5px;
 }
 
 .popup-playlist.active{

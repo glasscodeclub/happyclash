@@ -103,4 +103,8 @@ function closehr(hr){
     hr.classList.remove("active")
 }
 
+function thumb(e){
+    console.log(e);
+}
+
 // WORKING OF POPUP
