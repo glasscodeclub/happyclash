@@ -177,7 +177,7 @@
                 <% for(var i=1; i<=5; i++){ %>
                     <div class=" challenge-songs">
                         <div class="  challenge-name">
-                            <div class="song-name">
+                            <div class="song-name" onclick="challenge(this)">
                                 song challenge
                             </div>
                         </div>
@@ -199,7 +199,7 @@
             <% for(var i=0; i<5; i++){ %>
                 <div class="similar-playlist-table">
                     <div class="similar-song">
-                        <p class="song-name simi-song">Song name</p>
+                        <p class="song-name simi-song" onclick="challenge(this)">Song name</p>
                     </div>
                     <div class="similar-details">
                         <div class="creator-name">created by: jenne wilson</div>

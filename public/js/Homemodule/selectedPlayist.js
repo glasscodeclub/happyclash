@@ -81,6 +81,10 @@ function comment(){
 function share(){
     console.log("Share button was clicked")
 }
+function challenge(e) {
+    console.log(e)
+    console.log("Clicked on challenge button")
+}
 
 function display(play,pause){
     if(play.classList.contains("display"))
