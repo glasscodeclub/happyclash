@@ -218,10 +218,33 @@ body {
     right: 5% !important;
   }
   
-  .progress {
-    height: 2px !important;
+  .video-progress {
+    position: relative;
+    /* height: 2px !important; */
     margin-top: 1rem;
+    background-color:#fff;
   }
+
+  input[type="range"]{
+    width: 100%;
+  }
+  input[type="range"]::-webkit-slider-runnable-track{
+    height:8px !important;
+  }
+  input[type="range"]::-webkit-slider-thumb{
+    position:absolute;
+    /* margin-bottom:4px ; */
+    top:5px;
+  }
+  /* .video-progress-filled{
+    position: absolute;
+    background-color:#fff;
+    top:-5px;
+    height:12px;
+    width:12px;
+    border-radius:50px;
+    /* z-index: 5; */
+  } */
   
   .videoicons {
     width: 100%;
