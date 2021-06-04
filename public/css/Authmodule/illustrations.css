@@ -1,0 +1,56 @@
+.illustrations{
+    position:relative;
+    height:400px;
+    width: 100%;
+}
+
+.row{
+    margin-right: 0;
+}
+
+.cir-illus{
+    width: 90px;
+}
+
+#saxophone{
+    position: absolute;
+    left: 144px;
+    top: 15px;
+
+}
+
+#bricks{
+    position: absolute;
+    top: 55px;
+    left: 15px;
+    
+}
+
+#dog{
+    position: absolute;
+    left: 15px;
+    top: 240px;
+    
+}
+
+#singing{
+    position: absolute;
+    right: 10px;
+    top: 81px;
+    
+}
+
+#wheelchair{
+    position: absolute;
+    bottom: 5px;
+    left: 142px;
+    width: 97px;
+    
+}
+
+#painting{
+    position: absolute;
+    right: 10px;
+    top: 235px;
+    
+}

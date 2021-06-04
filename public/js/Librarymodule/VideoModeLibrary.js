@@ -10,7 +10,7 @@ function playVideo() {
     }
 }
 
-function pauseVideo() {
+function pauseVideo(element) {
     console.log('Pause icon was hit.');
     const myvideo = document.querySelector('.myvideo');
     const videoplay = document.querySelector('#videoplay');
@@ -18,6 +18,7 @@ function pauseVideo() {
     if(isPlaying === true) {
         myvideo.pause();
         isPlaying = false;
+        element.classList.remove('active')
         videoplay.style.display = 'block';
     }
 }
@@ -42,20 +43,20 @@ function pauseAndplayVideo() {
     
     const myvideo = document.querySelector('.myvideo');
     const videoplay = document.querySelector('#videoplay');
-    const playbtn = document.querySelector(".playbtn");
+    // const playbtn = document.querySelector(".playbtn");
     const pausebtn = document.querySelector(".pausebtn");
 
     if(isPlaying === false) {
         myvideo.play();
         isPlaying = true;
         videoplay.style.display = 'none';
-        playbtn.classList.remove("active")
+        // playbtn.classList.remove("active")
         pausebtn.classList.add("active")
     }else{
         myvideo.pause();
         isPlaying = false;
         videoplay.style.display = 'block';
-        playbtn.classList.add("active")
+        // playbtn.classList.add("active")
         pausebtn.classList.remove("active")
     }
 
