@@ -48,3 +48,55 @@ function deleteElement() {
 
     element.remove();
 }
+
+
+
+function displayError(classname,idname) {
+    let fieldname = document.querySelector("#" + idname);
+    let emptyfield = document.querySelector("." + classname);
+
+    if(fieldname.value == null || fieldname.value == "") {
+        emptyfield.innerHTML = "This field can't be empty";
+        emptyfield.style.color = "red";
+    }
+    else {
+        emptyfield.innerHTML = "";
+    }
+}
+
+
+function checkInputfields() {
+    let username = document.getElementById('username');
+    let password = document.getElementById('password');
+
+    if(username.value == "" || username.value == null) {
+        displayError('username','username');
+    }
+
+
+    if(password.value == "" || password.value == null) {
+        displayError('password','password');
+    }
+
+}
+
+
+function checkPasswordEquality() {
+    let confirm = document.querySelector('#confirm');
+    let password = document.querySelector('#password');
+    let confirmpass = document.querySelector('.confirm');
+
+    if(password.value != null || confirm.value != null)
+    {
+        if(password.value != confirm.value) {
+            confirmpass.innerHTML = "<strong>Passwords don't match</strong>";
+            confirmpass.style.color = "red";
+            return false;
+        }
+        else {
+            confirmpass.innerHTML = "";
+            return true;
+        }
+    }
+    return true;
+}
