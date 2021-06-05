@@ -96,3 +96,8 @@ function toggleclass(image, name){
     image.classList.toggle('active')
     name.classList.toggle('active')
 }
+
+function send(e) {
+    console.log(e)
+    console.log("Clicked on send button")
+}
