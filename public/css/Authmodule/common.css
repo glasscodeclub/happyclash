@@ -203,7 +203,7 @@
 
 @media only screen and (min-width:251px) and (max-width:500px) {
     #backdiv {
-        padding: 0.15rem 0.4rem;
+        padding: 0.3rem 0.3rem;
     }
     
     #back {
@@ -216,8 +216,9 @@
     }
 
     .headicon {
-        width: 8.7rem !important;
-        height: 8rem !important;
+        width: 100% !important;
+        height: auto !important;
+        filter: drop-shadow(0 0 30px rgba(0, 0, 0, 0.2));
     }
 
     /* #subheaddiv {

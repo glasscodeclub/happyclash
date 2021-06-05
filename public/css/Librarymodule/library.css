@@ -77,8 +77,8 @@ body {
   }
 
   #headdiv {
-    text-align: left;
-    margin: 0.9rem 9rem 0.7rem 1rem;
+    text-align: center;
+    /* margin: 0.9rem 9rem 0.7rem 1rem; */
   }
 }
 
