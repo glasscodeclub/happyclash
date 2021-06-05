@@ -59,35 +59,19 @@
     
 }
 
-.search-bar{
-    border-radius: 20px;
-    font-size:0.8rem;
-    border: none;
-    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+.input-data input{
+  border: none;
+  border-radius: 40px;
+  box-shadow: 0px 1px 7.000000476837158px 0px #00000026;
+  /* padding: 15px; */
+  color: #7b7b7b;
 }
 
-.send-button{
-    background: linear-gradient(81.23deg, #7C49F6 9.3%, #FF53B7 51.61%, #FFD458 97.6%);
-    position: relative;
-    left: 185px;
-    padding-bottom: 25px;
-    margin: 20px 15px -10px;
-    text-align: center;
-    border-radius:5px;
-    height:25px;
-    width:50px;
-
-}
-
-.send-button button{
-    border: none;
-    font-size: 0.8rem;
-    color: #fff;
-    font-weight: bold;
-    text-transform: capitalize;
-    font-family: roboto, sans-serif;
-    outline:none;
-    background: none;
+.input-data button{
+  border: none;
+  background: linear-gradient(81.23deg, #7C49F6 9.3%, #FF53B7 51.61%, #FFD458 97.6%);
+  color: white;
+  border-radius: 8px;
 }
 
 .close-button{

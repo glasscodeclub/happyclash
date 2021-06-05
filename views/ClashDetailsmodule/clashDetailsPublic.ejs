@@ -217,15 +217,16 @@
         <div class="popup-header">
             <button data-close-button class="close-button">&times;</button>
             <div class="title">Suggest Profile <p>that should be activated</p> </div>
-            <div class="search-bar">
-                <input type="search" class="form-control search-bar " placeholder="Enter Email">
+            <div class="input-data container">
+                <div class="row justify-content-center">
+                    <input type="search" class="form-control my-3" placeholder="Enter email">
+                    <div style="display: flex; justify-content: flex-end; margin-top: 1em;">
+                        <button style="width: 5em;" onclick="send(this)"> Send </button>
+                    </div>
+                </div>
             </div>
-            <div class="send-button">
-                <button >send</button>
-            </div>
-            
         </div>
-        <div class="popup-body">
+        <div class="popup-body" style="overflow-y: auto; height: 220px;">
             <div class="suggested">
                 Suggested
                 <div class="row profiles">
