@@ -1,6 +1,6 @@
 .illustrations{
     position:relative;
-    height:400px;
+    /* height:400px; */
     width: 100%;
 }
 
@@ -8,49 +8,88 @@
     margin-right: 0;
 }
 
-.cir-illus{
-    width: 90px;
+#happyclash{
+    height: auto;
+    width: 35%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    filter: drop-shadow(0px 0px 30px rgba(0,0,0,0.2));
 }
 
-#saxophone{
-    position: absolute;
-    left: 144px;
-    top: 15px;
-
+.img-circles{
+    position: relative;
+    width:100%;
+    padding: 4%;
+    filter: drop-shadow(0px 0px 30px rgba(0,0,0,0.2) );
 }
 
-#bricks{
+.img-illus{
+    width:100%;
     position: absolute;
-    top: 55px;
-    left: 15px;
-    
+    padding: 4%;
+    left: 0;
 }
 
-#dog{
-    position: absolute;
-    left: 15px;
-    top: 240px;
-    
+@media only screen and (min-width:540px) and (max-width:767px){
+    .img-circles{
+        position: relative;
+        width:65%;
+        left: 50%;
+        transform:translateX(-50%);
+        padding: 4%;
+        filter: drop-shadow(0px 0px 30px rgba(0,0,0,0.2) );
+    }
+
+    .img-illus{
+        width:65%;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 4%;
+        /* background-color: #6A83bc; */
+    }
 }
 
-#singing{
-    position: absolute;
-    right: 10px;
-    top: 81px;
-    
+@media only screen and (min-width:768px) and (max-width:1000px){
+    .img-circles{
+        position: relative;
+        width:47%;
+        left: 50%;
+        transform:translateX(-50%);
+        padding: 4%;
+        filter: drop-shadow(0px 0px 30px rgba(0,0,0,0.2) );
+    }
+
+    .img-illus{
+        width:47%;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 4%;
+        /* background-color: #6A83bc; */
+    }
 }
 
-#wheelchair{
-    position: absolute;
-    bottom: 5px;
-    left: 142px;
-    width: 97px;
-    
-}
+@media only screen and (min-width:1001px){
+    .img-circles{
+        position: relative;
+        width: 30%;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 4%;
+        margin-top: -1%;
+        filter: drop-shadow(0px 0px 30px rgba(0,0,0,0.2) );
+    }
 
-#painting{
-    position: absolute;
-    right: 10px;
-    top: 235px;
-    
+    .img-illus{
+        width:30%;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 4%;
+        margin-top: -1%;
+        /* background-color: #6A83bc; */
+    }
 }
