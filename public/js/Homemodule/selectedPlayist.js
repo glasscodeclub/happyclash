@@ -8,8 +8,9 @@ window.addEventListener('load', ()=> {
     const arr = ["#66C07F", "#9F7CDE", "#58A6E4", "#FF8080"]
     var i = 0;
     var count = 0;
-    const play = document.querySelector(".play")
-    const pause = document.querySelector(".pause")
+    const play = document.querySelector(".play");
+    const pause = document.querySelector(".pause");
+    const challengediv = document.querySelector('.challengediv');
 
     video.play()
 
@@ -34,11 +35,14 @@ window.addEventListener('load', ()=> {
     play.addEventListener("click", ()=>
     {
         video.play();
+        challengediv.style.display = 'none';
         display(play,pause)
     })
 
     pause.addEventListener("click", ()=>{
         video.pause();
+        challengediv.style.display = 'block';
+        challengediv.style.animation = 'none';
         display(play,pause)
     })
 

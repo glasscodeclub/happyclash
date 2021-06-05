@@ -30,24 +30,32 @@ function countDislikes() {
 function playVideo() {
     console.log('Play icon was hit.');
     const myvideo = document.querySelector('.myvideo');
-    const videoplay = document.querySelector('#videoplay');
-
+    const challengediv = document.querySelector('.challengediv');
+    const pausebutton = document.querySelector('.pause');
+    const playbutton = document.querySelector('.play');
+ 
     if(isPlaying === false) {
         myvideo.play();
         isPlaying = true;
-        videoplay.style.display = 'none';
+        pausebutton.style.display = 'inline';
+        playbutton.style.display = 'none';
+        challengediv.style.display = 'none';
     }
 }
 
 function pauseVideo() {
     console.log('Pause icon was hit.');
     const myvideo = document.querySelector('.myvideo');
-    const videoplay = document.querySelector('#videoplay');
+    const challengediv = document.querySelector('.challengediv');
+    const pausebutton = document.querySelector('.pause');
+    const playbutton = document.querySelector('.play');
 
     if(isPlaying === true) {
         myvideo.pause();
         isPlaying = false;
-        videoplay.style.display = 'block';
+        pausebutton.style.display = 'none';
+        playbutton.style.display = 'inline';
+        challengediv.style.display = 'block';
     }
 }
 
@@ -66,16 +74,22 @@ let isPlaying = false;
 function pauseAndplayVideo() {
     
     const myvideo = document.querySelector('.myvideo');
-    const videoplay = document.querySelector('#videoplay');
+    const challengediv = document.querySelector('.challengediv');
+    const pausebutton = document.querySelector('.pause');
+    const playbutton = document.querySelector('.play');
 
     if(isPlaying === false) {
         myvideo.play();
         isPlaying = true;
-        videoplay.style.display = 'none';
+        pausebutton.style.display = 'inline';
+        playbutton.style.display = 'none';
+        challengediv.style.display = 'none';
     }else{
         myvideo.pause();
         isPlaying = false;
-        videoplay.style.display = 'block';
+        pausebutton.style.display = 'none';
+        playbutton.style.display = 'inline';
+        challengediv.style.display = 'block';
     }
 
 }

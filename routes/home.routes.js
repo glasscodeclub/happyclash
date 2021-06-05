@@ -6,25 +6,25 @@ var middlewares = require("../middlewares/auth.middleware");
 
 
 router.get("/videomode", function (req, res) {
-    res.render("homemodule/videomode",{page:"Video Mode"});
+    res.render("Homemodule/videomode",{page:"Video Mode"});
 })
 router.get('/homefeed',(req,res)=> {
-    res.render("homemodule/feedhome",{page:"HappyClash homefeed",url:req.url})
+    res.render("Homemodule/feedhome",{page:"HappyClash homefeed",url:req.url})
 })
 
 router.get('/challenge',(req,res)=> {
-    res.render("homemodule/challenge",{url:req.url});
+    res.render("Homemodule/challenge",{url:req.url});
 })
 
 router.get("/songs", (req, res) => {
-    res.render("homemodule/songs", {url: req.url})
+    res.render("Homemodule/songs", {url: req.url})
 })
 
 router.get("/videomodeprivate", (req, res) => {
-    res.render("homemodule/videomodeprivate", {page:"VideoModePrivate",url: req.url})
+    res.render("Homemodule/videomodeprivate", {page:"VideoModePrivate",url: req.url})
 })
 
 router.get("/selectedPlaylist", (req, res) => {
-    res.render("homemodule/selectedPlaylist", {page:"Selected Playlist",url: req.url})
+    res.render("Homemodule/selectedPlaylist", {page:"Selected Playlist",url: req.url})
 })
 module.exports = router;

@@ -1,24 +1,30 @@
 function playVideo() {
-    console.log('Play icon was hit.');
-    const myvideo = document.querySelector('.myvideo');
-    const videoplay = document.querySelector('#videoplay');
+  console.log('Play icon was hit.');
+  const playbtn = document.querySelector(".play");
+  const pausebtn = document.querySelector(".pause");
+  const myvideo = document.querySelector('.myvideo');
 
     if(isPlaying === false) {
         myvideo.play();
         isPlaying = true;
-        videoplay.style.display = 'none';
+        playbtn.style.display = 'none';
+        pausebtn.style.display = 'inline';
+        
     }
 }
 
 function pauseVideo() {
-    console.log('Pause icon was hit.');
-    const myvideo = document.querySelector('.myvideo');
-    const videoplay = document.querySelector('#videoplay');
+  console.log('Pause icon was hit.');
+  const playbtn = document.querySelector(".play");
+  const pausebtn = document.querySelector(".pause");
+  const myvideo = document.querySelector('.myvideo');
 
     if(isPlaying === true) {
         myvideo.pause();
         isPlaying = false;
-        videoplay.style.display = 'block';
+        playbtn.style.display = 'inline';
+        pausebtn.style.display= 'none'
+        
     }
 }
 
@@ -31,9 +37,9 @@ function save(){
 }
 
 window.addEventListener('load',()=> {
-    const myvideo = document.querySelector('.myvideo');
-
-    myvideo.pause();
+  const myvideo = document.querySelector('.myvideo');
+  
+  myvideo.pause();
 })
 
 let isPlaying = false;
@@ -41,22 +47,20 @@ let isPlaying = false;
 function pauseAndplayVideo() {
     
     const myvideo = document.querySelector('.myvideo');
-    const videoplay = document.querySelector('#videoplay');
-    const playbtn = document.querySelector(".playbtn");
-    const pausebtn = document.querySelector(".pausebtn");
+    const playbtn = document.querySelector(".play");
+    const pausebtn = document.querySelector(".pause");
 
     if(isPlaying === false) {
         myvideo.play();
         isPlaying = true;
-        videoplay.style.display = 'none';
-        playbtn.classList.remove("active")
-        pausebtn.classList.add("active")
+        playbtn.style.display = 'none';
+        pausebtn.style.display= 'inline'
+        
     }else{
         myvideo.pause();
         isPlaying = false;
-        videoplay.style.display = 'block';
-        playbtn.classList.add("active")
-        pausebtn.classList.remove("active")
+        playbtn.style.display = 'inline';
+        pausebtn.style.display= 'none'
     }
 
 }

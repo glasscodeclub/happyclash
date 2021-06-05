@@ -13,24 +13,24 @@ router.get("/edit", function(req, res){
     res.render("./careermodule/editProfile", {url: req.url});
 })
 router.get('/profile',(req,res)=> {
-    res.render("./Careermodule/profile",{url:req.url});
+    res.render("./careermodule/profile",{url:req.url});
 })
 router.get('/notification',(req,res)=> {
-    res.render("./Careermodule/notification",{url:req.url});
+    res.render("./careermodule/notification",{url:req.url});
 })
 router.get("/admincontrols", (req, res) => {
-    res.render("./Careermodule/admincontrols", { url: req.url })
+    res.render("./careermodule/admincontrols", { url: req.url })
 })
 router.get("/results", (req, res) => {
-    res.render("./Careermodule/results", { url: req.url })
+    res.render("./careermodule/results", { url: req.url })
 })
 
 router.get("/congratulations", (req, res) => {
-    res.render("./Careermodule/congratulations", { url: req.url })
+    res.render("./careermodule/congratulations", { url: req.url })
 })
 
 router.get("/post", (req, res) => {
-    res.render("./Careermodule/post", { page:"Post" , url: req.url })
+    res.render("./careermodule/post", { page:"Post" , url: req.url })
 })
 
 

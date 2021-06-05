@@ -3,7 +3,7 @@ function displayPopUp(element) {
 }
 
 function playVideo(element) {
-  window.location.href = "/videomode";
+  window.location.href = "/library/videomodelibrary";
 }
 
 function play(){

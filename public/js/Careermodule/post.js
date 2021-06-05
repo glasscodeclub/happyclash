@@ -7,16 +7,6 @@ const video = document.querySelectorAll(".post")
 // status(video[0])
 
 video.forEach(vid=>{
-    vid.play()
-})
-
-const btn = document.querySelectorAll(".play-btn")
-
-btn.forEach(b=>{
-    b.style.display ='none'
-})
-
-video.forEach(vid=>{
     vid.addEventListener('click', ()=>{ 
     
         status(vid)

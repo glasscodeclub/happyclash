@@ -117,19 +117,6 @@ svg.infoicon {
   position: relative;
 }
 
-#videoplay {
-  /* margin: 30%; */
-  position: fixed;
-  top: 44% !important;
-  bottom: 44% !important;
-  right: 42% !important;
-  left: 42% !important;
-  vertical-align: middle;
-  display: inline-block;
-  width: 4rem;
-  height: 4rem;
-}
-
 .activity {
   position: fixed;
   width: 50%;
@@ -181,11 +168,6 @@ svg.infoicon {
   right: 5% !important;
 }
 
-.progress {
-  height: 2px !important;
-  margin-top: 1rem;
-}
-
 .videoicons {
   width: 100%;
   text-align: center;
@@ -201,6 +183,7 @@ svg.infoicon {
   );
   margin: auto 0.35rem;
   font-size: 1.3rem;
+  display: none;
 }
 
 .play {

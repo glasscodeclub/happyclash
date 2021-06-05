@@ -26,6 +26,18 @@ p{
     z-index: 2;
     /* width: 100%; */
     display: inline-block;
+    animation: challengedivanimation 4s ease-in-out forwards;
+}
+
+@keyframes challengedivanimation {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        display: none;
+    }
 }
   
 .challengeName {
