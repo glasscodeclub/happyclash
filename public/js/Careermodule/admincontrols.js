@@ -4,167 +4,65 @@ let popupElem = {};
 function challenge(e, id) {
   console.log(e);
   const div = document.createElement("div");
-  div.innerHTML = `<div class="div1">
-  <div style="font-size: 0.7rem; color: grey" class="mt-4 mb-1">
-    Clash details
-  </div>
-  <div style="font-size: 0.9rem; line-height: 1.2rem">
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas
-    debitis fuga aspernatur unde, in nesciunt, laborum voluptatibus
-    nobis consectetur dolorum enim quisquam porro delectus minus
-    <div style="font-size: 0.7rem; color: grey" class="mt-4">
-      Ends on
+  div.innerHTML = `
+  <div class="div1">
+    <div style="font-size: 0.7rem; color: grey" class="mt-4 mb-1">
+      Clash details
     </div>
-    <div style="font-size: 0.9rem">15/05/2021</div>
-  </div>
-</div>
-<hr />
-<div class="div1">
-  <div
-    style="
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    "
-  >
-    <div style="font-size: 0.85rem">Your Video</div>
-    <div>
-      <button
-        style="
-          color: white;
-          background-color: red;
-          font-size: 0.7rem;
-          border: none;
-        "
-        onclick="del()"
-      >
-        Delete
-      </button>
+    <div style="font-size: 0.9rem; line-height: 1.2rem">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas
+      debitis fuga aspernatur unde, in nesciunt, laborum voluptatibus
+      nobis consectetur dolorum enim quisquam porro delectus minus
+      <div style="font-size: 0.7rem; color: grey" class="mt-4">
+        Ends on
+      </div>
+      <div style="font-size: 0.9rem">15/05/2021</div>
     </div>
   </div>
-  <div class="row mt-4">
-    <div class="col" style="text-align: center; position: relative; ">
-      <video style = "position: relative; width:100%; right: 6px">
-        <source src="/video/sample" type="video/mp4" />
-      </video>
-      <div
-        style="
-          position: absolute;
-          top: 10px;
-          left: 30px;
-          font-size: 0.8rem;
-          color: white;
-        "
-      >
-        Rank 12/20
+  <hr />
+  <div class="div1">
+    <div style="display: flex; align-items: center; justify-content: space-around;">
+      <div style="font-size: 0.85rem">Your Video</div>
+      <div>
+        <button
+          style="color: white; background-color: #ef5757; font-size: 0.7rem; border: none; width: 60px; padding: 3px; border-radius: 3px;"
+          onclick="del()"
+        >
+          Delete
+        </button>
       </div>
-      <div
-        style="
-          position: absolute;
-          top: 10px;
-          right: 30px;
-          font-size: 0.8rem;
-          color: white;
-        "
-      >
-        1:20
-      </div>
-      <div
-        style="
-          position: absolute;
-          bottom: 140px;
-          left: 30px;
-          font-size: 0.9rem;
-          color: white;
-        "
-      >
-        2h ago
-      </div>
-      <div
-        style="
-          position: absolute;
-          bottom: 100px;
-          left: 30px;
-          font-size: 1.7rem;
-          background: -webkit-linear-gradient(
-            45deg,
-            #924bec,
-            #e552c4,
-            #ffbf7b
-          );
-          -webkit-background-clip: text;
-          background-clip: text;
-          -webkit-text-fill-color: transparent;
-        "
-      >
-        Piano Challenge
-      </div>
-      <div
-        style="
-          position: absolute;
-          bottom: 80px;
-          left: 30px;
-          font-size: 0.8rem;
-          color: white;
-        "
-      >
-        Started by John doe
-      </div>
-      <div
-        style="
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-        "
-      >
-        <img
-          src="/img/Play.svg"
-          width="50"
-          height="50"
-          onclick="play()"
-        />
-      </div>
-      <div
-        style="
-          position: absolute;
-          bottom: 20px;
-          left: 30px;
-          right: 30px;
-          display: flex;
-          font-size: 0.8rem;
-          justify-content: space-between;
-          color: white;
-        "
-      >
-        <div>96 Likes</div>
-        <div>40 Comments</div>
-        <div>20 Participants</div>
+    </div>
+    <div class="container mt-2">
+      <div class="row">
+          <div class="col d-flex justify-content-center mb-2">
+              <video width="400px" muted>
+                  <source src="/Video/sample" type="video/mp4">
+              </video>
+              <div class="overlay d-flex justify-content-between flex-column">
+                  <div class="d-flex justify-content-between">
+                      <p>Rank 3/40</p>
+                      <p>1:20</p>
+                  </div>
+                  <div class="d-flex justify-content-center">
+                      <img src="/img/Play.svg" alt="play" onclick="playVideo(this)">
+                  </div>
+                  <div>
+                      <p>2h ago</p>
+                      <h2 class="mb-0">Dance Challenge</h2>
+                      <p>Started by Wade Warren</p>
+                      <div class="d-flex justify-content-around mt-3">
+                          <p>72 Likes</p>
+                          <p>23 Comments</p>
+                          <p>40 Participants</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
       </div>
     </div>
   </div>
-</div>
-<hr />
-<div class="div1">
-  <div
-    style="
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    "
-  >
-    <div style="display: flex; align-items: center">
-      <div style="font-size: 0.9rem">Participants (70)</div>
-      <div
-        onclick="console.log(this)"
-        style="font-size: 0.7rem; color: grey; margin-left: 10px"
-      >
-        See All >
-      </div>
-    </div>
-    <div data-target-add="#add-friends" onclick="test()"  style="font-size: 2rem">+</div>
-  </div>
-  <div>
+  <hr />
+  <div class="div1">
     <div
       style="
         display: flex;
@@ -172,52 +70,65 @@ function challenge(e, id) {
         justify-content: space-between;
       "
     >
-      <div onclick="console.log(this)" style="text-align: center">
-        <img style="width: 15vw" src="/img/profile.png" class="p1" />
-        <h6 style="font-size: 0.6rem">Jane Cooper</h6>
+      <div style="display: flex; align-items: center">
+        <div style="font-size: 0.9rem">Participants (70)</div>
+        <div
+          onclick="console.log(this)"
+          style="font-size: 0.7rem; color: grey; margin-left: 10px"
+        >
+          See All >
+        </div>
       </div>
-      <div onclick="console.log(this)" style="text-align: center">
-        <img style="width: 15vw" src="/img/profile1.png" class="p1" />
-        <h6 style="font-size: 0.6rem">Jane Cooper</h6>
-      </div>
-      <div onclick="console.log(this)" style="text-align: center">
-        <img style="width: 15vw" src="/img/profile2.png" class="p1" />
-        <h6 style="font-size: 0.6rem">Jane Cooper</h6>
-      </div>
-      <div onclick="console.log(this)" style="text-align: center">
-        <img style="width: 15vw" src="/img/profile3.png" class="p1" />
-        <h6 style="font-size: 0.6rem">Jane Cooper</h6>
-      </div>
-      <div onclick="console.log(this)" style="text-align: center">
-        <img style="width: 15vw" src="/img/profile4.png" class="p1" />
-        <h6 style="font-size: 0.6rem">Jane Cooper</h6>
-      </div>
+      <div data-target-add="#add-friends" onclick="test()"  style="font-size: 2rem">+</div>
     </div>
-    <div
-      class="mt-4 mb-2"
-      style="
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      "
-    >
-      <button
-        onclick="console.log(this)"
+    <div>
+      <div class="row">
+        <div class="col" onclick="console.log(this)" style="text-align: center">
+          <img class="profile_image" src="/img/profile.png" class="p1" />
+          <h6 style="font-size: 0.6rem">Jane Cooper</h6>
+        </div>
+        <div class="col" onclick="console.log(this)" style="text-align: center">
+          <img class="profile_image" src="/img/profile1.png" class="p1" />
+          <h6 style="font-size: 0.6rem">Jane Cooper</h6>
+        </div>
+        <div class="col" onclick="console.log(this)" style="text-align: center">
+          <img class="profile_image" src="/img/profile2.png" class="p1" />
+          <h6 style="font-size: 0.6rem">Jane Cooper</h6>
+        </div>
+        <div class="col" onclick="console.log(this)" style="text-align: center">
+          <img class="profile_image" src="/img/profile3.png" class="p1" />
+          <h6 style="font-size: 0.6rem">Jane Cooper</h6>
+        </div>
+        <div class="col" onclick="console.log(this)" style="text-align: center">
+          <img class="profile_image" src="/img/profile4.png" class="p1" />
+          <h6 style="font-size: 0.6rem">Jane Cooper</h6>
+        </div>
+      </div>
+      <div
+        class="mt-4 mb-2"
         style="
-          background: linear-gradient(
-            81.23deg,
-            #7c49f6 9.3%,
-            #ff53b7 51.61%,
-            #ffd458 97.6%
-          );
-          border: none;
+          display: flex;
+          align-items: center;
+          justify-content: center;
         "
-        class="btn btn-dark submit"
       >
-        Save Changes
-      </button>
+        <button
+          onclick="console.log(this)"
+          style="
+            background: linear-gradient(
+              81.23deg,
+              #7c49f6 9.3%,
+              #ff53b7 51.61%,
+              #ffd458 97.6%
+            );
+            border: none;
+          "
+          class="btn btn-dark submit"
+        >
+          Save Changes
+        </button>
+      </div>
     </div>
-  </div>
   </div>`;
 
   if (divElem[id]) {
@@ -229,12 +140,29 @@ function challenge(e, id) {
   }
 }
 
-function play(){
+function play() {
   console.log("Play button was clicked")
 }
 
-function del(){
+function del() {
   console.log("Delete button was clicked")
+}
+
+function playVideo(e) {
+  const overlay = document.querySelector(".overlay");
+  const video = document.getElementsByTagName("video");
+  console.log(e);
+  overlay.setAttribute("style", "display: none !important;");
+  video[0].controls = true;
+  video[0].play()
+  const interval = setInterval(() => {
+    if (video[0].paused) {
+      overlay.removeAttribute("style")
+      video[0].controls = false;
+      clearInterval(interval);
+    }
+  }, 1000 * 10);
+  console.log("This will play the video");
 }
 
 // function addParticipants(e, id) {
@@ -370,4 +298,3 @@ function del(){
 
 
 // POPUP JS
-

@@ -50,7 +50,7 @@
 }
 
 #subheading {
-    font-size: 1.45rem;
+    font-size: 1.5rem;
     font-family: Roboto;
     font-style: normal;
     background: linear-gradient(90deg, #7C49F6 21.82%, #E55ABD 49.61%, #FEDF67 89.82%);
@@ -95,9 +95,7 @@
     vertical-align: baseline;
 }
 
-.icons {
-    opacity: 0.5;
-}
+
 
 .form-control {
     width: 80%;
@@ -218,7 +216,7 @@
     }
 
     .headicon {
-        width: 8rem !important;
+        width: 8.7rem !important;
         height: 8rem !important;
     }
 

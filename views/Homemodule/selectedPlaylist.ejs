@@ -25,17 +25,15 @@
 
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Roboto"
       rel="stylesheet"
     />
+    <script src="https://code.iconify.design/1/1.0.6/iconify.min.js"></script>
 
 </head>
 <body>
-    <div class="col-2 backdiv">
-        <i
-          onclick="window.location.href='/home/challenge'"
-          class="fas fa-arrow-left back allicons"
-        ></i>
+    <div class="col-2 backdiv" onclick="window.location.href='/home/challenge'">
+        <span class="iconify" data-inline="false" data-icon="eva:arrow-back-outline" style="color: #ffffff; font-size: 22px;"></span>
     </div>
 
     <div class="col-4 challengediv">
@@ -44,7 +42,7 @@
       
       <h6 class="challengeName">Challenge Name</h6>
       <div class="challengesubtitle">
-        <p>Challenge details</p>
+        <p>By Wade warren</p>
       </div>
     </div>
 
@@ -177,7 +175,7 @@
                 <% for(var i=1; i<=5; i++){ %>
                     <div class=" challenge-songs">
                         <div class="  challenge-name">
-                            <div class="song-name">
+                            <div class="song-name" onclick="thumb(this)">
                                 song challenge
                             </div>
                         </div>
@@ -193,25 +191,27 @@
             </div>
         <!-- POPUP END -->
         <hr class="hr-pop active" id="hr-pop">
-        <h3>Similar Playlist: </h3>
-        <!-- SIMILAR PLAYLIST -->
-       
-            <% for(var i=0; i<5; i++){ %>
-                <div class="similar-playlist-table">
-                    <div class="similar-song">
-                        <p class="song-name simi-song">Song name</p>
+        <div class="simi-play-parent">
+            <h3 class="h3-title">Similar Playlist: </h3>
+            <!-- SIMILAR PLAYLIST -->
+           
+                <% for(var i=0; i<5; i++){ %>
+                    <div class="similar-playlist-table">
+                        <div class="similar-song">
+                            <p class="song-name simi-song" onclick="thumb(this)">Song name</p>
+                        </div>
+                        <div class="similar-details">
+                            <div class="creator-name">created by: jenne wilson</div>
+                            <div class="created-on">created on: 10 May 2021</div>
+                            <div class="participants">Participants: 39</div>
+                            <div class="clash-till">Clash till: 10 june 2021</div>
+                        </div>
                     </div>
-                    <div class="similar-details">
-                        <div class="creator-name">created by: jenne wilson</div>
-                        <div class="created-on">created on: 10 May 2021</div>
-                        <div class="participants">Participants: 39</div>
-                        <div class="clash-till">Clash till: 10 june 2021</div>
-                    </div>
-                </div>
-                <hr class="hr-outside">
-            <%}%>
-        <!-- </div> -->
-    </div>
+                    <hr class="hr-outside">
+                <%}%>
+            <!-- </div> -->
+            </div>
+        </div>
     <div class="bottom">
         <%- include("../BottomNavmodule/bottomnavbar") %>
     </div>

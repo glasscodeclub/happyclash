@@ -24,7 +24,6 @@ function pauseVideo() {
         isPlaying = false;
         playbtn.style.display = 'inline';
         pausebtn.style.display= 'none'
-        
     }
 }
 

@@ -23,6 +23,7 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap"
       rel="stylesheet"
     />
+    <script src="https://code.iconify.design/1/1.0.6/iconify.min.js"></script>
     <link rel="shortcut icon" href="#">
     <title>Video Mode Library</title>
     <base href="/" />
@@ -31,11 +32,8 @@
   <body>
     <div class="container">
       <div class="row">
-        <div class="col-2 backdiv">
-          <i
-            onclick="window.location.href='/library'"
-            class="fas fa-arrow-left back allicons"
-          ></i>
+        <div class="col-2 backdiv"  onclick="window.location.href='/library'">
+          <span class="iconify" data-inline="false" data-icon="eva:arrow-back-outline" style="color: #ffffff; font-size: 40px;"></span>
         </div>
 
         <div class="threedots" data-target="#play-options">
@@ -61,14 +59,14 @@
             class="pause allicons"
             onclick="pauseVideo()"
           />
-          <img
+          <!-- <img
             src="/img/Play.svg"
             alt=""
             width="22"
             height="22"
             class="play allicons"
             onclick="playVideo()"
-          />
+          /> -->
         </div>
       </div>
     </div>
