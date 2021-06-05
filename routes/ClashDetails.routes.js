@@ -29,7 +29,7 @@ router.get('/comments', (req, res) => {
     res.render("ClashDetailsmodule/clashComments", { url: req.url });
 })
 router.get('/reportClash', (req, res) => {
-    res.render("ClashDetailsmodule/reportClash", { url: req.url });
+    res.render("ClashDetailsmodule/ReportClash", { url: req.url });
 })
 
 // router.get('/alpha', (req, res)=>{

@@ -139,22 +139,11 @@ body {
 
 .play {
   position: absolute;
-  text-align: center;
-  vertical-align: middle !important;
-  margin: auto;
-  padding: 50% auto;
-  width: 80%;
-  height: 100%;
-  z-index: 1;
-}
-
-.threedots {
-  position: absolute;
-  text-align: right;
-  margin: auto;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
+  z-index: 3;
+  background: transparent !important;
+  top: 50%;
+  text-align: center !important;
+  transform: translateY(-15%);
 }
 
 /* START POPUP FOR UPLOADING */
@@ -295,4 +284,57 @@ body {
     margin-right: 15% !important;
     font-size: 10rem !important;
   }
+}
+
+
+/* Lets add new css */
+
+.videoList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+}
+
+.videoList div {
+  width: 400px;
+  height: 250px;
+  background-color: rgba(0, 0, 0, 1); 
+}
+
+.options {
+    width: max-content !important;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    margin: 0 !important;
+    z-index: 2;
+    background-color: transparent !important;
+}
+
+
+
+.play img {
+  margin : 0 auto !important ;
+}
+
+.videoBox {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 5;
+}
+
+@media only screen and (max-width: 600px) {
+  .videoList {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  }
+  
+  .videoList div {
+    width: 100px;
+    height: 80px;
+  }
+
+  .play {
+    transform: translateY(-20%);
+  }
+
 }

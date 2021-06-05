@@ -39,68 +39,34 @@
         </div>
     </div>
 
-        <%let num=18;%>
-        <%let count=Math.floor(num/3);%>
 
-        <div class="row videorow">
-            <%for(let i=0;i<count;i++){%>
-                <div class="col-4 videodiv">
-                    <div style="position: relative;">
-                        <a href="/library/videomodelibrary">
-                            <video class="myvideo">
-                                <source src="/video/sample" type="video/mp4">
-                                Video not available at the moment
-                            </video>
-                        </a>
-                        <div style="position: absolute;top:5px;right:10px">
-                         <img src="/img/threedots.png" alt="" width="4" height="15" onclick="displayPopUp(this)" data-target = "#play-options" >
-                        </div>
-                    </div>
+    <div class="videoList">
+
+    <%const count=18;%>
+
+    <%for(let i=0;i<count;i++){%>   
+
+        <div class="videodiv">
+            <div style="position: relative;">
+                    <a href="/library/videomodelibrary">
+                        <video class="myvideo">
+                            <source src="/video/sample.mp4" type="video/mp4">
+                            Video not available at the moment
+                        </video>
+                    </a>
+               
+                <div class="options">
+                    <img src="/img/threedots.png" alt="" width="4" height="15" onclick="displayPopUp(this)" data-target = "#play-options" >
                 </div>
-                <div class="col-4 videodiv">
-                    <div style="position: relative;">
-                        <a href="/library/videomodelibrary">
-                            <video class="myvideo">
-                                <source src="/video/sample" type="video/mp4">
-                                Video not available at the moment
-                            </video>
-                        </a>
-                        <div style="position: absolute;top:5px;right:10px">
-                         <img src="/img/threedots.png" alt="" width="4" height="15" onclick="displayPopUp(this)" data-target = "#play-options">
-                        </div>
-                    </div>
+                <div class="play">
+                    <img src="/img/Play.svg" width="24" height="24" class="videoplay" onclick="playVideo(this)">
                 </div>
-                <div class="col-4 videodiv">
-                    <div style="position: relative;">
-                        <a href="/library/videomodelibrary">
-                            <video class="myvideo">
-                                <source src="/video/sample" type="video/mp4">
-                                Video not available at the moment
-                            </video>
-                        </a>
-                        <div style="position: absolute;top:5px;right:10px">
-                         <img src="/img/threedots.png" alt="" width="4" height="15" onclick="displayPopUp(this)" data-target = "#play-options">
-                        </div>
-                    </div>
-                </div>
-                <%}%>
-                    <%if(num%3){%>
-                        <%for(let i=0;i<num%3;i++){%>
-                            <div class="col-4 videodiv">
-                                <div class="threedots">
-                                    <img src="/img/threedots.png" alt="" width="3" height="12" class="videodots" onclick="displayPopUp(this)" data-target = "#play-options">
-                                </div>
-                                <div class="play">
-                                    <img src="/img/Play.svg" width="24" height="24" class="videoplay" onclick="playVideo(this)">
-                                </div>
-                                <video muted class="myvideo" onclick="window.location.href='/videomode'">
-                                    <source src="/img/sample.mp4" type="video/mp4">
-                                    Video not available at the moment
-                                </video>
-                            </div>
-                        <%}%>
-                    <%}%>
             </div>
+        </div>
+
+    <%}%>
+
+    </div>
 
 
             <!-- POPUP BEGINING FOR UPLOADING -->
@@ -162,3 +128,4 @@
 </body>
 <script src="/js/Librarymodule/library.js" type="text/javascript"></script>
 </html>
+
