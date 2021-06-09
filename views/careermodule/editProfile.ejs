@@ -11,35 +11,35 @@
         <!-- <link rel="stylesheet" href="/css/Profilemodule/profile.css">  -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
             integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+        <!-- Google FONTS -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto" rel="stylesheet">
+        <!-- Custon CSS -->
         <link rel="stylesheet" href="/css/Careermodule/editProfile.css">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
             crossorigin="anonymous"></script>
+            <script src="https://code.iconify.design/1/1.0.6/iconify.min.js"></script>
     </head>
     <body>
         
-            <div id="backdiv">
-                <i onclick="window.location.href='/profile'" id="back" class="fas fa-arrow-left"></i>
+            <div id="backdiv" >
+              <span onclick="window.location.href='/profile'" class="iconify" data-inline="false" data-icon="eva:arrow-back-outline" style="font-size: 36px;"></span>
             </div>
 
             <form action="" method="post">
         <div class="container">
-            <button type="button" class="btn btn-danger" onclick="DeleteAccount()">Delete Account</button>
+            <div type="button" class="btn-danger" onclick="DeleteAccount()">Delete Account</div>
                 <div class="profileImg col-6"><img src="/img/profile3.png" class="p1"></div>
                 
-                <div class="row cont">
-                    <div class="col-6" style="text-align: right">
-                      <button class="btn btn-dark sub" onclick="RemoveClick(this)">
-                        <p class="btn" id="remove">Remove</p>
-                      </button>
-                    </div>
-                    <div class="col-6">
-                      <div class="col-6" style="text-align: left">
-                        <button class="btn btn-dark sub" onclick="ChangeClick(this)">
-                          <p class="btn" id="change">Change</p>
-                        </button>
+                <div class="action-btns">
+                      <div class="btn btn-dark sub" onclick="RemoveClick(this)">
+                        <p class="btn-names">Remove</p>
                       </div>
-                    </div>
+                      <div class="btn btn-dark sub" onclick="ChangeClick(this)">
+                          <p class="btn-names">Change</p>
+                      </div>
                 </div>     
               
                   <div class="formi container">
@@ -62,7 +62,9 @@
 
         </div>
         <div style="text-align: center; margin-left: auto; margin-right: auto; width: 6rem; height: 2rem;">
-        <button type="submit" class="btn btn-primary sub save" style="margin-right: auto; margin-left: auto;">Save</button>
+        <div type="submit" class="btn btn-primary sub" style="margin-right: auto; margin-left: auto;" onclick="console.log('Savebtn was clicked')">
+          <p class="btn-names">Save</p>
+        </div>
         </div>
       </form> 
         <%- include("../BottomNavmodule/bottomnavbar") %>
