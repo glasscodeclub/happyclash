@@ -34,29 +34,25 @@
 }
 
 #headdiv {
-    text-align: center;
-    /* margin:0px!important; */
-    margin: 1.3rem auto;
-    vertical-align: middle;
+    margin: 0.8rem;
     margin-bottom: 0.5rem !important;
 }
 
 #heading {
     width: 65%;
-    margin: 0.5rem auto;
-    font-size: 2.5rem !important;
-    font-family: America;
+    margin: 21px 0px 0px -60px;
+    font-size: 2rem !important;
+    font-family: Roboto;
     font-style: normal;
-    font-weight: bold;
-    background: linear-gradient(180deg, #7C49F6 0%, #E55ABD 47.92%, #FEDF67 100%);
+    font-weight: bolder;
+    background: linear-gradient(90deg, #7C49F6 13%, #E55ABD 68.92%, #FEDF67 90%);
     color: transparent;
     -webkit-background-clip: text;
     background-clip: text;
-    /* margin-bottom: 0px !important; */
 }
 
 .profile img{
-    width: 150px;
+    width: 120px;
     margin: 1.5em;
 }
 
@@ -70,7 +66,7 @@ h6{
 }
 
 .mobile-view{
-    margin-top: 50px;
+    margin-top: 24px;
 }
 
 .career{
@@ -114,3 +110,79 @@ h6{
         margin-top: 50px;
     }
 }
+
+
+@media only screen and (min-width: 281px) and (max-width: 320px){
+
+    #backdiv {
+        margin-top: 1rem!important;
+        margin-left: 0rem !important;
+        padding: 0.2rem 0.4rem;
+        background-color: white;
+        border-radius: 0.5rem;
+        float: left;
+    }
+
+    .mobile-view {
+        margin-top: 31px;
+    }    
+
+    #heading {
+        width: 65%;
+        margin: 0px 0px 0px -45px;
+        font-size: 2rem !important;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: bolder;
+        background: linear-gradient(90deg, #7C49F6 13%, #E55ABD 68.92%, #FEDF67 90%);
+        color: transparent;
+        -webkit-background-clip: text;
+        background-clip: text;
+    }
+}
+
+@media only screen and ( max-width:280px){
+
+    #backdiv {
+        margin-top: 1rem!important;
+        margin-left: 0rem !important;
+        padding: 0.2rem 0.4rem;
+        background-color: white;
+        border-radius: 0.5rem;
+        float: left;
+    }
+
+    .mobile-view {
+        margin-top: 19px;
+    }
+
+    #heading {
+        width: 65%;
+        margin: 0px 0px 0px -15px;
+        font-size: 2rem !important;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: bolder;
+        background: linear-gradient(90deg, #7C49F6 13%, #E55ABD 68.92%, #FEDF67 90%);
+        color: transparent;
+        -webkit-background-clip: text;
+        background-clip: text;
+    }
+}
+
+
+@media only screen and (min-width: 1280px) {
+    #headdiv {
+        margin: -0.5rem;
+        margin-bottom: 0.5rem !important;
+    }
+
+    #heading {
+
+        margin: 21px 0px 0px -40rem;
+        background: linear-gradient(90deg, #7C49F6 9%, #E55ABD 84.92%, #FEDF67 100%);
+        color: transparent;
+        -webkit-background-clip: text;
+        background-clip: text;
+    }
+} 
