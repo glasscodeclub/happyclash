@@ -4,9 +4,25 @@ body{
   margin-bottom: 60px;
 }
 
+body{
+  font-family:Roboto;
+}
+
 .p1 {
-  width: 130px;
-  height: 130px;
+  width: 120px;
+  height: auto;
+}
+
+#backdiv{
+    margin: 0;
+    padding: 0.2rem 0.4rem;
+    background-color: white;
+    border-radius: 0.5rem;
+    float: left;
+}
+
+.back{
+  margin-left: -10px;
 }
 
 .submit {
@@ -33,7 +49,7 @@ body{
   width: 7rem !important;
   /* font-size: 5rem !important; */
   margin-top: 1rem;
-  /* padding: 0.22rem 3.5rem; */
+  padding: 0.3rem 1.5rem !important;
   font-size: 0.8rem;
   font-family: Roboto;
   font-style: normal;
@@ -45,9 +61,10 @@ body{
     #ffd458 97.6%
   );
   color: white !important;
-  border-radius: 0.25rem !important;
+  border-radius: 4px !important;
   border: none !important;
   outline: none;
+  box-shadow: 0px 1px 7px rgba(0, 0, 0, 0.15);
 }
 
 .n1 {
@@ -67,7 +84,7 @@ body{
   margin-left: 1.4rem !important;
 }
 
-#n2 {
+.n2 {
   font-size: 10px;
   /* text-align:center; */
   /* margin-top: 1px; */
@@ -90,7 +107,7 @@ body{
 }
 
 .rp1 {
-  font-size: 1rem;
+  font-size: 0.71rem;
   text-align: center;
   font-family: Roboto;
   color: #7a7a7a;
@@ -105,13 +122,8 @@ body{
   text-align: center;
   font-family: Roboto;
   font-style: normal;
-  font-weight: normal;
-  background: -webkit-linear-gradient(
-    269.06deg,
-    #fedf67 -11.43%,
-    #ff53b7 47.34%,
-    #7c49f6 107.7%
-  );
+  font-weight: bolder;
+  background: linear-gradient(90deg,#7c49f6 0%,#ff53b7 52.34%,#fedf67 70%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -119,7 +131,6 @@ body{
   padding-bottom: 0px !important;
   margin-bottom: 0px !important;
   margin-top: 0px !important;
-  /* background: linear-gradient(269.06deg, #FEDF67 -11.43%, #FF53B7 47.34%, #7C49F6 107.7%); */
 }
 
 .pp {
@@ -129,8 +140,8 @@ body{
 #posts {
   font-family: Roboto;
   font-style: normal;
-  font-weight: normal;
-  font-size: 1.5rem;
+  font-weight: 500;
+  font-size: 1.4rem;
   text-align: center;
   color: #000000;
 }
@@ -154,12 +165,12 @@ body{
   color: #ffffff;
 }
 
-#fol {
+.fol {
   margin: 0px !important;
   font-family: Roboto;
   font-style: normal;
   font-weight: bold;
-  font-size: 1rem;
+  font-size: 0.8rem;
   text-align: center;
   color: #ffffff;
 }
@@ -168,4 +179,44 @@ body{
   text-align: center;
   width: 90%;
   padding-bottom: 5rem !important;
+}
+
+.bell-settings{
+  position: absolute;
+  display: flex;
+  top: 15px;
+  right: 5px;
+  justify-content: space-between;
+  width: 70px;
+}
+
+.post-container{
+  display: flex;
+  justify-content:space-between;
+}
+
+.video-container{
+  position: relative;
+  border-radius: 5px;
+}
+
+.myvideo {
+  border-radius: 6px;
+  max-width:400px;
+  box-shadow: -5.03451px 5.03451px 16.7817px rgba(0, 0, 0, 0.25), inset 0px -45.4817px 75.8028px #000000;
+}
+.bottom-info{
+  position: relative;
+  bottom:-70px;
+  right:10px;
+}
+
+.video-body{
+  margin: 1.2rem 0.3rem 0.5rem;
+}
+
+@media only screen and (min-width:768px){
+  .video-body{
+    margin: 1.2rem 1rem 0.5rem;
+  }
 }
