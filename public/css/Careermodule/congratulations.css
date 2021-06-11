@@ -5,6 +5,14 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
+body{
+    overflow-x: hidden;
+}
+
+.hr-out{
+    margin:1rem -0.75rem;
+}
+
 .head {
     position:sticky;
     top:0px;
@@ -67,6 +75,7 @@ body{
 }
 
 .wining-song{
+    position: relative;
     padding:0 17%;
     display:grid;
     grid-template-columns: 1fr 2fr;
@@ -76,8 +85,8 @@ body{
 
 .crown{
     position: absolute;
-    left: 51px;
-    top: 178px;
+    left: 38px;
+    top: -12px;
     /* z-index: -1; */
 }
 
@@ -137,13 +146,6 @@ body{
     border-style: none;
     background: linear-gradient(81.23deg, #7C49F6 9.3%, #FF53B7 51.61%, #FFD458 97.6%);
     box-shadow: 0px 0.690355px 4.83249px rgba(0, 0, 0, 0.15);
-}
-
-@media (max-width: 280px){
-    .crown{
-        left: 35px;
-        top: 170px;
-    }
 }
 
 @media only screen and (min-width:280px) and (max-width:281px) {
@@ -221,22 +223,63 @@ body{
     #back{
         font-size: 1.5rem !important;
     }
-    .crown{
-        left: 75px;
-        top: 185px;
-    }
 }
 
 @media (min-width: 768px) and (max-width: 1023px){
     .crown{
-        left: 130px;
-        top: 185px;
+        left: 101px;
+        top: -13px;
     }
 }
 
 @media (min-width: 1024px){
     .crown{
-        left: auto;
-        top: 220px;
+        left: 166px;
+        top: -13px;
+    }
+}
+
+
+@media only screen and (min-width: 768px) and (max-width:1024px){
+    .hr-out{
+        margin: 1rem -2.75rem;
+    }
+}
+
+@media only screen and (min-width:1280px){
+    .hr-out{
+        margin: 1rem -7rem;
+    }
+}
+
+@media only screen and (min-width:411px) and (max-width:500px){
+    .crown{
+        top:-13px;
+        left:48px;
+    }
+}
+
+@media only screen and (min-width:320px) and (max-width:330px){
+    .crown{
+        left: 32px;
+    }
+}
+
+@media only screen and (min-width:539px) and (max-width:600px){
+    .crown{
+        top: -13px;
+        left: 70px;
+    }
+}
+
+@media only screen and (max-width:280px){
+    .crown{
+        left: 25px;
+    }
+}
+
+@media only screen and (min-width:1279px){
+    .crown{
+        left: 265px;
     }
 }
