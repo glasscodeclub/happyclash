@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/Librarymodule/library.css">
     <link rel="stylesheet" href="/css/BottomNavmodule/bottomnavbar.css"> 
     <base href="/">
@@ -26,8 +26,8 @@
 <body>
     
     <div style="display: flex;">
-        <div id="backdiv" style="    position: relative; bottom: 6px;">
-            <img src="/img/backarrow.png" alt="" style="width: 25px; margin-bottom: 2px;">
+        <div id="backdiv">
+            <img onclick="console.log(this)" src="/img/backarrow.png" alt="" style="width: 25px; margin-bottom: 2px;">
         </div>
 
         <div id="headdiv">
@@ -42,7 +42,7 @@
 
     <div class="videoList">
 
-    <%const count=18;%>
+    <%const count=30;%>
 
     <%for(let i=0;i<count;i++){%>   
 
@@ -55,7 +55,7 @@
                         </video>
                     </a>
                
-                <div class="options">
+                <div class="threedots">
                     <img src="/img/threedots.png" alt="" width="4" height="15" onclick="displayPopUp(this)" data-target = "#play-options" >
                 </div>
                 <div class="play">
@@ -85,8 +85,7 @@
                         <div class="gallery">
                             <i class="fas fa-photo-video" onclick="window.location.href='/upload'"></i>
                             <p>Gallery</p>
-                        </div>
-                        
+                        </div>            
                     </div>
                 </div>
             </div>
