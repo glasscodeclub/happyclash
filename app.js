@@ -76,6 +76,9 @@ app.use("/search", Searchroutes)//
 
 app.use('/upload',Uploadroutes);
 app.use('/video',Videoroutes);
+app.use('/error',(req,res)=>{
+ res.send("error")
+});
 
 app.listen(port, function(){
     console.log("connected on : ",port," mongo url : ",url);

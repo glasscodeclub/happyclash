@@ -15,7 +15,7 @@ const storage = multer.diskStorage({
             username:req.user.username,
             videoName:file.originalname.split(".")[0],
           })
-          const filename=`${file.originalname.split(".")[0]}_${req.user.username}_${new_video._id}.${file.mimetype.split("/")[1]}`; 
+          const filename=`${new_video._id}.${file.mimetype.split("/")[1]}`; 
           new_video.save(function(err,result){
               if (err){
                   console.log(err);

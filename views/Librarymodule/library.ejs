@@ -42,25 +42,22 @@
 
     <div class="videoList">
 
-    <%const count=30;%>
-
+    <%const count=videoModelArray.length;%>
+    <!-- error handling missing -->
     <%for(let i=0;i<count;i++){%>   
-
         <div class="videodiv">
             <div style="position: relative;">
-                    <a href="/library/videomodelibrary">
                         <video class="myvideo">
-                            <source src="/video/sample" type="video/mp4">
+                            <source src="/video/<%= videoModelArray[i]._id %>" type="video/mp4">
                             Video not available at the moment
                         </video>
-                    </a>
-               
                 <div class="threedots">
-                    <img src="/img/threedots.png" alt="" width="4" height="15" onclick="displayPopUp(this)" data-target = "#play-options" >
+                    <img src="/img/threedots.png" alt="" width="4" height="15" onclick="optionThreeDot(this);" data-target = "#play-options" id="threeDot_<%= videoModelArray[i]._id %>">
                 </div>
-                <div class="play">
+                <!-- not good ui -->
+                <!-- <div class="play">
                     <img src="/img/Play.svg" width="24" height="24" class="videoplay" onclick="playVideo(this)">
-                </div>
+                </div> -->
             </div>
         </div>
 
@@ -96,6 +93,7 @@
             <!-- POPUP BEGINING FOR PLAYING OPTIONS -->
 
             <div class="popup-play" id="play-options">
+                <input type="text" value="" style="display: none;height: 0px;width:0px" id="optionThreeDots">
                 <div class="play-header">
                     <div class="title">What to do: </div>
                     <div class="close-button-play" data-close-button>&times;</div>
@@ -104,13 +102,14 @@
                     <div class="control" onclick="play()"> 
                         <i class="fas fa-play"></i><span>Play</span>
                     </div>
-                    <div class="control" onclick="del()"> 
-                        <i class="far fa-trash-alt" ></i><span>Delete</span>
+                    <div class="control" onclick="del();"> 
+                        <i class="far fa-trash-alt"></i><span>Delete</span>
                     </div>
                     <div class="control" onclick="download()"> 
                         <i class="fas fa-download" ></i><span>Save to Gallery</span>
                     </div>
-                    
+                    <a id="downloadLink" href="/" download style="height: 0px;width:0px;display: none;">
+                    </a>
                     
                 </div>
             </div>

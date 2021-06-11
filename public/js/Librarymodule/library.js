@@ -1,21 +1,41 @@
-function displayPopUp(element) {
-  console.log(element);
-}
+// function displayPopUp(element) {
+//   document.getElementById("optionThreeDots").value=element.id;
+//   console.log(element);
+// }
 
-function playVideo(element) {
-  window.location.href = "/library/videomodelibrary";
-}
 
-function play(){
-  console.log("Play button was clicked")
+function optionThreeDot(e){
+  document.getElementById("optionThreeDots").value=e.id.split("_")[1];
 }
 
 function del(){
-  console.log("delete button was clicked")
+ let id=document.getElementById("optionThreeDots").value
+ $.ajax('/library/delete/'+id, {
+  type: 'POST',  
+  success: function (data, status, xhr) {
+     window.location.reload();
+  },
+  error: function (jqXhr, textStatus, errorMessage) {
+    window.location.assign("/error")
+  }
+});
+}
+
+// function playVideo(element) {
+//   window.location.href = "/library/videomodelibrary";
+// }
+
+function play(){
+  let id=document.getElementById("optionThreeDots").value
+  window.location.assign("/library/videomodelibrary/"+id)
 }
 
 function download(){
-  console.log("Save to Gallery was clicked")
+  let id=document.getElementById("optionThreeDots").value
+  // window.open("/library/videomodelibrary/"+id)
+  console.log(id)
+  document.getElementById("downloadLink").href="/video/"+id;
+  document.getElementById("downloadLink").click();
 } 
 
 function capture(){
@@ -98,3 +118,17 @@ function upload(){
 function optionUpload(){
 
 }
+
+
+
+// $(document).ready(function(){
+
+//   //delete funtion
+// $('#play-options').on('show.bs.modal', function (event) {
+//   console.log("hi")
+//   var button = $(event.relatedTarget);
+//   var id = button.data('id');
+//   console.log(id)
+// });
+
+// });
