@@ -1,4 +1,4 @@
-body{
+*, body{
     font-family: "Roboto", sans-serif;
 }
 
@@ -22,9 +22,9 @@ input[type="date"] , input[type="time"]{
   }
 
 .filter input,.filter  select{
-    height:fit-content;
-    max-width: 113px;
-    width:-webkit-fill-available;
+    height:2em;
+    /* max-width: 113px; */
+    width:200px;
     font-size:0.9rem;
     margin: 10px;
     border:1px solid #DEDEDE;
@@ -125,16 +125,17 @@ select option{
       background:#fff;
       top: 50%;
       left:50%;
-      width:88%;
+      /* width:88%; */
       z-index: 10;
-      padding:5%;
-      border-radius:4px;
+      padding:2em;
+      border-radius:10px;
       font-family:"Roboto", sans-serif; 
       text-transform: capitalize;
       transform: translate(-50%, -50%) scale(0);
   }
 
   .filter.active{
+    width: fit-content;
     top: 50%;
     left:50%;
     transform: translate(-50%, -50%) scale(1);
@@ -147,18 +148,16 @@ select option{
 
   .close-btn{
       font-size:1.5rem;
-      position:absolute;
-      top:0;
       right: 15px;
       font-weight: bold;
   }
 
-  .sortby, .date, .duration{
+  /* .sortby, .date, .duration{
       display: grid;
       grid-template-columns: 1fr 1fr;
       grid-gap: 15px;
       grid-row-gap: 15px ;
-  }
+  } */
 
   .sortby-option{
     position: relative;
@@ -175,21 +174,22 @@ select option{
     width: 15px;
     height: 20px;
     position: absolute;
-    top: 10px;
+    top: 3px;
     right: 17px;
     color: #909090;
     pointer-events: none;
 }
 
 .filter-head{
-    padding-bottom: 40px;
+    padding-bottom: 20px;
 }
 
 .name{
     color: #7B7B7B;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     justify-self: baseline;
     align-self: center;
+    font-weight: bold;
 }
 
 .apply{
@@ -198,12 +198,35 @@ select option{
 }
 
 .apply>button{
+    padding: 3px;
     text-transform: capitalize;
     background: none;
     outline: none;
     border:none;
     font-size:0.9rem;
-    width: 45%;
+    width: 120px;
     border-radius:4px;
-    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2)
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.15)
+}
+
+@media (min-width: 280px) and (max-width: 281px){
+    .filter{
+        padding: 1em;
+    }
+}
+
+@media (min-width: 280px) and (max-width: 320px){
+    .name{
+        font-size: .7em;
+        padding-right: 0;
+    }
+    .filter input, .filter select{
+        width: 170px;
+    }
+}
+
+@media (min-width: 768px){
+    .filter.active{
+        width: 450px;
+    }
 }
