@@ -1,8 +1,3 @@
-@font-face {
-    font-family: America;
-    src: url('/font-family/America.ttf');
-}
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 .head {
     position: fixed;
     z-index: 1;
@@ -17,8 +12,8 @@
 }
 
 #backdiv {
-    margin-top: 1.4rem!important;
-    margin-left: 1rem !important;
+    margin-top: 1.2rem!important;
+    margin-left: 0.4rem !important;
     padding: 0.2rem 0.4rem;
     background-color: white;
     border-radius: 0.5rem;
@@ -43,16 +38,15 @@
 
 #heading {
     width: 65%;
-    margin: 0.5rem auto;
+    /* margin: 0.5rem auto; */
     font-size: 2.5rem !important;
     font-family: Roboto;
     font-style: normal;
-    font-weight: bold;
-    background: linear-gradient(180deg, #7C49F6 0%, #E55ABD 47.92%, #FEDF67 100%);
+    font-weight: bolder;
+    background: linear-gradient(90deg, #7C49F6 0%, #E55ABD 47.92%, #FEDF67 100%);
     color: transparent;
     -webkit-background-clip: text;
     background-clip: text;
-    /* margin-bottom: 0px !important; */
 }
 
 .identifier{
@@ -94,9 +88,13 @@
     padding: 0;
 }
 
+hr{
+    margin: 1rem -1.5rem;
+}
+
 @media (max-width: 767px){
     #heading{
-        font-size: 2rem !important;
+        font-size: 1.8rem !important;
     }
     #back{
         font-size: 1.2rem !important;
@@ -106,5 +104,41 @@
     }
     .identifier + div p, .time span{
         font-size: .8em;
+    }
+}
+
+@media only screen and (max-width:786px) {
+    hr{
+        margin:1rem -2.5rem;
+    }
+}
+
+@media only screen and (max-width:1024px){
+    hr{
+        margin:1rem -3rem;
+    }
+}
+
+@media only screen and (max-width:280px){
+    #heading{
+        margin: 0.5rem auto;
+    }
+}
+
+@media only screen and (min-width:1280px){
+    hr{
+        margin:1rem -8rem;
+    }
+}
+
+@media only screen and (min-width:768px) {
+    #heading{
+        margin: 0.5rem -11rem;
+    }
+}
+
+@media only screen and (min-width:1000px) and (max-width:1024px){
+    #heading{
+        margin: 0.5rem -22rem;
     }
 }
