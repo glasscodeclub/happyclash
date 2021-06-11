@@ -21,7 +21,7 @@ function challenge(e, id) {
   </div>
   <hr />
   <div class="div1">
-    <div style="display: flex; align-items: center; justify-content: space-around;">
+    <div style="display: flex; align-items: center; justify-content: space-between; width:300px; margin:auto;">
       <div style="font-size: 0.85rem">Your Video</div>
       <div>
         <button
@@ -79,7 +79,7 @@ function challenge(e, id) {
           See All >
         </div>
       </div>
-      <div data-target-add="#add-friends" onclick="test()"  style="font-size: 2rem">+</div>
+      <div data-target-add="#add-friends" onclick="test()"  style="font-size: 2rem; cursor:pointer;">+</div>
     </div>
     <div>
       <div class="row">

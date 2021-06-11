@@ -14,7 +14,7 @@
     bottom: 0.75rem;
     left: 0;
     right: 0;
-    z-index: 10;
+    z-index: 5;
     /* top: 0.75rem; */
 }
 
@@ -38,17 +38,17 @@
     text-align: center;
     margin: 1.3rem auto;
     vertical-align: middle;
-    z-index: 10;
+    z-index: 4;
 }
 
 #heading {
-    width: 65%;
-    margin: 0.5rem auto;
+    width: 75%;
+    margin: 0.5rem 5rem 0 0;
     font-size: 2.6rem !important;
     font-family: Roboto;
     font-style: normal;
     font-weight: bold;
-    background: linear-gradient(180deg, #7C49F6 0%, #E55ABD 47.92%, #FEDF67 100%);
+    background: linear-gradient(90deg, #7C49F6 0%, #E55ABD 47.92%, #FEDF67 100%);
     color: transparent;
     -webkit-background-clip: text;
     background-clip: text;
@@ -127,6 +127,10 @@ video{
 
 .profile_image{
     width: 4.2rem;
+}
+
+hr{
+    margin: 1rem -1rem;
 }
 
 @media only screen and (min-width:280px) and (max-width:281px) {
@@ -220,5 +224,14 @@ video{
 @media (min-width: 568px) and (max-width: 1024px){
     .overlay{
         font-size: .5em;
+    }
+}
+
+@media only screen and (min-width:768px) and (max-width:1024px){
+    #heading{
+        margin: 0.5rem 0 0 -9rem;
+    }
+    hr{
+        margin:1rem -5%;
     }
 }
