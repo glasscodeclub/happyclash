@@ -4,7 +4,7 @@
 } */
 
 body {
-    background-color: black;
+    background-color: black !important;
   }
   
   .container {
@@ -58,7 +58,12 @@ body {
   .challengeName {
     font-family: Roboto;
     font-style: normal;
-    background: linear-gradient(180deg, #7c49f6 0%, #e55abd 47.92%, #fedf67 100%);
+    background: linear-gradient(
+      81.23deg,
+      #7c49f6 9.3%,
+      #ff53b7 51.61%,
+      #ffd458 97.6%
+    );
     color: transparent;
     -webkit-background-clip: text;
     background-clip: text;
@@ -106,9 +111,17 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    width: 100%;
+    width: auto;
     height: 100%;
     vertical-align: middle;
+    margin: 0 auto;
+  }
+
+  @media only screen and (max-width:550px) {
+    .myvideo{
+      width: 100%;
+      height: 100%;
+    }
   }
   
   .videoelements {
