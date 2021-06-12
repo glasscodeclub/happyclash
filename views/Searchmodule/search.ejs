@@ -14,7 +14,7 @@
         integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
-        crossorigin="anonymous"></script>   
+        crossorigin="anonymous"></script>
 
 
 
@@ -24,7 +24,7 @@
 
     <!-- Custom js -->
     <script src="/js/searchmodule/search.js"></script>
-    
+
 </head>
 
 <body>
@@ -50,8 +50,8 @@
         <div class="play">
             Recent searches:
         </div>
-        <div class="row" style="margin-left: .5rem;">
-            <div class="col">
+        <div class="row">
+            <div class=" col">
                 <div class="recent">
                     <span onclick="remove(this)"> <i class="fas fa-times"></i> </span>
                     <span> Songs </span>
@@ -72,7 +72,7 @@
         </div>
         <div class="play d-flex justify-content-between mt-4">
             <span> New Clashes this week: </span>
-            <span data-target="#filter"> <i class="fas fa-filter"></i> </span>
+            <span data-target="#filter" style="cursor: pointer;"> <i class="fas fa-filter"></i> </span>
         </div>
         <div class="row">
             <div class="col new" onclick="newClash(this)">
@@ -95,34 +95,37 @@
 
     <!-- Filter starts here -->
 
-    <div class="filter" id="filter">
-        <div class="filter-head">
-            <div class="title">filter</div>
-            <div class="close-btn" data-close-btn >&times;</div>
+    <div class="filter" id="filter" style="padding-top: 10px;">
+        <div class="filter-head row">
+            <div class="col d-flex justify-content-center">
+                <span class="title">filter</span>
+            </div>
+            <div class="col-1 d-flex justify-content-center">
+                <span class="close-btn" data-close-btn>&times;</span>
+            </div>
         </div>
         <div class="filter-body">
-            <div class="sortby">
-                <div class="name">sort by</div>
-                <div class="sortby-option">
-                    <select>
+            <div class="sortby row" style="padding-top: 1em;">
+                <div class="name col d-flex justify-content-start">sort by</div>
+                <div class="sortby-option col">
+                    <select style="margin: 0;">
                         <option disabled hidden selected></option>
                         <option value="latest">Latest</option>
                         <option value="oldest">Oldest</option>
                         <option value="from-friends">From Friends</option>
                     </select>
                 </div>
-                
             </div>
-           <div class="date">
-               <div class="name">upload date</div>
-               <input type="date" name="date" class="dateTime">
-           </div>
-            <div class="duration">
-                <div class="name">duration</div>
-               <input type="time" step="1" class="dateTime">
+            <div class="date row" style="padding-top: 1em;">
+                <div class="name col d-flex justify-content-start">upload date</div>
+                <input type="date" name="date" class="dateTime">
+            </div>
+            <div class="duration row" style="padding-top: 1em;">
+                <div class="name col d-flex justify-content-start">duration</div>
+                <input type="time" step="1" class="dateTime">
             </div>
             <div class="apply">
-                <button data-close-btn >apply filters</button>
+                <button data-close-btn>apply filters</button>
             </div>
         </div>
     </div>

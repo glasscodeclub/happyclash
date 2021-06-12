@@ -5,6 +5,10 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
+*{
+    font-family: Roboto, sans-serif;
+}
+
 body{
     margin-bottom: 60px;
 }
@@ -50,7 +54,7 @@ body{
 }
 
 #input span img{
-    width: 40px;
+    width: 25px;
 }
 
 #input input{
@@ -87,10 +91,11 @@ body{
 
 .new{
     background: #96E069;
-    border-radius: 1.89603px;
+    border-radius: 4px;
     font-weight: bold;
     margin: 10px;
     padding: 5px;
+    box-shadow: 0px 1px 8px 0px #00000026;
 }
 
 .new:hover, .recent span:nth-of-type(1):hover{
@@ -102,7 +107,7 @@ body{
         font-size: 1rem !important;
     }
     .recent span{
-        font-size: .855em;
+        font-size: .8em;
     }
     .new span{
         font-size: .8em;
@@ -123,7 +128,7 @@ body{
         font-size: 1em;
     }
     .recent span{
-        font-size: .755em;
+        font-size: .7em;
     }
     #heading{
         font-size: 1.7em !important;
@@ -133,7 +138,7 @@ body{
     }
 }
 
-@media (min-width: 360px) and (max-width: 413px){
+@media (min-width: 320px) and (max-width: 413px){
     .recent{
         width: auto;
         padding-left: 0;
@@ -161,6 +166,6 @@ body{
 
 @media (min-width: 540px) and (max-width: 541px){
     .new span{
-        font-size: .7em;
+        font-size: .68em;
     }
 }
