@@ -4,7 +4,7 @@
 } */
 
 body {
-  background-color: black;
+  background-color: black !important;
 }
 
 .container {
@@ -108,9 +108,16 @@ svg.infoicon {
   left: 0;
   right: 0;
   bottom: 0;
-  width: 100%;
+  width: auto;
   height: 100%;
   vertical-align: middle;
+  margin: 0 auto;
+}
+
+@media only screen and (max-width: 550px) {
+  .myvideo {
+    width: 100%;
+  }
 }
 
 .videoelements {
@@ -217,7 +224,7 @@ svg.infoicon {
 /* POPUP CSS BEGINS */
 
 #overlay {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.9);
   z-index: 5;
   position: absolute;
   top: 0;
@@ -229,7 +236,7 @@ svg.infoicon {
 }
 
 #overlay.active{
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.9);
   z-index: 5;
   position: absolute;
   top: 0;
@@ -242,9 +249,9 @@ svg.infoicon {
 }
 
 .popup{
-  width:80%;
+  width:90%;
   font-family: "Roboto", sans-serif;
-  padding:5px;
+  padding:2%;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -252,6 +259,12 @@ svg.infoicon {
   background-color:white;
   z-index: 10;
   border-radius:6px;
+}
+
+@media only screen and (min-width: 500px) {
+  .popup {
+    width: 415px;
+  }
 }
 
 .popup.active{
@@ -299,6 +312,6 @@ svg.infoicon {
   display: flex;
   justify-content: space-between;
   width: 60%;
-  margin: 10px auto;
+  margin: 28px auto 10px auto;
 }
 /* POPUP CSS ENDS */

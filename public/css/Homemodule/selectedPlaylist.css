@@ -219,7 +219,7 @@ video{
     background: none;
     text-overflow: ellipsis;
     overflow: hidden;
-    max-height: 50px;
+    max-height: fit-content;
 }
 
 .challenge-details{

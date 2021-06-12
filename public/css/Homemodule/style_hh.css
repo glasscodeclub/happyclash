@@ -14,7 +14,7 @@ body{
 }
 
 #happy-logo img{
-  width: 115%;
+  height: 60px;
   margin-left: -12px;
 }
 
@@ -229,12 +229,13 @@ body{
   width: 90%;
   border-radius: 5.76px;
   box-shadow: -3px 3px 10px rgba(0, 0, 0, 0.25), inset 0px -30px 50px #000000;
+  background-color: black !important;
 }
 
 .challenge-title{
   position: absolute;
   bottom: 80px;
-  left: 33px;
+  left: 5.5%;
   font-size: 1.7rem;
   background: -webkit-linear-gradient(
     45deg,
@@ -251,21 +252,30 @@ body{
 .author-name{
   position: absolute;
   bottom: 60px;
-  left: 33px;
+  left: 5.8%;
   font-size: 0.8rem;
   color: white;
 }
 
 .interactions{
-  padding:1%;
+  padding:30px 4% 10px 2%;
   position: absolute;
   bottom: 18px;
-  left: 30px;
+  left: 4%;
   right: 30px;
   display: flex;
   font-size: 0.8rem;
   justify-content: space-between;
   color: white;
+}
+
+.duration {
+  position: absolute;
+  top: 10px;
+  right: 6%;
+  font-size: 0.8rem;
+  color: white;
+              
 }
 
 #bc {
