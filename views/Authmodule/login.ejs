@@ -20,7 +20,16 @@
     <div id="subheaddiv">
         <h6 id="subheading">Discover the new Clashes</h6>
     </div>
-
+    <%if(message){%>
+        <div class="alert alert-danger alert-dismissible fade show d-flex justify-content-center">
+            <div class="errmessage">
+                <strong><%=message %></strong>
+            </div>
+            <div class="close">
+                <i class="fas fa-times" onclick="removeMessage()"></i>
+            </div>
+        </div>
+    <%}%> 
     <div class="form-group fg-login">
         <form action="/auth/login" method="POST">
 

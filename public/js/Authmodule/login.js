@@ -100,3 +100,10 @@ function checkPasswordEquality() {
     }
     return true;
 }
+
+
+function removeMessage() {
+    let alert = document.querySelector(".alert");
+
+    alert.remove();
+}
