@@ -20,21 +20,23 @@
 
         <div class="head">
             <div id="backdiv">
-                <i onclick="window.location.href='/clashDetails'" id="back" class="fas fa-arrow-left"></i>
+                <img onclick="window.location.href='/clashDetails'" id="back" style="width: 20px; cursor: pointer;"
+                    src="/img/backarrow.png" alt="back">
             </div>
 
             <div id="headdiv">
                 <p id="heading">Report Clash</p>
             </div>
         </div>
+
         <div id="textDiv">
             Why are you reporting this Clash?
         </div>
+
         <form action="" method="post">
         <div class="container" id="listTable">         
-            <table class="table table-hover">
+            <table class="table table-hover" style="border-top: 1px solid #dee2e6;">
               <tbody>
-              
                 <tr>
                   <td class="one">It's Spam</td>
                   <td><input type="checkbox" id="1" />&nbsp;</td>
@@ -66,7 +68,6 @@
             <div class="form-group">
                 <textarea class="form-control" id="Textarea1" rows="3" placeholder="Your Message"></textarea>
               </div>
-            
           </div>
           <button type="submit" class="btn btn-primary sub save" >Report</button>
         </form>

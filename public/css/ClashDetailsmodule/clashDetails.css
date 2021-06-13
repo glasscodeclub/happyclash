@@ -16,13 +16,22 @@
     /* top: 0.75rem; */
 }
 
-#backdiv {
-    margin-top: 1.4rem!important;
-    margin-left: 1rem !important;
+*{
+    font-family: Roboto, sans-serif;
+}
+
+#backdiv, #exclamation {
+    margin-top: 1rem!important;
+    margin-left: .5rem !important;
     padding: 0.2rem 0.4rem;
     background-color: white;
     border-radius: 0.5rem;
     float: left;
+}
+
+#exclamation{
+    float: right;
+    margin-right: 5px;
 }
 
 #back {
@@ -42,13 +51,13 @@
 }
 
 #heading {
-    width: 65%;
-    margin: 0.5rem auto;
+    /* width: 65%; */
+    /* margin: 0.5rem auto; */
     font-size: 2.5rem !important;
-    font-family: America;
+    /* font-family: America; */
     font-style: normal;
     font-weight: bold;
-    background: linear-gradient(180deg, #7C49F6 0%, #E55ABD 47.92%, #FEDF67 100%);
+    background: linear-gradient(90deg, #7C49F6 0%, #E55ABD 47.92%, #FEDF67 100%);
     color: transparent;
     -webkit-background-clip: text;
     background-clip: text;
@@ -57,8 +66,8 @@
 
 .br1{
     border: 1px solid white;
-    border-radius: 4px;
-    box-shadow: 0px 1px 7px rgba(0, 0, 0, 0.15);
+    border-radius: 6px;
+    box-shadow: 0px 1px 7px rgba(0, 0, 0, 0.12);
     text-align: center;
     font-size: 0.5rem !important;
     background-color: white;
@@ -72,7 +81,6 @@
 #p1{
     margin:0px !important;
     font-size:0.7rem !important;
-    font-family: Roboto;
 }
 
 #img1{
@@ -87,9 +95,8 @@
 }
 
 .rp1{
-    font-size: 1rem;
+    font-size: .8rem;
     text-align: center;
-    font-family: Roboto;
     color:#7A7A7A;
     padding-top: 0px !important;
     padding-bottom: 0px !important;
@@ -98,9 +105,8 @@
 }
 
 .rp2{
-    font-size: 1.4rem !important;
+    font-size: 1.6rem !important;
     text-align: center;
-    font-family: Roboto;
     font-style: normal;
     font-weight: normal;
     padding-top: 0px !important;
@@ -109,7 +115,6 @@
     margin-top: 0px !important;
 }
 #p2{
-    font-family: Roboto;
     font-size: 0.8rem !important;
     color:#747474;
     margin:0px;
@@ -118,7 +123,6 @@
 }
 
 #p3{
-    font-family: Roboto;
     font-size: 0.925rem;
     color:#000000;
     width:89px;
@@ -131,8 +135,8 @@
 
 .btn1{
     border: 1px solid white;
-    border-radius: 4px;
-    box-shadow: 0px 1px 7px rgba(0, 0, 0, 0.15);
+    border-radius: 6px;
+    box-shadow: 0px 1px 7px rgba(0, 0, 0, 0.12);
     text-align: center;
     font-size: 0.5rem !important;
     background-color: white;
@@ -140,7 +144,6 @@
 }
 
 #p4{
-    font-family: Roboto;
     font-size: 0.8rem!important;
     color:#747474;
     margin:0px;
@@ -153,21 +156,18 @@
 #p7{
     margin:0px;
     color:#747474;
-    font-family: Roboto;
     font-size: 0.7rem;
 }
 #p8{
     margin:0px;
     /* color:#747474; */
     color:#000000;
-    font-family: Roboto;
     font-size: 0.7rem;
 }
 
 #p9{
     margin: 0px;
     color:#747474;
-    font-family: Roboto;
     font-size: 0.7rem;
     display: inline;
 }
@@ -175,7 +175,6 @@
 #p10{
     margin: 0px;
     color:#747474;
-    font-family: Roboto;
     font-size: 0.7rem;
     display: inline;
 }
@@ -185,9 +184,8 @@
 }
 
 .p11{
-    margin: 0px;
+    margin-top: 5px;
     color:#747474;
-    font-family: Roboto;
     font-size: 0.7rem;
 }
 
@@ -263,7 +261,6 @@
     font-size:1.5rem;
     font-weight:400;
     text-align: center;
-    font-family: "roboto", sans-serif;
     text-transform:capitalize;
 }
 
@@ -350,7 +347,6 @@
     text-align:center;
     margin-top:7px;
     font-weight:400;
-    font-family: "Roboto", sans-serif;
 }
 
 .user-name.active{
@@ -359,7 +355,6 @@
     text-align:center;
     margin-top:-16px;
     font-weight:400;
-    font-family: "Roboto", sans-serif;
 }
 
 .see-all-users{
@@ -368,7 +363,6 @@
     text-align:center;
     margin-top:6px;
     font-weight:400;
-    font-family: "Roboto", sans-serif;
 }
 
 .see-all-button{
@@ -383,7 +377,6 @@
 /* POPUP SECTION FOR SELECT ALL */
 .select-followers{
     display:flex;
-    font-family: "Roboto", sans-serif;
     margin: 18px 9px;
 }
 
@@ -458,7 +451,7 @@
 
 @media (max-width: 281px){
     #heading{
-        font-size: 1.3rem !important;
+        font-size: 1rem !important;
     }
     #back{
         font-size: 1rem !important;
@@ -496,7 +489,7 @@
         font-size: 1.2em !important;
     }
     .rp1{
-        font-size: .8em;
+        font-size: .6em;
     }
     .participants, .comment-header{
         font-size: 0.7em;
@@ -511,10 +504,14 @@
 
 @media (min-width: 281px) and (max-width: 376px){
     #back{
-        font-size: 1.1rem !important;
+        font-size: 1rem !important;
+    }
+    #backdiv{
+        margin-left: 0 !important;
     }
     #heading{
-        font-size: 1.5rem !important;
+        font-size: 1.3rem !important;
+        margin-top: 5px;
     }
     #p4{
         font-size: 1.5em !important;
@@ -526,7 +523,7 @@
         margin-top: 4.5em;
     }
     .rp2{
-        font-size: 1.1em !important;
+        font-size: 1.3em !important;
     }
     .rp1, .participants, .comment-header{
         font-size: 0.8em;
@@ -559,7 +556,7 @@
 
 @media (min-width: 410px) and (max-width: 767px){
     #heading{
-        font-size: 1.9rem !important;
+        font-size: 1.5rem !important;
     }
     #back{
         font-size: 1.2rem !important;
@@ -587,6 +584,9 @@
 }
 
 @media (min-width: 768px){
+    #headdiv{
+        margin: 0;
+    }
     #p1{
         font-size: 2.2em !important;
     }
@@ -600,10 +600,10 @@
         font-size: 1.1em !important;
     }
     .rp2{
-        font-size: 1.5em !important;
+        font-size: 1.8em !important;
     }
     .rp1, #p7{
-        font-size: 1.2em;
+        font-size: 1em;
     }
     .participants, .comment-header{
         font-size: 1.47em !important;

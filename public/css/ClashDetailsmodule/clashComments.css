@@ -2,7 +2,13 @@
   font-family: America;
   src: url("/font-family/America.ttf");
 }
-@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+*{
+  font-family: Roboto, sans-serif;
+}
+
 .head {
   position: fixed;
   z-index: 1;
@@ -17,7 +23,7 @@
 }
 
 #backdiv {
-  margin-top: 1.4rem !important;
+  margin-top: 1.8rem !important;
   margin-left: 1rem !important;
   padding: 0.2rem 0.4rem;
   background-color: white;
@@ -44,19 +50,16 @@
 #heading {
   width: 65%;
   margin: 0.5rem auto;
-  font-size: 2.5rem !important;
-  font-family: America;
+  font-size: 2rem !important;
   font-style: normal;
   font-weight: bold;
-  background: linear-gradient(180deg, #7c49f6 0%, #e55abd 47.92%, #fedf67 100%);
+  background: linear-gradient(90deg, #7c49f6 0%, #e55abd 47.92%, #fedf67 100%);
   color: transparent;
   -webkit-background-clip: text;
   background-clip: text;
   /* margin-bottom: 0px !important; */
 }
-#searchSpace {
-  margin-top: 108.797px;
-}
+
 .input-group {
   text-align: center;
   margin: 1.25rem auto !important;
@@ -65,8 +68,21 @@
   width: 82% !important;
   overflow: auto;
   background-color: white;
-  box-shadow: 0.05px 0.05px 1rem rgb(179 179 179);
+  box-shadow: 0px 0px 0.6em rgb(0, 0, 0, 0.15);;
 }
+
+#searchSpace button{
+  background: linear-gradient(81.23deg, #7C49F6 9.3%, #FF53B7 51.61%, #FFD458 97.6%);
+  box-shadow: 0px 1px 7px rgba(0, 0, 0, 0.15);
+  border-radius: 5px; 
+  color: white; 
+  border: none; 
+  position: relative;
+  left: 70%;
+  padding: 2px;
+  width: 4em;
+}
+
 .form-control {
   width: 100%;
   margin: auto;
@@ -84,21 +100,18 @@
 #p7 {
   margin: 0px;
   color: #747474;
-  font-family: Roboto;
-  font-size: 0.7rem;
+  font-size: 0.8rem;
 }
 #p8 {
   margin: 0px;
   /* color:#747474; */
   color: #000000;
-  font-family: Roboto;
   font-size: 0.7rem;
 }
 
 #p9 {
   margin: 0px;
   color: #747474;
-  font-family: Roboto;
   font-size: 0.7rem;
   display: inline;
 }
@@ -106,7 +119,6 @@
 #p10 {
   margin: 0px;
   color: #747474;
-  font-family: Roboto;
   font-size: 0.7rem;
   display: inline;
 }
@@ -126,7 +138,6 @@
 .p11 {
   margin: 0px;
   color: #747474;
-  font-family: Roboto;
   font-size: 0.7rem;
 }
 
@@ -199,10 +210,7 @@
 }
 
 @media (min-width: 768px) {
-  #p8,
-  #p9,
-  #p10,
-  .p11 {
+  #p8, .p11 {
     font-size: 1em;
   }
 }
@@ -218,9 +226,18 @@
   }
 }
 
+@media (min-width: 768px) and (max-width: 1025px){
+  #searchSpace button{
+    left: 80%;
+  }
+}
+
 @media (min-width: 1024px) {
   .comments {
     padding-left: 3em;
+  }
+  #searchSpace button{
+    left: 85%;
   }
 }
 

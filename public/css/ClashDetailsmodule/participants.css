@@ -3,6 +3,11 @@
   src: url("/font-family/America.ttf");
 }
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+*{
+  font-family: Roboto, sans-serif;
+}
+
 .head {
   position: fixed;
   z-index: 1;
@@ -17,7 +22,7 @@
 }
 
 #backdiv {
-  margin-top: 1.4rem !important;
+  margin-top: 1.8rem !important;
   margin-left: 1rem !important;
   padding: 0.2rem 0.4rem;
   background-color: white;
@@ -44,11 +49,10 @@
 #heading {
   width: 65%;
   margin: 0.5rem auto;
-  font-size: 2.5rem !important;
-  font-family: America;
+  font-size: 2rem !important;
   font-style: normal;
   font-weight: bold;
-  background: linear-gradient(180deg, #7c49f6 0%, #e55abd 47.92%, #fedf67 100%);
+  background: linear-gradient(90deg, #7c49f6 0%, #e55abd 47.92%, #fedf67 100%);
   color: transparent;
   -webkit-background-clip: text;
   background-clip: text;

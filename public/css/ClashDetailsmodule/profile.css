@@ -5,6 +5,10 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
+*{
+    font-family: Roboto, sans-serif;
+}
+
 #backdiv{
     float: left;
     margin-top: 1em;
@@ -27,8 +31,8 @@ center p:nth-of-type(2){
 }
 
 center button{
-    background: linear-gradient(81.23deg, #7C49F6 9.3%, #FF53B7 51.61%, #FFD458 97.6%);
-    box-shadow: 0px 1px 7px rgba(0, 0, 0, .15);
+    background: linear-gradient(40deg, #7C49F6 9.3%, #FF53B7 51.61%, #FFD458 97.6%);
+    box-shadow: 0px 1px 8px rgba(0, 0, 0, .15);
     border-style: none;
     border-radius: 3px;
     color: #fff;
@@ -40,7 +44,6 @@ center button{
 .rp1{
     font-size: 1rem;
     text-align: center;
-    font-family: Roboto;
     color:#7A7A7A;
     padding-top: 0px !important;
     padding-bottom: 0px !important;
@@ -51,14 +54,13 @@ center button{
 .rp2{
     font-size: 2rem !important;
     text-align: center;
-    font-family: Roboto;
     font-style: normal;
     font-weight: bold;
     padding-top: 0px !important;
     padding-bottom: 0px !important;
     margin-bottom: 0px !important;
     margin-top: 0px !important;
-    background: -webkit-linear-gradient(269.06deg, #FEDF67 -11.43%, #FF53B7 47.34%, #7C49F6 107.7%);
+    background: -webkit-linear-gradient(360deg, #7C49F6 9.3%, #FF53B7 51.61%, #FFD458 97.6%);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -94,7 +96,7 @@ video{
 
 .overlay h2{
     font-weight: bold;
-    background: -webkit-linear-gradient(269.06deg, #FEDF67 -11.43%, #FF53B7 47.34%, #7C49F6 107.7%);
+    background: -webkit-linear-gradient(360deg, #7C49F6 0%, #E55ABD 47.92%, #FEDF67 100%);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -117,7 +119,7 @@ video{
         width: 250px;
     }
     .rp1{
-        font-size: .9em;
+        font-size: .8em;
     }
     .rp2{
         font-size: 1.5em !important;
