@@ -14,7 +14,13 @@ var UserSchema = new mongoose.Schema({
     },
     phone:{
         type:String,
-        unique:true,
+    },
+    randomString:{
+        type:String,
+    },
+    isVerfied:{
+        type:Boolean,
+        default:false,
     }
 });
 
