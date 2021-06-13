@@ -77,7 +77,7 @@ app.use("/search", Searchroutes)//
 app.use('/upload',Uploadroutes);
 app.use('/video',Videoroutes);
 app.use('/error',(req,res)=>{
- res.send("error")
+ res.render("error",{error:""})
 });
 
 app.listen(port, function(){

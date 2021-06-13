@@ -51,8 +51,8 @@
                             <source src="/video/<%= videoModelArray[i]._id %>" type="video/mp4">
                             Video not available at the moment
                         </video>
-                <div class="threedots">
-                    <img src="/img/threedots.png" alt="" width="4" height="15" onclick="optionThreeDot(this);" data-target = "#play-options" id="threeDot_<%= videoModelArray[i]._id %>">
+                <div class="threedots" onclick="optionThreeDot(this);" id="threeDot_<%= videoModelArray[i]._id %>">
+                    <img src="/img/threedots.png" alt="" width="4" height="15" data-target = "#play-options">
                 </div>
                 <!-- not good ui -->
                 <!-- <div class="play">
