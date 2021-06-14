@@ -1,0 +1,12 @@
+<%if(basic){%>
+<form method="POST">
+    <input type="email" required name="email">
+    <button type="submit">submit</button>
+</form>
+<%}else{%>
+    <%if(send){%>
+        <p>email send</p>
+    <%}else{%>
+        <p>email not exists</p>
+    <%}%>
+<%}%>

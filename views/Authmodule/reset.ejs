@@ -1,0 +1,9 @@
+<%if(empty){%>
+   <p>no email exists or wrong link</p>
+<%}else{%>
+  <form method="POST">
+      <input type="password" required name="password" placeholder="enter new password">
+      <input type="password" required name ="confirmPassword" placeholder="confirm password">
+      <button type="submit">submit</button>
+  </form>
+<%}%>        
