@@ -14,7 +14,11 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
     crossorigin="anonymous"></script>
+  <script src="https://code.iconify.design/1/1.0.6/iconify.min.js"></script>
 
+
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto" rel="stylesheet">
   <!-- Custom CSS -->
   <link rel="stylesheet" href="/css/BottomNavmodule/bottomnavbar.css">
   <link rel="stylesheet" href="/css/createclashmodule/newClash.css">
@@ -35,13 +39,13 @@
   <div id="typeOfClash">
     <div id="typeOfClashBox">
       <div class="form-check">
-        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+        <input class="form-check-input" type="radio" name="flexRadioDefault" id="public-clash" checked>
         <label class="form-check-label" for="flexRadioDefault1">
           Public Clash
         </label>
       </div>
       <div class="form-check">
-        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+        <input class="form-check-input" type="radio" name="flexRadioDefault" id="friends-clash">
         <label class="form-check-label" for="flexRadioDefault2">
           Friends Clash
         </label>
@@ -75,47 +79,18 @@
         <input type="text" class="form-control" placeholder="Keywords">
       </div>
       <div class="upload">
-        <button type="button" data-bs-toggle="modal" data-bs-target="#uploadModal">
+        <button type="button"  data-target=".upload-popup">
           Upload
         </button>
       </div>
-      <div class="upload">
+      <!-- <div class="upload">
         <button type="button" data-bs-toggle="modal" data-bs-target="#saveModal">
           Save
         </button>
-      </div>
-      <button type="submit" class="btn btn-primary sub save">Start Clash</button>
+      </div> -->
+      <div type="submit" id="start" class="btn btn-primary sub save all" onclick="console.log('starting clash....')">Start Clash</div>
+      <div type="submit" id="continue" class="btn btn-primary sub save none" onclick="console.log('continue was clicked..')">Continue</div>
     </form>
-  </div>
-
-  <!-- Upload Modal -->
-  <div class="modal fade" id="uploadModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Upload from:</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <div class="container-fluid">
-            <div class="row">
-              <div class="col" onclick="uploadViaCamera(this)">
-                <i class="fas fa-camera"></i>
-                <p>Camera</p>
-              </div>
-              <div class="col" onclick="uploadViaLibrary(this)">
-                <i class="fas fa-book-open"></i>
-                <p>Library</p>
-              </div>
-              <div class="col" onclick="uploadViaGallery(this)">
-                <i class="fas fa-photo-video"></i>
-                <p>Gallery</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
 
   <!-- Save modal -->
@@ -133,6 +108,31 @@
       </div>
     </div>
   </div>
+
+  <div class="upload-popup" >
+    <div class="popup-header">
+      <div class="title">
+        <h3>upload from: </h3>
+      </div>
+      <div class="close-btn" data-close-button>&times;</div>
+    </div>
+    <div class="popup-body">
+      <div class="camera element" onclick="uploadViaCamera(this)">
+        <span class="iconify" data-inline="false" data-icon="ant-design:camera-outlined" style="font-size: 45px;"></span>
+        <p>camera</p>
+      </div>
+      <div class="library element" onclick="uploadViaLibrary(this)">
+        <span class="iconify" data-inline="false" data-icon="ion:library-outline" style="font-size: 45px;"></span>
+        <p>library</p>
+      </div>
+      <div class="gallery element" onclick="uploadViaGallery(this)">
+        <span class="iconify" data-inline="false" data-icon="grommet-icons:gallery" style="font-size: 45px;"></span>
+        <p>gallery</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="overlay"></div>
 
   <%- include("../BottomNavmodule/bottomnavbar") %>
     <script src="/js/createclashmodule/newClash.js"></script>
