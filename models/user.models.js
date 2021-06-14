@@ -18,6 +18,9 @@ var UserSchema = new mongoose.Schema({
     randomString:{
         type:String,
     },
+    randomStringForget:{
+        type:String,
+    },
     isVerfied:{
         type:Boolean,
         default:false,

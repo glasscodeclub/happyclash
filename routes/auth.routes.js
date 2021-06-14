@@ -7,7 +7,8 @@ const fs = require("fs")
 const async=require("async")
 var randomstring = require("randomstring");
 var _=require("lodash")
-var Email=require("../lib/email.lib")
+var Email=require("../lib/email.lib");
+const { isLoggedIn } = require("../middlewares/auth.middleware");
 
 router.get("/signup", function (req, res) {
     if(req.query&&req.query.incorrect&&req.query.incorrect=="yes"&&req.query.userid){
@@ -17,6 +18,129 @@ router.get("/signup", function (req, res) {
     else{
         res.render("./Authmodule/signup", { page: "HappyClash SignUp", err: { value: false,error:null,message:false } });
     }   
+});
+
+router.get("/forget", function (req, res) {
+    if(req.query&&req.query.send=="no"){
+        res.render("./Authmodule/forget", { send:false,basic:false });
+    }
+    
+    else if(req.query&&req.query.send=="yes"){
+        res.render("./Authmodule/forget", { send:true ,basic:false});
+    }
+    else{
+        res.render("./Authmodule/forget", { page: "HappyClash SignUp",send:false,basic:true });
+    }
+});
+
+
+
+router.get("/reset/:rid/user/:userid", function (req, res) {
+    if(req.params&&req.params.rid&&req.params.userid){
+        User.findOne({_id:req.params.userid,randomStringForget:req.params.rid},(err,doc)=>{
+                if(err){
+                    console.log(err)
+                    res.redirect("/error")
+                }
+                else if(_.isEmpty(doc)){
+                    res.render("./Authmodule/reset", { empty:true });
+                    //email not exists or wrong link
+                }
+                else{
+                    res.render("./Authmodule/reset", { empty:false });//right
+                }
+        })
+    }
+    //res.render("./Authmodule/forget", { page: "HappyClash SignUp" });
+});
+
+router.post("/reset/:rid/user/:userid", function (req, res) {
+    if(req.params&&req.params.rid&&req.params.userid){
+        User.findOne({_id:req.params.userid,randomStringForget:req.params.rid},(err,doc)=>{
+                if(err){
+                    console.log(err)
+                    res.redirect("/error")
+                }
+                else if(_.isEmpty(doc)){
+                    res.send("no user exists")
+                }
+                else{
+                    doc.setPassword(req.body.password, function(err,user){
+                        doc.password_name=req.body.password;
+                        doc.save(function (err){
+                         if(err){
+                             console.log(err)
+                             res.redirect("/error")
+                         }
+                         else{
+                            res.redirect("/auth/login");
+                         }
+                        })
+                    })
+                }
+        })
+    }
+});
+
+router.post("/forget", function (req, res) {
+    if(req.body.email){
+        let data={};
+     async.series([
+         cb=>{
+             let string=randomstring.generate({length:64});
+             data.string=string;
+            User.findOneAndUpdate({email:req.body.email},{randomStringForget:string},(err,doc)=>{
+                    if(err){
+                        return cb(err)
+                    }
+                    else if(_.isEmpty(doc)){
+                        data._id=false
+                        return cb();
+                    }
+                    else{
+                        data._id=doc._id;
+                        return cb();
+                    }
+            })
+         },
+         cb =>{
+            if(data&&data._id&&data.string){ 
+                let string=data.string;
+                let text='click this email to reset the password : '+"http://localhost:3000/auth/reset/"+string+"/user/"+data._id;
+                let input={};
+                input.email=req.body.email
+                input.text=text;
+                Email.hcSendMail(input,(err,data)=>{
+                    if(err){
+                        return cb(err)
+                    }
+                    else{
+                    return  cb();
+                    }
+                });
+            }
+            else{
+                return cb();
+            }
+         }
+     ],(err)=>{
+         if(err){
+             console.log(err)
+             res.redirect("/error");
+         }
+         else{
+           if(data._id){  
+           res.redirect("/auth/forget?send=yes") //email exists and send
+           }
+           else{
+           res.redirect("/auth/forget?send=no") //no email exists
+           }
+         }
+     })
+    }
+    else{
+        res.send("no email added")//
+    }
 });
 
 router.get("/:userid/:string", function (req, res) {
@@ -78,7 +202,7 @@ router.post("/signup", async (req, res) => {
             });
         },
         cb => {
-            var text="http://localhost:3000/auth/"+data._id+"/"+data.randomString;
+            var text='click this email to verify the account : '+"http://localhost:3000/auth/"+data._id+"/"+data.randomString;
             let input={};
             input.email=data.email
             input.text=text;
@@ -113,7 +237,7 @@ router.get("/login", function (req, res) {
         res.render("./Authmodule/login", { page: "HappyClash Login",message:"email verified" });
     }
     else if(req.query&&req.query.verify&&req.query.verify=="no"){
-        res.render("./Authmodule/login", { page: "HappyClash Login",message:"email not verified" });
+        res.render("./Authmodule/login", { page: "HappyClash Login",message:"email not verified please check your mail" });
     }
     else{
     res.render("./Authmodule/login", { page: "HappyClash Login",message:false });
