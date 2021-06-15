@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script
       src="https://kit.fontawesome.com/2635296004.js"
       crossorigin="anonymous"
@@ -36,7 +36,7 @@
           <span class="iconify" data-inline="false" data-icon="eva:arrow-back-outline" style="color: #ffffff; font-size: 40px;"></span>
         </div>
 
-        <div class="threedots" data-target="#play-options">
+        <div class="threedots" data-target="#play-options" onclick="optionThreeDot(this);" id="threeDot_<%= videoModel._id %>">
             <img src="/img/threedots.svg">
         </div>
 
@@ -74,6 +74,7 @@
     <!-- POPUP FOR VIDEO OPTIONS -->
 
     <div class="popup-play" id="play-options">
+      <input type="text" value="" style="display: none;height: 0px;width:0px" id="optionThreeDots">
         <div class="play-header">
             <div class="title">What to do: </div>
             <div class="close-button-play" data-close-button>&times;</div>
@@ -87,7 +88,9 @@
             </div>
             <div class="control" onclick="save()"> 
                 <i class="fas fa-download"></i><span>Save to Gallery</span>
-            </div> 
+            </div>
+            <a id="downloadLink" href="/" download style="height: 0px;width:0px;display: none;">
+            </a> 
         </div>
     </div>
 
