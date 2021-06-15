@@ -32,8 +32,6 @@ function play(){
 
 function download(){
   let id=document.getElementById("optionThreeDots").value
-  // window.open("/library/videomodelibrary/"+id)
-  console.log(id)
   document.getElementById("downloadLink").href="/video/"+id;
   document.getElementById("downloadLink").click();
 } 
