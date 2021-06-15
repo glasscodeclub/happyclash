@@ -165,6 +165,17 @@ function playVideo(e) {
   console.log("This will play the video");
 }
 
+window.addEventListener("load", ()=> {
+  const buttons = document.querySelectorAll(".p1")
+  const color = ['#67A3A3', '#66C07F', '#9F7CDE', '#58A6E4']
+  var count = 0;
+  buttons.forEach((button => {
+    button.style.backgroundColor = color[count];
+    count++;
+  }))
+
+})
+
 // function addParticipants(e, id) {
 //   console.log(e);
 //   const div = document.createElement("div");
