@@ -28,6 +28,7 @@ body{
     background-color: white;
     border-radius: 0.5rem;
     float: left;
+    margin-right: 20px !important;
 }
 
 #back {
@@ -144,4 +145,80 @@ body{
 
 .likes, .comments, .participants{
     text-transform: capitalize;
+}
+
+.myvideo {
+    border-radius: 5.76px;
+    box-shadow: -3px 3px 10px rgb(0 0 0 / 25%), inset 0px -30px 50px #000000;
+    background-color: #fff !important;
+    height: auto;
+    width: 100%;
+}
+
+.postedTime {
+    position: absolute;
+    bottom: 142px;
+    left: 30px;
+    font-size: 0.9rem;
+    color: white;
+}
+
+.challenge-title {
+    position: absolute;
+    bottom: 93px;
+    width: max-content;
+    left: 28px;
+    font-size: 1.7rem;
+    font-weight: bolder;
+    font-family: Roboto;
+    background: linear-gradient( 
+90deg
+, #924bec 0%, #e552c4 35%, #ffbf7b 100% );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.challenge-author {
+    position: absolute;
+    bottom: 73px;
+    left: 30px;
+    font-size: 0.7rem;
+    color: white;
+}
+
+.interactions {
+    position: absolute;
+    bottom: 20px;
+    left: 22px;
+    display: flex;
+    font-size: 0.7rem;
+    justify-content: space-between;
+    color: white;
+    width: 87%;
+}
+
+@media only screen and (max-width: 450px) {
+    .challenge-title {
+        font-size: 1.6rem;
+        left: 14px;
+        bottom: 71px;
+    }
+
+    .challenge-author {
+        font-size: 0.6rem;
+        left: 18px;
+        bottom: 57px;
+    }
+
+    .interactions {
+        left: 17px;
+        font-size: 0.6rem;
+    }
+
+    .postedTime {
+        left: 16px;
+        font-size: 0.8rem;
+        bottom : 118px;
+    }
 }
