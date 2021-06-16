@@ -6,7 +6,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 *{
-    font-family: Roboto, sans-serif;
+    font-family: "Roboto";
 }
 
 .head {
@@ -22,7 +22,7 @@
 }
 
 #backdiv {
-    margin-top: 1.5em;
+    margin-top: 1em;
     margin-left: 0.8rem;
     padding: 0.2rem 0.4rem;
     background-color: white;
