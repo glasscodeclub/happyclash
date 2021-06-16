@@ -19,7 +19,8 @@
 }
 
 #backdiv {
-    margin-left: 0.8rem;
+    margin-top: -0.4rem;
+    margin-left: 0.4rem;
     padding: 0.2rem 0.4rem;
     background-color: white;
     border-radius: 0.5rem;
@@ -135,7 +136,7 @@ video{
 }
 
 .profile_image{
-    width: 4.2rem;
+    width: 2.9rem;
 }
 
 hr{
@@ -250,5 +251,13 @@ hr{
     }
     hr{
         margin:1rem -5%;
+    }
+}
+
+@media only screen and (max-width:280px){
+    .col-8 {
+        flex: 0 0 auto;
+        width: 66.6666666667%;
+        padding: .35rem 0 .35rem 4.5rem;
     }
 }

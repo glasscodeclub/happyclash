@@ -1,13 +1,6 @@
-@font-face {
-    font-family: America;
-    src: url('/font-family/America.ttf');
-}
-
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-
-
 body{
     overflow-x: hidden;
+    font-family: Roboto;
 }
 
 .head {
@@ -52,6 +45,7 @@ body{
     width: 65%;
     margin: 0.5rem auto;
     font-size: 2.6rem !important;
+    font-family: Roboto;
     font-style: normal;
     font-weight: bold;
     background: linear-gradient(90deg, #7C49F6 0%, #E55ABD 47.92%, #FEDF67 100%);
@@ -78,14 +72,26 @@ body{
 }
 
 .p1{
-    color:white;
-    /* margin:0px!important; */
+    color: white;
+    background-color: #67A3A3;;
+    /* margin: 0px!important; */
     font-size: 1rem;
     font-weight: 600;
     margin-top: 0.5rem;
     margin-bottom: 0.5rem!important;
     text-align: center;
-    box-shadow: 0px 3.79207px 14.2203px rgba(0, 0, 0, 0.15);
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    height: 62px;
+    width: 125px;
+    box-shadow: 0px 3.79207px 14.2203px rgb(0 0 0 / 15%);
+    border-radius: 9px;
+    border: none;
+}
+
+.col-8{
+    padding: 0.35rem 3rem;
 }
 
 .p2{
@@ -206,5 +212,11 @@ body{
 @media only screen and (min-width:1280px){
     .hr-out{
         margin: 1rem -7rem;
+    }
+}
+
+@media only screen and (max-width:280px){
+    .col-8 {
+        padding: 0rem 0 0 4rem;
     }
 }
