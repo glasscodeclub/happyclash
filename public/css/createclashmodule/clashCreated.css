@@ -1,3 +1,7 @@
+body{
+    font-family: Roboto;
+}
+
 #p1{
     font-size: 2em;
     font-weight: bold;
@@ -7,11 +11,10 @@
     -webkit-text-fill-color: transparent;
 }
 
-#p4{
+.p4{
     font-family: Roboto;
-    font-size: 0.8rem!important;
     color:#747474;
-    margin:0px;
+    margin-bottom:5px;
 }
 
 .p5{
@@ -19,7 +22,7 @@
 }
 
 .p11{
-    margin: 0px;
+    margin: 0.5rem auto;
     color:#747474;
     font-family: Roboto;
     font-size: 0.7rem;
@@ -41,12 +44,20 @@
 
 .done button{
     color: white;
-    width: 5.5em;
-    padding: 5px;
+    padding: 0.2rem 0.3rem;
     border: none;
+    font-size: smaller;
+    height: 1.8rem;
+    border-radius: 0.25rem;
+    width: 6rem;
+    box-shadow: 0px 1px 7px rgb(0 0 0 / 15%);
+    outline: none;
     background: linear-gradient(81.23deg, #7C49F6 9.3%, #FF53B7 51.61%, #FFD458 97.6%);
-    box-shadow: 0px 0.49746328592300415px 3.4822428226470947px 0px #00000026;
-    border-radius: 4.32354px;
+}
+
+.keyword{
+    font-size: .9em;
+    color: #747474;
 }
 
 /* POPUP SECTION */
@@ -295,10 +306,14 @@
     width: 4.2rem;
 }
 
+.participants{
+    justify-content:space-between;
+}
+
 @media (max-width: 281px){
-    #p4{
+    /* .p4{
         font-size: 1.3em !important;
-    }
+    } */
     .p5{
         font-size: .7em;
     }
@@ -309,14 +324,14 @@
         width: 3.1rem;
     }
     .p11{
-        font-size: .57rem;
+        font-size: .7rem;
     }
 }
 
 @media (min-width: 281px) and (max-width: 376px){
-    #p4{
+    /* .p4{
         font-size: 1.5em !important;
-    }
+    } */
     .p5{
         font-size: .9em !important;
     }
@@ -327,15 +342,15 @@
         width: 3rem;
     }
     .p11{
-        font-size: .56rem;
+        font-size: .7rem;
     }
 }
 
 @media (min-width: 410px) and (max-width: 767px){
 
-    #p4{
+    /* .p4{
         font-size: 1.8em !important;
-    }
+    } */
     .p5{
         font-size: .9em;
     }
@@ -345,9 +360,9 @@
 }
 
 @media (min-width: 768px){
-    #p4{
+    /* .p4{
         font-size: 2em !important;
-    }
+    } */
     .p5{
         font-size: 1.1em !important;
     }
