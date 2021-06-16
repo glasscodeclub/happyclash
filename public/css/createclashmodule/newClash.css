@@ -1,3 +1,6 @@
+body{
+  font-family: Roboto;
+}
 .head {
   position: fixed;
   z-index: 1;
@@ -12,8 +15,8 @@
 }
 
 #backdiv {
-  margin-top: 1.4rem !important;
-  margin-left: 1rem !important;
+  margin-top: 1.2rem !important;
+  margin-left: 0.4rem !important;
   padding: 0.2rem 0.4rem;
   background-color: white;
   border-radius: 0.5rem;
@@ -37,7 +40,7 @@
 }
 
 #heading {
-  width: 100%;
+  width: 80%;
   margin: 0.5rem auto;
   font-size: 1.5rem !important;
   font-family: Roboto;
@@ -51,7 +54,7 @@
 }
 
 #typeOfClash {
-  margin-top: 88px;
+  margin-top: 6rem;
 }
 #typeOfClashBox {
   width: 110px;
@@ -113,7 +116,7 @@ option {
 .upload{
   display: flex;
   justify-content: center;
-  margin: 1em auto;
+  margin: 3em auto 1em;
 }
 
 .upload button{
