@@ -14,8 +14,9 @@ body{
 }
 
 #happy-logo img{
-  height: 60px;
+  height: 65px;
   margin-left: -12px;
+  margin-top: -15px;
 }
 
 #search {
@@ -37,8 +38,8 @@ body{
 
 .clashtype {
   font-size: smaller;
-  height: 2rem;
-  width: 7rem;
+  height: 1.8rem;
+  width: 6rem;
   border-radius: 0.25rem !important;
 }
 
@@ -229,19 +230,20 @@ body{
   width: 90%;
   border-radius: 5.76px;
   box-shadow: -3px 3px 10px rgba(0, 0, 0, 0.25), inset 0px -30px 50px #000000;
-  background-color: black !important;
+  background-color: #fff !important;
+  height: auto;
 }
 
 .challenge-title{
-  position: absolute;
-  bottom: 80px;
-  left: 5.5%;
+  margin: 0 0 5px 0 !important;
+  width: max-content;
   font-size: 1.7rem;
+  text-align: left;
   background: -webkit-linear-gradient(
-    45deg,
-    #924bec,
-    #e552c4,
-    #ffbf7b
+    0deg,
+    #7c49f6 9.3%,
+    #ff53b7 51.61%,
+    #ffd458 97.6%
   );
   font-weight:bolder;
   -webkit-background-clip: text;
@@ -250,32 +252,106 @@ body{
 }
 
 .author-name{
-  position: absolute;
-  bottom: 60px;
-  left: 5.8%;
-  font-size: 0.8rem;
+  margin: 0 0 10px 0 !important;
+  font-size: 0.7rem;
+  text-align: left;
   color: white;
+  padding-left: 3px;
 }
 
 .interactions{
-  padding:30px 4% 10px 2%;
-  position: absolute;
-  bottom: 18px;
-  left: 4%;
-  right: 30px;
   display: flex;
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   justify-content: space-between;
   color: white;
+  width: 85%;
+  padding: 2%;
+  margin-bottom: -20px;
+}
+
+.interactions p:not(:last-child) {
+  margin: 0 2% 0 0;
+}
+
+.interactions p:last-child{
+  margin: 0 !important;
 }
 
 .duration {
   position: absolute;
   top: 10px;
-  right: 6%;
-  font-size: 0.8rem;
+  right: 8%;
+  font-size: 0.7rem;
   color: white;
               
+}
+
+.challenge-details {
+  position: absolute;
+  bottom: 25px;
+  left: 12%;
+  width: 95%;
+  transform: translateX(-3%);
+}
+
+@media only screen and (min-width: 600px) {
+  .vid {
+    width: 65%;
+  }
+
+  .challenge-details {
+    width: 67%;
+    left: 23%;
+  }
+
+  .duration{
+    right: 21%;
+  }
+}
+
+@media only screen and (min-width: 700px) {
+  .vid {
+    width: 60%;
+  }
+
+  .challenge-details {
+    width: 61%;
+    left: 25.5%;
+  }
+
+  .duration{
+    right: 23%;
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  .vid {
+    width: 45%;
+  }
+
+  .challenge-details {
+    width: 41%;
+    left: 33.5%;
+  }
+
+  .duration{
+    right: 30%;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .vid {
+    width: 25%;
+  }
+
+  .challenge-details {
+    width: 26%;
+    left: 39.5%;
+  }
+
+  .duration{
+    right: 39%;
+  }
 }
 
 #bc {
@@ -319,4 +395,8 @@ body{
   width: 35px;
   height: 35px;
   /* padding-right: 0px !important; */
+}
+
+.btn {
+  padding: 0.2rem 0.3rem !important;
 }

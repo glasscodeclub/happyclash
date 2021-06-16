@@ -8,7 +8,6 @@
     z-index: 1;
     top:0px !important;
     background-color:white;
-    text-align: center !important;
     margin: auto;
     /* margin-top:0px !important; */
     left: 0;
@@ -17,9 +16,9 @@
 }
 
 #backdiv {
-    margin-top: 1.4rem!important;
+    margin-top: 1.25rem!important;
     margin-left: 1rem !important;
-    padding: 0.2rem 0.4rem;
+    /* padding: 0.2rem 0.4rem; */
     background-color: white;
     border-radius: 0.5rem;
     float: left;
@@ -40,12 +39,12 @@
 
 #heading {
     width: 65%;
-    margin: 21px 0px 0px -60px;
-    font-size: 2rem !important;
+    margin: 17px 0px 0px 50px;
+    font-size: 1.6rem !important;
     font-family: Roboto;
     font-style: normal;
     font-weight: bolder;
-    background: linear-gradient(90deg, #7C49F6 13%, #E55ABD 68.92%, #FEDF67 90%);
+    background: linear-gradient(90deg, #7C49F6 0%, #E55ABD 10.92%, #FEDF67 60%);
     color: transparent;
     -webkit-background-clip: text;
     background-clip: text;
@@ -53,7 +52,8 @@
 
 .profile img{
     width: 120px;
-    margin: 1.5em;
+    /* margin: 1.5em; */
+    margin: auto;
 }
 
 h6{
@@ -63,6 +63,7 @@ h6{
 .p1{
     font-size: .92em;
     margin-bottom: 0;
+    color: #6A6A6A;
 }
 
 .mobile-view{
@@ -75,9 +76,22 @@ h6{
     align-items: center;
 }
 
+.customize{
+    padding: 7% 5% 5%;    
+}
+
 @media only screen and (min-width: 900px) and (max-width: 7000px){
     #heading{
-        font-size: 3rem !important;
+        font-size: 2.25rem !important;
+        width: 65%;
+        margin: 20px 0px 0px 55px;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: bolder;
+        background: linear-gradient(90deg, #7C49F6 0%, #E55ABD 10.92%, #FEDF67 60%);
+        color: transparent;
+        -webkit-background-clip: text;
+        background-clip: text;
     }
     .desktop-view-left{
         margin-left: 250px;
@@ -85,6 +99,15 @@ h6{
     .desktop-bottom{
         margin-left: 240px;
     }
+    #backdiv {
+        margin-top: 2rem!important;
+        margin-left: 1rem !important;
+        background-color: white;
+        border-radius: 0.5rem;
+        float: left;
+    }
+    
+    
 }
 
 @media (max-width: 410px){
@@ -100,6 +123,7 @@ h6{
     .mobile-view{
         margin-top: 60px;
     }
+
 }
 
 @media (max-width: 280px){
@@ -115,7 +139,7 @@ h6{
 @media only screen and (min-width: 281px) and (max-width: 320px){
 
     #backdiv {
-        margin-top: 1rem!important;
+        margin-top: 0.8rem!important;
         margin-left: 0rem !important;
         padding: 0.2rem 0.4rem;
         background-color: white;
@@ -129,12 +153,12 @@ h6{
 
     #heading {
         width: 65%;
-        margin: 0px 0px 0px -45px;
-        font-size: 2rem !important;
+        margin: 0px 0px 0px 40px;
+        font-size: 1.6rem !important;
         font-family: Roboto;
         font-style: normal;
         font-weight: bolder;
-        background: linear-gradient(90deg, #7C49F6 13%, #E55ABD 68.92%, #FEDF67 90%);
+        background: linear-gradient(90deg, #7C49F6 0%, #E55ABD 10.92%, #FEDF67 55%);
         color: transparent;
         -webkit-background-clip: text;
         background-clip: text;
@@ -179,10 +203,13 @@ h6{
 
     #heading {
 
-        margin: 21px 0px 0px -40rem;
-        background: linear-gradient(90deg, #7C49F6 9%, #E55ABD 84.92%, #FEDF67 100%);
+        margin: 21px 0px 0px 6rem;
+        background: linear-gradient(90deg, #7C49F6 0%, #E55ABD 5.92%, #FEDF67 16%);
         color: transparent;
         -webkit-background-clip: text;
         background-clip: text;
+    }
+    #backdiv{
+        margin-top:1.5rem !important;
     }
 } 

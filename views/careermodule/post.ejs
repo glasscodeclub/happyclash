@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <link href="https://fonts.googleapis.com/css2?family=Roboto" rel="stylesheet">
 
     <!-- GENERAL CSS -->
     <script src="https://kit.fontawesome.com/2635296004.js" crossorigin="anonymous"></script>
@@ -35,36 +36,62 @@
     </div>
 
     <% for(var i=0; i<5; i++){ %>
-    
-        <div class="post-video">
-            <div class="post-details">
-                <div class="check">
-                    <div class="play-btn">
-                        <img src="/img/Play.svg" alt="play">
-                    </div>
-    
-                    <div class="rank">rank 12/20</div>
-                    <div class="time">0:20</div>
-                    <video class="post" poster="https://media-exp3.licdn.com/dms/image/C4E16AQFBxD_kh16Xaw/profile-displaybackgroundimage-shrink_200_800/0/1608508808920?e=1628121600&v=beta&t=ur4o_AI4RNTTae3IKJGCnFwz206Cl-7QUIu4unh8IZU">
-                        <source src="/video/sample" type="video/mp4">
-                    </video>
-                </div>
-                
 
-                <div class="challenge-details">
-                    <div class="time-since">2h ago</div>
-                    <div class="title">piano challenge</div>
-                    <div class="author">Started by Jane Cooper</div>
-                </div>  
-                
-                <div class="interaction">
-                    <div class="likes">96 likes</div>
-                    <div class="comments">40 comments</div>
-                    <div class="participants">20 participants</div>
-                </div>
+        <div class="post-video">
+            <div style="width: fit-content; margin: auto; position: relative;">
+              <video width="400px" class="myvideo" muted autoplay>
+                <source src="/video/sample" type="video/mp4">
+            </video>
+
+              <div
+                style="
+                  position: absolute;
+                  top: 13px;
+                  left: 5%;
+                  font-size: 0.8rem;
+                  color: white;
+                "
+              >
+                Rank 12/20
+              </div>
+              <div
+                style="
+                  position: absolute;
+                  top: 13px;
+                  right: 5%;
+                  font-size: 0.8rem;
+                  color: white;
+                "
+              >
+                1:20
+              </div>
+              <div class="bottom-info">
+
+            <div class="">
+                <div class="postedTime">
+                2h ago
+              </div>
+              <div class="challenge-title">
+                Piano Challenge
+              </div>
+              <div
+                class="challenge-author"
+                "
+              >
+                Started by John doe
+              </div>
+              <div class="interactions"
+              >
+                <div>96 Likes</div>
+                <div>40 Comments</div>
+                <div>20 Participants</div>
+              </div>
 
             </div>
-        </div>
+
+              </div>
+            </div>
+          </div>
         
     <% } %>
 

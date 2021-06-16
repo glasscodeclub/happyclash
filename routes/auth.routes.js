@@ -234,10 +234,10 @@ router.post("/signup", async (req, res) => {
 
 router.get("/login", function (req, res) {
     if(req.query&&req.query.verify&&req.query.verify=="yes"){
-        res.render("./Authmodule/login", { page: "HappyClash Login",message:"email verified" });
+        res.render("./Authmodule/login", { page: "HappyClash Login",message:"email verified" ,isVerified:true});
     }
     else if(req.query&&req.query.verify&&req.query.verify=="no"){
-        res.render("./Authmodule/login", { page: "HappyClash Login",message:"email not verified please check your mail" });
+        res.render("./Authmodule/login", { page: "HappyClash Login",message:"email not verified please check your mail",isVerified:false });
     }
     else{
     res.render("./Authmodule/login", { page: "HappyClash Login",message:false });

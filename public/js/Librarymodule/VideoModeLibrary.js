@@ -26,13 +26,27 @@ function pauseVideo() {
         pausebtn.style.display= 'none'
     }
 }
-
-function del(){
-  console.log('Delete icon was hit.');
+function optionThreeDot(e){
+  document.getElementById("optionThreeDots").value=e.id.split("_")[1];
 }
 
+function del(){
+  let id=document.getElementById("optionThreeDots").value
+  $.ajax('/library/delete/'+id, {
+   type: 'POST',  
+   success: function (data, status, xhr) {
+      window.location.assign("/library");
+   },
+   error: function (jqXhr, textStatus, errorMessage) {
+     window.location.assign("/error")
+   }
+ });
+ }
+
 function save(){
-  console.log('Save icon was hit')
+  let id=document.getElementById("optionThreeDots").value
+  document.getElementById("downloadLink").href="/video/"+id;
+  document.getElementById("downloadLink").click();
 }
 
 window.addEventListener('load',()=> {

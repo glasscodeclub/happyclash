@@ -165,11 +165,15 @@ body{
   color: #ffffff;
 }
 
+.a1{
+  color: #7A7A7A;
+}
+
 .fol {
   margin: 0px !important;
   font-family: Roboto;
   font-style: normal;
-  font-weight: bold;
+  font-weight: 500;
   font-size: 0.8rem;
   text-align: center;
   color: #ffffff;
