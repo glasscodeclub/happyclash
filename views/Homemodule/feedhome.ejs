@@ -40,7 +40,7 @@
     <div class="feedhomepage">
       <div class="container" style="margin-top: 10px; margin-bottom: 10px">
         <div class="row">
-          <div class="col-3 jcc hcl-circle">
+          <div class="col-3 jcc hcl-circle" style="padding: 0 15px !important;">
             <img src="/img/hcl-logo.png" />
           </div>
           <div class="col-6 jcc" id="happy-logo">
@@ -136,8 +136,8 @@
           ></a
         >
       </div>
-      <div class="col-1" id="redisplaydiv">
-        <img src="/img/redisplay.png" alt="" id="redisplay" onclick="reload()" />
+      <div class="col-1" id="redisplaydiv" onclick="reload()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" id="redisplay" viewBox="0 0 24 24"><path d="M20.944 12.979c-.489 4.509-4.306 8.021-8.944 8.021-2.698 0-5.112-1.194-6.763-3.075l1.245-1.633c1.283 1.645 3.276 2.708 5.518 2.708 3.526 0 6.444-2.624 6.923-6.021h-2.923l4-5.25 4 5.25h-3.056zm-15.864-1.979c.487-3.387 3.4-6 6.92-6 2.237 0 4.228 1.059 5.51 2.698l1.244-1.632c-1.65-1.876-4.061-3.066-6.754-3.066-4.632 0-8.443 3.501-8.941 8h-3.059l4 5.25 4-5.25h-2.92z"/></svg>
       </div>
     </div>
 
@@ -150,7 +150,7 @@
       <div class="carousel-inner">
         <div class="carousel-item active" data-bs-interval="36000000">
           <div class="row" style="margin: 10px 0px">
-            <div class="col-2 jcc">
+            <div class="col-2 jcc" style="padding: 0 15px !important;">
               <img src="/img/profile.png" class="car1" />
             </div>
             <div
@@ -175,42 +175,19 @@
               src="/img/dance.png"
               alt="Img"
             /> -->
-            <video class="vid" muted>
+            <video class="vid" muted autoplay>
               <source src="/video/sample" type="video/mp4" />
             </video>
             <div class="duration">1:20</div>
-            <div
-              class="challenge-title"
-             >
-              Dance Challenge
+            <div class="challenge-details">
+            <p class="challenge-title">Dance Challenge</p>
+            <p class="author-name">Started by John doe</p>
+            <div class="interactions">
+              <p>96 Likes</p>
+              <p>40 Comments</p>
+              <p>20 Participants</p>
             </div>
-            <div
-              class="author-name"
-            >
-              Started by John doe
-            </div>
-            <div
-              style="
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -100%);
-              "
-            >
-              <img
-                src="/img/Play.svg"
-                width="50"
-                height="50"
-                onclick="console.log(this)"
-              />
-            </div>
-            <div
-              class="interactions"
-            >
-              <div>96 Likes</div>
-              <div>40 Comments</div>
-              <div>20 Participants</div>
-            </div>
+          </div>
           </div>
         </div>
       </div>
@@ -227,73 +204,60 @@
         </div>
     </div>
      <br>
-      <div class="carousel-inner">
-        <div class="carousel-item active" data-bs-interval="36000000">
-          <div class="row" style="margin: 10px 0px">
-            <div class="col-2 jcc">
-              <img src="/img/profile.png" class="car1" />
-            </div>
-            <div
-              class="col-6"
-              id="profiletitle"
-              style="text-align: start; padding-left: 5px"
-            >
-              <div class="profile-name">Alex Benjamin</div>
-              <div class="fontsize">Ranchview Dr. Richardson, California</div>
-            </div>
-            <div class="col" id="timeleft">
-              <%d.setHours(3)%> <%d.setMinutes(40)%>
-              <img src="/img/carbon_time.png" alt="" />
-              <%=JSON.stringify(d.getHours())+"h " +
-              JSON.stringify(d.getMinutes()) + "m"%>
-            </div>
+     <div class="carousel-inner">
+      <div class="carousel-item active" data-bs-interval="36000000">
+        <div class="row" style="margin: 10px 0px">
+          <div class="col-2 jcc">
+            <img src="/img/profile.png" class="car1" />
           </div>
-          <div id="profilevideo">
-            <video class="vid" muted>
-              <source src="/video/sample" type="video/mp4" />
-            </video>
-            <div class="duration">1:20</div>
-            <div
-            class="challenge-title"
-            >
-              Dance Challenge
-            </div>
-            <div
-              class="author-name"
-            >
-              Started by John doe
-            </div>
-            <div
-              style="
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -100%);
-              "
-            >
-              <img
-                src="/img/Play.svg"
-                width="50"
-                height="50"
-                onclick="console.log(this)"
-              />
-            </div>
-            <div
-              class="interactions"
-            >
-              <div>96 Likes</div>
-              <div>40 Comments</div>
-              <div>20 Participants</div>
-            </div>
-            <!-- <video
-              class="vid"
-              poster="https://media.geeksforgeeks.org/wp-content/cdn-uploads/20190710102234/download3.png"
-            >
-              <source src="/img/video.mp4" type="video/mp4" />
-            </video> -->
+          <div
+            class="col-6"
+            id="profiletitle"
+            style="text-align: start; padding-left: 5px"
+          >
+            <div class="profile-name">Alex Benjamin</div>
+            <div class="fontsize">Ranchview Dr. Richardson, California</div>
+          </div>
+          <div class="col" id="timeleft">
+            <%d.setHours(3)%> <%d.setMinutes(40)%>
+            <img src="/img/carbon_time.png" alt="" />
+            <%=JSON.stringify(d.getHours())+"h " +
+            JSON.stringify(d.getMinutes()) + "m"%>
           </div>
         </div>
+        <div id="profilevideo">
+          <video class="vid" muted autoplay>
+            <source src="/video/sample1.mp4" type="video/mp4" />
+          </video>
+          <div class="duration">1:20</div>
+          <div class="challenge-details">
+            <div
+          class="challenge-title"
+          >
+            Dance Challenge
+          </div>
+          <div
+            class="author-name"
+          >
+            Started by John doe
+          </div>
+          <div
+            class="interactions"
+          >
+            <div>96 Likes</div>
+            <div>40 Comments</div>
+            <div>20 Participants</div>
+          </div>
+          </div>
+          <!-- <video
+            class="vid"
+            poster="https://media.geeksforgeeks.org/wp-content/cdn-uploads/20190710102234/download3.png"
+          >
+            <source src="/img/video.mp4" type="video/mp4" />
+          </video> -->
+        </div>
       </div>
+    </div>
     </div>
 
     <% let url = '/homefeed'%> <%- include("../BottomNavmodule/bottomnavbar") %>
