@@ -5,7 +5,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
 *{
-  font-family: Roboto, sans-serif;
+  font-family: "Roboto";
 }
 
 .head {
@@ -22,7 +22,7 @@
 }
 
 #backdiv {
-  margin-top: 1.8rem !important;
+  margin-top: 1.4rem !important;
   margin-left: 1rem !important;
   padding: 0.2rem 0.4rem;
   background-color: white;
@@ -49,7 +49,7 @@
 #heading {
   width: 65%;
   margin: 0.5rem auto;
-  font-size: 2rem !important;
+  font-size: 1.5rem !important;
   font-style: normal;
   font-weight: bold;
   background: linear-gradient(90deg, #7c49f6 0%, #e55abd 47.92%, #fedf67 100%);
@@ -58,6 +58,11 @@
   background-clip: text;
   /* margin-bottom: 0px !important; */
 }
+
+.table>:not(caption)>*>* {
+  border-bottom: .9px solid #dedede;
+}
+
 #textDiv {
   margin-top: 97px;
   margin-bottom: 20px;
@@ -76,28 +81,18 @@
   font-style: normal;
   font-weight: bold;
   font-size: 12px;
-  line-height: 14px;
+  line-height: 25px;
 }
 .one {
   margin-left: 30px;
 }
 #bottom {
-  margin-top: 20px;
-  margin-bottom: 60px;
+  margin-bottom: 50px;
   padding-left: 10%;
   padding-right: 10%;
   padding-top: 3%;
 }
 .sub {
-  width: 7rem !important;
-  height: 2rem;
-  text-align: center;
-  /* font-size: 5rem !important; */
-  /* margin-top: 0.5rem; */
-  /* padding: 0.22rem 3.5rem; */
-  font-size: 0.8rem;
-  font-style: normal;
-  font-weight: normal;
   background: linear-gradient(
     81.23deg,
     #7c49f6 9.3%,
@@ -110,12 +105,10 @@
   outline: none;
 }
 .save {
+  padding: 0;
   display: block;
-  font-size: 1rem;
-  font-weight: bold;
-  margin-left: auto;
-  margin-right: auto;
-  width: 6rem !important;
+  font-size: smaller;
+  width: 7rem !important;
   height: 2rem;
   box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.15);
 }
