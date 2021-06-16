@@ -56,7 +56,7 @@ body {
   }
   
   .challengeName {
-    font-family: Roboto;
+    font-family: 'Roboto', sans-serif;
     font-style: normal;
     background: linear-gradient(
       81.23deg,
@@ -67,9 +67,10 @@ body {
     color: transparent;
     -webkit-background-clip: text;
     background-clip: text;
-    font-size: 1.35rem;
-    margin: 0.25rem auto;
-    margin-bottom: 0.25rem !important;
+    margin: 0.25rem auto !important;
+    font-weight: bolder;
+    width: max-content !important;
+    font-size: 1.55rem;
   }
   
   .videoRank {
@@ -87,7 +88,7 @@ body {
     font-style: normal;
     font-weight: normal;
     color: white;
-    font-size: 0.65rem;
+    font-size: 0.7rem;
   }
   
   .infodiv {

@@ -8,10 +8,14 @@ body{
 }
 
 .btn{
-    background: #67A3A3;
-    box-shadow: 0px 3.79207px 14.2203px rgba(0, 0, 0, 0.15);
-    border-radius: 9px;
-    padding: 0.25rem 1.2rem ;
+    width: 125px !important;
+    height: 62px !important;
+    padding: 6px 20px !important;
+    white-space: nowrap !important;
+    overflow: hidden !important; 
+    text-overflow: ellipsis !important;
+    box-shadow: 0px 3.79207px 14.2203px rgb(0 0 0 / 15%) !important;
+    border-radius: 9px !important;
 }
 
 .col-8{
@@ -65,9 +69,9 @@ hr{
 }
 
 #heading {
-    width: 84%;
-    margin: 0.5rem 0 0.5rem 80px;
-    font-size: 1.5rem !important;
+    width: max-content;
+    margin: 0.5rem 0 0.5rem 67px;
+    font-size: 2.6rem !important;
     text-align: left;
     font-family: Roboto;
     font-style: normal;
@@ -91,6 +95,7 @@ hr{
     border: 1px solid #228D5A; */
     border-radius: 9px;
     text-align: left;
+    font-size: 0.9rem;
     /* width:70%; */
 }
 
@@ -195,7 +200,7 @@ hr{
         font-size: 2rem !important;
     }
     #heading{
-        font-size: 1.8rem !important;
+        font-size: 2rem !important;
     }
     #back{
         font-size: 1.7rem !important;
@@ -222,11 +227,6 @@ hr{
     width: min-content;
 }
 
-@media only screen and (max-width: 485px) {
-    .challenge1 p {
-        font-size: 0.8rem;
-    }
-}
 
 .challenge-details {
     width: max-content;
@@ -248,10 +248,6 @@ hr{
     .challenge-details p {
         font-size: 1rem;
     }
-
-    .challenge1 p {
-        font-size: 0.6rem;
-    }
 }
 
 @media only screen and (max-width: 403px) {
@@ -263,5 +259,23 @@ hr{
 @media only screen and (max-width: 379px) {
     .challenge-details p {
         font-size: .75rem !important;
+    }
+}
+
+@media (min-width: 320px) and (max-width: 415px){
+.p1 {
+    font-size: .9rem;
+}
+}
+
+@media only screen and (min-width: 540px) and (max-width: 768px){
+.p1 {
+    font-size: 1rem !important;
+}
+}
+
+@media only screen and (min-width: 468px) {
+    .challenge-details{
+        padding-top : 0;
     }
 }

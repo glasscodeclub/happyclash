@@ -39,16 +39,16 @@ function addButton(arg) {
   console.log(arg);
 }
 
-window.addEventListener('load', () => {
-  const vid = document.querySelectorAll('.vid');
+// window.addEventListener('load', () => {
+//   const vid = document.querySelectorAll('.vid');
 
-  const height = window.innerHeight * 0.85;
+//   const height = window.innerHeight * 0.85;
 
-  console.log(height)
+//   console.log(height)
 
-  if (vid.length > 0) {
-    vid.forEach(el => {
-      el.style.height = `${height}px`
-    })
-  }
-})
+//   if (vid.length > 0) {
+//     vid.forEach(el => {
+//       el.style.height = `${height}px`
+//     })
+//   }
+// })
