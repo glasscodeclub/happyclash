@@ -65,10 +65,15 @@ body{
     font-size: 2.6rem !important;
     font-style: normal;
     font-weight: bold;
-    background: linear-gradient(90deg, #7C49F6 0%, #E55ABD 7.92%, #FEDF67 45%);
+    background: linear-gradient(90deg, #7C49F6 3%, #E55ABD 41.92%, #FEDF67 95%);
+    width: max-content;
     color: transparent;
     -webkit-background-clip: text;
     background-clip: text;
+}
+
+#play {
+    background: linear-gradient(90deg, #7C49F6 0%, #E55ABD 7.92%, #FEDF67 45%);
 }
 
 #play{

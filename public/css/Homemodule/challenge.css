@@ -3,35 +3,26 @@
     src: url('/font-family/America.ttf');
 }
 
-body{
-    font-family: Roboto;
-}
-
-.btn{
-    width: 125px !important;
-    height: 62px !important;
-    padding: 6px 20px !important;
-    white-space: nowrap !important;
-    overflow: hidden !important; 
-    text-overflow: ellipsis !important;
-    box-shadow: 0px 3.79207px 14.2203px rgb(0 0 0 / 15%) !important;
-    border-radius: 9px !important;
-}
-
-.col-8{
-    margin-left:20px;
-    align-self: center;
+.play{
+    margin-bottom: 1.6rem;
 }
 
 hr{
-    height:2px !important;
-    margin: 1rem -12px;
-    border: 1px solid #DEDEDE;
+    margin: 10px -12px;
+    color: #DEDEDE;
+    outline: auto;
 }
 
-.reach{
-    color: #818181;
-    font-size: 0.7rem;;
+.row>*{
+    padding-left:2px;
+}
+
+.col-8{
+    padding-left: 35px;
+}
+
+body{
+    font-family: Roboto;
 }
 
 .head {
@@ -63,40 +54,60 @@ hr{
 }
 
 #headdiv {
-    text-align: center;
+    text-align: left;
     margin: 1.3rem auto;
     vertical-align: middle;
 }
 
-#heading {
-    width: max-content;
-    margin: 0.5rem 0 0.5rem 67px;
+#heading, #play {
+    width: 65%;
+    margin: 0.5rem 3.4rem;
     font-size: 2.6rem !important;
-    text-align: left;
-    font-family: Roboto;
     font-style: normal;
-    font-weight: bolder;
-    background: linear-gradient(
-        81.23deg,
-        #7c49f6 9.3%,
-        #ff53b7 51.61%,
-        #ffd458 97.6%
-      );
+    font-weight: bold;
+    background: linear-gradient(90deg, #7C49F6 3%, #E55ABD 41.92%, #FEDF67 95%);
+    width: max-content;
     color: transparent;
     -webkit-background-clip: text;
     background-clip: text;
 }
 
+#play {
+    background: linear-gradient(90deg, #7C49F6 0%, #E55ABD 7.92%, #FEDF67 45%);
+}
+
+#play{
+    font-size: 2rem !important;
+}
+
+#input{
+    border-radius: 40px;
+    box-shadow: 0px 1px 7.000000476837158px 0px #00000026;
+}
+
 .div1{
-    font-size: 1.3rem;
+    font-size: 1.8rem;
+    margin-left: 1rem;
 }
 .challenge1{
     /* background-color:#228D5A;
     border: 1px solid #228D5A; */
     border-radius: 9px;
-    text-align: left;
-    font-size: 0.9rem;
+    text-align: center;
+    margin:auto 12px;
     /* width:70%; */
+}
+
+.btn{
+    padding:0.375rem 1.35rem;
+    height:62px;
+    width:125px;
+    padding: 6px 20px;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    box-shadow: 0px 3.79207px 14.2203px rgba(0, 0, 0, 0.15);
+    border-radius: 9px;
 }
 
 .p1{
@@ -107,175 +118,84 @@ hr{
     margin-top: 0.5rem;
     margin-bottom: 0.5rem!important;
     text-align: center;
+    /* box-shadow: 0px 3.79207px 14.2203px rgba(0, 0, 0, 0.15); */
 }
+
 .p2{
-    color:white;
-    /* margin:0px!important; */
-    margin-top: 0px!important;
-    margin-bottom: 0.5rem;
-    text-align: center;
+    font-size: .9em;
+    margin-bottom: 0;
+    color: #747474;
 }
 
 .p3{
     margin: 0px!important;
-    font-size: 1.4rem;
-    font-family: Roboto;
-}
-.p4, .p5{
-    display: inline;
     font-size: 1.1rem;
-    font-family: Roboto;
 }
-.p4{
-    margin-right: 1rem;
-}
-.p5{
-    margin:0px !important;
-}
-
-#id{
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 1rem;
-    color: #000000;
-}
-
 
 @media only screen and (min-width:280px) and (max-width:281px) {
     .p3{
-        font-size: 0.9rem !important;
+        font-size: 0.8rem !important;
     }
     .p1{
         font-size: 0.7rem !important;
     }
-    .p4, .p5{
-        font-size:0.7rem!important;
+    .p2{
+        font-size: .6em;
     }
     .div1{
         margin-left: 0;
     }
     #play{
-        font-size: 1.1rem !important;
-        font-weight: 500;
+        font-size: 1.3rem !important;
     }
     #heading{
         font-size: 1.7rem !important;
     }
     #back{
-        font-size: 1.1rem !important;
-    }
-}
-
-@media (min-width: 320px) and (max-width: 376px){
-    .p1{
-        font-size: .9rem;
-    }
-    .p3{
         font-size: 1rem !important;
-    }
-    .p4, .p5{
-        font-size: .8rem;
-    }
-    .div1{
-        font-size: 1.4rem;
-        margin-left: 0;
-    }
-    #heading{
-        font-size: 1.6rem !important;
-    }
-}
-
-@media only screen and (min-width:540px) and (max-width:1024px) {
-    .p3{
-        font-size: 1.6rem !important;
-    }
-    .p1{
-        font-size: 1rem !important;
-    }
-    .p4, .p5{
-        font-size:1.2rem!important;
-    }
-    #play{
-        font-size: 2rem !important;
-    }
-    #heading{
-        font-size: 2rem !important;
-    }
-    #back{
-        font-size: 1.7rem !important;
-    }
-}
-
-@media (min-width: 1024px){
-    #heading{
-        font-size: 2.5em !important;
-    }
-    #back{
-        font-size: 2em !important;
-    }
-    .div1{
-        font-size: 2.3em;
-    }
-}
-
-.challenge-container {
-  display: flex;
-}
-
-.challenge1 {
-    width: min-content;
-}
-
-
-.challenge-details {
-    width: max-content;
-    padding-top: 2%;
-    margin-left: 10px;
-}
-
-@media only screen and (min-width: 700px){
-    .challenge-details {
-        padding-top: 0%;
-    }
-}
-
-.challenge-details p {
-    font-size: 1.2rem;
-}
-
-@media only screen and (max-width: 468px) {
-    .challenge-details p {
-        font-size: 1rem;
-    }
-}
-
-@media only screen and (max-width: 403px) {
-    .challenge-details p {
-        font-size: .9rem;
-    }
-}
-
-@media only screen and (max-width: 379px) {
-    .challenge-details p {
-        font-size: .75rem !important;
     }
 }
 
 @media (min-width: 320px) and (max-width: 415px){
-.p1 {
-    font-size: .9rem;
-}
+    .p1{
+        font-size: .9rem;
+    }
+    .p2{
+        font-size: .65em;
+        padding-left: 10px;
+    }
+    .p3{
+        font-size: .9rem !important;
+        padding-left: 10px;
+    }
+    .div1{
+        font-size: 1.1em;
+    }
+    #heading{
+        font-size: 1.7em !important;
+    }
+    #play{
+        font-size: 1.4em !important;
+    }
+    #back{
+        font-size: 1.1rem !important;
+    }
 }
 
-@media only screen and (min-width: 540px) and (max-width: 768px){
-.p1 {
-    font-size: 1rem !important;
-}
-}
-
-@media only screen and (min-width: 468px) {
-    .challenge-details{
-        padding-top : 0;
+@media only screen and (min-width:540px) and (max-width:768px) {
+    .p1{
+        font-size: 1rem !important;
+    }
+    .p2{
+        font-size: .8em;
+    }
+    #play{
+        font-size: 1.5rem !important;
+    }
+    #heading{
+        font-size: 2rem !important;
+    }
+    #back{
+        font-size: 1.5rem !important;
     }
 }
