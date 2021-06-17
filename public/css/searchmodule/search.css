@@ -86,7 +86,8 @@ body{
 }
 
 .recent span{
-    padding-right: .5em;
+    padding-right: .3em;
+    font-size: .9em;
 }
 
 .new{
@@ -106,9 +107,6 @@ body{
     .play{
         font-size: 1rem !important;
     }
-    .recent span{
-        font-size: .8em;
-    }
     .new span{
         font-size: .8em;
     }
@@ -126,9 +124,6 @@ body{
     }
     .new span{
         font-size: 1em;
-    }
-    .recent span{
-        font-size: .7em;
     }
     #heading{
         font-size: 1.7em !important;
@@ -153,9 +148,6 @@ body{
     .new span{
         font-size: 1em;
     }
-    .recent span{
-        font-size: .8em;
-    }
     #heading{
         font-size: 2rem !important;
     }
@@ -167,5 +159,17 @@ body{
 @media (min-width: 540px) and (max-width: 541px){
     .new span{
         font-size: .68em;
+    }
+}
+
+@media (min-width: 320px) and (max-width: 321px){
+    .recent span{
+        font-size: .7em;
+    }
+}
+
+@media (min-width: 410px) and (max-width: 415px){
+    .new span{
+        font-size: 1.1em;
     }
 }
