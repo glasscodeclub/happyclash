@@ -31,7 +31,7 @@
     </div>
     <div class="form-group fg-login">
       <%if(empty){%>
-        <p class="subheading">no email exists or wrong link</p>
+        <p class="subheading blink">no email exists or wrong link</p>
     <%}else{%>
       <form method="POST">
         <div class="input-group">
@@ -45,35 +45,6 @@
           <button type="submit" class="btn btn-dark submit loginbtn" >submit</button>
       </form>
     <%}%>     
-        <!-- <form action="/auth/login" method="POST">
-
-            <div class="input-group">
-                <span class="input-group-addon"><i class="far fa-user"></i></span>
-                <input onfocusout="displayError('username','username')" class="form-control" id="username" type="text" placeholder="Username" name="username" required>
-            </div>
-            <div class="error">
-                <div class="username errordiv"></div>
-            </div>
-
-            <div class="input-group">
-                <span class="input-group-addon"><i class="fas fa-unlock"></i></span>
-                <input onfocusout="displayError('password','password')" class="form-control" id="password" type="password" placeholder="Password" name="password" required>
-            </div>
-            <div class="error">
-                <div class="password errordiv"></div>
-            </div>
-
-            <div id="forgotpass" onclick="window.location.assign('/auth/forget')">
-                Forgot Password?
-            </div>
-
-            <div class="formbutton">
-                <button onclick="checkInputfields();" class="btn btn-dark submit loginbtn" type="submit">Login</button>
-            </div>
-        </form>
-        <div class="otheroption">
-            Don't have an account? <a class="otherlink" href="/auth/signup">Sign Up</a>
-        </div> -->
     </div>
 </div>
 
