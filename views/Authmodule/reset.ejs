@@ -1,9 +1,89 @@
-<%if(empty){%>
-   <p>no email exists or wrong link</p>
-<%}else{%>
-  <form method="POST">
-      <input type="password" required name="password" placeholder="enter new password">
-      <input type="password" required name ="confirmPassword" placeholder="confirm password">
-      <button type="submit">submit</button>
-  </form>
-<%}%>        
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= page %></title>
+</head>
+<body>
+    
+<%- include("./../partials/header",{page:page ? page:null}) %>
+
+
+<div class="formpage">
+
+    <div id="headdiv">
+        <div class="col-3">
+            <div id="backdiv" class="loginback" onclick="window.location.href='/'" style="margin: -0.15rem -0.4rem !important;">
+                <img src="/img/backarrow.png" alt="" style="width: 25px; margin-bottom: 2px;">
+            </div>
+        </div>
+        <div class="col-6" style=" margin: 1rem auto;">
+            <div id="headdiv">
+                <img src="/img/happyclash_logo.png" alt="" class="headicon" width="190" height="100">
+            </div>
+        </div>
+    </div>
+
+    <div class="subheaddiv">
+        <h6 class="subheading">Discover the new Clashes</h6>
+    </div>
+    <div class="form-group fg-login">
+      <%if(empty){%>
+        <p class="subheading">no email exists or wrong link</p>
+    <%}else{%>
+      <form method="POST">
+        <div class="input-group">
+          <span class="input-group-addon"><i class="fas fa-unlock"></i></span>
+          <input type="password" class="form-control" required name="password" placeholder="enter new password">
+        </div>
+         <div class="input-group">
+          <span class="input-group-addon"><i class="fas fa-unlock"></i></span>
+          <input type="password" required class="form-control" name ="confirmPassword" placeholder="confirm password">
+         </div>
+          <button type="submit" class="btn btn-dark submit loginbtn" >submit</button>
+      </form>
+    <%}%>     
+        <!-- <form action="/auth/login" method="POST">
+
+            <div class="input-group">
+                <span class="input-group-addon"><i class="far fa-user"></i></span>
+                <input onfocusout="displayError('username','username')" class="form-control" id="username" type="text" placeholder="Username" name="username" required>
+            </div>
+            <div class="error">
+                <div class="username errordiv"></div>
+            </div>
+
+            <div class="input-group">
+                <span class="input-group-addon"><i class="fas fa-unlock"></i></span>
+                <input onfocusout="displayError('password','password')" class="form-control" id="password" type="password" placeholder="Password" name="password" required>
+            </div>
+            <div class="error">
+                <div class="password errordiv"></div>
+            </div>
+
+            <div id="forgotpass" onclick="window.location.assign('/auth/forget')">
+                Forgot Password?
+            </div>
+
+            <div class="formbutton">
+                <button onclick="checkInputfields();" class="btn btn-dark submit loginbtn" type="submit">Login</button>
+            </div>
+        </form>
+        <div class="otheroption">
+            Don't have an account? <a class="otherlink" href="/auth/signup">Sign Up</a>
+        </div> -->
+    </div>
+</div>
+
+<%- include("./../partials/footer") %>
+
+
+
+
+</body>
+</html>
+
+
+

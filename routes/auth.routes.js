@@ -22,14 +22,14 @@ router.get("/signup", function (req, res) {
 
 router.get("/forget", function (req, res) {
     if(req.query&&req.query.send=="no"){
-        res.render("./Authmodule/forget", { send:false,basic:false });
+        res.render("./Authmodule/forget", { page: "Error" ,send:false,basic:false });
     }
     
     else if(req.query&&req.query.send=="yes"){
-        res.render("./Authmodule/forget", { send:true ,basic:false});
+        res.render("./Authmodule/forget", { page: "Sent" ,send:true ,basic:false});
     }
     else{
-        res.render("./Authmodule/forget", { page: "HappyClash SignUp",send:false,basic:true });
+        res.render("./Authmodule/forget", { page: "Forget",send:false,basic:true });
     }
 });
 
@@ -43,11 +43,11 @@ router.get("/reset/:rid/user/:userid", function (req, res) {
                     res.redirect("/error")
                 }
                 else if(_.isEmpty(doc)){
-                    res.render("./Authmodule/reset", { empty:true });
+                    res.render("./Authmodule/reset", {page:"error" ,empty:true });
                     //email not exists or wrong link
                 }
                 else{
-                    res.render("./Authmodule/reset", { empty:false });//right
+                    res.render("./Authmodule/reset", {page:"reset" ,empty:false });//right
                 }
         })
     }

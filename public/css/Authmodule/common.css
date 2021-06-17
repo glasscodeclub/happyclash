@@ -44,12 +44,12 @@
     height: 9rem !important;
 }
 
-#subheaddiv {
+.subheaddiv {
     margin: 0.8rem auto !important;
     margin-bottom: 1.15rem !important;
 }
 
-#subheading {
+.subheading {
     font-size: 1.5rem;
     font-family: Roboto;
     font-style: normal;
@@ -93,6 +93,7 @@
 .input-group-addon {
     margin: 0.4rem 0.8rem;
     vertical-align: baseline;
+    color: #A7A7A7;
 }
 
 
