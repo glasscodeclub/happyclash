@@ -66,6 +66,7 @@ video {
   font-size: 1.55rem;
   margin: 0.25rem auto;
   margin-bottom: 0.25rem !important;
+  width: max-content;
 }
 
 .videoRank {
@@ -74,7 +75,7 @@ video {
   font-weight: normal;
   color: white;
   font-size: 0.65rem;
-  margin: 0.58rem auto;
+  margin: 0.25rem auto;
   margin-bottom: 0rem !important;
 }
 

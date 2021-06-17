@@ -42,7 +42,7 @@ body{
 #headdiv {
     text-align: left;
     text-transform: capitalize;
-    margin:0px!important;
+    margin: 1.3rem auto !important;
     vertical-align: middle;
     margin-bottom: 0.5rem !important;
 }
@@ -50,12 +50,13 @@ body{
 #heading {
     /* width: 65%; */
     position:relative;
-    margin: 0.8rem auto 0.4rem;
+    width: max-content;
+    margin: 0.8rem 3.8rem 0.4rem;
     font-size: 2rem !important;
     font-family: Roboto;
     font-style: normal;
     font-weight: bold;
-    background: linear-gradient(90deg, #7C49F6 -4%, #E55ABD 28.92%, #FEDF67 37%);
+    background: linear-gradient(90deg, #7C49F6 5%, #E55ABD 61.92%, #FEDF67 94%);
     color: transparent;
     -webkit-background-clip: text;
     background-clip: text;
