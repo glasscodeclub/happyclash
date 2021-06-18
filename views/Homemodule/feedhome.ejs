@@ -40,19 +40,19 @@
     <div class="feedhomepage">
       <div class="container" style="margin-top: 10px; margin-bottom: 10px">
         <div class="row">
-          <div class="col-3 jcc hcl-circle" style="padding: 5px 15px 0 15px !important;">
+          <div class="col-3 jcc hcl-circle" style="padding: 5px 0px 0 0px !important; width: 15%; text-align: left;">
             <img src="/img/hcl-logo.png" />
           </div>
-          <div class="col-6 jcc" id="happy-logo">
+          <div class="col-6 jcc" id="happy-logo" style="width:70%">
             <img src="/img/homefeed-logo.png" />
           </div>
-          <div class="col-3 jcc user-image" style="padding: 5px 15px 0 15px !important;">
+          <div class="col-3 jcc user-image" style="padding: 5px 0px 0 0px !important; width: 15%; text-align: right;">
             <img src="/img/profile.png" />
           </div>
         </div>
       </div>
 
-      <div class="row clashtypediv">
+      <!-- <div class="row clashtypediv">
         <div class="col-6 publicdiv">
           <button
             class="btn btn-light clashtype"
@@ -70,6 +70,15 @@
           >
             Friends Clash
           </button>
+        </div>
+      </div> -->
+
+      <div class="clashtypediv">
+        <div id="public" onclick="changeColor()">
+          Public Clash
+        </div>
+        <div id="friends" onclick="changeColor()">
+          Friends Clash
         </div>
       </div>
 
@@ -175,7 +184,7 @@
               src="/img/dance.png"
               alt="Img"
             /> -->
-            <video class="vid" muted autoplay>
+            <video class="vid" muted autoplay loop>
               <source src="/video/sample" type="video/mp4" />
             </video>
             <div class="duration">1:20</div>
@@ -226,7 +235,7 @@
           </div>
         </div>
         <div id="profilevideo">
-          <video class="vid" muted autoplay>
+          <video class="vid" muted autoplay loop>
             <source src="/video/sample" type="video/mp4" />
           </video>
           <div class="duration">1:20</div>

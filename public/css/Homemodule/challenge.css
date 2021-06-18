@@ -199,3 +199,34 @@ body{
         font-size: 1.5rem !important;
     }
 }
+
+.challenge-details {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 68% !important;
+    padding: 10px 0 0 35px !important;
+}
+
+.reach {
+    display: flex;
+    justify-content: space-between;
+    width: 200px;
+}
+
+@media only screen and (min-width: 415px) {
+    .reach {
+        width: 240px;
+    }
+}
+
+@media only screen and (max-width: 342px) {
+    .challenge-details {
+        width: 64% !important;
+    }
+}
+
+@media only screen and (max-width: 361px) {
+    .reach {
+        width: 175px !important;
+    }
+}
