@@ -4,6 +4,8 @@ body{
 
 hr{
   margin: 1rem -0.75rem;
+  color: #DEDEDE;
+  outline: auto;
 }
 
 .head {
@@ -178,14 +180,14 @@ p{
   top: 229px;
   right: 20px;
   font-size:0.8rem;
-  font-family: "Roboto", sans-serif;
+  font-family: Roboto;
   color:#7A7A7A;
   cursor:pointer;
 }
 
 .select-followers{
   display:flex;
-  font-family: "Roboto", sans-serif;
+  font-family: Roboto;
   margin: 18px 9px;
 }
 

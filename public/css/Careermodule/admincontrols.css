@@ -1,12 +1,11 @@
-@font-face {
-    font-family: America;
-    src: url('/font-family/America.ttf');
+body{
+    font-family: Roboto;
 }
-
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 .head {
     position:sticky;
+    display:flex;
+    align-items:center;
     top:0px;
     background-color:white;
     text-align: center !important;
@@ -18,11 +17,15 @@
     /* top: 0.75rem; */
 }
 
+.keyword {
+    font-size: .9rem;
+    color: #747474;
+}
+
 #backdiv {
-    margin-top: -0.4rem;
+    margin-top: 0.4rem;
     margin-left: 0.4rem;
     padding: 0.2rem 0.4rem;
-    background-color: white;
     border-radius: 0.5rem;
     float: left;
 }
@@ -37,7 +40,7 @@
 
 #headdiv {
     text-align: center;
-    margin: 1.3rem auto;
+    margin: 0rem auto;
     vertical-align: middle;
     z-index: 4;
 }
@@ -48,6 +51,7 @@
     font-size: 2.6rem !important;
     font-family: Roboto;
     font-style: normal;
+    white-space:nowrap;
     font-weight: bold;
     background: linear-gradient(90deg, #7C49F6 0%, #E55ABD 47.92%, #FEDF67 100%);
     color: transparent;
@@ -102,10 +106,19 @@
     color: #000000;
 }
 
-video{
-    border-radius: .4em;
-    border: 1.49px solid #E8E8E8;
-    box-shadow: -4.472218990325928px 4.472218990325928px 14.907395362854004px 0px #00000040;
+video {
+    border-radius: 6px;
+    box-shadow: -5.03451px 5.03451px 16.7817px rgb(0 0 0 / 25%), inset 0px -45.4817px 75.8028px #000000;
+}
+
+.a1{
+    color: #7A7A7A;
+    font-size: 0.9rem;
+    margin-left: 0.7rem;
+}
+
+.name{
+    margin-top:0.5rem;
 }
 
 .overlay{
@@ -141,12 +154,18 @@ video{
 
 hr{
     margin: 1rem -1rem;
+    color: #DEDEDE;
+    outline:auto;
 }
 
 .col-8{
     flex: 0 0 auto;
     width: 66.6666666667%;
     padding: .35rem 0 .35rem 2.5rem;
+}
+
+.container{
+    padding-left:0;
 }
 
 
@@ -259,5 +278,9 @@ hr{
         flex: 0 0 auto;
         width: 66.6666666667%;
         padding: .35rem 0 .35rem 4.5rem;
+    }
+
+    .container{
+        padding-left: 0.5rem;
     }
 }
