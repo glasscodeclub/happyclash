@@ -210,7 +210,7 @@ body{
 .reach {
     display: flex;
     justify-content: space-between;
-    width: 200px;
+    width: 160px;
 }
 
 @media only screen and (min-width: 415px) {
@@ -224,9 +224,9 @@ body{
         width: 64% !important;
     }
 }
-
+/* 
 @media only screen and (max-width: 361px) {
     .reach {
         width: 175px !important;
     }
-}
+} */
