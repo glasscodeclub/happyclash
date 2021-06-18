@@ -9,6 +9,7 @@ body{
 }
 
 .head {
+    display: flex;
     position: sticky;
     z-index: 5;
     top:0px !important;
@@ -22,6 +23,7 @@ body{
 }
 
 #backdiv {
+    width: 2%;
     margin-top: 0.6rem!important;
     margin-left: 1rem !important;
     padding: 0.2rem 0.4rem;
@@ -40,9 +42,10 @@ body{
 }
 
 #headdiv {
+    width: 98%;
     text-align: left;
     text-transform: capitalize;
-    margin: 1.3rem auto !important;
+    margin: 1rem auto !important;
     vertical-align: middle;
     margin-bottom: 0.5rem !important;
 }
@@ -51,7 +54,9 @@ body{
     /* width: 65%; */
     position:relative;
     width: max-content;
-    margin: 0.8rem 3.8rem 0.4rem;
+    margin-left: 10px;
+    margin-top: 4px;
+    /* margin: 0.8rem 3.8rem 0.4rem; */
     font-size: 2rem !important;
     font-family: Roboto;
     font-style: normal;
