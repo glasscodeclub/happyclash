@@ -6,14 +6,14 @@ function challenge(e, id) {
   const div = document.createElement("div");
   div.innerHTML = `
   <div class="div1">
-    <div style="font-size: 0.7rem; color: grey" class="mt-4 mb-1">
+    <div class="mt-4 mb-1 keyword">
       Clash details
     </div>
-    <div style="font-size: 0.9rem; line-height: 1.2rem">
+    <div style="line-height: 1.2rem" class="keyword">
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas
       debitis fuga aspernatur unde, in nesciunt, laborum voluptatibus
       nobis consectetur dolorum enim quisquam porro delectus minus
-      <div style="font-size: 0.7rem; color: grey" class="mt-4">
+      <div class="mt-4 keyword">
         Ends on
       </div>
       <div style="font-size: 0.9rem">15/05/2021</div>
@@ -22,7 +22,7 @@ function challenge(e, id) {
   <hr />
   <div class="div1">
     <div style="display: flex; align-items: center; justify-content: space-between; width:300px; margin:auto;">
-      <div style="font-size: 0.85rem">Your Video</div>
+      <div style="font-size: 1rem">Your Video</div>
       <div>
         <button
           style="color: white; background-color: #ef5757; font-size: 0.7rem; border: none; width: 60px; padding: 3px; border-radius: 3px;"
@@ -35,16 +35,13 @@ function challenge(e, id) {
     <div class="container mt-2">
       <div class="row">
           <div class="col d-flex justify-content-center mb-2">
-              <video width="400px" muted>
+              <video width="400px" muted autoplay loop>
                   <source src="/Video/sample" type="video/mp4">
               </video>
               <div class="overlay d-flex justify-content-between flex-column">
                   <div class="d-flex justify-content-between">
                       <p>Rank 3/40</p>
                       <p>1:20</p>
-                  </div>
-                  <div class="d-flex justify-content-center">
-                      <img src="/img/Play.svg" alt="play" onclick="playVideo(this)">
                   </div>
                   <div>
                       <p>2h ago</p>
@@ -70,38 +67,32 @@ function challenge(e, id) {
         justify-content: space-between;
       "
     >
-      <div style="display: flex; align-items: center">
+      <div style="display: flex; align-items: baseline; margin-top: 0.5rem;">
         <div style="font-size: 0.9rem">Participants (70)</div>
-        <div
-          onclick="console.log(this)"
-          style="font-size: 0.7rem; color: grey; margin-left: 10px"
-        >
-          See All >
+        
+        <div>
+        <p class="a1" onclick="console.log(this)">See All&nbsp;&nbsp;<i class="fas fa-angle-right"></i> </a>
         </div>
       </div>
-      <div data-target-add="#add-friends" onclick="test()"  style="font-size: 2rem; cursor:pointer;">+</div>
+      <div data-target-add="#add-friends" onclick="test()"  style="font-size: 2rem; cursor:pointer; margin-top: -0.7rem; ">+</div>
     </div>
     <div>
       <div class="row">
         <div class="col" onclick="console.log(this)" style="text-align: center">
           <img class="profile_image" src="/img/profile.png" class="p1" />
-          <h6 style="font-size: 0.6rem">Jane Cooper</h6>
+          <h6 style="font-size: 0.7rem" class="name">Jane Cooper</h6>
         </div>
         <div class="col" onclick="console.log(this)" style="text-align: center">
           <img class="profile_image" src="/img/profile1.png" class="p1" />
-          <h6 style="font-size: 0.6rem">Jane Cooper</h6>
+          <h6 style="font-size: 0.7rem" class="name">Jane Cooper</h6>
         </div>
         <div class="col" onclick="console.log(this)" style="text-align: center">
           <img class="profile_image" src="/img/profile2.png" class="p1" />
-          <h6 style="font-size: 0.6rem">Jane Cooper</h6>
+          <h6 style="font-size: 0.7rem" class="name">Jane Cooper</h6>
         </div>
         <div class="col" onclick="console.log(this)" style="text-align: center">
           <img class="profile_image" src="/img/profile3.png" class="p1" />
-          <h6 style="font-size: 0.6rem">Jane Cooper</h6>
-        </div>
-        <div class="col" onclick="console.log(this)" style="text-align: center">
-          <img class="profile_image" src="/img/profile4.png" class="p1" />
-          <h6 style="font-size: 0.6rem">Jane Cooper</h6>
+          <h6 style="font-size: 0.7rem" class="name">Jane Cooper</h6>
         </div>
       </div>
       <div

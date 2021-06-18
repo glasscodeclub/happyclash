@@ -31,6 +31,7 @@ body{
 .a1{
     text-decoration: none;
     color: gray;
+    font-size: 0.9em;
 }
 
 .last{
@@ -40,6 +41,12 @@ body{
 
 .done{
     text-align: center;
+}
+
+hr{
+    margin: 1rem -0.75rem;
+  color: #DEDEDE;
+  outline: auto;
 }
 
 .done button{
@@ -315,7 +322,7 @@ body{
         font-size: 1.3em !important;
     } */
     .p5{
-        font-size: .7em;
+        font-size: .8em;
     }
     .participants{
         font-size: 0.7em;
@@ -333,7 +340,7 @@ body{
         font-size: 1.5em !important;
     } */
     .p5{
-        font-size: .9em !important;
+        font-size: 1em !important;
     }
     .participants{
         font-size: 0.8em;
@@ -352,7 +359,7 @@ body{
         font-size: 1.8em !important;
     } */
     .p5{
-        font-size: .9em;
+        font-size: 1em;
     }
     .last img{
         width: 3.2rem;
@@ -383,5 +390,23 @@ body{
 @media only screen and (min-width:375px) and (max-width:1024px) {
     .p11{
         margin-top: 1rem;
+    }
+}
+
+@media only screen and (min-width:768px){
+    hr{
+        margin: 1rem -2.2rem;
+    }
+}
+
+@media only screen and (min-width:1024px){
+    hr{
+        margin: 1rem -2.6rem;
+    }
+}
+
+@media only screen and (min-width:1280px){
+    hr{
+        margin: 1rem -5rem;
     }
 }
