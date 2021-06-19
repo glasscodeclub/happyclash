@@ -59,6 +59,12 @@ body{
     background-clip: text;
 }
 
+hr{
+    color: #DEDEDE;
+    outline: auto;
+}
+
+
 #play{
     font-size: 2rem !important;
 }

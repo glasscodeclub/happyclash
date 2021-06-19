@@ -9,14 +9,14 @@ function challenge(e, id) {
     <div class="mt-4 mb-1 keyword">
       Clash details
     </div>
-    <div style="line-height: 1.2rem" class="keyword">
+    <div style="line-height: 1.2rem; color: black;" class="keyword">
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas
       debitis fuga aspernatur unde, in nesciunt, laborum voluptatibus
       nobis consectetur dolorum enim quisquam porro delectus minus
       <div class="mt-4 keyword">
         Ends on
       </div>
-      <div style="font-size: 0.9rem">15/05/2021</div>
+      <div style="font-size: 0.9rem; color: #000">15/05/2021</div>
     </div>
   </div>
   <hr />
@@ -113,6 +113,7 @@ function challenge(e, id) {
               #ffd458 97.6%
             );
             border: none;
+            font-size: 0.9rem;
           "
           class="btn btn-dark submit"
         >

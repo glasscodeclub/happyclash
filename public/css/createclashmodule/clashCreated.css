@@ -31,7 +31,7 @@ body{
 .a1{
     text-decoration: none;
     color: gray;
-    font-size: 0.9em;
+    font-size: 0.9rem;
 }
 
 .last{
@@ -63,7 +63,7 @@ hr{
 }
 
 .keyword{
-    font-size: .9em;
+    font-size: .9rem;
     color: #747474;
 }
 
