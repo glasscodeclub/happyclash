@@ -15,6 +15,11 @@ body{
     /* top: 0.75rem; */
 }
 
+hr{
+    color: #DEDEDE;
+    outline: auto;
+}
+
 .hr-out{
     margin: 1rem -0.75rem;
 }
