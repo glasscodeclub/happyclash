@@ -15,7 +15,8 @@ var express                 = require("express"),
     Libraryroutes           =require("./routes/library.routes"),
     Homeroutes              =require("./routes/home.routes"),
     ClashDetailsroutes      =require("./routes/ClashDetails.routes"),
-    createclashroute        =require("./routes/createclash.routes")
+    createclashroute        =require("./routes/createclash.routes"),
+    Cameraroute            =require("./routes/camera.routes")
     
 var app = express();
 const port = 3000;
@@ -73,9 +74,11 @@ app.use("/Clashdetails",ClashDetailsroutes)//
 app.use('/career', Careerroutes);//
 app.use("/createclash",createclashroute)//
 app.use("/search", Searchroutes)//
+app.use('/camera',Cameraroute);
 
 app.use('/upload',Uploadroutes);
 app.use('/video',Videoroutes);
+
 app.use('/error',(req,res)=>{
  res.render("error",{error:""})
 });
