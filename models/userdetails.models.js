@@ -1,54 +1,53 @@
 const mongoose = require("mongoose")
 
 const userDetailSchema = new mongoose.Schema({
-    city: String,
-    profilePic: String,
-    name: String,
+    city: {
+        type:String,
+    },
+    profilePic: {
+        type:String,
+    },
+    name: {
+        type:String,
+    },
     joinDate: {
         type: Date,
         default: Date.now()
     },
     userId: {
-        type: mongose.Schema.Types.ObjectID,
-        ref: "User"
+        type:String,
     },
     age: Number,
     bio: String,
     clashes: [
         {
-            type: mongose.Schema.Types.ObjectID,
-            ref: "Clash"
+            type:String,
         }
     ],
     followers: [
         {
-            type: mongose.Schema.Types.ObjectID,
-            ref: "User"
+            type:String,
         }
     ],
     following: [
         {
-            type: mongose.Schema.Types.ObjectID,
-            ref: "User"
+            type:String,
         }
     ],
     videosCreated: [
         {
-            type: mongose.Schema.Types.ObjectID,
-            ref: "Video"
+            type:String,
         }
     ],
     wonClashes: [
         {
-            type: mongose.Schema.Types.ObjectID,
-            ref: "Clash"
+            type:String,
         }
     ],
     highestRank: Number,
     notifications: [
         {
-            type: mongose.Schema.Types.ObjectID,
-            ref: "Notification"
+            type:String,
         }
     ],
     longestStreak: Number

@@ -1,15 +1,25 @@
 const mongoose = require("mongoose")
 
 const reportSchema = new mongoose.Schema({
-    user: String,
-    email: String,
-    message: String,
-    for: [String],
+    user: {
+        type:String,
+    },
+    email: {
+        type:String,
+    },
+    message: {
+        type:String,
+    },
+    for: [{
+        type:String,
+    }],
     time: {
         type: Date,
         default: Date.now()
     },
-    status: Boolean
+    status: {
+        type:Boolean,
+    }
 })
 
 module.exports = mongoose.model("Report", reportSchema)

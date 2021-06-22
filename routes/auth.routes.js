@@ -247,7 +247,7 @@ router.get("/login", function (req, res) {
 router.post("/login", passport.authenticate("local", {
     failureRedirect: "/auth/login",//wrong password query
 }), function (req, res) {
-    User.findOne({username:req.user.username,isVerfied:true},(err,doc)=>{
+    User.findOne({username:req.body.username,isVerfied:true},(err,doc)=>{
       if(err){
        console.log(err)
        res.redirect("/error");

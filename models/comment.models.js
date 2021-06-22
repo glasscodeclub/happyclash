@@ -1,21 +1,18 @@
 const mongoose = require("mongoose")
 
 const commentSchema = new mongoose.Schema({
-    user: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "User"
+    user:{
+        type:String,
     },
     isReplied: Boolean,
-    video: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "Video"
+    video:{
+        type:String,
     },
     message: String,
     time: String,
     subComments: [
         {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: "Comment"
+            type:String,
         }
     ]
 })
