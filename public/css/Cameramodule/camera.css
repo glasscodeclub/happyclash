@@ -1,3 +1,107 @@
+body{
+  overflow-x: hidden;
+  overflow-y:hidden;
+}
+
+.live{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -10;
+  height: 100%;
+  width: 100%;
+}
+
+
+.recorded{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -10;
+  height: 100%;
+  width: 100%;
+}
+
+.record{
+  height: 3rem;
+    width: 3rem;
+    background: center/contain no-repeat;
+    background-image: url(../../img/record.png);
+    border: none;
+    outline: none;
+    transition: 250ms ease-in-out;
+}
+
+.stop.record{
+  height: 3rem;
+    width: 3rem;
+    background: center/contain no-repeat;
+    background-image: url(../../img/stop_rec.png);
+    border: none;
+    outline: none;
+    transition: 250ms ease-in-out;
+}
+
+.play, .upload{
+  background:none;
+  outline: none;
+  border: none;
+  width: 3rem;
+}
+
+.download{
+  background:none;
+  outline: none;
+  border: none;
+  width:fit-content;
+  font-size:1.2rem;
+  color: #000;
+}
+
+.controls{
+  width: 100%;
+  position: absolute;
+  bottom:5px;
+  display:flex;
+  justify-content:space-around;
+}
+
+.play img{
+  height:2rem;
+  width:2rem;
+}
+
+.play.disabled, .upload.disabled{
+  display:none;
+}
+
+.top{
+  display:flex;
+  justify-content: space-between;
+  margin-top: 1.4rem;
+  margin-left: 0.5rem;
+}
+
+.three-dots{
+  display: flex;
+  display:none;
+  align-items: center;
+}
+
+.three-dots img{
+  height: 20px;
+  width: 30px;
+}
+
+.three-dots.active{
+  display:block;
+}
+
+
 button {
     margin: 0 3px 10px 0;
     padding-left: 2px;
@@ -21,10 +125,86 @@ button {
     height: calc(var(--width) * 0.5625);
   }
   
-  video:last-of-type {
+  /* video:last-of-type {
     margin: 0 0 20px 0;
+  } */
+  
+  /* video#gumVideo {
+    margin: 0 20px 20px 0;
+  } */
+
+  video::-webkit-media-controls {
+    display:none !important;
+  }
+
+  /* POPUP STYLING */
+
+  #overlay {
+    background-color: rgba(0, 0, 0, 0.95);
+    position: fixed;
+    opacity: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 5;
+    pointer-events:none;
   }
   
-  video#gumVideo {
-    margin: 0 20px 20px 0;
+  #overlay.active{
+    opacity:1;
+    transition: 200ms ease-in-out;
+    pointer-events: all;
+  }
+  
+  .popup {
+    position: fixed;
+    font-family: "Roboto", sans-serif;
+    border-radius: 6px;
+    top: 50%;
+    left: 50%;
+    height: 20%;
+    z-index: 10;
+    background-color: #fff;
+    width: 70%;
+    transform: translate(-50%,-50%) scale(0);
+    transition: 200ms ease-in-out;
+  }
+  
+  .popup.active{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    height: 20%;
+    z-index: 10;
+    background-color: #fff;
+    width: 70%;
+    font-family: "Roboto", sans-serif;
+    transform: translate(-50%,-50%) scale(1);
+    transition: 200ms ease-in-out;
+  }
+  
+  .popup-header{
+    padding:3% 5% 5%;
+    font-size: 1.5rem;
+    display:flex;
+    justify-content: space-between;
+  }
+  
+  .close-button {
+    font-size:1.7rem;
+    font-weight:bold;
+    cursor: pointer;
+  }
+  
+  .popup-body{
+    padding:5%;
+    font-size: 1rem; 
+    font-size: 1.35rem;
+  }
+  
+  .options{
+    margin: 0% 20% 10%;
+    display: flex;
+    justify-content: space-between;
   }
