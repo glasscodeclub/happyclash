@@ -1,29 +1,66 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Media Recorder in Javascript</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://kit.fontawesome.com/2635296004.js" crossorigin="anonymous"></script>
+    <script src="https://code.iconify.design/1/1.0.6/iconify.min.js"></script>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto" rel="stylesheet">
+
+    <title>Camera</title>
     <link rel="stylesheet" href="/css/Cameramodule/camera.css">
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   </head>
   <body>
-    <div id="container">
-
-      <video id="gum" playsinline autoplay muted></video>
-      <video id="recorded" playsinline loop></video>
-
-      <div>
-        <button id="start" style="visibility: hidden;display:none">Start camera</button> 
-        <button id="record" disabled>Record</button>
-        <button id="play" disabled>Play</button>
-        <button id="download" disabled>Download</button>
-        <button id="upload" disabled>upload</button>
+    <div class="top">
+      <div class="backdiv" onclick="back()">
+        <span class="iconify" data-inline="false" data-icon="eva:arrow-back-outline" style="color: #ffffff; font-size: 30px;"></span>
       </div>
-
-
-      <div>
-        <span id="errorMsg"></span>
+      <div id="threedots" class="three-dots" data-target = "#popup">
+        <img src="../../img/threedots.svg" alt="">
       </div>
     </div>
+    
+
+    <div id="container">
+
+      <video id="gum" class="live" playsinline autoplay muted></video>
+      <video id="recorded" class="recorded" playsinline loop></video>
+
+      <div class="controls">
+        <button id="start" style="visibility: hidden;display:none">Start camera</button> 
+        <button id="play" class="play disabled" disabled><img src="../../img/Play.svg" alt="Play"></button>
+        <button id="record"  class="record" name = "Record" disabled></button>
+        <button id="upload" class="upload disabled" disabled><span class="iconify" data-inline="false" data-icon="akar-icons:circle-check" style="font-size: 2rem; color: #fff;"></span>
+          </button>
+      </div>
+      <div>
+        <span id="errorMsg" style="visibility: hidden; display:none"></span>
+      </div>
+    </div>
+
+    <div class="popup" id="popup">
+        <div class="popup-header">
+            <div class="title">What to do: </div>
+            <div class="close-button-play" data-close-button>&times;</div>
+        </div>
+        <div class="popup-body">
+            <div class="control" onclick="download()"> 
+                <i class="fas fa-download" ></i>
+                <button id="download" class="download" disabled>Save to Gallery</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Overlay Start -->
+    <div id="overlay"></div>
+    <!-- Overlay end -->
+
   </body>
   
 </html>
