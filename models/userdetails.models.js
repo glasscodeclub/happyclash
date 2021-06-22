@@ -3,12 +3,15 @@ const mongoose = require("mongoose")
 const userDetailSchema = new mongoose.Schema({
     city: {
         type:String,
+        default:null,
     },
-    profilePic: {
+    profilePicLink: {
         type:String,
+        default:null,
     },
     name: {
         type:String,
+        default:null,
     },
     joinDate: {
         type: Date,
@@ -16,41 +19,53 @@ const userDetailSchema = new mongoose.Schema({
     },
     userId: {
         type:String,
+    },//user.models.js
+    age: {
+        type:Number,
+        default:null,
     },
-    age: Number,
-    bio: String,
+    bio: {
+        type:String,
+        default:null,
+    },
     clashes: [
         {
             type:String,
         }
-    ],
+    ],//clash.models.js
     followers: [
         {
             type:String,
         }
-    ],
+    ],//user.models.js
     following: [
         {
             type:String,
         }
-    ],
+    ],//user.models.js
     videosCreated: [
         {
             type:String,
         }
-    ],
+    ],//video.models.js in library
     wonClashes: [
         {
             type:String,
         }
-    ],
-    highestRank: Number,
+    ],//clash.models.js
+    highestRank: {
+        type:Number,
+        default:null,
+    },
     notifications: [
         {
             type:String,
         }
-    ],
-    longestStreak: Number
+    ],//notification.models.js
+    longestStreak:{
+        type:Number,
+        default:null,
+    }
 })
 
 module.exports = mongoose.model("Userdetails", userDetailSchema)
