@@ -13,6 +13,10 @@ body{
   margin: auto;
 }
 
+.profile-title{
+  margin: 10px 0px;
+}
+
 #happy-logo img{
   width: 180px;
   margin-left: -12px;
@@ -399,3 +403,22 @@ body{
 .btn {
   padding: 0.2rem 0.3rem !important;
 }
+
+
+@media only screen and (min-width:1000px){
+  .badgesdiv {
+    width: 30% !important;
+  }
+
+  .logo-title{
+    width: 30%;
+  }
+
+  .search-bar{
+    width: 30%;
+  }
+  .profile-title{
+    width: 30%;
+    margin: 10px auto;
+  }
+} 

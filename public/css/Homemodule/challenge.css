@@ -230,3 +230,9 @@ body{
         width: 175px !important;
     }
 } */
+
+@media only screen and (min-width:1000px){
+    #heading, #play {
+        font-size: 1.6rem !important;
+    }
+}
