@@ -17,27 +17,23 @@ const clashSchema = new mongoose.Schema({
     },
     category: [String],
     keywords: [String],
-    admin: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "User"
+    admin:{
+        type:String,
     },
     participants: [
         {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: "User"
+            type:String,
         }
     ],
     suggestions: [
         {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: "User"
+            type:String,
         }
     ],
     isSeenByAllForFriends: Boolean,
     videos: [
         {
-            type: mongose.Schema.Types.ObjectID,
-            ref: "Video"
+            type:String,
         }
     ],
     rank: Number

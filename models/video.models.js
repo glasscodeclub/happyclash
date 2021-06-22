@@ -2,42 +2,48 @@ var mongoose = require("mongoose");
 
 var VideoSchema = new mongoose.Schema({
     username: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "User"
+        type: String
     },
-    views: Number,
+    views: {
+        type: Number,
+        default:0,
+    },
     clash: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "Clash"
+        type: String,
+        default:"",
     },
-    video: String,
+    videoURL:     {
+        type:String,
+        default:"",
+    },
+    videoName:{type:String,   default:"",},
     uploadTime: {
         type: Date,
         default: Date.now()
     },
     likes: [
         {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: "User"
+            type:String,
         }
     ],
     dislikes: [
         {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: "User"
+            type:String,
         }
     ],
     comments: [
         {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: "Comment"
+            type:String,
         }
     ],
-    time: {
+    timeFinish: {
         type: Date,
-        default: Date.now()
+        default:null,
     },
-    rank: Number
+    rank: {
+        type:Number,
+        default:null,
+    }
 });
 
 module.exports = mongoose.model("Video", VideoSchema);
