@@ -7,6 +7,7 @@ let recordedBlobs;
 
 const errorMsgElement = document.querySelector('span#errorMsg');
 const recordedVideo = document.querySelector('video#recorded');
+const gum = document.querySelector('video#gum');
 const recordButton = document.querySelector('button#record');
 const playButton = document.querySelector('button#play');
 const downloadButton = document.querySelector('button#download');
@@ -33,9 +34,13 @@ uploadButton.addEventListener('click',()=>{
 })
 recordButton.addEventListener('click', () => {
   if (recordButton.textContent === 'Record') {
+    gum.style="display:static"; 
+    recordedVideo.style="display:none";
+    //
     startRecording();
   } else {
     stopRecording();
+    //
     recordButton.textContent = 'Record';
     playButton.disabled = false;
     downloadButton.disabled = false;
@@ -45,12 +50,14 @@ recordButton.addEventListener('click', () => {
 
 
 playButton.addEventListener('click', () => {
-  const superBuffer = new Blob(recordedBlobs, {type: 'video/webm'});
-  recordedVideo.src = null;
-  recordedVideo.srcObject = null;
-  recordedVideo.src = window.URL.createObjectURL(superBuffer);
-  recordedVideo.controls = true;
-  recordedVideo.play();
+  let superBuffer = new Blob(recordedBlobs, {type: 'video/webm'});
+    gum.style="display:none"; 
+    recordedVideo.src = null;
+    recordedVideo.srcObject = null;
+    recordedVideo.src = window.URL.createObjectURL(superBuffer);
+    recordedVideo.controls = true;
+    recordedVideo.style="display:static";
+    recordedVideo.play();
 });
 
 
@@ -124,10 +131,10 @@ async function init(constraints) {
 }
 
 document.querySelector('button#start').addEventListener('click', async () => {
-  const hasEchoCancellation = document.querySelector('#echoCancellation').checked;
+  //const hasEchoCancellation = document.querySelector('#echoCancellation').checked;
   const constraints = {
     audio: {
-      echoCancellation: {exact: hasEchoCancellation}
+      echoCancellation: {exact: true}
     },
     video: {
       width: 1280, height: 720
@@ -137,3 +144,4 @@ document.querySelector('button#start').addEventListener('click', async () => {
   await init(constraints);
 });
  
+
