@@ -3,9 +3,9 @@ body{
 }
 
 #p1{
-    font-size: 2em;
+    font-size: 1.6rem;
     font-weight: bold;
-    background: linear-gradient(269.06deg, #FEDF67 -11.43%, #FF53B7 47.34%, #7C49F6 107.7%);
+    background: linear-gradient(90deg, #7c49f6 35%, #e55abd 45.92%, #fedf67 71%);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;

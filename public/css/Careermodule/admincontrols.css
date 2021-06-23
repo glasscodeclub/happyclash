@@ -40,9 +40,12 @@ body{
 
 #headdiv {
     text-align: center;
-    margin: 0rem auto;
+    width: 100%;
+    justify-content: center;
+    display: flex;
     vertical-align: middle;
     z-index: 4;
+
 }
 
 #heading {
@@ -282,5 +285,11 @@ hr{
 
     .container{
         padding-left: 0.5rem;
+    }
+}
+
+@media only screen and (min-width: 1025px){
+    #heading {
+        font-size: 1.6rem !important;
     }
 }
