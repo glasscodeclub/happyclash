@@ -12,6 +12,7 @@ const userDetailSchema = new mongoose.Schema({
     name: {
         type: String,
         default: null
+
     },
     joinDate: {
         type: Date,
@@ -39,6 +40,7 @@ const userDetailSchema = new mongoose.Schema({
     longestStreak: {
         type: Number,
         default: null
+
     }
 })
 

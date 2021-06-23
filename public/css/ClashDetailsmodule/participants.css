@@ -66,3 +66,14 @@
   width: 40px;
   height: 40px;
 }
+
+@media only screen and (min-width:1000px){
+  #heading {
+      font-size: 1.6rem !important;
+      background: linear-gradient(52deg, #7C49F6 43%, #E55ABD 49.92%, #FEDF67 58%);
+      color: transparent;
+      -webkit-background-clip: text;
+      background-clip: text;
+      margin-top: 10px !important;
+  }
+}

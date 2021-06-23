@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="/css/Librarymodule/library.css">
     <link rel="stylesheet" href="/css/BottomNavmodule/bottomnavbar.css"> 
     <base href="/">
@@ -106,7 +106,10 @@
                         <i class="far fa-trash-alt"></i><span>Delete</span>
                     </div>
                     <div class="control" onclick="download()"> 
-                        <i class="fas fa-download" ></i><span>Save to Gallery</span>
+                        <i class="fas fa-download" ></i><span>Save To Gallery</span>
+                    </div>
+                    <div class="control" id="createClashButton" value='' onclick="redirectToCreateClash()"> 
+                        <i class="fa fa-video-camera" ></i><span>Create Clash</span>
                     </div>
                     <a id="downloadLink" href="/" download style="height: 0px;width:0px;display: none;">
                     </a>

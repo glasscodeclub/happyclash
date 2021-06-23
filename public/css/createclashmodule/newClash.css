@@ -42,11 +42,11 @@ body{
 #heading {
   width: 80%;
   margin: 0.5rem auto;
-  font-size: 1.5rem !important;
+  font-size: 1.6rem !important;
   font-family: Roboto;
   font-style: normal;
   font-weight: bold;
-  background: linear-gradient(90deg, #7c49f6 0%, #e55abd 47.92%, #fedf67 100%);
+  background: linear-gradient(90deg, #7c49f6 35%, #e55abd 45.92%, #fedf67 71%);
   color: transparent;
   -webkit-background-clip: text;
   background-clip: text;
@@ -54,20 +54,31 @@ body{
 }
 
 #typeOfClash {
-  margin-top: 6rem;
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
 }
 #typeOfClashBox {
-  width: 110px;
+  width: 86%;
   height: 64px;
   margin-left: auto;
   margin-right: auto;
 }
 div.form-check {
   padding-left: 5px;
+  width: 68%;
+  margin: 0 auto;
+  text-align: left;
 }
-div.form-check:hover {
+
+/* div.form-check:hover {
+  background-color: lightgray;
+} */
+
+.form-check-input:checked + label {
   background-color: lightgray;
 }
+
 #form-div {
   width: 75%;
   margin-left: auto;
@@ -116,7 +127,11 @@ option {
 .upload{
   display: flex;
   justify-content: center;
-  margin: 3em auto 1em;
+  margin: 5em auto 1em;
+}
+
+#continue {
+  margin-top: 60px !important;
 }
 
 .upload button{

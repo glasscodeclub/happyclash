@@ -8,6 +8,7 @@ const fs = require('fs')
 router.get("/",isLoggedIn, function (req, res) {
         Video.find({username:req.user.username},(err,docs)=>{
             if(err){
+                console.log(err);
                 res.redirect("/error");
             }
             else if(_.isEmpty(docs)){

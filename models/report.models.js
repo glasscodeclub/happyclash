@@ -9,7 +9,9 @@ const reportSchema = new mongoose.Schema({
         type: Date,
         default: Date.now()
     },
-    status: Boolean
+    status: {
+        type:Boolean,
+    }
 })
 
 module.exports = mongoose.model("Report", reportSchema)

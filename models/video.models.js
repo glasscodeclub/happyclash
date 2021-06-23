@@ -14,9 +14,12 @@ var VideoSchema = new mongoose.Schema({
     comments: [String],       //comment ids
     time: {
         type: Date,
-        default: Date.now()
+        default:null,
     },
-    rank: Number
+    rank: {
+        type:Number,
+        default:null,
+    }
 });
 
 module.exports = mongoose.model("Video", VideoSchema);

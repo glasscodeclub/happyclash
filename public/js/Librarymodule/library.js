@@ -5,7 +5,12 @@
 
 
 function optionThreeDot(e){
-  document.getElementById("optionThreeDots").value=e.id.split("_")[1];
+  document.getElementById("optionThreeDots").value = e.id.split("_")[1];
+  document.getElementById('createClashButton').value = e.id.split("_")[1];
+}
+
+function redirectToCreateClash(e) {
+  window.location.href = `/createclash/createNewClash?videoId=${document.getElementById('createClashButton').value}`
 }
 
 function del(){

@@ -40,7 +40,7 @@
     width: 65%;
     /* margin: 0.5rem auto; */
     margin-left: -60px;
-    font-size: 2.5rem !important;
+    font-size: 2.5rem ;
     font-family: Roboto;
     font-style: normal;
     font-weight: bolder;
@@ -114,7 +114,7 @@ hr{
     }
 }
 
-@media only screen and (min-width:1024px){
+@media only screen and (min-width:1024px) and (max-width:1279px){
     hr{
         margin:1rem -3rem;
     }
@@ -126,13 +126,7 @@ hr{
     }
 }
 
-@media only screen and (min-width:1280px){
-    hr{
-        margin:1rem -8rem;
-    }
-}
-
-@media only screen and (min-width:768px) {
+@media only screen and (min-width:768px) and (max-width: 900px) {
     #heading{
         margin: 0.5rem -11rem;
     }
@@ -144,7 +138,7 @@ hr{
     }
 }
 
-@media only screen and (min-width:320px){
+@media only screen and (min-width:320px) and (max-width:500px){
     #headdiv {
         text-align: center;
         margin: 1rem 0 0 7rem;
@@ -153,14 +147,22 @@ hr{
     }
 }
 
-@media only screen and (min-width: 540px){
+@media only screen and (min-width: 540px) and (max-width: 767px){
     #heading {
         margin-left: -13rem;
     }
 }
 
-@media only screen and (min-width:1280px){
-    #heading{
-        margin-left: -30rem;
+@media only screen and (min-width: 1279px){
+    #heading {
+        font-size: 1.6rem ;
+        margin-left: -35rem;
+        background: linear-gradient(52deg, #7C49F6 75%, #E55ABD 81.92%, #FEDF67 92%);
+        color: transparent;
+        -webkit-background-clip: text;
+        background-clip: text;
+    }
+    hr{
+        margin:1rem -8rem;
     }
 }

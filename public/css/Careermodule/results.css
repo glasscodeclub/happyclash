@@ -214,10 +214,15 @@ hr{
     }
 }
 
-@media only screen and (min-width:1280px){
+@media only screen and (min-width:1025px){
     .hr-out{
         margin: 1rem -7rem;
     }
+
+    #heading, #play {
+        font-size: 1.6rem !important;
+    }
+
 }
 
 @media only screen and (max-width:280px){

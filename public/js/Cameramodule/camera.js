@@ -2,15 +2,25 @@
 
 /* globals MediaRecorder */
 
+var width = screen.width;
+console.log("Width: ",width);
+
+var height = screen.height;
+console.log("Height: ",height);
+
 let mediaRecorder;
 let recordedBlobs;
 
 const errorMsgElement = document.querySelector('span#errorMsg');
 const recordedVideo = document.querySelector('video#recorded');
+const gum = document.querySelector('video#gum');
 const recordButton = document.querySelector('button#record');
 const playButton = document.querySelector('button#play');
 const downloadButton = document.querySelector('button#download');
 const uploadButton =document.querySelector('button#upload')
+const threeDots = document.querySelector('#threedots');
+
+
 
 uploadButton.addEventListener('click',()=>{
   var fd = new FormData();
@@ -32,11 +42,28 @@ uploadButton.addEventListener('click',()=>{
   })
 })
 recordButton.addEventListener('click', () => {
-  if (recordButton.textContent === 'Record') {
+  if (recordButton.name === 'Record') {
+    gum.style="display:static";
+    if(recordedVideo){
+      recordedVideo.pause();
+    } 
+    recordButton.name = 'StopRec'
+    threeDots.classList.remove('active')
+    recordedVideo.style="display:none";
+    recordButton.classList.add('stop');
+    playButton.classList.add('disabled');
+    uploadButton.classList.add('disabled');
+    
+    //
     startRecording();
   } else {
     stopRecording();
-    recordButton.textContent = 'Record';
+    //
+    recordButton.name = 'Record';
+    playButton.classList.remove('disabled');
+    uploadButton.classList.remove('disabled');
+    recordButton.classList.remove('stop');
+    threeDots.classList.add('active');
     playButton.disabled = false;
     downloadButton.disabled = false;
     uploadButton.disabled = false;
@@ -45,12 +72,14 @@ recordButton.addEventListener('click', () => {
 
 
 playButton.addEventListener('click', () => {
-  const superBuffer = new Blob(recordedBlobs, {type: 'video/webm'});
-  recordedVideo.src = null;
-  recordedVideo.srcObject = null;
-  recordedVideo.src = window.URL.createObjectURL(superBuffer);
-  recordedVideo.controls = true;
-  recordedVideo.play();
+  let superBuffer = new Blob(recordedBlobs, {type: 'video/webm'});
+    gum.style="display:none"; 
+    recordedVideo.src = null;
+    recordedVideo.srcObject = null;
+    recordedVideo.src = window.URL.createObjectURL(superBuffer);
+    recordedVideo.controls = true;
+    recordedVideo.style="display:static";
+    recordedVideo.play();
 });
 
 
@@ -83,12 +112,13 @@ function startRecording() {
     mediaRecorder = new MediaRecorder(window.stream, options);
   } catch (e) {
     console.error('Exception while creating MediaRecorder:', e);
-    errorMsgElement.innerHTML = `Exception while creating MediaRecorder: ${JSON.stringify(e)}`;
+    // errorMsgElement.innerHTML = `Exception while creating MediaRecorder: ${JSON.stringify(e)}`;
+    window.alert(`Exception while creating MediaRecorder: ${JSON.stringify(e)}`);
     return;
   }
 
   console.log('Created MediaRecorder', mediaRecorder, 'with options', options);
-  recordButton.textContent = 'Stop Recording';
+  // recordButton.textContent = 'Stop Recording';
   playButton.disabled = true;
   downloadButton.disabled = true;
   mediaRecorder.onstop = (event) => {
@@ -119,21 +149,72 @@ async function init(constraints) {
     handleSuccess(stream);
   } catch (e) {
     console.error('navigator.getUserMedia error:', e);
-    errorMsgElement.innerHTML = `navigator.getUserMedia error:${e.toString()}`;
+    // errorMsgElement.innerHTML = `navigator.getUserMedia error:${e.toString()}`;
+    window.alert(`navigator.getUserMedia error:${e.toString()}`);
   }
 }
 
 document.querySelector('button#start').addEventListener('click', async () => {
-  const hasEchoCancellation = document.querySelector('#echoCancellation').checked;
+  //const hasEchoCancellation = document.querySelector('#echoCancellation').checked;
   const constraints = {
     audio: {
-      echoCancellation: {exact: hasEchoCancellation}
+      echoCancellation: {exact: true}
     },
     video: {
-      width: 1280, height: 720
+      width: width, height: height
     }
   };
   console.log('Using media constraints:', constraints);
   await init(constraints);
 });
+
+
+//POPUP JS CODECS
+
+
+const openPopup = document.querySelectorAll("[data-target]")
+const closePopup = document.querySelectorAll("[data-close-button]")
+const overlay = document.getElementById("overlay")
+
+openPopup.forEach(popup =>{
+  popup.addEventListener('click', () => {
+    const pop = document.querySelector(popup.dataset.target)
+    openPop(pop)
+  })
+})
+
+closePopup.forEach(popup =>{
+  popup.addEventListener('click', () => {
+    const pop = popup.closest(".popup")
+    closePop(pop)
+  })
+})
+
+overlay.addEventListener('click', () => {
+  const pop = document.querySelector(".popup.active")
+  closePop(pop)
+})
+
+function openPop(pop){
+  if(pop == null) return;
+  pop.classList.add("active")
+  overlay.classList.add("active")
+}
+
+function closePop(pop){
+  if(pop == null) return;
+  pop.classList.remove("active")
+  overlay.classList.remove("active")
+}
+
+
+
+
+
+function back(){
+  console.log('back button was hit...')
+}
  
+
+
+

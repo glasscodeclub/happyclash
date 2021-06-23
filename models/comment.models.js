@@ -10,6 +10,11 @@ const commentSchema = new mongoose.Schema({
     message: String,
     time: String,
     subComments: [String]  //comment ids
+    subComments: [
+        {
+            type:String,
+        }
+    ]
 })
 
 module.exports = mongoose.model("Comment", commentSchema)

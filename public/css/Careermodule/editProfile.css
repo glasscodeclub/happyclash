@@ -116,3 +116,9 @@ p{
     font-size: 0.6rem;
 }
 }
+
+@media only screen and (min-width:1000px){
+  .formi{
+    width: 45%;
+  }
+}
