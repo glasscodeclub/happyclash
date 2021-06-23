@@ -1,13 +1,14 @@
 const mongoose = require("mongoose")
 
 const notificationSchema = new mongoose.Schema({
-    user: {
-        type:String,
-    },
+    username: String,    //username
     heading: String,
     body: String,
     time: String,
-    isRead: Boolean,
+    isRead: {
+        type: Boolean,
+        default: false
+    },
     option: Boolean
 })
 

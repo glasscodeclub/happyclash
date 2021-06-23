@@ -1,15 +1,15 @@
 const mongoose = require("mongoose")
 
 const commentSchema = new mongoose.Schema({
-    user:{
-        type:String,
+    username: String,           //username
+    isReplied: {
+        type: Boolean,
+        default: false
     },
-    isReplied: Boolean,
-    video:{
-        type:String,
-    },
+    video: String,          //video id
     message: String,
     time: String,
+    subComments: [String]  //comment ids
     subComments: [
         {
             type:String,

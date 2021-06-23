@@ -1,42 +1,18 @@
 var mongoose = require("mongoose");
 
 var VideoSchema = new mongoose.Schema({
-    username: {
-        type: String
-    },
-    views: {
-        type: Number,
-        default:0,
-    },
-    clash: {
-        type: String,
-        default:"",
-    },
-    videoURL:     {
-        type:String,
-        default:"",
-    },
-    videoName:{type:String,   default:"",},
+    username: String,        //username
+    views: Number,
+    clash: String,           //clash id
+    video: String,
     uploadTime: {
         type: Date,
         default: Date.now()
     },
-    likes: [
-        {
-            type:String,
-        }
-    ],
-    dislikes: [
-        {
-            type:String,
-        }
-    ],
-    comments: [
-        {
-            type:String,
-        }
-    ],
-    timeFinish: {
+    likes: [String],          //usernames array
+    dislikes: [String],       //usernames array
+    comments: [String],       //comment ids
+    time: {
         type: Date,
         default:null,
     },

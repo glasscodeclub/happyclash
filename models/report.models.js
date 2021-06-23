@@ -1,18 +1,10 @@
 const mongoose = require("mongoose")
 
 const reportSchema = new mongoose.Schema({
-    user: {
-        type:String,
-    },
-    email: {
-        type:String,
-    },
-    message: {
-        type:String,
-    },
-    for: [{
-        type:String,
-    }],
+    username: String,   //username
+    email: String,
+    message: String,
+    for: [String],
     time: {
         type: Date,
         default: Date.now()

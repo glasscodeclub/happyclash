@@ -2,69 +2,45 @@ const mongoose = require("mongoose")
 
 const userDetailSchema = new mongoose.Schema({
     city: {
-        type:String,
-        default:null,
+        type: String,
+        default: null
     },
-    profilePicLink: {
-        type:String,
-        default:null,
+    profilePic: {
+        type: String,
+        default: null
     },
     name: {
-        type:String,
-        default:null,
+        type: String,
+        default: null
+
     },
     joinDate: {
         type: Date,
         default: Date.now()
     },
-    userId: {
-        type:String,
-    },//user.models.js
+    username: String,    //username
     age: {
-        type:Number,
-        default:null,
+        type: Number,
+        default: null
     },
     bio: {
-        type:String,
-        default:null,
+        type: String,
+        default: null
     },
-    clashes: [
-        {
-            type:String,
-        }
-    ],//clash.models.js
-    followers: [
-        {
-            type:String,
-        }
-    ],//user.models.js
-    following: [
-        {
-            type:String,
-        }
-    ],//user.models.js
-    videosCreated: [
-        {
-            type:String,
-        }
-    ],//video.models.js in library
-    wonClashes: [
-        {
-            type:String,
-        }
-    ],//clash.models.js
+    clashes: [String],  //clash ids
+    followers: [String],  //usernames array
+    following: [String],  //usernames array
+    videosCreated: [String],  //video ids
+    wonClashes: [String],     //clash ids
     highestRank: {
-        type:Number,
-        default:null,
+        type: Number,
+        default: null
     },
-    notifications: [
-        {
-            type:String,
-        }
-    ],//notification.models.js
-    longestStreak:{
-        type:Number,
-        default:null,
+    notifications: [String],  //notification ids
+    longestStreak: {
+        type: Number,
+        default: null
+
     }
 })
 
