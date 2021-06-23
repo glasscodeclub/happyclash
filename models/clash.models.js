@@ -13,33 +13,15 @@ const clashSchema = new mongoose.Schema({
     },
     endDate: {
         type: Date,
-        default: Date.now()
+        default: null
     },
     category: [String],
     keywords: [String],
-    admin: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "User"
-    },
-    participants: [
-        {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: "User"
-        }
-    ],
-    suggestions: [
-        {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: "User"
-        }
-    ],
+    username: String,            //username
+    participants: [String],   //usernames array
+    suggestions: [String],    //usernames array
     isSeenByAllForFriends: Boolean,
-    videos: [
-        {
-            type: mongose.Schema.Types.ObjectID,
-            ref: "Video"
-        }
-    ],
+    videos: [String],        //video ids
     rank: Number
 })
 

@@ -1,57 +1,45 @@
 const mongoose = require("mongoose")
 
 const userDetailSchema = new mongoose.Schema({
-    city: String,
-    profilePic: String,
-    name: String,
+    city: {
+        type: String,
+        default: null
+    },
+    profilePic: {
+        type: String,
+        default: null
+    },
+    name: {
+        type: String,
+        default: null
+    },
     joinDate: {
         type: Date,
         default: Date.now()
     },
-    userId: {
-        type: mongose.Schema.Types.ObjectID,
-        ref: "User"
+    username: String,    //username
+    age: {
+        type: Number,
+        default: null
     },
-    age: Number,
-    bio: String,
-    clashes: [
-        {
-            type: mongose.Schema.Types.ObjectID,
-            ref: "Clash"
-        }
-    ],
-    followers: [
-        {
-            type: mongose.Schema.Types.ObjectID,
-            ref: "User"
-        }
-    ],
-    following: [
-        {
-            type: mongose.Schema.Types.ObjectID,
-            ref: "User"
-        }
-    ],
-    videosCreated: [
-        {
-            type: mongose.Schema.Types.ObjectID,
-            ref: "Video"
-        }
-    ],
-    wonClashes: [
-        {
-            type: mongose.Schema.Types.ObjectID,
-            ref: "Clash"
-        }
-    ],
-    highestRank: Number,
-    notifications: [
-        {
-            type: mongose.Schema.Types.ObjectID,
-            ref: "Notification"
-        }
-    ],
-    longestStreak: Number
+    bio: {
+        type: String,
+        default: null
+    },
+    clashes: [String],  //clash ids
+    followers: [String],  //usernames array
+    following: [String],  //usernames array
+    videosCreated: [String],  //video ids
+    wonClashes: [String],     //clash ids
+    highestRank: {
+        type: Number,
+        default: null
+    },
+    notifications: [String],  //notification ids
+    longestStreak: {
+        type: Number,
+        default: null
+    }
 })
 
 module.exports = mongoose.model("Userdetails", userDetailSchema)

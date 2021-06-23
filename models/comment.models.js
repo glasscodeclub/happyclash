@@ -1,23 +1,15 @@
 const mongoose = require("mongoose")
 
 const commentSchema = new mongoose.Schema({
-    user: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "User"
+    username: String,           //username
+    isReplied: {
+        type: Boolean,
+        default: false
     },
-    isReplied: Boolean,
-    video: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "Video"
-    },
+    video: String,          //video id
     message: String,
     time: String,
-    subComments: [
-        {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: "Comment"
-        }
-    ]
+    subComments: [String]  //comment ids
 })
 
 module.exports = mongoose.model("Comment", commentSchema)
