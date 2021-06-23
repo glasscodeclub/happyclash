@@ -42,11 +42,11 @@ body{
 #heading {
   width: 80%;
   margin: 0.5rem auto;
-  font-size: 1.5rem !important;
+  font-size: 1.6rem !important;
   font-family: Roboto;
   font-style: normal;
   font-weight: bold;
-  background: linear-gradient(90deg, #7c49f6 0%, #e55abd 47.92%, #fedf67 100%);
+  background: linear-gradient(90deg, #7c49f6 35%, #e55abd 45.92%, #fedf67 71%);
   color: transparent;
   -webkit-background-clip: text;
   background-clip: text;
