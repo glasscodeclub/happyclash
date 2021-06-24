@@ -97,6 +97,7 @@ body{
 
 .p3{
     margin: 0px!important;
+    position: relative;
     font-size: 1.1rem;
     font-family: Roboto;
 }
@@ -122,6 +123,21 @@ video {
 
 .name{
     margin-top:0.5rem;
+}
+
+.down-arrow{
+    position: absolute;
+    right: 0%;
+    top: -12%;
+    font-size: 22px;
+    cursor: pointer;
+    color: #909090;
+    transition: 250ms ease-in-out;
+}
+
+.upside{
+    transform: rotate(180deg) !important;
+    transition: 250ms ease-in-out ;
 }
 
 .overlay{
@@ -291,5 +307,11 @@ hr{
 @media only screen and (min-width: 1025px){
     #heading {
         font-size: 1.6rem !important;
+    }
+}
+
+@media only screen and (min-width:320px) and (max-width:350px){
+    .down-arrow{
+        right: -8%;
     }
 }

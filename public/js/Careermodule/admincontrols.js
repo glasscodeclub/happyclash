@@ -124,9 +124,15 @@ function challenge(e, id) {
   </div>`;
 
   if (divElem[id]) {
+    const details = e.closest(".row")
+    var check = details.querySelector(".down-arrow")
+    check.classList.remove('upside');
     document.getElementById(`song-details-${id}`).removeChild(divElem[id]);
     divElem[id] = null;
   } else {
+    const details = e.closest(".row")
+    var check = details.querySelector(".down-arrow")
+    check.classList.add('upside');
     document.getElementById(`song-details-${id}`).appendChild(div);
     divElem[id] = div;
   }
