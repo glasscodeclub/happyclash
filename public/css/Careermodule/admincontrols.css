@@ -244,7 +244,7 @@ hr{
     }
 }
 
-@media (min-width: 280px) and (max-width: 321px){
+@media only screen and (min-width: 280px) and (max-width: 321px){
     video{
         width: 250px;
     }
@@ -255,6 +255,9 @@ hr{
     }
     .overlay div:nth-of-type(2) img{
         width: 2em;
+    }
+    .container{
+        padding-left: 0.75rem;
     }
 }
 
@@ -307,6 +310,10 @@ hr{
 @media only screen and (min-width: 1025px){
     #heading {
         font-size: 1.6rem !important;
+    }
+
+    .down-arrow {
+        right: 4%;
     }
 }
 
