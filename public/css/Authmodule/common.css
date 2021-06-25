@@ -350,3 +350,9 @@
         width: 40%;
     }
 }
+
+@media only screen and (min-width:1280px){
+    .input-group {
+        width: 60%;
+    }
+}

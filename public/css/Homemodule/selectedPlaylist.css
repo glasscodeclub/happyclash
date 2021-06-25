@@ -320,9 +320,17 @@ video{
     opacity: .25;
     margin: 16px -12px;
 }
-
+.video-progress img{
+    width: 100%;
+}
 @media only screen and (min-width: 1000px){
     .video-controls {
         padding: 10px 30rem;
+    }
+}
+
+@media only screen and (max-width:320px){
+    .hr-outside {
+        margin: 16px -0.75rem;
     }
 }
