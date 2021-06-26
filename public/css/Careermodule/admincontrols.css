@@ -127,7 +127,7 @@ video {
 
 .down-arrow{
     position: absolute;
-    right: 0%;
+    right: 4%;
     top: -12%;
     font-size: 22px;
     cursor: pointer;
