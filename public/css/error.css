@@ -1,0 +1,74 @@
+@font-face {
+    font-family: America;
+    src: url('/font-family/America.ttf');
+}
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+*{
+    font-family: "Roboto";
+}
+
+.head {
+    position: fixed;
+    z-index: 1;
+    top:0px !important;
+    background-color:white;
+    text-align: center !important;
+    margin: auto;
+    /* margin-top:0px !important; */
+    left: 9px;
+    right: 9px;
+    /* top: 0.75rem; */
+}
+
+#backdiv {
+    margin-top: 1rem!important;
+    margin-left: .5rem !important;
+    padding: 0.2rem 0.4rem;
+    background-color: white;
+    border-radius: 0.5rem;
+    float: left;
+}
+
+#back {
+    font-size: 1.5rem !important;
+}
+
+#backdiv::after {
+    clear: both;
+}
+
+.p1, .p3{
+    background: linear-gradient(81.23deg, #7C49F6 0%, #E55ABD 47.92%, #FEDF67 100%);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    font-size: 2.5em;
+    font-weight: bold;
+}
+
+.p2, .p4{
+    font-size: 1.2em;
+    text-align: center;
+}
+
+.p3{
+    font-size: 7em;
+}
+
+hr {
+    margin: 15px -12px;
+    color: #dedede;
+    border: 0;
+    opacity: .25;
+    outline: auto;
+}
+
+button{
+    background: linear-gradient(81.23deg, #7c49f6 9.3%, #ff53b7 51.61%, #ffd458 97.6% );
+    padding: 5px 20px;
+    border-radius: 0.25rem !important;
+    box-shadow: 0px 1px 7px rgb(0 0 0 / 15%);
+    color: #fff;
+    border: none;
+}
