@@ -40,7 +40,8 @@ mongoose.connect(url,connectionParams)
         console.error(`Error connecting to the database. \n${err}`);
     })
 
-app.use(bodyParser.urlencoded({extended:true}));
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json())
 app.use(require("express-session")({
     secret,
     resave: false,
