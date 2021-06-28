@@ -29,8 +29,7 @@
 <body>
     <div class="head">
         <div id="backdiv">
-            <span onclick="window.location.href='/createclash/createNewClash'" class="iconify" data-inline="false" data-icon="eva:arrow-back-outline" style="font-size: 30px;"></span>
-
+            <span onclick="deleteClash()" class="iconify" data-inline="false" data-icon="eva:close-fill" style="font-size: 30px;"></span>
         </div>
 
         <div id="headdiv">
@@ -42,10 +41,10 @@
         <div class="choose-friends container" style="margin-top: 5em;">
             <div class="row justify-content-center">
                 <div class="col-md-6">
-                    <h6>Choose Friends to add:</h6>
-                    <input type="search" class="form-control my-3" placeholder="Username/Email/Phone">
+                    <h6 class="choose-friend-headline">Choose Friends to add:</h6>
+                    <input type="text" class="form-control my-3 invitation-bar" placeholder="Username/Email/Phone">
                     <div style="display: flex; justify-content: flex-end; margin-top: 1em;">
-                        <button  onclick="send(this)"> Send </button>
+                        <button  onclick="sendRequest(this)"> Send </button>
                     </div>
                 </div>
             </div>
@@ -64,8 +63,24 @@
                 </div>
             </div>
             <div class="body">
-                <% for(var i=0; i<4; i++){ %>
-                    <%- include("../partials/followers") %>
+                <% for(var i=0; i<count; i++){ %>
+                    <% if (followerDetails[i].value !== null) { %>
+                        <div data-select= ".selected" onclick="select(this)" id=<%= followerDetails[i].value.username %> class="row"">
+                            <div class="col-3">
+                                <img src="/img/profile2.png" alt="profile pic" class="suggested-profile">
+                            </div>
+                            <div class="col-6">
+                                <div class="user-info">
+                                    <p><%= followerDetails[i].value.username %></p>
+                                </div>
+                            </div>
+                            <div class="col-3 selected">
+                                <i class="far fa-check-square"></i>
+                            </div>
+                        </div>
+                    <%} else { %>
+                        <span> </span>
+                    <% } %>
                 <% } %>
             </div>
         </div>
@@ -84,8 +99,24 @@
                 </div>
             </div>
             <div class="popup-body">
-                <% for(var i=0; i<4; i++){ %>
-                    <%- include("../partials/followers") %>
+                <% for(var i=0; i<followerDetails.length; i++){ %>
+                    <% if (followerDetails[i].value !== null) { %>
+                        <div data-select= ".selected" onclick="select(this)" id=<%= followerDetails[i].value.username %> class="row"">
+                            <div class="col-3">
+                                <img src="/img/profile2.png" alt="profile pic" class="suggested-profile">
+                            </div>
+                            <div class="col-6">
+                                <div class="user-info">
+                                    <p><%= followerDetails[i].value.username %></p>
+                                </div>
+                            </div>
+                            <div class="col-3 selected">
+                                <i class="far fa-check-square"></i>
+                            </div>
+                        </div>
+                    <%} else { %>
+                        <span> </span>
+                    <% } %>
                 <% } %>
             </div>
         </div>
@@ -93,8 +124,8 @@
     </div>
 
     <%- include("../BottomNavmodule/bottomnavbar") %>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="/js/createclashmodule/addParticipants.js"></script>
-
 </body>
 
 </html>

@@ -1,5 +1,7 @@
 body{
   font-family: Roboto;
+  overflow: auto;
+  height: 100vh;
 }
 .head {
   position: fixed;
@@ -132,13 +134,18 @@ option {
 
 #continue {
   margin-top: 60px !important;
+  display: none;
+}
+
+#start {
+  margin-top: 60px !important;
 }
 
 .upload button{
   border: none;
   box-shadow: 0px 1.6666667461395264px 11.666668891906738px 0px #00000026;
   background-color: white;
-  width: 111px;
+  width: max-content;
   border-radius: 6px;
   padding: 3px;
 }
@@ -271,4 +278,12 @@ option {
 
 .all{
   display:block;
+}
+
+.successIcon {
+  color: cadetblue;
+}
+
+.submit-buttons {
+  text-align: center !important;
 }

@@ -119,6 +119,7 @@ hr{
 .popup-header{
   /* border-bottom:2px solid black; */
   padding: 10px 15px;
+  height: 20%;
 }
 
 .close-button{
@@ -137,6 +138,8 @@ hr{
 .popup-body{
   padding: 10px 15px;
   font-size: 1.2rem;
+  height: 80%;
+  overflow-y: auto;
 }
 
 .all-selected{
@@ -282,4 +285,10 @@ hr{
     #heading{
         font-size: 1.4rem !important;
     }
+}
+
+.removeActions {
+  pointer-events: none;
+  background: #e5e5e5;
+  opacity: 0.4;
 }

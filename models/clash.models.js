@@ -13,14 +13,15 @@ const clashSchema = new mongoose.Schema({
     },
     endDate: {
         type: Date,
-        default: null
+        default: Date.now() // add 24 hrs
     },
-    category: [String],
+    category: String,
     keywords: [String],
     username: String,            //username
     participants: [String],   //usernames array
     suggestions: [String],    //usernames array
     isSeenByAllForFriends: Boolean,
+    selectedAllFollowers: Boolean,
     view:[String],
     videos: [String],        //video ids
     rank: Number

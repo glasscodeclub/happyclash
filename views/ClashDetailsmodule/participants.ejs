@@ -32,32 +32,24 @@
         <div class="container" id="participantTable">         
             <table class="table table-hover">
               <tbody>
-              <% for(var i=0;i<10;i=i+1){ %>     
-                <tr>
-                  <td ><img src="/img/profile1.png" class="listImg"></td>
-                  <td>#<%= 3*i+1 %>/30</td>
-                  <td>Ronald Richards</td>
-                  <td><img src="/img/Play.svg" alt="" width="22" height="22" class="play-btn" onclick="playVideo()"></td>
-                </tr>
-                <tr>
-                  <td ><img src="/img/profile2.png"  class="listImg"></td>
-                  <td>#<%= 3*i+2 %>/30</td>
-                  <td>Jenny Wilson</td>
-                  <td><img src="/img/Play.svg" alt="" width="22" height="22" class="play-btn" onclick="playVideo()"></td>
-                </tr>
-                <tr>
-                  <td ><img src="/img/profile3.png"  class="listImg"></td>
-                  <td>#<%= 3*i+3 %>/30</td>
-                  <td>Wade Warren</td>
-                  <td><img src="/img/Play.svg" alt="" width="22" height="22" class="play-btn" onclick="playVideo()"></td>
-                </tr>
-                <% } %> 
+                <% for(var i=0; i<participantsDetails.length; i++){ %>
+                  <% if (participantsDetails[i].value !== null) { %>
+                    <tr>
+                      <td ><img src="/img/profile1.png" class="listImg"></td>
+                      <td>#<%= 3*i+1 %>/30</td>
+                      <td><%= participantsDetails[i].value.username %></td>
+                      <td><img src="/img/Play.svg" alt="" width="22" height="22" class="play-btn" onclick="playVideo()"></td>
+                    </tr>
+                  <%} else { %>
+                    <span></span>
+                  <% } %> 
+              <% } %> 
               </tbody>
             </table>
           </div>
            
         <%- include("../BottomNavmodule/bottomnavbar") %>
-    </body>    
+    </body>
     <script>
         function playVideo(){
             console.log("Play Video button was hit");
