@@ -2,7 +2,9 @@ const express = require("express");
 const router = express.Router();
 var { isLoggedIn } = require("../middlewares/auth.middleware");
 const Userdetail = require("../models/userdetails.models")
+const Clashs = require("../models/clash.models")
 const Video = require("../models/video.models")
+const Report = require("../models/report.models")
 const url = require("url")
 
 router.get('/', (req, res) => {
@@ -21,7 +23,7 @@ router.get("/public", (req, res) => {
     res.render("ClashDetailsmodule/clashDetailsPublic", { url: req.url })
 })
 
-router.get("/profile/:username", async (req, res) => {
+router.get("/profile/:username", isLoggedIn, async (req, res) => {
     try {
         const { username } = req.params
         const userDetails = await Userdetail.findOne({ username: { $eq: username } })
@@ -45,11 +47,56 @@ router.get("/profile/:username", async (req, res) => {
 router.get('/participants', (req, res) => {
     res.render("ClashDetailsmodule/participants", { url: req.url });
 })
+
 router.get('/comments', (req, res) => {
     res.render("ClashDetailsmodule/clashComments", { url: req.url });
 })
-router.get('/reportClash', (req, res) => {
-    res.render("ClashDetailsmodule/ReportClash", { url: req.url });
+
+router.get('/reportClash/:id', isLoggedIn, (req, res) => {
+    const { id } = req.params
+    res.render("ClashDetailsmodule/ReportClash", { url: req.url, id });
+})
+
+router.post("/reportClash/:id", isLoggedIn, async (req, res) => {
+    const { id } = req.params
+    const { username, email } = req.user
+    const { message } = req.body
+    const reasons = []
+    try {
+        Object.keys(req.body).forEach(ele => {
+            if (ele.includes("reason")) reasons.push(req.body[ele])
+        })
+
+        const clash = await Clashs.findOne({ _id: { $eq: id } })
+        if (!clash) throw "Their is no clash with this reference id"
+
+        const { isSeenByAllForFriends, mode, _id } = clash
+        if (mode === "Public" || (mode === "Friend" && isSeenByAllForFriends)) {
+            const newReport = new Report({
+                username, email, message, for: reasons, clashAdmin: clash.username, clashId: _id, status: false
+            })
+            await newReport.save()
+        } else {
+            const present = clash.view.filter(user => user === username)
+            if (present.length === 0) throw "You don't have access to report this clash"
+            else {
+                const newReport = new Report({
+                    username, email, message, for: reasons, clashAdmin: clash.username, clashId: _id, status: false
+                })
+                await newReport.save()
+            }
+        }
+        res.redirect("/library")
+    } catch (err) {
+        console.log(err)
+        res.redirect(url.format({
+            pathname: "/error",
+            query: {
+                message: err.message,
+                status: 404
+            }
+        }))
+    }
 })
 
 // router.get('/alpha', (req, res)=>{

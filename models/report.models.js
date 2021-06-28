@@ -5,6 +5,8 @@ const reportSchema = new mongoose.Schema({
     email: String,
     message: String,
     for: [String],
+    clashAdmin: String,
+    clashId: String,
     time: {
         type: Date,
         default: Date.now()
