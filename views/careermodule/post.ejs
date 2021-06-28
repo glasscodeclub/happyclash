@@ -1,106 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link href="https://fonts.googleapis.com/css2?family=Roboto" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto" rel="stylesheet">
 
-    <!-- GENERAL CSS -->
-    <script src="https://kit.fontawesome.com/2635296004.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="/css/BottomNavmodule/bottomnavbar.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
-        crossorigin="anonymous"></script>
+  <!-- GENERAL CSS -->
+  <script src="https://kit.fontawesome.com/2635296004.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="/css/BottomNavmodule/bottomnavbar.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+    crossorigin="anonymous"></script>
 
 
-    <!-- CUSTOM CSS -->
-    <link rel="stylesheet" href="/css/Careermodule/post.css">
-    
+  <!-- CUSTOM CSS -->
+  <link rel="stylesheet" href="/css/Careermodule/post.css">
 
-    <title><%=page%></title>
+
+  <title>
+    <%=page%>
+  </title>
 </head>
-<body>
-    
-    <div class="head">
-      <div id="backdiv" onclick="window.location.href='/'">
-        <img src="/img/backarrow.png" alt="" style="width: 20px; margin:22px 0 2px 0;">
-      </div>
 
-        <div id="headdiv">
-            <p id="heading">posts</p>
-        </div>
+<body>
+
+  <div class="head">
+    <div id="backdiv" onclick="window.location.href='/'">
+      <img src="/img/backarrow.png" alt="" style="width: 20px; margin:22px 0 2px 0;">
     </div>
 
-    <% for(var i=0; i<5; i++){ %>
+    <div id="headdiv">
+      <p id="heading">posts</p>
+    </div>
+  </div>
 
-        <div class="post-video">
-            <div style="width: fit-content; margin: auto; position: relative;">
-              <video width="400px" class="myvideo" muted autoplay loop>
-                <source src="/video/sample" type="video/mp4">
-            </video>
+  <div class="posts" style="margin-bottom: 4em;">
+    <% videosArray.forEach(video=> { %>
 
-              <div
-                style="
-                  position: absolute;
-                  top: 13px;
-                  left: 5%;
-                  font-size: 0.8rem;
-                  color: white;
-                "
-              >
-                Rank 12/20
-              </div>
-              <div
-                style="
-                  position: absolute;
-                  top: 13px;
-                  right: 5%;
-                  font-size: 0.8rem;
-                  color: white;
-                "
-              >
-                1:20
-              </div>
-              <div class="bottom-info">
+      <div class="post-video">
+        <div style="width: fit-content; margin: auto; position: relative;">
+          <video width="400px" class="myvideo" muted autoplay loop>
+            <source src="/video/<%= video._id %>" type="video/mp4">
+          </video>
+
+          <div style="
+              position: absolute;
+              top: 13px;
+              left: 5%;
+              font-size: 0.8rem;
+              color: white;
+            ">
+            Rank 12/20
+          </div>
+          <div style="
+              position: absolute;
+              top: 13px;
+              right: 5%;
+              font-size: 0.8rem;
+              color: white;
+            ">
+            1:20
+          </div>
+          <div class="bottom-info">
 
             <div class="">
-                <div class="postedTime">
+              <div class="postedTime">
                 2h ago
               </div>
               <div class="challenge-title">
                 Piano Challenge
               </div>
-              <div
-                class="challenge-author"
-                "
-              >
+              <div class="challenge-author">
                 Started by John doe
               </div>
-              <div class="interactions"
-              >
-                <div>96 Likes</div>
-                <div>40 Comments</div>
+              <div class=" interactions">
+                <div>
+                  <%= video.likes.length %> Likes
+                </div>
+                <div>
+                  <%= video.dislikes.length %> Comments
+                </div>
                 <div>20 Participants</div>
               </div>
 
             </div>
 
-              </div>
-            </div>
           </div>
-        
-    <% } %>
+        </div>
+      </div>
 
-        
+      <% }) %>
+      <a onclick="loadMore(this)" style="display: flex; justify-content: center; margin-top: -1em; font-size: .9em;">
+        Load more
+      </a>
+  </div>
 
-    <%- include("../BottomNavmodule/bottomnavbar")%>
+  <%- include("../BottomNavmodule/bottomnavbar")%>
 </body>
 
 <!-- CUSTOM JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+  integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+  crossorigin="anonymous" referrerpolicy="no-referrer">
+  </script>
 <script src="/js/Careermodule/post.js"></script>
 
 </html>

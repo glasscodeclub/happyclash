@@ -27,29 +27,29 @@
                 src="/img/backarrow.png" alt="back">
         </div>
         <center>
-            <img src="/img/profile3.png" alt="profile">
-            <h2>Wade Warren</h2>
-            <p>wadewarren28</p>
-            <p>California, USA</p>
+            <img src="<%= userDetails.profilePic %>" alt="profile">
+            <h2><%= userDetails.name %></h2>
+            <p><%= userDetails.username %></p>
+            <p><%= userDetails.city %></p>
             <button onclick="follow()">Follow</button>
         </center>
         <br>
         <div class="container" style="margin-bottom: 10px; margin-top:5px;">
             <div class="row">
                 <div class="col" style="padding:0px !important;">
-                    <h6 class="rp2">345</h6>
+                    <h6 class="rp2"><%= userDetails.followers.length %></h6>
                     <p class="rp1">Followers</p>
                 </div>
                 <div class="col" style="padding:0px !important;">
-                    <h6 class="rp2">134</h6>
+                    <h6 class="rp2"><%= userDetails.following.length %></h6>
                     <p class="rp1">Following</p>
                 </div>
                 <div class="col" style="padding:0px !important;">
-                    <h6 class="rp2">78</h6>
+                    <h6 class="rp2"><%= userDetails.videosCreated.length %></h6>
                     <p class="rp1">Videos</p>
                 </div>
                 <div class="col" style="padding:0px !important;">
-                    <h6 class="rp2">53</h6>
+                    <h6 class="rp2"><%= userDetails.wonClashes.length %></h6>
                     <p class="rp1">Clash Won</p>
                 </div>
             </div>
@@ -61,34 +61,36 @@
                     <p style="margin-bottom: 0;">Posts</p>
                 </div>
                 <div class="col d-flex justify-content-end align-items-center">
-                    <a href="#" onclick="seeAllPosts(this)">See All&nbsp;&nbsp;<i class="fas fa-angle-right"></i> </a>
+                    <a href="/career/post?page=1&size=10&username=<%= userDetails.username %>" onclick="seeAllPosts(this)">See All&nbsp;&nbsp;<i class="fas fa-angle-right"></i> </a>
                 </div>
             </div>
         </div>
         <br>
         <div class="container">
             <div class="row">
-                <div class="col d-flex justify-content-center mb-3">
-                    <video width="400px" muted autoplay loop onclick="playVideo(this)">
-                        <source src="/video/sample" type="video/mp4">
-                    </video>
-                    <div class="overlay d-flex justify-content-between flex-column">
-                        <div class="d-flex justify-content-between">
-                            <p>Rank 3/40</p>
-                            <p>1:20</p>
-                        </div>
-                        <div>
-                            <p>2h ago</p>
-                            <h2 class="mb-0">Dance Challenge</h2>
-                            <p>Started by Wade Warren</p>
-                            <div class="d-flex justify-content-around mt-3">
-                                <p>72 Likes</p>
-                                <p>23 Comments</p>
-                                <p>40 Participants</p>
+                <% videosArray.forEach(video => { %>
+                    <div class="col d-flex justify-content-center mb-3">
+                        <video width="400px" height="400px" muted autoplay loop onclick="playVideo(this)">
+                            <source src="/video/<%= video._id %>" type="video/mp4">
+                        </video>
+                        <div class="overlay d-flex justify-content-between flex-column">
+                            <div class="d-flex justify-content-between">
+                                <p>Rank 3/40</p>
+                                <p>1:20</p>
+                            </div>
+                            <div>
+                                <p>2h ago</p>
+                                <h2 class="mb-0">Dance Challenge</h2>
+                                <p>Started by Wade Warren</p>
+                                <div class="d-flex justify-content-around mt-3">
+                                    <p><%= video.likes.length %> Likes</p>
+                                    <p><%= video.dislikes.length %> Comments</p>
+                                    <p>40 Participants</p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                <% }) %> 
             </div>
         </div>
     </div>
