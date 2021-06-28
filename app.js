@@ -40,7 +40,10 @@ mongoose.connect(url,connectionParams)
         console.error(`Error connecting to the database. \n${err}`);
     })
 
-app.use(bodyParser.urlencoded({extended:true}));
+app.use(express.urlencoded({extended:true}));
+app.use(express.json());
+
+
 app.use(require("express-session")({
     secret,
     resave: false,
@@ -64,7 +67,6 @@ app.get('/',(req,res)=>{
 app.get('/links',(req,res)=>{
     res.render('Authmodule/links');
 })
-
 
 
 app.use('/auth',Authroutes);//

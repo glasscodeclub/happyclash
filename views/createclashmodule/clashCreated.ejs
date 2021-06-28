@@ -21,28 +21,28 @@
     <div class="container" style="margin-bottom: 5em !important; margin-top: 2em;">
         <div class="d-flex flex-column" align='center'>
             <p id="p1">Congratulations!</p>
-            <p class="p5">New Clash “Dance Challenge” has been created successfully.</p>
+            <p class="p5">New Clash "<%= title %>" has been created successfully.</p>
         </div>
         <hr>
         <div style="margin-top: 1rem; padding:0 1rem;">
             <p class="p4 keyword">Clash Details</p>
             <p class="p5">
-                Lorem ipsum dolor sit amet, adipiscing elit ut aliquamconsectetur adipiscing elit ut aliquam, purus sit amet luctus
-                venenatis. Lorem ipsum dolor sit amet, adipiscing elit ut aliquamconsectetur adipiscing elit ut aliquam, purus sit amet
-                luctus venenatis.
+                <%= description %>
             </p>
             <br>
             <p style="margin-bottom: 0;" class="keyword">Ends on</p>
-            <p>15/05/2021 </p>
+            <p> <%= endDate %> </p>
         </div>
+
+    <% if (mode === 'Friend') { %>
         <hr>
         <div class="container">
             <div class="participants d-flex">
                 <div>
-                    <p style="color: #747474;" class="keyword"> List of Participants (70)</p>
+                    <p style="color: #747474;" class="keyword"> List of Participants (<%= participantsDetails.length %>)</p>
                 </div>
                 <div style="margin:0px; padding:0px; text-align: center;">
-                    <a href="#" class="a1" onclick="seeAllParticipants()">See All&nbsp;&nbsp;<i class="fas fa-angle-right"></i> </a>
+                    <a href="#" class="a1" onclick="redirectToParticipantsPage()">See All&nbsp;&nbsp;<i class="fas fa-angle-right"></i> </a>
                 </div>
             </div>
         </div>
@@ -50,84 +50,27 @@
         <div class="container last">
             <div class="row">
                 <!-- <div class="col-2"></div> -->
-                <div class="col">
-                    <img src="/img/profile1.png">
-                    <p class="p11">Ronald Richards</p>
-                </div>
-                <div class="col">
-                    <img src="/img/profile2.png">
-                    <p class="p11">Jenny Wilson</p>
-                </div>
-                <div class="col">
-                    <img src="/img/profile3.png">
-                    <p class="p11">Wade Warren</p>
-                </div>
-                <div class="col">
-                    <img src="/img/profile4.png">
-                    <p class="p11">Theresa Webb</p>
-                </div>
+                <%for(let i=0;i<count;i++){%>   
+                    <% if (participantsDetails[i].value !== null) { %>
+                        <div class="col">
+                            <img src="/img/profile<%= i+1 %>.png">
+                            <p class="p11"><%= participantsDetails[i].value.username %></p>
+                        </div>
+                    <%} else {%>
+                        <span></span>
+                    <%}%>    
+                <%}%>
             </div>
         </div>
+    <% } %>
 
-        <div class="done">
-            <button onclick="done()">Done</button>      
-        </div>
+    <div class="done">
+        <button onclick="done()">Done</button>      
     </div>
-
-    <!-- POPUP SECTION -->
-    <div class="popup" id="popup-suggest-clash">
-        <div class="popup-header">
-            <button data-close-button class="close-button">&times;</button>
-            <div class="title">Suggest Profile <p>that should be activated</p> </div>
-            <div class="search-bar">
-                <input type="search" class="form-control search-bar " placeholder="Enter Email">
-            </div>
-            <div class="send-button">
-                <button >send</button>
-            </div>
-            
-        </div>
-        <div class="popup-body">
-            <div class="suggested">
-                Suggested
-                <div class="row profiles">
-                    <% for(var i=0; i<5; i++){ %>
-                        <%- include("../partials/userimg") %>
-                    <% } %> 
-                    <div class="suggested-friends col">
-                        <button class="see-all-button" data-target="#see-all" >
-                            <img src="/img/see-all-user.png" alt="profile" class="suggested-profile">
-                            <p class="see-all-users">See All ></p>
-                        </button>
-                         
-                    </div>                    
-                </div>
-            </div>
-        </div>
-      </div>
-
-      <div class="popup" id="see-all">
-        <div class="popup-header">
-            <button data-close-button-follow class="close-button">&times;</button>
-            <div class="select-followers">
-                <div class="follower-title">Your Followers</div>
-                <button  id="select-all" class="select-all" onclick="selectAll()">Select All</button>
-            </div>
-        </div>
-        <div class="popup-body">
-            <% for(var i = 0; i<4; i++){ %>
-                <%- include("../partials/followers") %>
-           <% } %>
-            
-        </div>
-      </div>
-
-    <!-- OVERLAY -->
-    <div id="overlay"></div>
+    </div>
 
     <%- include("../BottomNavmodule/bottomnavbar") %>
 
   </body>
-  <script src="/js/ClashDetailsmodule/clashDetails.js"></script>
   <script src="/js/createclashmodule/clashCreated.js"></script>
 </html>
