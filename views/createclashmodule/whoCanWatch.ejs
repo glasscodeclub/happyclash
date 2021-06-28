@@ -28,7 +28,7 @@
 <body>
     <div class="head">
         <div id="backdiv">
-            <span onclick="window.location.href='/createclash/createNewClash'" class="iconify" data-inline="false" data-icon="eva:arrow-back-outline" style="font-size: 30px;"></span>
+            <span onclick="deleteClash()" class="iconify" data-inline="false" data-icon="eva:close-fill" style="font-size: 30px;"></span>
         </div>
 
         <div id="headdiv">
@@ -38,11 +38,11 @@
 
     <div class="container" style="margin-bottom: 5.5rem !important;">
         <div class="container everyone">
-            <div class="row d-flex justify-content-center" onclick="select(this)">
+            <div class="row d-flex justify-content-center" onclick="selectEveryone(this)">
                 <div class="col" align='center'>
                     <p style="margin-bottom: 0;">Everyone</p>
                 </div>
-                <div class="col selected select">
+                <div class="col selected" id="everyone">
                     <i class=" far fa-check-square"></i>
                 </div>
             </div>
@@ -51,10 +51,10 @@
         <div class="choose-friends container my-4">
             <div class="row justify-content-center">
                 <div class="col-md-6">
-                    <h6>Choose Friends to add:</h6>
-                    <input type="search" class="form-control my-3" placeholder="Username/Email/Phone">
+                    <h6 class="choose-friend-headline">Choose Friends to add:</h6>
+                    <input type="search" class="form-control my-3 invitation-bar" placeholder="Username/Email/Phone">
                     <div style="display: flex; justify-content: flex-end; margin-top: 1em;">
-                        <button onclick="send(this)"> Send </button>
+                        <button onclick="sendRequest(this)"> Send </button>
                     </div>
                 </div>
             </div>
@@ -72,8 +72,40 @@
                 </div>
             </div>
             <div class="body">
-                <% for(var i=0; i<4; i++){ %>
-                    <%- include("../partials/followers") %>
+                <% for(var i=0; i<count; i++){ %>
+                    <% if (followerDetails[i].value !== null) { %>
+                        <% if (view.includes(followerDetails[i].value.username)) { %>
+                            <div style="background-color:#e5e5e5; pointer-events: none; opacity: 0.4;" id=<%= followerDetails[i].value.username %> class="row">
+                                <div class="col-3">
+                                    <img src="/img/profile2.png" alt="profile pic" class="suggested-profile">
+                                </div>
+                                <div class="col-6">
+                                    <div class="user-info">
+                                        <p><%= followerDetails[i].value.username %></p>
+                                    </div>
+                                </div>
+                                <div class="col-3 selected">
+                                    <i class="far fa-check-square"></i>
+                                </div>
+                            </div>
+                            <%} else { %>
+                            <div data-select= ".selected" onclick="select(this)" id=<%= followerDetails[i].value.username %> class="row">
+                                <div class="col-3">
+                                    <img src="/img/profile2.png" alt="profile pic" class="suggested-profile">
+                                </div>
+                                <div class="col-6">
+                                    <div class="user-info">
+                                        <p><%= followerDetails[i].value.username %></p>
+                                    </div>
+                                </div>
+                                <div class="col-3 selected">
+                                    <i class="far fa-check-square"></i>
+                                </div>
+                            </div>
+                        <% } %>
+                    <%} else { %>
+                        <span></span>
+                    <% } %>
                 <% } %>
             </div>
         </div>
@@ -101,12 +133,48 @@
                 <button data-close-button class="close-button">&times;</button>
                 <div class="select-followers">
                     <div class="follower-title">Your Followers</div>
-                    <button id="select-all" class="select-all" onclick="selectAll()">Select All</button>
+                    <% if (selectedAllFollowers === true) { %>
+                        <button class="select-all" style="pointer-events: none; opacity: 0.5;">Already Selected</button>
+                    <%} else { %>
+                        <button id="select-all" class="select-all" onclick="selectAll()">Select All</button>
+                    <% } %>
                 </div>
             </div>
             <div class="popup-body">
-                <% for(var i=0; i<4; i++){ %>
-                    <%- include("../partials/followers") %>
+                <% for(var i=0; i<followerDetails.length; i++){ %>
+                    <% if (followerDetails[i].value !== null) { %>
+                        <% if (view.includes(followerDetails[i].value.username)) { %>
+                            <div style="background-color:#e5e5e5; pointer-events: none; opacity: 0.4;" id=<%= followerDetails[i].value.username %> class="row">
+                                <div class="col-3">
+                                    <img src="/img/profile2.png" alt="profile pic" class="suggested-profile">
+                                </div>
+                                <div class="col-6">
+                                    <div class="user-info">
+                                        <p><%= followerDetails[i].value.username %></p>
+                                    </div>
+                                </div>
+                                <div class="col-3 selected">
+                                    <i class="far fa-check-square"></i>
+                                </div>
+                            </div>
+                            <%} else { %>
+                            <div data-select= ".selected" onclick="select(this)" id=<%= followerDetails[i].value.username %> class="row">
+                                <div class="col-3">
+                                    <img src="/img/profile2.png" alt="profile pic" class="suggested-profile">
+                                </div>
+                                <div class="col-6">
+                                    <div class="user-info">
+                                        <p><%= followerDetails[i].value.username %></p>
+                                    </div>
+                                </div>
+                                <div class="col-3 selected">
+                                    <i class="far fa-check-square"></i>
+                                </div>
+                            </div>
+                        <% } %>
+                    <%} else { %>
+                        <span></span>
+                    <% } %>
                 <% } %>
             </div>
         </div>
@@ -114,7 +182,7 @@
     </div>
 
     <%- include("../BottomNavmodule/bottomnavbar") %>
-    <script src="/js/createclashmodule/addParticipants.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="/js/createclashmodule/whoCanWatch.js"></script>
 </body>
 

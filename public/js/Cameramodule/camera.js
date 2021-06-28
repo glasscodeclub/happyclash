@@ -8,6 +8,7 @@ console.log("Width: ",width);
 var height = screen.height;
 console.log("Height: ",height);
 
+
 let mediaRecorder;
 let recordedBlobs;
 
@@ -111,9 +112,9 @@ function startRecording() {
   try {
     mediaRecorder = new MediaRecorder(window.stream, options);
   } catch (e) {
-    console.error('Exception while creating MediaRecorder:', e);
-    // errorMsgElement.innerHTML = `Exception while creating MediaRecorder: ${JSON.stringify(e)}`;
-    window.alert(`Exception while creating MediaRecorder: ${JSON.stringify(e)}`);
+    // console.error('Exception while creating MediaRecorder:', e);
+    errorMsgElement.innerHTML = `Exception while creating MediaRecorder: ${JSON.stringify(e)}`;
+    // window.alert(`Exception while creating MediaRecorder: ${JSON.stringify(e)}`);
     return;
   }
 
@@ -148,9 +149,9 @@ async function init(constraints) {
     const stream = await navigator.mediaDevices.getUserMedia(constraints);
     handleSuccess(stream);
   } catch (e) {
-    console.error('navigator.getUserMedia error:', e);
-    // errorMsgElement.innerHTML = `navigator.getUserMedia error:${e.toString()}`;
-    window.alert(`navigator.getUserMedia error:${e.toString()}`);
+    // console.error('navigator.getUserMedia error:', e);
+    errorMsgElement.innerHTML = `navigator.getUserMedia error:${e.toString()}`;
+    // window.alert(`navigator.getUserMedia error:${e.toString()}`);
   }
 }
 
@@ -206,9 +207,6 @@ function closePop(pop){
   pop.classList.remove("active")
   overlay.classList.remove("active")
 }
-
-
-
 
 
 function back(){

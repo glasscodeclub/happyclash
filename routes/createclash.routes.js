@@ -1,25 +1,25 @@
 
 var express = require("express");
 var router = express.Router();
-var passport = require("passport");
-var User = require("../models/user.models");
-var middlewares = require("../middlewares/auth.middleware");
+var createClashController = require('./../controllers/createclash.controller');
+const { isLoggedIn } = require("../middlewares/auth.middleware");
 
 
-router.get('/createNewClash', (req, res) => {
-    res.render("createclashmodule/newClash", { url: req.url });
-})
+router.route('/createNewClash')
+    .get(isLoggedIn ,createClashController.getCreateNewClashPage)
+    .post(isLoggedIn ,createClashController.createClash);
 
-router.get("/clashcreated", (req, res) => {
-    res.render("createclashmodule/clashCreated", { url: req.url });
-})
+router.route("/clashcreated/:clashId")
+    .get(isLoggedIn, createClashController.getClashCreatedPage);
 
-router.get('/addParticipants', (req, res) => {
-    res.render("createclashmodule/addParticipants", { url: req.url });
-})
+router.route('/addParticipants/:clashId')
+    .get(isLoggedIn, createClashController.getAddParticipantsPage)
+    .post(isLoggedIn, createClashController.addParticipants);
 
-router.get("/whocanwatch", (req, res) => {
-    res.render("createclashmodule/whoCanWatch", { url: req.url })
-})
+router.route("/whocanwatch/:clashId")
+    .get(isLoggedIn, createClashController.getWhoCanWatchPage)
+    .post(isLoggedIn, createClashController.addViewers);
+
+router.route("/deleteClash/:clashId").delete(isLoggedIn, createClashController.deleteClash);
 
 module.exports = router;

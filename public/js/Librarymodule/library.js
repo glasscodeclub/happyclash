@@ -9,8 +9,9 @@ function optionThreeDot(e){
   document.getElementById('createClashButton').value = e.id.split("_")[1];
 }
 
-function redirectToCreateClash(e) {
-  window.location.href = `/createclash/createNewClash?videoId=${document.getElementById('createClashButton').value}`
+function redirectToCreateClash() {
+  const createClashButton = document.getElementById('createClashButton');
+  window.location.href = `/createclash/createNewClash?videoId=${createClashButton.value}`
 }
 
 function del(){
@@ -121,17 +122,3 @@ function upload(){
 function optionUpload(){
 
 }
-
-
-
-// $(document).ready(function(){
-
-//   //delete funtion
-// $('#play-options').on('show.bs.modal', function (event) {
-//   console.log("hi")
-//   var button = $(event.relatedTarget);
-//   var id = button.data('id');
-//   console.log(id)
-// });
-
-// });
