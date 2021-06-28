@@ -206,7 +206,9 @@ body{
 
 .myvideo {
   border-radius: 6px;
-  max-width:400px;
+  max-width:320px;
+  height: 320px;
+  background-color: black;
   box-shadow: -5.03451px 5.03451px 16.7817px rgba(0, 0, 0, 0.25), inset 0px -45.4817px 75.8028px #000000;
 }
 .bottom-info{
