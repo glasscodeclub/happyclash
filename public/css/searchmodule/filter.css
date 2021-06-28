@@ -1,5 +1,5 @@
 *, body{
-    font-family: "Roboto";
+    font-family: Roboto;
 }
 
 select{
@@ -25,6 +25,7 @@ input[type="date"] , input[type="time"]{
     height:2em;
     /* max-width: 113px; */
     width:200px;
+    font-family: Roboto;
     font-size:0.9rem;
     margin: 10px;
     border:1px solid #DEDEDE;
