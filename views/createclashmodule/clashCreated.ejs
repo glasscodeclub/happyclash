@@ -64,6 +64,22 @@
         </div>
     <% } %>
 
+    <% if(mode === 'Public' || (mode === 'Friend' && isSeenByAllForFriends === true)) { %>
+        <hr>
+        <div class="choose-friends container" style="margin-top: 2em; margin-bottom: 2.5em;">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <h5 style="margin-bottom: 0; font-size: 22px;">Get Shareable Link:</h5>
+                    <p style="color: #7B7B7B; font-size: .9em;" class="sharableLink-headline">Anyone with the link can view</p>
+                    <input type="text" class="share-link form-control my-3" value="<%= shareableLink %>" placeholder="<%= shareableLink %>">
+                    <div style="display: flex; justify-content: flex-end; margin-top: 1em;">
+                        <button style="width: 5em;" class="get_link" onclick="copyLinkToClipBoard()"> Get Link </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <% } %>    
+
     <div class="done">
         <button onclick="done()">Done</button>      
     </div>

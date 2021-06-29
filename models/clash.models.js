@@ -21,7 +21,7 @@ const clashSchema = new mongoose.Schema({
     participants: [String],   //usernames array
     suggestions: [String],    //usernames array
     isSeenByAllForFriends: Boolean,
-    selectedAllFollowers: Boolean,
+    isSelectedAllFollowers: Boolean,
     view:[String],
     videos: [String],        //video ids
     rank: Number
