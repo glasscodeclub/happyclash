@@ -410,3 +410,25 @@ hr{
         margin: 1rem -5rem;
     }
 }
+
+.choose-friends input{
+    height: 2rem;
+    font-size: smaller;
+    border: none;
+    flex-wrap: nowrap;
+    padding: 0rem 1rem;
+    border-radius: 5rem;
+    color: #7b7b7b;
+    box-shadow: 0px 1px 7px rgb(0 0 0 / 15%);
+  }
+  
+  .choose-friends button{
+    border: none;
+      background: linear-gradient(81.23deg, #7C49F6 9.3%, #FF53B7 51.61%, #FFD458 97.6%);
+      color: white;
+      font-size: smaller;
+      border-radius: 0.25rem;
+      box-shadow: 0px 1px 7px rgb(0 0 0 / 15%);
+      width: 3rem;
+      padding: 0.1rem 0.4rem;
+  }

@@ -71,7 +71,7 @@
         <textarea class="form-control clash-des" rows="3" placeholder="Enter Clash Description" required></textarea>
       </div>
       <div class="form-group md-form">
-          <input placeholder="Clash Ends" onfocus="(this.type='date')" type="text" class="form-control  clash-endTime" required>
+          <input placeholder="Clash Ends" onfocus="(this.type='date')" type="text" class="form-control  clash-endTime" min="<%= tomorrow %>" required>
       </div>
       <div class="form-group">
         <select class="form-control" id="exampleFormControlSelect1" required>

@@ -41,7 +41,7 @@ createClashForm.addEventListener('submit', async (e) => {
    const suggestions = [];
    const view = [];
    const isSeenByAllForFriends = false;
-   const selectedAllFollowers = false;
+   const isSelectedAllFollowers = false;
    const rank = null;
 
    try {
@@ -60,7 +60,7 @@ createClashForm.addEventListener('submit', async (e) => {
             suggestions,
             view,
             isSeenByAllForFriends,
-            selectedAllFollowers,
+            isSelectedAllFollowers,
             rank
         }
      });
