@@ -12,7 +12,7 @@
     <!-- <link rel="stylesheet" href="/css/Profilemodule/profile.css">  -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-    <link rel="preconnect" href="https://fonts.gstatic.com">    
+    <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="/css/Careermodule/career.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
@@ -29,7 +29,8 @@
 
     <div class="head">
         <div id="backdiv">
-            <span onclick="window.location.href='/links'" class="iconify" data-inline="false" data-icon="eva:arrow-back-outline" style="font-size: 30px;"></span>
+            <span onclick="window.location.href='/links'" class="iconify" data-inline="false"
+                data-icon="eva:arrow-back-outline" style="font-size: 30px;"></span>
 
         </div>
 
@@ -40,7 +41,7 @@
 
     <div class="container" style="margin-top: 6em; margin-bottom: 5em;">
         <div class="row profile">
-            <img src="/img/profile3.png" alt="Profile">
+            <img src="<%= userDetails.profilePic %>" alt="Profile">
         </div>
         <div class="row customize">
             <div class="col-6">
@@ -48,34 +49,44 @@
                     <div class="row my-2">
                         <div>
                             <p class="p1">Name</p>
-                            <h6>Jane Cooper</h6>
+                            <h6>
+                                <%= userDetails.name %>
+                            </h6>
                         </div>
                     </div>
                     <div class="row mobile-view">
                         <div>
-                            <p class="p1">Posts</p>
-                            <h6>18</h6>
+                            <p class="p1">Videos Created</p>
+                            <h6>
+                                <%= userDetails.videosCreated.length %>
+                            </h6>
                         </div>
                     </div>
 
                     <div class="row my-2">
                         <div>
                             <p class="p1">Following</p>
-                            <h6>34</h6>
+                            <h6>
+                                <%= userDetails.following.length %>
+                            </h6>
                         </div>
                     </div>
 
                     <div class="row my-2">
                         <div>
                             <p class="p1">Clashes Created</p>
-                            <h6>18</h6>
+                            <h6>
+                                <%= userDetails.clashes.length %>
+                            </h6>
                         </div>
                     </div>
 
                     <div class="row my-2">
                         <div>
                             <p class="p1">Time with HappyClash</p>
-                            <h6>1y 3m 4d 19h</h6>
+                            <h6>
+                                <%= days===0 ? "Joined today" : days===1 ? `${days} day` : `${days} days` %>
+                            </h6>
                         </div>
                     </div>
                 </div>
@@ -84,19 +95,25 @@
                 <div class="row my-2">
                     <div>
                         <p class="p1">City</p>
-                        <h6>New York, USA</h6>
+                        <h6>
+                            <%= userDetails.city %>
+                        </h6>
                     </div>
                 </div>
                 <div class="row my-2">
                     <div>
                         <p class="p1">Followers</p>
-                        <h6>54</h6>
+                        <h6>
+                            <%= userDetails.followers.length %>
+                        </h6>
                     </div>
                 </div>
                 <div class="row my-2">
                     <div>
                         <p class="p1">Total Clash wins</p>
-                        <h6>3</h6>
+                        <h6>
+                            <%= userDetails.wonClashes.length %>
+                        </h6>
                     </div>
                 </div>
                 <!-- <div class="row my-2">

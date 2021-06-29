@@ -87,9 +87,7 @@ label {
   margin-bottom: 15px;
 }
 .save {
-  font-size: 1rem;
-  font-weight: bold;
-  
+  font-size: .9rem;  
   width: 6rem !important;
   height: 2rem;
   margin-left: auto;
