@@ -28,24 +28,24 @@
         </div>
         <center>
             <img src="<%= userDetails.profilePic %>" alt="profile">
-            <h2><%= userDetails.name %></h2>
-            <p><%= userDetails.username %></p>
-            <p><%= userDetails.city %></p>
-            <button onclick="follow()">Follow</button>
+            <h2><%= userDetails.name ? userDetails.name : 'null' %></h2>
+            <p id="username"><%= userDetails.username %></p>
+            <p><%= userDetails.city ? userDetails.city : 'null' %></p>
+            <button onclick="follow(this)"><%= isFollowed ? "Unfollow" : "Follow" %> </button>
         </center>
         <br>
         <div class="container" style="margin-bottom: 10px; margin-top:5px;">
             <div class="row">
                 <div class="col" style="padding:0px !important;">
-                    <h6 class="rp2"><%= userDetails.followers.length %></h6>
+                    <h6 class="rp2" id="follower"><%= userDetails.followers.length %></h6>
                     <p class="rp1">Followers</p>
                 </div>
                 <div class="col" style="padding:0px !important;">
-                    <h6 class="rp2"><%= userDetails.following.length %></h6>
+                    <h6 class="rp2" id="following"><%= userDetails.following.length %></h6>
                     <p class="rp1">Following</p>
                 </div>
                 <div class="col" style="padding:0px !important;">
-                    <h6 class="rp2"><%= userDetails.videosCreated.length %></h6>
+                    <h6 class="rp2"><%= videosArray.length %></h6>
                     <p class="rp1">Videos</p>
                 </div>
                 <div class="col" style="padding:0px !important;">
@@ -96,7 +96,11 @@
     </div>
 
     <%- include("../BottomNavmodule/bottomnavbar") %>
-        <script src="/js/ClashDetailsmodule/profile.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+        integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+        </script>
+    <script src="/js/ClashDetailsmodule/profile.js"></script>
 </body>
 
 </html>

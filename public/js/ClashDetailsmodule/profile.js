@@ -1,8 +1,25 @@
 const overlay = document.querySelector(".overlay");
 const video = document.getElementsByTagName("video");
+const follower = document.getElementById("follower")
+const user = document.getElementById("username")
 
-function follow() {
-    console.log("You clicked on follow button");
+async function follow(e) {
+    try {
+        if (e.innerText === "Follow") {
+            const response = await axios.post("/clashDetails/follow", { user: user.innerText, keyword: "follow" })
+            if (response.data.message !== "Updated successfully") throw response.data.message
+            follower.innerText = parseInt(follower.innerText) + 1
+            e.innerText = "Unfollow"
+        } else if (e.innerText === "Unfollow") {
+            const response = await axios.post("/clashDetails/follow", { user: user.innerText, keyword: "unfollow" })
+            if (response.data.message !== "Updated successfully") throw response.data.message
+            follower.innerText = parseInt(follower.innerText) - 1
+            e.innerText = "Follow"
+        }
+    } catch (err) {
+        console.log(err)
+        alert(err)
+    }
 }
 
 function seeAllPosts(e) {

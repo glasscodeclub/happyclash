@@ -29,9 +29,9 @@
 
     <div class="head">
         <div id="backdiv">
-            <span onclick="window.location.href='/links'" class="iconify" data-inline="false"
-                data-icon="eva:arrow-back-outline" style="font-size: 30px;"></span>
-
+            <span onclick="window.location.href='/career/profile'" class="iconify" data-inline="false"
+                data-icon="eva:arrow-back-outline" style="font-size: 30px;">
+            </span>
         </div>
 
         <div id="headdiv">
@@ -50,7 +50,7 @@
                         <div>
                             <p class="p1">Name</p>
                             <h6>
-                                <%= userDetails.name %>
+                                <%= userDetails.name ? userDetails.name : 'null' %>
                             </h6>
                         </div>
                     </div>
@@ -58,7 +58,7 @@
                         <div>
                             <p class="p1">Videos Created</p>
                             <h6>
-                                <%= userDetails.videosCreated.length %>
+                                <%= videos.length %>
                             </h6>
                         </div>
                     </div>
@@ -76,7 +76,7 @@
                         <div>
                             <p class="p1">Clashes Created</p>
                             <h6>
-                                <%= userDetails.clashes.length %>
+                                <%= clashes.length %>
                             </h6>
                         </div>
                     </div>
@@ -96,7 +96,7 @@
                     <div>
                         <p class="p1">City</p>
                         <h6>
-                            <%= userDetails.city %>
+                            <%= userDetails.city ? userDetails.city : 'null' %>
                         </h6>
                     </div>
                 </div>
