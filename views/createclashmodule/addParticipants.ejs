@@ -53,41 +53,53 @@
 
         <div class="followers">
             <div class="headingsRow">
-                <div >
-                    <h6>Your Followers</h6>
-                </div>
-                <div>
-                    <a href="#" data-target="#see-all" style="color: #7a7a7a; text-decoration: none; font-size: 0.9rem;">
-                        See all &nbsp;<i class="fas fa-angle-right" aria-hidden="true"></i>
-                    </a>
-                </div>
+                <% if (followerDetails.length > 0) { %>
+                    <div >
+                        <h6>Your Followers</h6>
+                    </div>
+                    <div>
+                        <a href="#" data-target="#see-all" style="color: #7a7a7a; text-decoration: none; font-size: 0.9rem;">
+                            See all &nbsp;<i class="fas fa-angle-right" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                <% } %>
             </div>
             <div class="body">
-                <% for(var i=0; i<count; i++){ %>
-                    <% if (followerDetails[i].value !== null) { %>
-                        <div data-select= ".selected" onclick="select(this)" id=<%= followerDetails[i].value.username %> class="row"">
-                            <div class="col-3">
-                                <img src="/img/profile2.png" alt="profile pic" class="suggested-profile">
-                            </div>
-                            <div class="col-6">
-                                <div class="user-info">
-                                    <p><%= followerDetails[i].value.username %></p>
+                <% if (followerDetails.length > 0) { %>
+                    <% for(var i=0; i<count; i++){ %>
+                        <% if (followerDetails[i].value !== null) { %>
+                            <div data-select= ".selected" onclick="select(this)" id=<%= followerDetails[i].value.username %> class="row"">
+                                <div class="col-3">
+                                    <img src="/img/profile2.png" alt="profile pic" class="suggested-profile">
+                                </div>
+                                <div class="col-6">
+                                    <div class="user-info">
+                                        <p><%= followerDetails[i].value.username %></p>
+                                    </div>
+                                </div>
+                                <div class="col-3 selected">
+                                    <i class="far fa-check-square"></i>
                                 </div>
                             </div>
-                            <div class="col-3 selected">
-                                <i class="far fa-check-square"></i>
-                            </div>
-                        </div>
-                    <%} else { %>
-                        <span> </span>
+                        <%} else { %>
+                            <span> </span>
+                        <% } %>
                     <% } %>
+                <%} else { %>
+                    <h6 style="text-align: center; margin-top: 4rem;">No Followers</h6>
                 <% } %>
             </div>
         </div>
 
-        <div class="continue-btn">
-            <button onclick="Continue(this)">Continue</button>
-        </div>
+        <% if (followerDetails.length > 0) { %>
+            <div class="continue-btn">
+                <button onclick="Continue(this)">Continue</button>
+            </div>
+        <% } else { %>
+            <div class="continue-btn">
+                <button onclick="ContinueWithoutAddingFollowers(this)">Not Continue</button>
+            </div>
+        <% } %>
 
         <!-- POPUPS -->
         <div class="popup" id="see-all">
@@ -99,23 +111,25 @@
                 </div>
             </div>
             <div class="popup-body">
-                <% for(var i=0; i<followerDetails.length; i++){ %>
-                    <% if (followerDetails[i].value !== null) { %>
-                        <div data-select= ".selected" onclick="select(this)" id=<%= followerDetails[i].value.username %> class="row"">
-                            <div class="col-3">
-                                <img src="/img/profile2.png" alt="profile pic" class="suggested-profile">
-                            </div>
-                            <div class="col-6">
-                                <div class="user-info">
-                                    <p><%= followerDetails[i].value.username %></p>
+                <% if (followerDetails.length > 0) { %>
+                    <% for(var i=0; i<followerDetails.length; i++){ %>
+                        <% if (followerDetails[i].value !== null) { %>
+                            <div data-select= ".selected" onclick="select(this)" id=<%= followerDetails[i].value.username %> class="row"">
+                                <div class="col-3">
+                                    <img src="/img/profile2.png" alt="profile pic" class="suggested-profile">
+                                </div>
+                                <div class="col-6">
+                                    <div class="user-info">
+                                        <p><%= followerDetails[i].value.username %></p>
+                                    </div>
+                                </div>
+                                <div class="col-3 selected">
+                                    <i class="far fa-check-square"></i>
                                 </div>
                             </div>
-                            <div class="col-3 selected">
-                                <i class="far fa-check-square"></i>
-                            </div>
-                        </div>
-                    <%} else { %>
-                        <span> </span>
+                        <%} else { %>
+                            <span> </span>
+                        <% } %>
                     <% } %>
                 <% } %>
             </div>

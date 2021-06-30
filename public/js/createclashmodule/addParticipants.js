@@ -123,11 +123,15 @@ const Continue = async (e) => {
             data : data
         });
         
-        if(updatedClash.data.status === 'success') window.location.href = `/createclash/whocanwatch/${updatedClash.data.clash._id}`
+        if (updatedClash.data.status === 'success') window.location.href = `/createclash/whocanwatch/${updatedClash.data.clash._id}`;
 
     } catch (err) {
         console.log(err);
     }
+}
+
+const ContinueWithoutAddingFollowers = (e) => {
+    window.location.href = `/createclash/whocanwatch/${window.location.href.split('/addParticipants/')[1]}`;
 }
 
 const sendRequest = async () => {
