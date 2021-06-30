@@ -50,7 +50,7 @@ router.get("/profile/:username", isLoggedIn, async (req, res) => {
 router.get('/participants/:clashId', isLoggedIn  ,async (req, res) => {
 
     try {
-        const clash = await Clash.findOne({ _id: req.params.clashId, username: req.user.username });
+        const clash = await Clash.findOne({ _id: req.params.clashId });
 
         if (_.isEmpty(clash)) return res.redirect(`/error?errorMessage=Clash Not Found`);
   

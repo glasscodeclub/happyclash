@@ -31,7 +31,6 @@ const userDetailSchema = new mongoose.Schema({
         type: String,
         default: null
     },
-    clashes: [String],  //clash ids
     followers: [String],  //usernames array
     following: [String],  //usernames array
     wonClashes: [String],     //clash ids
@@ -39,7 +38,6 @@ const userDetailSchema = new mongoose.Schema({
         type: Number,
         default: null
     },
-    notifications: [String],  //notification ids
     longestStreak: {
         type: Number,
         default: null
