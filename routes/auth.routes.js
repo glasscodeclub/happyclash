@@ -2,6 +2,7 @@ var express = require("express");
 var router = express.Router();
 var passport = require("passport");
 var User = require("../models/user.models");
+var Userdetails = require("../models/userdetails.models")
 var middlewares = require("../middlewares/auth.middleware");
 const fs = require("fs")
 const async = require("async")
@@ -231,6 +232,26 @@ router.post("/signup", async (req, res) => {
                         return cb();
                     }
                 });
+            },
+            cb =>{
+                var _Userdetails= new Userdetails({
+                    username:req.body.username,
+                    clashes: [],  
+                    followers: [], 
+                    following: [],    
+                    wonClashes: [],     
+                    notifications: [],
+                    email:req.body.email,
+                })  
+                _Userdetails.save((err,user) =>{
+                    if (err) {
+                        return cb(err);
+                    }
+                    else {
+                        data.userDetails=user;
+                        return cb();
+                    }
+                })  
             },
             cb => {
                 var text = 'click this email to verify the account : ' + "http://localhost:3000/auth/" + data._id + "/" + data.randomString;

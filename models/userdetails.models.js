@@ -7,18 +7,22 @@ const userDetailSchema = new mongoose.Schema({
     },
     profilePic: {
         type: String,
-        default: null
+        default: "https://picsum.photos/200"
     },
     name: {
         type: String,
         default: null
 
     },
+    email:{
+     type:String,
+     unique:true,
+    },
     joinDate: {
         type: Date,
         default: Date.now()
     },
-    username: String,    //username
+    username: {type:String,unique:true} ,   //username
     age: {
         type: Number,
         default: null
@@ -30,7 +34,6 @@ const userDetailSchema = new mongoose.Schema({
     clashes: [String],  //clash ids
     followers: [String],  //usernames array
     following: [String],  //usernames array
-    videosCreated: [String],  //video ids
     wonClashes: [String],     //clash ids
     highestRank: {
         type: Number,
