@@ -141,14 +141,42 @@ const startClash = async (e) => {
             url: `/createclash/whocanwatch/${window.location.href.split('whocanwatch/')[1]}`,
             data : data
         });
-
-        console.log(updatedClash);
         
         if (updatedClash.data.status === 'success') window.location.href = `/createclash/clashcreated/${window.location.href.split('whocanwatch/')[1]}`;
 
     } catch (err) {
         console.log(err);
     }
+}
+
+const startClashWithoutFollowersOne = async(arr, everyOneStatus) => {
+    const data = { newViewersArray: arr, everyoneSelected: everyOneStatus };
+
+        try {
+            const updatedClash = await axios({
+                method: 'POST',
+                url: `/createclash/whocanwatch/${window.location.href.split('whocanwatch/')[1]}`,
+                data : data
+            });
+            
+            if (updatedClash.data.status === 'success') window.location.href = `/createclash/clashcreated/${window.location.href.split('whocanwatch/')[1]}`;
+    
+        } catch (err) {
+            console.log(err);
+        }
+}
+
+const startClashWithoutFollowers = async () => {
+    const everyoneButtons = Array.prototype.slice.call(document.getElementById('everyone').classList);
+
+    if (everyoneButtons.includes("select")) {
+
+        await startClashWithoutFollowersOne([], true);
+        
+    } else {
+        window.location.href = `/createclash/clashcreated/${window.location.href.split('whocanwatch/')[1]}`;
+    }
+    
 }
 
 const sendRequest = async () => {
