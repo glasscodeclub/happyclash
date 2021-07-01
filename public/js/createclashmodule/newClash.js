@@ -64,6 +64,8 @@ createClashForm.addEventListener('submit', async (e) => {
             rank
         }
      });
+      
+      console.log(newClash)
 
       if (newClash.data.status === 'success' && newClash.data.newClash.mode === "Public") window.location.href = `/createclash/clashcreated/${newClash.data.newClash._id}`;
       if (newClash.data.status === 'success' && newClash.data.newClash.mode === "Friend") window.location.href = `/createclash/addParticipants/${newClash.data.newClash._id}`;

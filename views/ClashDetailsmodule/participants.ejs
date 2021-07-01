@@ -35,7 +35,7 @@
                 <% for(var i=0; i<participantsDetails.length; i++){ %>
                   <% if (participantsDetails[i].value !== null) { %>
                     <tr>
-                      <td ><img src="/img/profile1.png" class="listImg"></td>
+                      <td ><img src="<%= participantsDetails[i].value.profilePic %>" class="listImg"></td>
                       <td>#<%= 3*i+1 %>/30</td>
                       <td><%= participantsDetails[i].value.username %></td>
                       <td><img src="/img/Play.svg" alt="" width="22" height="22" class="play-btn" onclick="playVideo()"></td>
@@ -55,4 +55,4 @@
             console.log("Play Video button was hit");
         }
     </script>
-</html>    
+</html>

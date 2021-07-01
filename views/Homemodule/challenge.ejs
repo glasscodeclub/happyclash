@@ -37,21 +37,19 @@
         </div>
 
         <% for(var i=0; i<challenges.length; i++){ %>
-            <% if (challenges[i].value !== null) { %>
                 <div class="row">
                     <div class="col-3 challenge1">
                         <p class="p1 btn" onclick="songChallenge(this)" style="background: #67A3A3;"><%= title %></p>
                     </div>
                     <div class="challenge-details">
-                        <p class="p3"><%= title %> Video #1</p>
+                        <p class="p3"><%= title %> Video #<%= i+1 %></p>
                         <div class="reach">
-                            <p class="p2">Votes: <%= challenges[i].value.likes.length - challenges[i].value.dislikes.length %></p>
-                            <p class="p2">Comments: <%= challenges[i].value.comments.length %></p>
+                            <p class="p2">Votes: <%= challenges[i].likes.length - challenges[i].dislikes.length %></p>
+                            <p class="p2">Comments: <%= challenges[i].comments.length %></p>
                         </div>
                     </div>
                 </div>
                 <hr>
-            <% } %>
         <% } %>
     </div>
     <%- include("../BottomNavmodule/bottomnavbar") %>

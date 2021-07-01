@@ -65,6 +65,7 @@
 .listImg {
   width: 40px;
   height: 40px;
+  border-radius: 50%;
 }
 
 @media only screen and (min-width:1000px){

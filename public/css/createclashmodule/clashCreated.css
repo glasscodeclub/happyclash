@@ -432,3 +432,7 @@ hr{
       width: 3rem;
       padding: 0.1rem 0.4rem;
   }
+
+  .participantProfile {
+      border-radius: 50%;
+  }

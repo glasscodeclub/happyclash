@@ -7,30 +7,22 @@ exports.getChallengePage = async (req, res) => {
 
    try {
       // Getting all the challenges of particular clash
-
       const clash = await Clash.findById(req.params.clashId);
 
       if (_.isEmpty(clash)) return res.redirect(`/error?message=Clash Not Found&status=404`);
 
-      const view = [req.user.username, ...clash.view];
+      const view = [clash.username, ...clash.view];
 
       if (clash.mode === 'Friend' && clash.isSeenByAllForFriends === false) {
          if (!view.includes(req.user.username)) return res.redirect(`/error?message=This Page Is Not Accessible&status=503`);
       }
 
-      let videosPromiseArray = []; // followerDetails should be name
+      const challenges = await Video.find({ clash: clash._id });
 
-      //3) Now we need full details of follwers in order to render over page
-      clash.videos.forEach(el => {
-         videosPromiseArray.push(Video.findById(el));
-      })
-
-      Promise.allSettled(videosPromiseArray).then(data => {
-         return res.render("Homemodule/challenge", { url: req.url, challenges: data, title: clash.title });
-      }).catch(err => {
-         console.log(err);
-         return res.redirect(`/error?message=${err}`);
-      })
+      if(_.isEmpty(challenges)) return res.redirect(`/error?message=Challenges Not Found&status=404`);
+     
+      res.render("Homemodule/challenge", { url: req.url, challenges, title: clash.title });
+           
    }catch (err) {
       console.log(err);
       res.redirect(`/error?message=${err}`);

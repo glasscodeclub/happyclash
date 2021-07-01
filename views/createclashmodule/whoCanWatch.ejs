@@ -66,11 +66,13 @@
                     <div >
                         <h6>Your Followers</h6>
                     </div>
-                    <div>
-                        <a href="#" data-target="#see-all" style="color: #7a7a7a; text-decoration: none; font-size: 0.9rem;">
-                            See all &nbsp;<i class="fas fa-angle-right" aria-hidden="true"></i>
-                        </a>
-                    </div>
+                    <% if (followerDetails.length > 4) { %>
+                        <div>
+                            <a href="#" data-target="#see-all" style="color: #7a7a7a; text-decoration: none; font-size: 0.9rem;">
+                                See all &nbsp;<i class="fas fa-angle-right" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    <% } %>
                 <% } %>
             </div>
             <div class="body">
@@ -80,7 +82,7 @@
                             <% if (view.includes(followerDetails[i].value.username)) { %>
                                 <div style="background-color:#e5e5e5; pointer-events: none; opacity: 0.4;" id=<%= followerDetails[i].value.username %> class="row">
                                     <div class="col-3">
-                                        <img src="/img/profile2.png" alt="profile pic" class="suggested-profile">
+                                        <img src="<%= followerDetails[i].value.profilePic %>" alt="profile pic" class="suggested-profile">
                                     </div>
                                     <div class="col-6">
                                         <div class="user-info">
@@ -94,7 +96,7 @@
                                 <%} else { %>
                                 <div data-select= ".selected" onclick="select(this)" id=<%= followerDetails[i].value.username %> class="row">
                                     <div class="col-3">
-                                        <img src="/img/profile2.png" alt="profile pic" class="suggested-profile">
+                                        <img src="<%= followerDetails[i].value.profilePic %>" alt="profile pic" class="suggested-profile">
                                     </div>
                                     <div class="col-6">
                                         <div class="user-info">
@@ -147,7 +149,7 @@
                             <% if (view.includes(followerDetails[i].value.username)) { %>
                                 <div style="background-color:#e5e5e5; pointer-events: none; opacity: 0.4;" id=<%= followerDetails[i].value.username %> class="row">
                                     <div class="col-3">
-                                        <img src="/img/profile2.png" alt="profile pic" class="suggested-profile">
+                                        <img src="<%= followerDetails[i].value.profilePic %>" alt="profile pic" class="suggested-profile">
                                     </div>
                                     <div class="col-6">
                                         <div class="user-info">
@@ -161,7 +163,7 @@
                                 <%} else { %>
                                 <div data-select= ".selected" onclick="select(this)" id=<%= followerDetails[i].value.username %> class="row">
                                     <div class="col-3">
-                                        <img src="/img/profile2.png" alt="profile pic" class="suggested-profile">
+                                        <img src="<%= followerDetails[i].value.profilePic %>" alt="profile pic" class="suggested-profile">
                                     </div>
                                     <div class="col-6">
                                         <div class="user-info">

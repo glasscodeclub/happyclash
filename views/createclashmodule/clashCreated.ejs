@@ -35,33 +35,39 @@
         </div>
 
     <% if (mode === 'Friend') { %>
-        <hr>
-        <div class="container">
-            <div class="participants d-flex">
-                <div>
-                    <p style="color: #747474;" class="keyword"> List of Participants (<%= participantsDetails.length %>)</p>
-                </div>
-                <div style="margin:0px; padding:0px; text-align: center;">
-                    <a href="#" class="a1" onclick="redirectToParticipantsPage()">See All&nbsp;&nbsp;<i class="fas fa-angle-right"></i> </a>
+        <% if (participantsDetails.length > 0) { %>
+            <hr>
+            <div class="container">
+                <div class="participants d-flex">
+                    <div>
+                        <p style="color: #747474;" class="keyword"> List of Participants (<%= participantsDetails.length %>)</p>
+                    </div>
+                    <div style="margin:0px; padding:0px; text-align: center;">
+                        <a href="#" class="a1" onclick="redirectToParticipantsPage()">See All&nbsp;&nbsp;<i class="fas fa-angle-right"></i> </a>
+                    </div>
                 </div>
             </div>
-        </div>
-        
-        <div class="container last">
-            <div class="row">
-                <!-- <div class="col-2"></div> -->
-                <%for(let i=0;i<count;i++){%>   
-                    <% if (participantsDetails[i].value !== null) { %>
-                        <div class="col">
-                            <img src="/img/profile<%= i+1 %>.png">
-                            <p class="p11"><%= participantsDetails[i].value.username %></p>
-                        </div>
-                    <%} else {%>
-                        <span></span>
-                    <%}%>    
-                <%}%>
+            
+            <div class="container last">
+                <div class="row">
+                    <!-- <div class="col-2"></div> -->
+                    <%for(let i=0;i<count;i++){%>   
+                        <% if (participantsDetails[i].value !== null) { %>
+                            <div class="col">
+                                <img src="<%= participantsDetails[i].value.profilePic %>" class="participantProfile">
+                                <p class="p11"><%= participantsDetails[i].value.username %></p>
+                            </div>
+                        <%} else {%>
+                            <span></span>
+                        <%}%>    
+                    <%}%>
+                </div>
             </div>
-        </div>
+        <% } else { %>
+            <div style="margin-top: 1rem; padding:0 1rem;">
+                <p style="color: #747474;" class="keyword"> List of Participants (0)</p>
+            </div>
+        <% } %>
     <% } %>
 
     <% if(mode === 'Public' || (mode === 'Friend' && isSeenByAllForFriends === true)) { %>

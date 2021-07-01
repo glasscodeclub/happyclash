@@ -1,6 +1,7 @@
 var moment = require('moment');
 
 const Clash = require('../models/clash.models');
+const Video = require('./../models/video.models');
 const UserDetails = require('./../models/userdetails.models');
 const User = require('./../models/user.models');
 const _ = require("lodash");
@@ -68,7 +69,7 @@ exports.createClash = async (req, res) => {
    try {
       // 1) req body will not be empty
       if (_.isEmpty(req.body)) return res.status(201).redirect('/createclash/createNewClash');
-      
+
       // 4) Creating a clash
       const newClash = await Clash.create({
             mode : req.body.mode,
@@ -87,7 +88,14 @@ exports.createClash = async (req, res) => {
             username: req.user.username
       });
 
-      if(_.isEmpty(newClash)) return res.redirect(`/error?message=Some Error Occured. Clash Not Created&status=406`);
+      if (_.isEmpty(newClash)) return res.redirect(`/error?message=Some Error Occured. Clash Not Created&status=406`);
+      
+      const video = await Video.findByIdAndUpdate(newClash.videos[0], { clash: newClash._id } , {
+         new: true,
+         runValidators: true
+      });
+
+      console.log(video);
       
       // 5) Sending response after creating
       res.status(201).json({
@@ -117,7 +125,7 @@ exports.getAddParticipantsPage = async(req, res) => {
       userDetails.followers.forEach(el => {
          followersDetailsPromiseArray.push(UserDetails.findOne({ username: el }));
       })
-      
+
       // Runing all promises in parallel
       Promise.allSettled(followersDetailsPromiseArray).then(data => {
          let count;
