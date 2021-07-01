@@ -1,9 +1,9 @@
 function careerClick(params) {
-  console.log(params);
+  window.location.href = '/career'
 }
 
 function editClick(params) {
-  console.log(params);
+  window.location.href = '/career/edit'
 }
 
 function settingsClick(params) {

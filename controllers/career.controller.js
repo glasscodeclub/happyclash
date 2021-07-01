@@ -1,14 +1,17 @@
 const url = require("url")
 const User = require("../models/user.models")
 const Video = require("../models/video.models")
+const Clash = require("../models/clash.models")
 const Userdetail = require("../models/userdetails.models")
 
 module.exports.career = async (req, res) => {
     try {
         const { username } = req.user
         const userDetails = await Userdetail.findOne({ username: { $eq: username } })
+        const videos = await Video.find({ username: { $eq: username } })
+        const clashes = await Clash.find({ username: { $eq: username } })
         const days = Math.floor((new Date() - new Date(userDetails.joinDate)) / (1000 * 60 * 60 * 24))
-        res.render("./careermodule/career", { url: req.url, userDetails, days });
+        res.render("./careermodule/career", { url: req.url, userDetails, days, videos, clashes });
     } catch (err) {
         console.log(err)
         res.redirect(url.format({
@@ -67,7 +70,7 @@ module.exports.profile = async (req, res) => {
         const { username } = req.user
         const userDetails = await Userdetail.findOne({ username: { $eq: username } })
 
-        let docs = await Video.find({ _id: { $in: userDetails.videosCreated } })
+        let docs = await Video.find({ username: { $eq: username } })
         docs = docs.reverse().slice(0, 5)
 
         res.render("./careermodule/profile", { url: req.url, videosArray: docs, userDetails });
@@ -86,7 +89,7 @@ module.exports.profile = async (req, res) => {
 module.exports.postPage = async (req, res) => {
     try {
         let { page, size, username } = req.query
-        let userDetails
+        let docs
 
         if (!page) page = 1
         if (!size) size = 10
@@ -95,13 +98,11 @@ module.exports.postPage = async (req, res) => {
         const skip = (parseInt(page) - 1) * parseInt(size)
 
         if (username) {
-            userDetails = await Userdetail.findOne({ username: { $eq: username } })
+            docs = await Video.find({ username: { $eq: username } })
         } else {
             const { username } = req.user
-            userDetails = await Userdetail.findOne({ username: { $eq: username } })
+            docs = await Video.find({ username: { $eq: username } })
         }
-
-        let docs = await Video.find({ _id: { $in: userDetails.videosCreated } })
         docs = docs.reverse().slice(skip, limit + skip)
 
         res.render("./careermodule/post", { page: "Post", url: req.url, videosArray: docs })
@@ -127,9 +128,7 @@ module.exports.loadMore = async (req, res) => {
         const skip = (parseInt(page) - 1) * parseInt(size)
 
         const { username } = req.user
-        const userDetails = await Userdetail.findOne({ username: { $eq: username } })
-
-        let docs = await Video.find({ _id: { $in: userDetails.videosCreated } })
+        let docs = await Video.find({ username: { $eq: username } })
         docs = docs.reverse().slice(skip, limit + skip)
 
         res.status(200).json(docs)

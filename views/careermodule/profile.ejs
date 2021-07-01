@@ -40,13 +40,13 @@
       <div class="col-6" style="text-align: center">
         <img src="<%= userDetails.profilePic %>" class="p1" />
         <h6 class="n1">
-          <%= userDetails.name %>
+          <%= userDetails.name ? userDetails.name : 'null' %>
         </h6>
         <p class="n2">
           <%= userDetails.username %>
         </p>
         <p class="n2">
-          <%= userDetails.city %>
+          <%= userDetails.city ? userDetails.city : 'null' %>
         </p>
       </div>
     </div>
@@ -88,7 +88,7 @@
         <p class="rp1">Following</p>
       </div>
       <div class="col pp">
-        <h6 class="rp2"><%= userDetails.videosCreated.length %></h6>
+        <h6 class="rp2"><%= videosArray.length %></h6>
         <p class="rp1">Videos</p>
       </div>
       <div class="col pp">
