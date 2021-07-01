@@ -1,3 +1,6 @@
+// todo - if no one have joined the clash and clash, and clash video is only one (creator one) then if he deletes his video, clash should also be deleted
+
+
 let divElem = {};
 let popupElem = {};
 
