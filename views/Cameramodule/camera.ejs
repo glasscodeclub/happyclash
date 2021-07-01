@@ -31,13 +31,15 @@
 
       <video id="gum" class="live" playsinline autoplay muted></video>
       <video id="recorded" class="recorded" playsinline loop></video>
-
-      <div class="controls">
-        <button id="start" style="visibility: hidden;display:none">Start camera</button> 
-        <button id="play" class="play disabled" disabled><img src="../../img/Play.svg" alt="Play"></button>
-        <button id="record"  class="record" name = "Record" disabled></button>
-        <button id="upload" class="upload disabled" disabled><span class="iconify" data-inline="false" data-icon="akar-icons:circle-check" style="font-size: 2rem; color: #fff;"></span>
-          </button>
+      <div class="bottom">
+        <div id="time"></div>
+        <div class="controls">
+          <button id="start" style="visibility: hidden;display:none">Start camera</button> 
+          <button id="play" class="play disabled" disabled><img src="../../img/Play.svg" id="play-btn" alt="Play"> <img id="pause-btn"  class="not-visible" src="../../img/Pause.svg" alt="Pause"></button>
+          <button id="record"  class="record" name = "Record" disabled></button>
+          <button id="upload" class="upload disabled" disabled><span class="iconify" data-inline="false" data-icon="akar-icons:circle-check" style="font-size: 2rem; color: #fff;"></span>
+            </button>
+        </div>
       </div>
         <div>
         <span id="errorMsg"></span>
