@@ -12,6 +12,9 @@ console.log("Height: ",height);
 let mediaRecorder;
 let recordedBlobs;
 
+let start;
+let end;
+
 const errorMsgElement = document.querySelector('span#errorMsg');
 const recordedVideo = document.querySelector('video#recorded');
 const gum = document.querySelector('video#gum');
@@ -20,8 +23,9 @@ const playButton = document.querySelector('button#play');
 const downloadButton = document.querySelector('button#download');
 const uploadButton =document.querySelector('button#upload')
 const threeDots = document.querySelector('#threedots');
+const timeDiv = document.querySelector('#time')
 
-
+var time = 0;
 
 uploadButton.addEventListener('click',()=>{
   var fd = new FormData();
@@ -73,14 +77,41 @@ recordButton.addEventListener('click', () => {
 
 
 playButton.addEventListener('click', () => {
-  let superBuffer = new Blob(recordedBlobs, {type: 'video/webm'});
+  const playBtn = document.querySelector("#play-btn");
+  const pauseBtn = document.querySelector('#pause-btn');
+    let superBuffer = new Blob(recordedBlobs, {type: 'video/webm'}); 
+    var time = end - start;
+    var hh = Math.floor(time / 1000 / 60 / 60);
+    time -= hh * 1000 * 60 * 60;
+    var mm = Math.floor(time / 1000 / 60);
+    time -= mm * 1000 * 60;
+    var ss = Math.floor(time / 1000);
+    time -= ss * 1000;
+    if(mm<=9){
+     mm = '0' + mm;
+    }
+    if(ss<=9){
+      ss = '0' + ss;
+    }
+    var duration = mm +":"+ss;
+    timeDiv.innerHTML = duration;
     gum.style="display:none"; 
     recordedVideo.src = null;
     recordedVideo.srcObject = null;
     recordedVideo.src = window.URL.createObjectURL(superBuffer);
     recordedVideo.controls = true;
-    recordedVideo.style="display:static";
+    recordedVideo.style="display:static"; 
     recordedVideo.play();
+    if(pauseBtn.classList.contains('not-visible')){
+      recordedVideo.play();
+      playBtn.classList.add('not-visible');
+      pauseBtn.classList.remove('not-visible');
+    }
+    else if(playBtn.classList.contains('not-visible')){
+      recordedVideo.pause();
+      playBtn.classList.remove('not-visible');
+      pauseBtn.classList.add('not-visible');
+    }
 });
 
 
@@ -107,6 +138,9 @@ function handleDataAvailable(event) {
 }
 
 function startRecording() {
+  var today = new Date();
+  start = today;
+  console.log(start);
   recordedBlobs = [];
   let options = {mimeType: 'video/webm;codecs=vp9,opus'};
   try {
@@ -133,6 +167,9 @@ function startRecording() {
 
 function stopRecording() {
   mediaRecorder.stop();
+  var today = new Date();
+  end = today;
+  console.log(end);
 }
 
 function handleSuccess(stream) {
