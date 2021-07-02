@@ -95,8 +95,6 @@ exports.createClash = async (req, res) => {
          runValidators: true
       });
 
-      console.log(video);
-      
       // 5) Sending response after creating
       res.status(201).json({
          status: 'success',
@@ -342,8 +340,33 @@ exports.deleteClash = async (req, res) => {
 
    if (_.isEmpty(deletedClash)) return res.redirect('/error?message=Clash Not Found To Delete&status=404');
 
+   const video = await Video.findByIdAndUpdate(deletedClash.videos[0], { clash: null } , {
+      new: true,
+      runValidators: true
+   });
+
    res.status(204).json({
       status: 'success',
       data: null
    });
+};
+
+exports.getAllByNames = async (req, res, next) => {
+   const key = new RegExp(`^${req.params.key}`);
+
+   const filter = req.params.key.split('').includes('@') ? { email: { $in: [key] } } : { username: { $in: [key] } };
+
+   const users = await UserDetails.find(filter);
+
+   if (users.length > 0) {
+      res.status(200).json({
+         status: 'success',
+         users: [users[0], users[1], users[2]]
+       });
+   } else if(users.length === 0) {
+      res.status(200).json({
+         status: 'success',
+         users: []
+       });
+   }
 };

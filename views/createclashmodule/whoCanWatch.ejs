@@ -50,11 +50,18 @@
         <hr>
         <div class="choose-friends container my-4">
             <div class="row justify-content-center">
-                <div class="col-md-6">
+                <div class="col-md-6 searchBarContainer">
                     <h6 class="choose-friend-headline">Choose Friends to add:</h6>
                     <input type="search" class="form-control my-3 invitation-bar" placeholder="Username/Email">
                     <div style="display: flex; justify-content: flex-end; margin-top: 1em;">
                         <button onclick="sendRequest(this)"> Send </button>
+                    </div>
+                </div>
+                <br>
+                <div class="col-md-6 searchResultsContainer removeMe">
+                    <div class="searchResults">
+                        <ul class="searchResults-list">
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -66,13 +73,11 @@
                     <div >
                         <h6>Your Followers</h6>
                     </div>
-                    <% if (followerDetails.length > 4) { %>
-                        <div>
-                            <a href="#" data-target="#see-all" style="color: #7a7a7a; text-decoration: none; font-size: 0.9rem;">
-                                See all &nbsp;<i class="fas fa-angle-right" aria-hidden="true"></i>
-                            </a>
-                        </div>
-                    <% } %>
+                    <div>
+                        <a href="#" data-target="#see-all" style="color: #7a7a7a; text-decoration: none; font-size: 0.9rem;">
+                            See all &nbsp;<i class="fas fa-angle-right" aria-hidden="true"></i>
+                        </a>
+                    </div>
                 <% } %>
             </div>
             <div class="body">
