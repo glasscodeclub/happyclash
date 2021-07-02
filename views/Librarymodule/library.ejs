@@ -51,7 +51,7 @@
                             <source src="/video/<%= videoModelArray[i]._id %>" type="video/mp4">
                             Video not available at the moment
                         </video>
-                <div class="threedots" onclick="optionThreeDot(this);" id="threeDot_<%= videoModelArray[i]._id %>">
+                <div class="threedots" onclick="optionThreeDot(this);" data-clashexists="<%= videoModelArray[i].clash %>" id="threeDot_<%= videoModelArray[i]._id %>">
                     <img src="/img/threedots.svg" alt="" width="4" height="15" data-target = "#play-options">
                 </div>
                 <!-- not good ui -->
@@ -102,14 +102,14 @@
                     <div class="control" onclick="play()"> 
                         <i class="fas fa-play"></i><span>Play</span>
                     </div>
-                    <div class="control" onclick="del();"> 
+                    <div class="control" id="deleteVideoButton" onclick="del();"> 
                         <i class="far fa-trash-alt"></i><span>Delete</span>
                     </div>
                     <div class="control" onclick="download()"> 
                         <i class="fas fa-download" ></i><span>Save To Gallery</span>
                     </div>
                     <div class="control" id="createClashButton" value='' onclick="redirectToCreateClash()"> 
-                        <i class="fa fa-video-camera" ></i><span>Create Clash</span>
+                        <i class="fa fa-video-camera" ></i><span id="createClashText" >Create Clash</span>
                     </div>
                     <a id="downloadLink" href="/" download style="height: 0px;width:0px;display: none;">
                     </a>

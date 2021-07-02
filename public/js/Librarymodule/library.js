@@ -3,10 +3,15 @@
 //   console.log(element);
 // }
 
-
 function optionThreeDot(e){
   document.getElementById("optionThreeDots").value = e.id.split("_")[1];
   document.getElementById('createClashButton').value = e.id.split("_")[1];
+
+  if (e.dataset.clashexists !== '') {
+    document.getElementById('deleteVideoButton').classList.add('disable-me');
+    document.getElementById('createClashText').textContent = 'Clash Created';
+    document.getElementById('createClashButton').classList.add('disable-me');
+  }
 }
 
 function redirectToCreateClash() {
@@ -96,16 +101,16 @@ function closePop(pop){
   if(pop == null) return;
   pop.classList.remove("active")
   overlay.classList.remove("active")
+  document.getElementById('createClashButton').classList.remove('disable-me');
+  document.getElementById('deleteVideoButton').classList.remove('disable-me');
+  document.getElementById('createClashText').textContent = 'Create Clash';
 }
-
-
 
 // POPUP FOR CONTROL OPTIONS FUNCTIONANLITY
 
 closePopup.forEach(popup =>{
   popup.addEventListener('click', () => {
     const pop = popup.closest(".popup-play")
-    console.log(pop)
     closePop(pop)
   })
 })

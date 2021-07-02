@@ -1,5 +1,3 @@
-// Some Previous Assumptions -> need ajax request to check if video exists or not and if its owner is the user or not
-
 window.addEventListener('load', function () {
    if (window.location.href.includes('videoId')) {
       const uploadButton = document.querySelector('.uploadButton');
@@ -7,6 +5,15 @@ window.addEventListener('load', function () {
       uploadButton.innerHTML = 'Uploaded <i class="far fa-check-circle successIcon"></i>';
    }
 });
+
+{/* <input placeholder="Clash Ends" onClick="turnTextToDate()" type="text" class="form-control endTimeTextStyles" required></input> */}
+
+// const turnTextToDate = () => {
+//    document.querySelector('.endTimeTextStyles').style.display = 'none';
+//    document.querySelector('.endTimeStyles').style.display = 'block';
+//    document.querySelector('.endTimeStyles').style.opacity = 1;
+//    document.querySelector('.endTimeStyles').style.position = 'none';
+// }
 
 // Buttons On demad
 
@@ -30,6 +37,11 @@ const createClashForm = document.querySelector('.createClashForm');
 createClashForm.addEventListener('submit', async (e) => {
    e.preventDefault();
 
+   if (document.querySelector('.uploadButton').value === '') {
+      showAlert('Error', 'Video Not Uploaded');
+      return false;
+   }
+
    const mode = document.querySelector('input:checked').value;
    const title = document.querySelector('.clash-title').value.trim() || 'Title';
    const description = document.querySelector('.clash-des').value.trim() || 'Description';
@@ -43,6 +55,8 @@ createClashForm.addEventListener('submit', async (e) => {
    const isSeenByAllForFriends = false;
    const isSelectedAllFollowers = false;
    const rank = null;
+
+   console.log(endDate);
 
    try {
      const newClash =  await axios({
@@ -65,8 +79,6 @@ createClashForm.addEventListener('submit', async (e) => {
         }
      });
       
-      console.log(newClash)
-
       if (newClash.data.status === 'success' && newClash.data.newClash.mode === "Public") window.location.href = `/createclash/clashcreated/${newClash.data.newClash._id}`;
       if (newClash.data.status === 'success' && newClash.data.newClash.mode === "Friend") window.location.href = `/createclash/addParticipants/${newClash.data.newClash._id}`;
 
@@ -74,3 +86,18 @@ createClashForm.addEventListener('submit', async (e) => {
       console.log(err);
    }
 })
+
+const showAlert = (type, message) => {
+   let el;
+   if (type === 'Success') el = `<h5 class="notify-text" style="font-size:16px; color:cadetblue; margin-top: 10px;">${message}</h5>`;
+   if (type === 'Error') el = `<h5 class="notify-text" style="font-size:16px; color:red; margin-top:16px;">${message}</h5>`;
+   
+   document.querySelector('.check').insertAdjacentHTML('afterend', el);
+   window.setTimeout(hideAlert, 30000);
+};
+
+
+const hideAlert = () => {
+   const el = document.querySelector('.notify-text');
+   if (el) el.parentElement.removeChild(el);
+ };

@@ -234,3 +234,91 @@ const hideAlert = () => {
     const el = document.querySelector('.notify-text');
     if (el) el.parentElement.removeChild(el);
   };
+
+
+// Search Functionality
+
+const searchBar = document.querySelector('.invitation-bar');
+const searchResultBlock = document.querySelector('.searchResults-list');
+
+const sendUsernameToInputField = (username) => {
+    document.querySelector('.searchResultsContainer').classList.remove('addMe');  
+    document.querySelector('.invitation-bar').value = username;
+}
+
+// Api For Search
+
+const searchResults = async searchKey => {
+    try {
+      const users = await axios({
+        method: 'GET',
+        url: `/createclash/search/${searchKey}`
+      });
+        
+      if (users.data.status === 'success') {
+        return users;
+      }
+    } catch (err) {
+        console.log(err);
+    }
+  };
+
+
+const appendSearchResults = (data, searchResultBlock) => {
+    const html = `<li class="searchResults-listItem" onclick="sendUsernameToInputField('${data.username}')"><img src=${data.profilePic} alt="user"> <h6>${data.username}</h6> </li>`;
+    searchResultBlock.insertAdjacentHTML('beforeend', html);
+  };
+  
+  const appendLoadingSpinner = searchResultBlock => {
+    const html = `<div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>`;
+    searchResultBlock.insertAdjacentHTML('afterbegin', html);
+  };
+  
+  const appendFailureMessage = searchResultBlock => {
+    const html = `<h4 class="noResultsFound">User not found!! 🥱🥱</h4>`;
+    searchResultBlock.insertAdjacentHTML('afterbegin', html);
+  };
+  
+ const search = async (searchKey, searchResultBlock) => {
+  
+     if (searchKey.split('').length === 0) return false;
+  
+     searchResultBlock.innerHTML = '';
+
+     appendLoadingSpinner(searchResultBlock);
+    
+      try {
+        appendLoadingSpinner(searchResultBlock);
+          const users = await searchResults(searchKey);
+
+          searchResultBlock.innerHTML = '';
+          
+            if (users.data.users.length !== 0) {
+                users.data.users.forEach(el => {
+                appendSearchResults(el, searchResultBlock);
+            });
+            } else if (users.data.users.length === 0) {
+                appendFailureMessage(searchResultBlock);
+            }
+
+          
+      } catch (err) {
+          console.log(err);
+      }
+
+  };
+
+searchBar.addEventListener('focus', () => {
+
+    document.addEventListener('keyup', async e => {
+
+        if (e.target.value.trim().split('').length === 0 && Array.prototype.slice.call(document.querySelector('.searchResultsContainer').classList).includes('addMe')) {
+           document.querySelector('.searchResultsContainer').classList.remove('addMe');
+        } else if (e.target.value.trim().split('').length !== 0) {
+            document.querySelector('.searchResultsContainer').classList.add('addMe');  
+        }
+
+        await search(e.target.value.trim(), searchResultBlock);
+    });
+})
+

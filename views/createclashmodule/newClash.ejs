@@ -64,14 +64,14 @@
 
   <div id="form-div">
     <form class="createClashForm">
+      <div class="form-group md-form clash-endContainer">
+        <input placeholder="Clash Ends"  type="date" value="<%= tomorrow %>" class="form-control  clash-endTime endTimeStyles"  min="<%= tomorrow %>" required>
+      </div>
       <div class="form-group">
         <input type="text" class="form-control clash-title" placeholder="Clash Title" required>
       </div>
       <div class="form-group">
         <textarea class="form-control clash-des" rows="3" placeholder="Enter Clash Description" required></textarea>
-      </div>
-      <div class="form-group md-form">
-          <input placeholder="Clash Ends" onfocus="(this.type='date')" type="text" class="form-control  clash-endTime" min="<%= tomorrow %>" required>
       </div>
       <div class="form-group">
         <select class="form-control" id="exampleFormControlSelect1" required>
@@ -88,8 +88,8 @@
         <input type="text" class="form-control clash-keys" placeholder="Keywords" required>
       </div>
       <div class="form-group submit-buttons">
-        <button id="start" class="btn btn-primary sub save">Start Clash</button>
-        <button id="continue" class="btn btn-primary sub save">Continue</button>
+        <button id="start" class="btn btn-primary sub save check">Start Clash</button>
+        <button id="continue" class="btn btn-primary sub save check">Continue</button>
       </div>
     </form>
   </div>

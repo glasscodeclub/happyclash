@@ -22,4 +22,6 @@ router.route("/whocanwatch/:clashId")
 
 router.route("/deleteClash/:clashId").delete(isLoggedIn, createClashController.deleteClash);
 
+router.route("/search/:key").get(createClashController.getAllByNames);
+
 module.exports = router;
