@@ -1,138 +1,38 @@
 const express = require("express");
 const router = express.Router();
 var { isLoggedIn } = require("../middlewares/auth.middleware");
-const Userdetail = require("../models/userdetails.models")
-const Clashs = require("../models/clash.models")
-const Video = require("../models/video.models")
-const Report = require("../models/report.models")
-const url = require("url")
-const _ = require("lodash");
-const { follow } = require("../controllers/clashDetails.controller")
+const { follow, clashDetails, notAdminClashDetails, whenInvitedDetails, publicDetails, reportForm, report, profile, participants } = require("../controllers/clashDetails.controller")
 
-const Clash = require('./../models/clash.models');
+router.route("/clash/:id")
+    .get(isLoggedIn, clashDetails)
 
-router.get('/', (req, res) => {
-    res.render("ClashDetailsmodule/clashDetails", { url: req.url });
-})
+router.route("/notadmin/:id")
+    .get(isLoggedIn, notAdminClashDetails)
 
-router.get("/notadmin", (req, res) => {
-    res.render("ClashDetailsmodule/clashDetailsNotAdmin", { url: req.url })
-})
+router.route("/wheninvited/:id")
+    .get(isLoggedIn, whenInvitedDetails)
 
-router.get("/wheninvited", (req, res) => {
-    res.render("ClashDetailsmodule/clashDetailsWhenInvited", { url: req.url })
-})
+router.route("/public/:id")
+    .get(isLoggedIn, publicDetails)
 
-router.get("/public", (req, res) => {
-    res.render("ClashDetailsmodule/clashDetailsPublic", { url: req.url })
-})
-
-router.get("/profile/:username", isLoggedIn, async (req, res) => {
-    try {
-        const { username } = req.params
-        let isFollowed
-        const userDetails = await Userdetail.findOne({ username: { $eq: username } })
-
-        const present = userDetails.followers.find(follower => follower === req.user.username)
-        if (present) isFollowed = true
-        else isFollowed = false
-
-        let docs = await Video.find({ username: { $eq: username } })
-        docs = docs.reverse().slice(0, 5)
-
-        res.render("ClashDetailsmodule/profile", { url: req.url, videosArray: docs, userDetails, isFollowed })
-    } catch (err) {
-        console.log(err)
-        res.redirect(url.format({
-            pathname: "/error",
-            query: {
-                message: err.message,
-                status: 404
-            }
-        }))
-    }
-})
+router.route("/profile/:username")
+    .get(isLoggedIn, profile)
 
 router.route("/follow")
     .post(isLoggedIn, follow)
 
-router.get('/participants/:clashId', isLoggedIn, async (req, res) => {
-
-    try {
-        const clash = await Clash.findOne({ _id: req.params.clashId });
-
-        if (_.isEmpty(clash)) return res.redirect(`/error?errorMessage=Clash Not Found`);
-
-        let participantsDetailsPromiseArray = []; // followerDetails should be name
-
-        //3) Now we need full details of follwers in order to render over page
-        clash.participants.forEach(el => {
-            participantsDetailsPromiseArray.push(Userdetail.findOne({ username: el }));
-        })
-
-        Promise.allSettled(participantsDetailsPromiseArray).then(data => {
-            return res.render("ClashDetailsmodule/participants", { url: req.url, participantsDetails: data });
-        }).catch(err => {
-            console.log(err);
-            return res.redirect(`/error?errorMessage=${err}`);
-        })
-
-    } catch (err) {
-        console.log(err);
-        res.redirect(`/error?errorMessage=${err}`);
-    }
-})
+router.route('/participants/:clashId')
+    .get(isLoggedIn, participants)
 
 router.get('/comments', (req, res) => {
     res.render("ClashDetailsmodule/clashComments", { url: req.url });
 })
 
-router.get('/reportClash/:id', isLoggedIn, (req, res) => {
-    const { id } = req.params
-    res.render("ClashDetailsmodule/ReportClash", { url: req.url, id });
-})
+router.route('/reportClash/:id')
+    .get(isLoggedIn, reportForm)
+    .post(isLoggedIn, report)
 
-router.post("/reportClash/:id", isLoggedIn, async (req, res) => {
-    const { id } = req.params
-    const { username, email } = req.user
-    const { message } = req.body
-    const reasons = []
-    try {
-        Object.keys(req.body).forEach(ele => {
-            if (ele.includes("reason")) reasons.push(req.body[ele])
-        })
-
-        const clash = await Clashs.findOne({ _id: { $eq: id } })
-        if (!clash) throw "Their is no clash with this reference id"
-
-        const { isSeenByAllForFriends, mode, _id } = clash
-        if (mode === "Public" || (mode === "Friend" && isSeenByAllForFriends)) {
-            const newReport = new Report({
-                username, email, message, for: reasons, clashAdmin: clash.username, clashId: _id, status: false
-            })
-            await newReport.save()
-        } else {
-            const present = clash.view.filter(user => user === username)
-            if (present.length === 0) throw "You don't have access to report this clash"
-            else {
-                const newReport = new Report({
-                    username, email, message, for: reasons, clashAdmin: clash.username, clashId: _id, status: false
-                })
-                await newReport.save()
-            }
-        }
-        res.redirect("/library")
-    } catch (err) {
-        console.log(err)
-        res.redirect(url.format({
-            pathname: "/error",
-            query: {
-                message: err.message,
-                status: 404
-            }
-        }))
-    }
-})
+router.post("/reportClash/:id", isLoggedIn, )
 
 // router.get('/alpha', (req, res)=>{
 //     res.render("ClashDetailsmodule/alpha",{url:req.url});

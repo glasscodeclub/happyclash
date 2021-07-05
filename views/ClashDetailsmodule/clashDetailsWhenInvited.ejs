@@ -23,7 +23,7 @@
                 src="/img/backarrow.png" alt="back">
         </div>
         <div id="exclamation">
-            <img style="width: 1.3em; cursor: pointer;" onclick="window.location.href='/clashDetails/reportClash'"
+            <img style="width: 1.3em; cursor: pointer;" onclick="window.location.href='/clashDetails/reportClash/<%= clash._id %>'"
                 src="/img/exclamation.png" alt="exclamation">
         </div>
         <div id="headdiv">
@@ -33,7 +33,7 @@
 
     <div class="container" style="margin-bottom: 5em !important;">
         <div class="details">
-            <p class="clash-details" style="margin-bottom: 5px;">Video By <b> Jenny Wilson </b> </p>
+            <p class="clash-details" style="margin-bottom: 5px;">Video By <b> <%= video.username %> </b> </p>
             <div class="row">
                 <div class="col d-flex justify-content-end">
                     <a data-target="#popup-suggest-clash" class="btn btn-light br1" tabindex="-1" role="button" aria-disabled="true">
@@ -53,23 +53,23 @@
                 <div class="col" style="margin-top: 1.6em;">
                     <div class="clash-details">
                         <p style="margin-bottom: 0; font-size: .9rem; color: #747474;">Started By</p>
-                        <p style="font-size: 1.3em;">Wade Warren</p>
+                        <p style="font-size: 1.3em;" id="username"><%= user.username %> </p>
                     </div>
                     <div class="clash-details">
                         <p style="margin-bottom: 0; font-size: .9rem; color: #747474;">When</p>
-                        <p style="font-size: 1.3em;">25/02/2021</p>
+                        <p style="font-size: 1.3em;"><%= new Date(clash.startDate).toLocaleDateString('en-GB', { timeZone: 'UTC' }) %> </p>
                     </div>
                 </div>
                 <div class="col" id="div1">
-                    <img src="/img/profile3.png" id="img1">
+                    <img src="<%= user.profilePic %>" id="img1">
                     <div style="text-align: center;">
                         <a href="#" style="padding: .2rem 1.5rem;" class="btn btn-light btn1" tabindex="-1" 
-                            role="button" aria-disabled="true" onclick="follow()">
-                            <p id="p1">Follow</p>
+                            role="button" aria-disabled="true">
+                            <p onclick="follow(this)" id="p1"><%= isFollowed ? "Unfollow" : "Follow" %></p>
                         </a>
                     </div>
                     <div style="text-align: center;">
-                        <a href="#" class="btn btn-light btn1" tabindex="-1" role="button" aria-disabled="true" onclick="openProfile()">
+                        <a href="/clashDetails/profile/<%= user.username %>" class="btn btn-light btn1" tabindex="-1" role="button" aria-disabled="true" onclick="openProfile()">
                             <p id="p1">Open Profile</p>
                         </a>
                     </div>
@@ -78,26 +78,25 @@
         </div>
         <div style="margin-top: 1rem; padding-left: 1rem;">
             <p id="p4">Clash Details</p>
-            <p id="p5">Lorem ipsum dolor sit, suscipi sequi commodi libero eius architecto omnis facere nemo iure quisquam
-                soluta incidunt!</p>
+            <p id="p5"><%= clash.description %> </p>
         </div>
         <hr>
         <div class="container" style="margin-bottom: 10px; margin-top:5px;">
             <div class="row">
                 <div class="col-3" style="padding:0px !important;">
-                    <h6 class="rp2">54</h6>
+                    <h6 class="rp2"><%= video.views ? video.views : '0' %> </h6>
                     <p class="rp1">Total Views</p>
                 </div>
                 <div class="col-3" style="padding:0px !important;">
-                    <h6 class="rp2">34</h6>
+                    <h6 class="rp2"><%= video.likes.length %> </h6>
                     <p class="rp1">Likes</p>
                 </div>
                 <div class="col-3" style="padding:0px !important;">
-                    <h6 class="rp2">18</h6>
+                    <h6 class="rp2"><%= video.rank ? video.rank : '0' %> </h6>
                     <p class="rp1">Rank</p>
                 </div>
                 <div class="col-3" style="padding:0px !important;">
-                    <h6 class="rp2">3</h6>
+                    <h6 class="rp2"><%= participants.length %> </h6>
                     <p class="rp1">Participants</p>
                 </div>
             </div>
@@ -107,7 +106,7 @@
             <div class="row comment-header">
                 <!-- <div class="col-1"></div> -->
                 <div class="col">
-                    <p style="color: #747474; font-size: .8rrem;">Comments(23)</p>
+                    <p style="color: #747474; font-size: .8rrem;">Comments(<%= video.comments.length %>)</p>
                 </div>
                 <!-- <div class="col-5"></div> -->
                 <div class="col" style="display: flex; justify-content: flex-end;">
@@ -116,91 +115,63 @@
             </div>
         </div>
         
-        <div class="comments container">
-            <div class="row mb">
-                <img src="/img/profile1.png" class="img2">
-                <div class="col">
-                    <p id="p7">Ronald Richards</p>
-                    <p id="p8">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti corru</p>
-                    <p id="p9">2h</p>
-                    <p id="p10">Reply</p>
+        <% if(!video.comments.length){ %>
+            <h5 style="display: flex; justify-content: center;">No Comments</h5>
+        <% } else { %>
+            <div class="comments container">
+                <div class="row mb">
+                    <img src="/img/profile1.png" class="img2">
+                    <div class="col">
+                        <p id="p7">Ronald Richards</p>
+                        <p id="p8">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti corru</p>
+                        <p id="p9">2h</p>
+                        <p id="p10">Reply</p>
+                    </div>
                 </div>
+                <!-- Sub Comments Start -->
+                <!-- <div class="row mb sub-comment">
+                            <div class="col-1"></div>
+                            <img src="/img/profile3.png">
+                            <div class="col">
+                                <p id="p7">Jenny Wilson</p>
+                                <p id="p8">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti corru</p>
+                                <p id="p9">2h</p>
+                                <p id="p10">Reply</p>
+                            </div>
+                        </div> -->
+                <!-- Sub Comments End -->
             </div>
-            <!-- Sub Comments Start -->
-            <div class="row mb sub-comment">
-                <div class="col-1"></div>
-                <img src="/img/profile3.png">
-                <div class="col">
-                    <p id="p7">Jenny Wilson</p>
-                    <p id="p8">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti corru</p>
-                    <p id="p9">2h</p>
-                    <p id="p10">Reply</p>
-                </div>
-            </div>
-            <!-- Sub Comments End -->
-            <div class="row mb">
-                <img src="/img/profile4.png" class="img2">
-                <div class="col">
-                    <p id="p7">Theresa Webb</p>
-                    <p id="p8">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti corru</p>
-                    <p id="p9">1h</p>
-                    <p id="p10">Reply</p>
-                </div>
-            </div>
-            <div class="row mb">
-                <img src="/img/profile2.png" class="img2">
-                <div class="col">
-                    <p id="p7">Jenny Wilson</p>
-                    <p id="p8">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti corru</p>
-                    <p id="p9">23m</p>
-                    <p id="p10">Reply</p>
-                </div>
-            </div>
-            <div class="row mb">
-                <img src="/img/profile4.png" class="img2">
-                <div class="col">
-                    <p id="p7">Theresa Webb</p>
-                    <p id="p8">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti corru</p>
-                    <p id="p9">7m</p>
-                    <p id="p10">Reply</p>
-                </div>
-            </div>
-        </div>
+        <% } %> 
         <hr>
         <div class="container">
             <div class="row participants">
                 <!-- <div class="col-1"></div> -->
                 <div class="col">
-                    <p style="color: #747474; font-size: .8rrrem;">List of Participants (123)</p>
+                    <p style="color: #747474; font-size: .8rem;">List of Participants (<%= participants.length %>)</p>
                 </div>
                 <!-- <div class="col-1"></div> -->
                 <div class="col" style="display: flex; justify-content: flex-end;">
-                    <a href="#" style="font-size: .8rrrem;" class="a1" onclick="seeAllParticipants()">See All&nbsp;&nbsp;<i class="fas fa-angle-right"></i> </a>
+                    <a href="/clashDetails/participants/<%= clash._id %>" style="font-size: .8rem;" class="a1" onclick="seeAllParticipants()">
+                        See All&nbsp;&nbsp;<i class="fas fa-angle-right"></i> 
+                    </a>
                 </div>
             </div>
         </div>
         
-        <div class="container last">
-            <div class="row">
-                <!-- <div class="col-2"></div> -->
-                <div class="col">
-                    <img src="/img/profile1.png">
-                    <p class="p11">Ronald Richards</p>
-                </div>
-                <div class="col">
-                    <img src="/img/profile2.png">
-                    <p class="p11">Jenny Wilson</p>
-                </div>
-                <div class="col">
-                    <img src="/img/profile3.png">
-                    <p class="p11">Wade Warren</p>
-                </div>
-                <div class="col">
-                    <img src="/img/profile4.png">
-                    <p class="p11">Theresa Webb</p>
+        <% if(!participants.length){ %>
+            <h5 style="display: flex; justify-content: center;">No Participants</h5>
+        <% } else { %>
+            <div class="container last">
+                <div class="row">
+                    <% participants.forEach(p => { %>
+                        <div class="col">
+                            <img src="<%= p.profilePic %>">
+                            <p class="p11"><%= p.username %></p>
+                        </div>
+                    <% }) %> 
                 </div>
             </div>
-        </div>
+        <% } %> 
     </div>
 
     <!-- POPUP SECTION -->
@@ -259,6 +230,10 @@
 		<%- include("../BottomNavmodule/bottomnavbar") %>
 
   </body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+        integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    </script>
   <script src="/js/ClashDetailsmodule/clashDetails.js"></script>
   <script src="/js/ClashDetailsmodule/clashDetailsNotAdmin.js"></script>
 </html>
