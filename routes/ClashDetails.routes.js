@@ -32,8 +32,6 @@ router.route('/reportClash/:id')
     .get(isLoggedIn, reportForm)
     .post(isLoggedIn, report)
 
-router.post("/reportClash/:id", isLoggedIn, )
-
 // router.get('/alpha', (req, res)=>{
 //     res.render("ClashDetailsmodule/alpha",{url:req.url});
 // })
