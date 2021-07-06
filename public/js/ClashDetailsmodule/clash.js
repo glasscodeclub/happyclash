@@ -21,6 +21,13 @@ async function follow(e) {
     }
 }
 
+function comment(e) {
+    const toUser = document.getElementById("to")
+    const toc = document.getElementById("toc")
+    toUser.value = e.getAttribute('data-user')
+    toc.value = e.getAttribute('data-comment')
+}
+
 function openProfile(){
     console.log("You clicked on open profile");
 }

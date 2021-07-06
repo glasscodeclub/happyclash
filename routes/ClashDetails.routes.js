@@ -1,7 +1,9 @@
 const express = require("express");
 const router = express.Router();
 var { isLoggedIn } = require("../middlewares/auth.middleware");
-const { follow, clashDetails, notAdminClashDetails, whenInvitedDetails, publicDetails, reportForm, report, profile, participants } = require("../controllers/clashDetails.controller")
+const { follow, clashDetails, notAdminClashDetails, whenInvitedDetails,publicDetails,
+    reportForm, report, profile, participants, comments, formComment, subComment
+} = require("../controllers/clashDetails.controller")
 
 router.route("/clash/:id")
     .get(isLoggedIn, clashDetails)
@@ -24,9 +26,14 @@ router.route("/follow")
 router.route('/participants/:clashId')
     .get(isLoggedIn, participants)
 
-router.get('/comments', (req, res) => {
-    res.render("ClashDetailsmodule/clashComments", { url: req.url });
-})
+router.route('/comments/:videoId')
+    .get(isLoggedIn, comments)
+
+router.route("/formComment/:videoId")
+    .post(isLoggedIn, formComment)
+
+router.route("/subComment/:videoId")
+    .post(isLoggedIn, subComment)
 
 router.route('/reportClash/:id')
     .get(isLoggedIn, reportForm)

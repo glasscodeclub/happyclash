@@ -110,36 +110,33 @@
                 </div>
                 <!-- <div class="col-5"></div> -->
                 <div class="col" style="display: flex; justify-content: flex-end;">
-                    <a href="#" style="font-size: .8rrem;" class="a1" onclick="seeAllComments()">See All&nbsp;&nbsp;<i class="fas fa-angle-right"></i> </a>
+                    <a href="/clashDetails/comments/<%= video._id %>" style="font-size: .8rem;" class="a1" onclick="seeAllComments()">
+                        See All&nbsp;&nbsp;<i class="fas fa-angle-right"></i>
+                    </a>
                 </div>
             </div>
         </div>
         
-        <% if(!video.comments.length){ %>
+        <% if(!comments.length){ %>
             <h5 style="display: flex; justify-content: center;">No Comments</h5>
         <% } else { %>
             <div class="comments container">
-                <div class="row mb">
-                    <img src="/img/profile1.png" class="img2">
-                    <div class="col">
-                        <p id="p7">Ronald Richards</p>
-                        <p id="p8">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti corru</p>
-                        <p id="p9">2h</p>
-                        <p id="p10">Reply</p>
+                <% comments.forEach((comment, index) => { %>
+                    <% if(index < 4) { %>
+                        <div class="row mb">
+                        <img src="<%= comment.profilePic %>" class="img2">
+                        <div class="col">
+                            <p id="p7"><%= comment.c.username %> </p>
+                            <p id="p8"><%= comment.c.message %> </p>
+                            <p id="p9">2h</p>
+                            <p id="p10" type="button" data-bs-toggle="modal" data-user="<%= comment.c.username %>" 
+                                data-comment='<%= comment.c.message %>' data-bs-target="#sub-comment" onclick="comment(this)">
+                                Reply
+                            </p>
+                        </div>
                     </div>
-                </div>
-                <!-- Sub Comments Start -->
-                <!-- <div class="row mb sub-comment">
-                            <div class="col-1"></div>
-                            <img src="/img/profile3.png">
-                            <div class="col">
-                                <p id="p7">Jenny Wilson</p>
-                                <p id="p8">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti corru</p>
-                                <p id="p9">2h</p>
-                                <p id="p10">Reply</p>
-                            </div>
-                        </div> -->
-                <!-- Sub Comments End -->
+                    <% } %> 
+                <% }) %>
             </div>
         <% } %> 
         <hr>
@@ -175,6 +172,43 @@
     </div>
 
     <!-- POPUP SECTION -->
+
+        <!-- sub-comment modal start -->
+    <div class="modal fade" id="sub-comment" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Leave a comment</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form action="/clashDetails/subComment/<%= video._id %>" method="POST">
+                    <div class="modal-body">
+                        <div class="form-floating mb-3">
+                            <input style="border: .5px solid;" type="text" name="toUser" class="form-control" id="to"
+                                placeholder="Username" readonly required>
+                            <label for="to">Username</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input style="border: .5px solid; display: none;" type="text" name="toComment"
+                                class="form-control" id="toc" placeholder="Username" readonly required>
+                            <label for="to">Comment</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input style="border: .5px solid;" type="text" class="form-control" name="comment" id="comment"
+                                placeholder="add comment..." required>
+                            <label for="comment">Add Comment</label>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button class="btn btn-primary">Comment</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- sub-comment modal end -->
+
     <div class="popup" id="popup-suggest-clash">
         <div class="popup-header">
             <button data-close-button class="close-button">&times;</button>

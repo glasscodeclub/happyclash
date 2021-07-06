@@ -8,7 +8,10 @@ const commentSchema = new mongoose.Schema({
     },
     video: String,          //video id
     message: String,
-    time: String,
+    time: {
+        type: Date,
+        default: Date.now()
+    },
     subComments: [String]  //comment ids
 })
 

@@ -3,6 +3,7 @@ const Userdetail = require("../models/userdetails.models")
 const Video = require("../models/video.models")
 const Clash = require("../models/clash.models")
 const Report = require("../models/report.models")
+const Comment = require("../models/comment.models")
 const _ = require("lodash");
 
 module.exports.clashDetails = async (req, res) => {
@@ -17,10 +18,23 @@ module.exports.clashDetails = async (req, res) => {
         const clash = await Clash.findOne({ _id: { $eq: video.clash } })
         if (!clash) throw "This video is not associated with any clash"
 
+        // List of comments
+        let comments = video.comments.map(async id => {
+            return await Comment.findOne({ _id: { $eq: id } })
+        })
+        comments = await Promise.all(comments)
+        comments = comments.map(async c => {
+            let { profilePic } = await Userdetail.findOne({ username: { $eq: c.username } })
+            return { c, profilePic }
+        })
+        comments = await Promise.all(comments)
+
+        // List of paricipants
         let participants = clash.participants.map(async p => {
             return await Userdetail.findOne({ username: { $eq: p } })
         })
         participants = await Promise.all(participants)
+
         const user = await Userdetail.findOne({ username: { $eq: clash.username } })
         if (!user) throw "Their is no user with this username."
 
@@ -32,7 +46,7 @@ module.exports.clashDetails = async (req, res) => {
         else isFollowed = false
         participants = [user, ...participants]
 
-        res.render("ClashDetailsmodule/clashDetails", { url: req.url, video, clash, user, participants, isFollowed });
+        res.render("ClashDetailsmodule/clashDetails", { url: req.url, video, clash, user, participants, isFollowed, comments: comments.reverse() });
     } catch (err) {
         console.log(err)
         res.redirect(url.format({
@@ -57,10 +71,23 @@ module.exports.notAdminClashDetails = async (req, res) => {
         const clash = await Clash.findOne({ _id: { $eq: video.clash } })
         if (!clash) throw "This video is not associated with any clash"
 
+        // List of comments
+        let comments = video.comments.map(async id => {
+            return await Comment.findOne({ _id: { $eq: id } })
+        })
+        comments = await Promise.all(comments)
+        comments = comments.map(async c => {
+            let { profilePic } = await Userdetail.findOne({ username: { $eq: c.username } })
+            return { c, profilePic }
+        })
+        comments = await Promise.all(comments)
+
+        // List of paricipants
         let participants = clash.participants.map(async p => {
             return await Userdetail.findOne({ username: { $eq: p } })
         })
         participants = await Promise.all(participants)
+
         const user = await Userdetail.findOne({ username: { $eq: clash.username } })
         if (!user) throw "Their is no user with this username."
 
@@ -72,7 +99,7 @@ module.exports.notAdminClashDetails = async (req, res) => {
         else isFollowed = false
         participants = [user, ...participants]
 
-        res.render("ClashDetailsmodule/clashDetailsNotAdmin", { url: req.url, video, clash, user, participants, isFollowed });
+        res.render("ClashDetailsmodule/clashDetailsNotAdmin", { url: req.url, video, clash, user, participants, isFollowed, comments: comments.reverse() });
     } catch (err) {
         console.log(err)
         res.redirect(url.format({
@@ -97,10 +124,23 @@ module.exports.whenInvitedDetails = async (req, res) => {
         const clash = await Clash.findOne({ _id: { $eq: video.clash } })
         if (!clash) throw "This video is not associated with any clash"
 
+        // List of comments
+        let comments = video.comments.map(async id => {
+            return await Comment.findOne({ _id: { $eq: id } })
+        })
+        comments = await Promise.all(comments)
+        comments = comments.map(async c => {
+            let { profilePic } = await Userdetail.findOne({ username: { $eq: c.username } })
+            return { c, profilePic }
+        })
+        comments = await Promise.all(comments)
+
+        // List of paricipants
         let participants = clash.participants.map(async p => {
             return await Userdetail.findOne({ username: { $eq: p } })
         })
         participants = await Promise.all(participants)
+
         const user = await Userdetail.findOne({ username: { $eq: clash.username } })
         if (!user) throw "Their is no user with this username."
 
@@ -112,7 +152,7 @@ module.exports.whenInvitedDetails = async (req, res) => {
         else isFollowed = false
         participants = [user, ...participants]
 
-        res.render("ClashDetailsmodule/clashDetailsWhenInvited", { url: req.url, video, clash, user, participants, isFollowed });
+        res.render("ClashDetailsmodule/clashDetailsWhenInvited", { url: req.url, video, clash, user, participants, isFollowed, comments: comments.reverse() });
     } catch (err) {
         console.log(err)
         res.redirect(url.format({
@@ -137,10 +177,23 @@ module.exports.publicDetails = async (req, res) => {
         const clash = await Clash.findOne({ _id: { $eq: video.clash } })
         if (!clash) throw "This video is not associated with any clash"
 
+        // List of comments
+        let comments = video.comments.map(async id => {
+            return await Comment.findOne({ _id: { $eq: id } })
+        })
+        comments = await Promise.all(comments)
+        comments = comments.map(async c => {
+            let { profilePic } = await Userdetail.findOne({ username: { $eq: c.username } })
+            return { c, profilePic }
+        })
+        comments = await Promise.all(comments)
+
+        // List of paricipants
         let participants = clash.participants.map(async p => {
             return await Userdetail.findOne({ username: { $eq: p } })
         })
         participants = await Promise.all(participants)
+
         const user = await Userdetail.findOne({ username: { $eq: clash.username } })
         if (!user) throw "Their is no user with this username."
 
@@ -152,7 +205,7 @@ module.exports.publicDetails = async (req, res) => {
         else isFollowed = false
         participants = [user, ...participants]
 
-        res.render("ClashDetailsmodule/clashDetailsPublic", { url: req.url, video, clash, user, participants, isFollowed });
+        res.render("ClashDetailsmodule/clashDetailsPublic", { url: req.url, video, clash, user, participants, isFollowed, comments: comments.reverse() });
     } catch (err) {
         console.log(err)
         res.redirect(url.format({
@@ -244,6 +297,100 @@ module.exports.participants = async (req, res) => {
     } catch (err) {
         console.log(err);
         res.redirect(`/error?errorMessage=${err}`);
+    }
+}
+
+module.exports.comments = async (req, res) => {
+    try {
+        const { videoId } = req.params
+        if (!videoId) throw "Reference Id is required inorder to view comments."
+
+        const video = await Video.findOne({ _id: { $eq: videoId } })
+        if (!video) throw "Their is no details associated with this reference id."
+
+        // List of comments
+        let comments = video.comments.map(async id => {
+            return await Comment.findOne({ _id: { $eq: id } }).populate('subComments')
+        })
+        comments = await Promise.all(comments)
+        comments = comments.map(async c => {
+            let { profilePic } = await Userdetail.findOne({ username: { $eq: c.username } })
+            let sc = c.subComments.map(async sc => {
+                let { profilePic } = await Userdetail.findOne({ username: { $eq: sc.username } })
+                return { sc, profilePic }
+            })
+            sc = await Promise.all(sc)
+            return { c, profilePic, sc }
+        })
+        comments = await Promise.all(comments)
+        res.render("ClashDetailsmodule/clashComments", { url: req.url, comments: comments.reverse(), videoId });
+    } catch (err) {
+        console.log(err)
+        res.redirect(url.format({
+            pathname: "/error",
+            query: {
+                message: err ? err : err.message,
+                status: 404
+            }
+        }))
+    }
+}
+
+module.exports.formComment = async (req, res) => {
+    try {
+        const { videoId } = req.params
+        const { comment } = req.body
+        const { username } = req.user
+        if (!username) throw "You need to be loggedIn to post a comment"
+
+        const video = await Video.findOne({ _id: { $eq: videoId } })
+        if (!video) throw "Their is no video with this reference id."
+
+        const newComment = new Comment({ username, video: videoId, message: comment })
+        await newComment.save()
+
+        video.comments.push(newComment._id)
+        await video.save()
+        res.redirect(`/clashDetails/comments/${videoId}`)
+    } catch (err) {
+        console.log(err)
+        res.redirect(url.format({
+            pathname: "/error",
+            query: {
+                message: err ? err : err.message,
+                status: 404
+            }
+        }))
+    }
+}
+
+module.exports.subComment = async (req, res) => {
+    try {
+        const { toUser, comment, toComment } = req.body
+        const { videoId } = req.params
+        const { username } = req.user
+        if (!username) throw "You need to be loggedIn to post a comment"
+
+        const user = await Comment.findOne({ username: { $eq: toUser }, message: { $eq: toComment } })
+        if (!user) throw "Their is no comment that you are try to comment for."
+
+        const newComment = new Comment({
+            username, video: videoId, message: comment, isReplied: true
+        })
+        await newComment.save()
+
+        user.subComments.push(newComment._id)
+        await user.save()
+        res.redirect(`/clashDetails/comments/${videoId}`)
+    } catch (err) {
+        console.log(err)
+        res.redirect(url.format({
+            pathname: "/error",
+            query: {
+                message: err ? err : err.message,
+                status: 404
+            }
+        }))
     }
 }
 
