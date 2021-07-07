@@ -83,7 +83,7 @@ exports.createClash = async (req, res) => {
 
    try {
       // 1) req body will not be empty
-      if (_.isEmpty(req.body)) return res.status(201).redirect('/createclash/createNewClash');
+      if (_.isEmpty(req.body)) return res.status(201).redirect('/createclash/createNewClash');//error handle properly 
 
       // 4) Creating a clash
       const newClash = await Clash.create({
