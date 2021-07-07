@@ -30,18 +30,18 @@ function optionThreeDot(e){
   document.getElementById("optionThreeDots").value=e.id.split("_")[1];
 }
 
-function del(){
-  let id=document.getElementById("optionThreeDots").value
-  $.ajax('/library/delete/'+id, {
-   type: 'POST',  
-   success: function (data, status, xhr) {
-      window.location.assign("/library");
-   },
-   error: function (jqXhr, textStatus, errorMessage) {
-     window.location.assign("/error")
-   }
- });
- }
+// function del(){
+//   let id=document.getElementById("optionThreeDots").value
+//   $.ajax('/library/delete/'+id, {
+//    type: 'POST',  
+//    success: function (data, status, xhr) {
+//       window.location.assign("/library");
+//    },
+//    error: function (jqXhr, textStatus, errorMessage) {
+//      window.location.assign("/error")
+//    }
+//  });
+//  }
 
 function save(){
   let id=document.getElementById("optionThreeDots").value

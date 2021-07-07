@@ -40,7 +40,7 @@ exports.getClashCreatedPage = async (req, res) => {
 
       if (clash.mode === 'Friend') {
          let participantsDetailsPromiseArray = [];
-
+         participantsDetailsPromiseArray.push(UserDetails.findOne({ username: clash.username }));
          clash.participants.forEach(el => {
             participantsDetailsPromiseArray.push(UserDetails.findOne({ username: el }));
          })
@@ -56,7 +56,22 @@ exports.getClashCreatedPage = async (req, res) => {
          })
 
       } else {
-         res.render('createclashmodule/clashCreated', {mode: clash.mode, title: clash.title, shareableLink ,description : clash.description, isSeenByAllForFriends : clash.isSeenByAllForFriends, endDate: endDateCorrectFormat, url: req.url });
+         let participantsDetailsPromiseArray = [];
+         participantsDetailsPromiseArray.push(UserDetails.findOne({ username: clash.username }));
+         clash.participants.forEach(el => {
+            participantsDetailsPromiseArray.push(UserDetails.findOne({ username: el }));
+         })
+
+         // Runing all promises in parallel
+         Promise.allSettled(participantsDetailsPromiseArray).then(data => {
+            let count;
+            if (data.length < 4) count = data.length;
+            res.render('createclashmodule/clashCreated', {mode: clash.mode, title: clash.title, description: clash.description, shareableLink, isSeenByAllForFriends : clash.isSeenByAllForFriends,endDate : endDateCorrectFormat, participantsDetails: data, count : count || 4, url: req.url });  
+         }).catch(err => {
+            console.log(err);
+            return res.redirect(`/error?message=${err}`);
+         })
+         // res.render('createclashmodule/clashCreated', {mode: clash.mode, title: clash.title, shareableLink ,description : clash.description, isSeenByAllForFriends : clash.isSeenByAllForFriends, endDate: endDateCorrectFormat, url: req.url });
       }
 
    } catch (err) {
@@ -68,7 +83,7 @@ exports.createClash = async (req, res) => {
 
    try {
       // 1) req body will not be empty
-      if (_.isEmpty(req.body)) return res.status(201).redirect('/createclash/createNewClash');
+      if (_.isEmpty(req.body)) return res.status(201).redirect('/createclash/createNewClash');//error handle properly 
 
       // 4) Creating a clash
       const newClash = await Clash.create({

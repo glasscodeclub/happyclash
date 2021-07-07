@@ -20,19 +20,19 @@
         <li>auth module
             <br>
             <ul>
-                <li><a href="/" style="color: green;">Start</a></li>
-                <li> <a href="/auth/login" style="color: green;">Login</a></li>
-                <li> <a href="/auth/signup" style="color: green;">Signup</a></li>
-                <li><a href="/auth/forget" style="color: green;">forget</a></li>
-                <li><a href="/auth//reset/:rid/user/:userid" style="color: green;">reset(can't be accessed)</a></li>
+                <li><a href="/" style="color: green;">Start()</a></li>
+                <li> <a href="/auth/login" style="color: green;">Login()</a></li>
+                <li> <a href="/auth/signup" style="color: green;">Signup()</a></li>
+                <li><a href="/auth/forget" style="color: green;">forge()t</a></li>
+                <li><a href="/auth//reset/:rid/user/:userid" style="color: green;">reset(can't be accessed)()</a></li>
             </ul>
         </li>
 
         <li>Library module
             <br>
             <ul>
-                <li> <a href="/library/videomodelibrary" style="color: green;">Library video mode(can't be accessed)</a></li>
-                <li> <a href="/library" style="color: green;">Library</a> </li>
+                <li> <a href="/library/videomodelibrary" style="color: green;">Library video mode/:videoid()</a></li>
+                <li> <a href="/library" style="color: green;">Library()</a> </li>
             </ul>
         </li>
         <li>Home module
@@ -41,40 +41,44 @@
                 <li> <a href="/home/videomode" style="color: red;">Video Mode</a></li>
                 <li> <a href="/home/homefeed" style="color: red;">homefeed</a></li>
                 <!-- pic error in homefeef -->
-                <li> <a href="/home/challenge" style="color: red;">Challenge</a></li>
+                <li> <a href="/home/challenge" style="color:green;">Challenge/:clashid()</a></li>
                 <li> <a href="/home/songs" style="color: red;">Songs </a>
                 </li>
                 <li><a href="/home/videomodeprivate" style="color: red;">video mode private</a></li>
                 <li><a href="/home/selectedPlaylist" style="color: red;">Selected Playlist</a></li>
             </ul>
         </li>
-        <li>Clash details module
+        <li>Clash details module SAI
             <br>
             <ul>
-                <li><a href="/clashDetails" style="color: green;">Clash Details</a></li>
-                <li><a href="/clashDetails/notadmin" style="color: green;">Clash Details(Not Admin)</a></li>
-                <li><a href="/clashDetails/wheninvited" style="color: green;">Clash Details(When Invited)</a></li>
-                <li><a href="/clashDetails/public" style="color: green;">Clash Details(Public)</a></li>
-                <li><a href="/clashDetails/comments" style="color: green;">Clash Comments</a></li>
-                <li><a href="/clashDetails/profile" style="color:green;">Profile/:clashid(remove videoCreated) -> sai</a></li>
-                <li><a href="/clashDetails/participants" style="color: green;">Participants/:clashid ->raj</a></li>
-                <li><a href="/clashDetails/reportClash" style="color: green;">Report/:clashid -> sai</a></li>
+
+                <li><a href="/clashDetails" style="color: red;">Clash Details (Friend + not admin)</a></li>
+                <!-- <li><a href="/clashDetails/notadmin" style="color: red;">Clash Details(Friend + not admin)</a></li> -->
+                <li><a href="/clashDetails/wheninvited" style="color: red;">Clash Details(When Invited)</a></li>
+                <li><a href="/clashDetails/public" style="color: red;">Clash Details(Public)</a></li>
+                <li><a href="/clashDetails/comments" style="color: red;">Clash Comments</a></li>
+                <li><a href="/clashDetails/profile" style="color:green;">Profile/:userid ()</a></li>
+                <li><a href="/clashDetails/participants" style="color: green;">Participants/:clashid()</a></li>
+                <li><a href="/clashDetails/reportClash" style="color: green;">Report/:clashid() </a></li>
+
             </ul>
         </li>
-        <li>Career module ?
+        <li>Career module SAM
             <br>
             <ul>
-                <li> <a href="/career/edit" style="color:violet;">Edit Career(Delete, image) -> sai</a></li>
-                <li> <a href="/career" style="color: green;">Career -> sai</a></li>
-                <li> <a href="/career/profile" style="color: green;">Profile -> sai</a></li>
-                <li> <a href="/career/post" style="color: green;">Post -> sai</a></li>
+
+                <li> <a href="/career/edit" style="color:violet;">Edit Career(Delete, image,other data) -> sai</a></li>
+                <li> <a href="/career" style="color: green;">Career()</a></li>
+                <li> <a href="/career/profile" style="color: green;">Profile()</a></li>
+                <li> <a href="/career/post" style="color: green;">Post()</a></li>
+
                 <li><a href="/career/notification" style="color: red;">Notification</a></li>
                 <li> <a href="/career/admincontrols" style="color: red;">Administrator-Settings</a></li>
                 <li> <a href="/career/results" style="color: red;">Results</a></li>
                 <li> <a href="/career/congratulations" style="color: red;">Congratulation</a></li>
             </ul>
         </li>
-        <li>Create clash module ->raj
+        <li>Create clash module RAJ 
             <br>
             <ul>
                 <li><a href="/createclash/addParticipants" style="color: green;">Add Participants</a></li>
@@ -83,7 +87,7 @@
                 <li><a href="/createclash/whocanwatch" style="color: green;">Who Can Watch</a></li>
             </ul>
         </li>
-        <li>Search module
+        <li>Search module SUMANT
             <br>
             <ul>
                 <li><a href="/search" style="color: red;">Search</a></li>
