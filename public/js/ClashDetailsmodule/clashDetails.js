@@ -101,3 +101,10 @@ function send(e) {
     console.log(e)
     console.log("Clicked on send button")
 }
+
+function comment(e) {
+    const toUser = document.getElementById("to")
+    const toc = document.getElementById("toc")
+    toUser.value = e.getAttribute('data-user')
+    toc.value = e.getAttribute('data-comment')
+}
