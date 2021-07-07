@@ -45,7 +45,8 @@
                 </form>
             </div>
         </div>
-
+        <%if(comments==null||comments==undefined||comments==[]){%>
+        <%}else{%>    
         <div class="comments container" style="margin-bottom: 60px;">
             <% comments.forEach(comment => { %>
                 <div class="row mb">
@@ -75,8 +76,8 @@
                 <% } %> 
             <% }) %> 
         </div>
+        <%}%>
     </div>
-<% console.log(comments[0].sc) %> 
     <!-- sub-comment modal start -->
     <div class="modal fade" id="sub-comment" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">

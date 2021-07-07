@@ -5,6 +5,7 @@ const Clash = require("../models/clash.models")
 const Report = require("../models/report.models")
 const Comment = require("../models/comment.models")
 const _ = require("lodash");
+const { result } = require("lodash")
 
 module.exports.clashDetails = async (req, res) => {
     try {
@@ -307,7 +308,20 @@ module.exports.comments = async (req, res) => {
 
         const video = await Video.findOne({ _id: { $eq: videoId } })
         if (!video) throw "Their is no details associated with this reference id."
+        if(video.clash==null) throw "cannot comment on the video which is not linked with a clash"
+        const clash= await Clash.findOne({_id:video.clash})
+        if(!clash) throw "clash does not exist for this video"
+        if(clash.mode=="Friend"&&clash.isSeenByAllForFriends==false){
+            let isPresent=clash.view.includes(req.user.username);
+           if(!isPresent){
+               if(clash.username==req.user.username){
 
+               }
+               else{
+               throw "don't have permission for this"
+               }
+           } 
+        }
         // List of comments
         let comments = video.comments.map(async id => {
             return await Comment.findOne({ _id: { $eq: id } }).populate('subComments')
@@ -325,7 +339,7 @@ module.exports.comments = async (req, res) => {
         comments = await Promise.all(comments)
         res.render("ClashDetailsmodule/clashComments", { url: req.url, comments: comments.reverse(), videoId });
     } catch (err) {
-        console.log(err)
+
         res.redirect(url.format({
             pathname: "/error",
             query: {
