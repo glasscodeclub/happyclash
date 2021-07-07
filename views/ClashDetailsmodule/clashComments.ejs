@@ -51,11 +51,11 @@
                 <div class="row mb">
                     <img src="<%= comment.profilePic %>" class="img2">
                     <div class="col">
-                        <p id="p7"><%= comment.c.username %></p>
+                        <p id="p7"><%= comment.c.username %> (<%= new Date(comment.c.time).toDateString() %>)</p>
                         <p id="p8"><%= comment.c.message %></p>
-                        <p id="p9">2h</p>
+                        <p id="p9"><%= new Date(comment.c.time).toTimeString().slice(0, 8) %> </p>
                         <p id="p10" type="button" data-bs-toggle="modal" data-user="<%= comment.c.username %>" 
-                            data-comment='<%= comment.c.message %>' data-bs-target="#sub-comment" onclick="comment(this)">
+                            data-comment='<%= comment.c._id %>' data-bs-target="#sub-comment" onclick="comment(this)">
                             Reply
                         </p>
                     </div>
@@ -66,9 +66,9 @@
                             <div class="col-1"></div>
                             <img src="<%= subcomment.profilePic %>">
                             <div class="col">
-                                <p id="p7"><%= subcomment.sc.username %> </p>
+                                <p id="p7"><%= subcomment.sc.username %> (<%= new Date(comment.c.time).toDateString() %>)</p>
                                 <p id="p8"><%= subcomment.sc.message %> </p>
-                                <p id="p9">2h</p>
+                                <p id="p9"><%= new Date(subcomment.sc.time).toTimeString().slice(0, 8) %></p>
                             </div>
                         </div>
                     <% }) %> 
@@ -76,7 +76,7 @@
             <% }) %> 
         </div>
     </div>
-
+<% console.log(comments[0].sc) %> 
     <!-- sub-comment modal start -->
     <div class="modal fade" id="sub-comment" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">

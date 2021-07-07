@@ -366,12 +366,12 @@ module.exports.formComment = async (req, res) => {
 
 module.exports.subComment = async (req, res) => {
     try {
-        const { toUser, comment, toComment } = req.body
+        const { comment, toComment } = req.body
         const { videoId } = req.params
         const { username } = req.user
         if (!username) throw "You need to be loggedIn to post a comment"
 
-        const user = await Comment.findOne({ username: { $eq: toUser }, message: { $eq: toComment } })
+        const user = await Comment.findOne({ _id: { $eq: toComment } })
         if (!user) throw "Their is no comment that you are try to comment for."
 
         const newComment = new Comment({
