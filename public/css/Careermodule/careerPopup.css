@@ -24,7 +24,6 @@
 
 .career-popup{
     width:500px;
-    height: 400px;
     max-width:80%;
     position:fixed;
     top:50%;
@@ -92,6 +91,8 @@
 .popup-body{
     padding: 10px 15px;
     font-size: 1.2rem;
+    max-height: 250px;
+    overflow-y: auto;
 }
 
 .suggested{

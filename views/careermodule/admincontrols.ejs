@@ -31,13 +31,18 @@
 
     <!-- Custom css -->
     <link rel="stylesheet" href="/css/Careermodule/admincontrols.css" />
-    <link rel="stylesheet" href="/css/Careermodule/careerPopup.css">
-    <!-- Custom js -->
-    <script src="/js/Careermodule/admincontrols.js"></script>
-    
+    <link rel="stylesheet" href="/css/Careermodule/careerPopup.css">    
   </head>
 
   <body>
+    <script>
+      const ongoingClashes = JSON.parse('<%- JSON.stringify(ongoingClashes) %>');
+      const ongoingVideos = JSON.parse('<%- JSON.stringify(ongoingVideos) %>');
+      const ongoingParticipantsList = JSON.parse('<%- JSON.stringify(ongoingParticipantsList) %>');
+      const prevClashes = JSON.parse('<%- JSON.stringify(prevClashes) %>');
+      const prevVideos = JSON.parse('<%- JSON.stringify(prevVideos) %>');
+      const prevParticipantsList = JSON.parse('<%- JSON.stringify(prevParticipantsList) %>');
+    </script>
     <div class="head">
       <div id="backdiv">
         <span onclick="window.location.href='/'" class="iconify" data-inline="false" data-icon="eva:arrow-back-outline" style="font-size: 30px;"></span>
@@ -51,106 +56,92 @@
 
     <div class="container" style="margin-bottom: 4em; padding-left:0;">
       <hr />
+      <!-- Ongoing Clashes -->
       <div class="div1">
         <p id="play">Ongoing Clashes</p>
       </div>
-      <div class="row">
-        <div class="col-3 challenge1">
-          <p class="p1 btn btn-success" onclick="challenge(this,1)" data-target="#popup" >
-            Song Challenge
-          </p>
-        </div>
-        <div class="col-8 d-flex flex-column justify-content-center">
-          <p class="p3">Created on: 5 March 2021 <span class="iconify down-arrow" data-inline="false" data-icon="bx:bx-chevron-down" onclick="challenge(this,1)"></span></p>
-          <p class="p3">Participants: 102</p>
-          <p class="p3">Clash till: 20 April 2021</p>
-        </div>
-        <!-- <div class="col-1">></div> -->
-      </div>
-      <div id="song-details-1"></div>
-      <div id="suggest-popup-1"></div>
-      <br />
-      <div class="row">
-        <div class="col-3 challenge1">
-          <p class="p1 btn btn-success" onclick="challenge(this,2)">
-            Old School Song Challenge
-          </p>
-        </div>
-        <div class="col-8 d-flex flex-column justify-content-center">
-          <p class="p3">Created on: 11 March 2021 <span class="iconify down-arrow" data-inline="false" data-icon="bx:bx-chevron-down" onclick="challenge(this,2)"></span></p>
-          <p class="p3">Participants: 39</p>
-          <p class="p3">Clash till: 25 April 2021</p>
-        </div>
-      </div>
-      <div id="song-details-2"></div>
-      <div id="suggest-popup-2"></div>
-      <hr />
+      <% if(!ongoingClashes.length){ %>
+        <p style="display: flex; justify-content: center; margin-top: 10px;">Their are no on-going clashes right now.</p>
+      <% } else { %>
+        <% ongoingClashes.forEach((clash, index) => { %>
+          <div class="row">
+            <div class="col-3 challenge1">
+              <p class="p1 btn btn-success" onclick="challenge(this, parseInt('<%= index+1 %>'), ongoingClashes, ongoingVideos, ongoingParticipantsList, prevClashes, prevVideos, prevParticipantsList)" data-target="#popup">
+                <%= clash.title %> 
+              </p>
+            </div>
+            <div class="col-8 d-flex flex-column justify-content-center">
+              <p class="p3">
+                Created on: <%= new Date(clash.startDate).toDateString() %> 
+                <span class="iconify down-arrow" data-inline="false" data-icon="bx:bx-chevron-down" 
+                  onclick="challenge(this, parseInt('<%= index+1 %>'), ongoingClashes, ongoingVideos, ongoingParticipantsList, prevClashes, prevVideos, prevParticipantsList)">
+                </span>
+              </p>
+              <p class="p3">Participants: <%= clash.participants.length %> </p>
+              <p class="p3">Clash till: <%= new Date(clash.endDate).toDateString() %></p>
+            </div>
+          </div>
+          <div id="song-details-<%= index + 1 %>"></div>
+          <div id="suggest-popup-<%= index + 1 %>"></div>
+          <% if(ongoingClashes.length - 1 !== index){ %>
+            <br />
+          <% } %> 
+        <% }) %>
+      <% } %> 
+      <hr>
+
+      <!-- Previous Clashes -->
       <div class="div1">
         <p id="play">Previous Clashes</p>
       </div>
-      <div class="row">
-        <div class="col-3 challenge1">
-          <p class="p1 btn btn-success" onclick="challenge(this,3)">
-            Dance Challenge
-          </p>
-        </div>
-        <div class="col-8 d-flex flex-column justify-content-center">
-          <p class="p3">Created on: 5 March 2021 <span class="iconify down-arrow" data-inline="false" data-icon="bx:bx-chevron-down" onclick="challenge(this,3)"></span></p>
-          <p class="p3">Participants: 102</p>
-          <p class="p3">Clash till: 20 April 2021</p>
-        </div>
-      </div>
-      <div id="song-details-3"></div>
-      <div id="suggest-popup-3"></div>
-      <br />
-      <div class="row">
-        <div class="col-3 challenge1">
-          <p class="p1 btn btn-success" onclick="challenge(this,4)">
-            Painting Challenge
-          </p>
-        </div>
-        <div class="col-8 d-flex flex-column justify-content-center">
-          <p class="p3">Created on: 11 March 2021 <span class="iconify down-arrow" data-inline="false" data-icon="bx:bx-chevron-down" onclick="challenge(this,4)"></span></p>
-          <p class="p3">Participants: 39</p>
-          <p class="p3">Clash till: 25 April 2021</p>
-        </div>
-      </div>
-      <div id="song-details-4"></div>
-      <div id="suggest-popup-4"></div>
-      <br />
+      <% if(!prevClashes.length){ %>
+        <p style="display: flex; justify-content: center; margin-top: 10px;">Their are no previous clashes right now.</p>
+      <% } else { %>
+        <% prevClashes.forEach((clash, index) => { %>
+          <% let i = ongoingClashes.length + index %> 
+          <div class="row">
+            <div class="col-3 challenge1">
+              <p class="p1 btn btn-success" onclick="challenge(this, parseInt('<%= i+1 %>'), ongoingClashes, ongoingVideos, ongoingParticipantsList, prevClashes, prevVideos, prevParticipantsList)" data-target="#popup">
+                <%= clash.title %> 
+              </p>
+            </div>
+            <div class="col-8 d-flex flex-column justify-content-center">
+              <p class="p3">
+                Created on: <%= new Date(clash.startDate).toDateString() %> 
+                <span class="iconify down-arrow" data-inline="false" data-icon="bx:bx-chevron-down" onclick="challenge(this, parseInt('<%= i+1 %>'), ongoingClashes, ongoingVideos, ongoingParticipantsList, prevClashes, prevVideos, prevParticipantsList)"></span>
+              </p>
+              <p class="p3">Participants: <%= clash.participants.length %> </p>
+              <p class="p3">Clash till: <%= new Date(clash.endDate).toDateString() %></p>
+            </div>
+          </div>
+          <div id="song-details-<%= i + 1 %>"></div>
+          <div id="suggest-popup-<%= i + 1 %>"></div>
+          <br />
+        <% }) %> 
+      <% } %> 
     </div>
-
     <!-- POPUP FOR ADDING FRIENDS -->
     
     <!-- POPUP SECTION -->
     <div class="career-popup" id="add-friends">
       <div class="popup-header">
           <button data-close-button class="close-button">&times;</button>
-          <div class="title">Choose friends to add:</div>
+          <div class="title choose-friend-headline">Choose friends to add:</div>
           <div class="input-data container">
             <div class="row justify-content-center">
-              <input type="search" class="form-control my-3" placeholder="Enter email">
-              <div style="display: flex; justify-content: flex-end; margin-top: 1em;">
+              <input type="text" class="form-control my-3 invitation-bar" placeholder="Username/Email">
+              <input type="text" class="form-control my-3" id="clashId" placeholder="clash id" style="display: none;" readonly>
+              <div style="display: flex; justify-content: space-between; margin-top: 1em;">
+                <a href="#" data-target-see="#see-all" style="text-decoration: none; color: grey;">See All</a>
                 <button style="width: 4em;" onclick="send(this)"> Send </button>
               </div>
             </div>
           </div>
-      </div>
-      <div class="popup-body" style="height: 220px; overflow-y: auto;">
-          <div class="suggested">
-              Suggested
-              <div class="row profiles">
-                  <% for(var i=0; i<5; i++){ %>
-                      <%- include("../partials/userimg") %>
-                  <% } %> 
-                  <div class="suggested-friends col">
-                      <button class="see-all-button" data-target-see="#see-all" >
-                          <img src="/img/see-all-user.png" alt="profile" class="suggested-profile">
-                          <p class="see-all-users">See All ></p>
-                      </button>
-                       
-                  </div>                    
-              </div>
+          <br>
+          <div class="col-md-6 searchResultsContainer removeMe">
+            <div class="searchResults">
+              <ul class="searchResults-list"></ul>
+            </div>
           </div>
       </div>
     </div>
@@ -160,14 +151,32 @@
           <button data-close-button-follow class="close-button">&times;</button>
           <div class="select-followers">
               <div class="follower-title">Your Followers</div>
-              <button  id="select-all" class="select-all" onclick="selectAll()">Select All</button>
+              <% if(followersData.length){ %>
+                <button id="select-all" class="select-all" onclick="selectAll()">Select All</button>
+              <% } %> 
           </div>
       </div>
       <div class="popup-body">
-          <% for(var i = 0; i<4; i++){ %>
-              <%- include("../partials/followers") %>
-         <% } %>
-          
+        <% if(!followersData.length){ %>
+          <h5 style="display: flex; justify-content: center; margin-top: 10px;">No followers</h5>
+        <% } else { %>
+          <% followersData.forEach((follower, index) => { %>
+            <div data-select=".selected" onclick="select(this, parseInt('<%= index + 1 %>'))" class="row">
+              <div class="col-3">
+                <img src="<%= follower.profilePic %>" alt="profile pic" class="suggested-profile">
+              </div>
+              <div class="col-6">
+                <div class="user-info">
+                  <p id="<%= index + 1 %>"><%= follower.username %> </p>
+                  <p class="user-email"><%= follower.email %> </p>
+                </div>
+              </div>
+              <div class="col-3 selected">
+                <i class=" far fa-check-square"></i>
+              </div>
+            </div>
+          <% }) %> 
+        <% } %>          
       </div>
     </div>
 
@@ -177,6 +186,11 @@
     <!-- POPUP END  -->
 
     <%- include("../BottomNavmodule/bottomnavbar") %>
-  </body> 
-  <script src="/js/Careermodule/careerPopup.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+      integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+      crossorigin="anonymous" referrerpolicy="no-referrer">
+      </script>
+    <script src="/js/Careermodule/admincontrols.js"></script>
+    <script src="/js/Careermodule/careerPopup.js"></script>
+  </body>   
 </html>
