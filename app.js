@@ -16,7 +16,9 @@ var express = require("express"),
     Homeroutes = require("./routes/home.routes"),
     ClashDetailsroutes = require("./routes/ClashDetails.routes"),
     createclashroute = require("./routes/createclash.routes"),
-    Cameraroute = require("./routes/camera.routes")
+    Cameraroute = require("./routes/camera.routes"),
+    Imageroutes = require("./routes/img.routes"),
+    Uploadimageroutes = require("./routes/uploadimage.routes")  
 
 var app = express();
 const port = 3000;
@@ -80,12 +82,13 @@ app.use('/camera', Cameraroute);
 
 app.use('/upload', Uploadroutes);
 app.use('/video', Videoroutes);
+app.use('/image', Imageroutes);
+app.use('/uploadimage', Uploadimageroutes);
 
 app.use('/error', (req, res) => {
     const { message, status } = req.query
     res.render("error", { error: "", url: req.url, message, status })
 });
-
 app.listen(port, function () {
     console.log("connected on : ", port, " mongo url : ", url);
 });

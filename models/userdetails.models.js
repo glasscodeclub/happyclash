@@ -7,7 +7,7 @@ const userDetailSchema = new mongoose.Schema({
     },
     profilePic: {
         type: String,
-        default: "https://picsum.photos/200"
+        default: "sample"
     },
     name: {
         type: String,

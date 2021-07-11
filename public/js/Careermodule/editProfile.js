@@ -1,12 +1,21 @@
 const profile = document.getElementsByClassName("p1")
 
 function RemoveClick(params) {
-  profile[0].src = '/Images/defaultImage.jpg'
+  $.ajax('/career/edit/delete', {
+    type: 'POST',  // http method
+    success: function (data, status, xhr) {
+        console.log(data)
+        if(data.success)
+        window.location.reload();
+    },
+    error: function (jqXhr, textStatus, errorMessage) {
+        console.log(jqXhr, textStatus, errorMessage)
+    }
+});
 }
 
 function ChangeClick(params) {
-  console.log(params);
-  console.log("Change button was hit");
+  window.location.assign("/uploadimage")
 }
 
 function DeleteAccount() {

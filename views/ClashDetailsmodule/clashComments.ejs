@@ -50,7 +50,7 @@
         <div class="comments container" style="margin-bottom: 60px;">
             <% comments.forEach(comment => { %>
                 <div class="row mb">
-                    <img src="<%= comment.profilePic %>" class="img2">
+                    <img src="/image/<%= comment.profilePic %>" class="img2">
                     <div class="col">
                         <p id="p7"><%= comment.c.username %> (<%= new Date(comment.c.time).toDateString() %>)</p>
                         <p id="p8"><%= comment.c.message %></p>
@@ -65,7 +65,7 @@
                     <% comment.sc.forEach(subcomment => { %>
                         <div class="row mb sub-comment">
                             <div class="col-1"></div>
-                            <img src="<%= subcomment.profilePic %>">
+                            <img src="/image/<%= subcomment.profilePic %>">
                             <div class="col">
                                 <p id="p7"><%= subcomment.sc.username %> (<%= new Date(comment.c.time).toDateString() %>)</p>
                                 <p id="p8"><%= subcomment.sc.message %> </p>

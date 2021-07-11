@@ -87,7 +87,7 @@
                             <% if (view.includes(followerDetails[i].value.username)) { %>
                                 <div style="background-color:#e5e5e5; pointer-events: none; opacity: 0.4;" id=<%= followerDetails[i].value.username %> class="row">
                                     <div class="col-3">
-                                        <img src="<%= followerDetails[i].value.profilePic %>" alt="profile pic" class="suggested-profile">
+                                        <img src="/image/<%= followerDetails[i].value.profilePic %>" alt="profile pic" class="suggested-profile">
                                     </div>
                                     <div class="col-6">
                                         <div class="user-info">
@@ -101,7 +101,7 @@
                                 <%} else { %>
                                 <div data-select= ".selected" onclick="select(this)" id=<%= followerDetails[i].value.username %> class="row">
                                     <div class="col-3">
-                                        <img src="<%= followerDetails[i].value.profilePic %>" alt="profile pic" class="suggested-profile">
+                                        <img src="/image/<%= followerDetails[i].value.profilePic %>" alt="profile pic" class="suggested-profile">
                                     </div>
                                     <div class="col-6">
                                         <div class="user-info">
@@ -154,7 +154,7 @@
                             <% if (view.includes(followerDetails[i].value.username)) { %>
                                 <div style="background-color:#e5e5e5; pointer-events: none; opacity: 0.4;" id=<%= followerDetails[i].value.username %> class="row">
                                     <div class="col-3">
-                                        <img src="<%= followerDetails[i].value.profilePic %>" alt="profile pic" class="suggested-profile">
+                                        <img src="/image/<%= followerDetails[i].value.profilePic %>" alt="profile pic" class="suggested-profile">
                                     </div>
                                     <div class="col-6">
                                         <div class="user-info">
@@ -168,7 +168,7 @@
                                 <%} else { %>
                                 <div data-select= ".selected" onclick="select(this)" id=<%= followerDetails[i].value.username %> class="row">
                                     <div class="col-3">
-                                        <img src="<%= followerDetails[i].value.profilePic %>" alt="profile pic" class="suggested-profile">
+                                        <img src="/image/<%= followerDetails[i].value.profilePic %>" alt="profile pic" class="suggested-profile">
                                     </div>
                                     <div class="col-6">
                                         <div class="user-info">

@@ -163,7 +163,7 @@
           <% followersData.forEach((follower, index) => { %>
             <div data-select=".selected" onclick="select(this, parseInt('<%= index + 1 %>'))" class="row">
               <div class="col-3">
-                <img src="<%= follower.profilePic %>" alt="profile pic" class="suggested-profile">
+                <img src="/image/<%= follower.profilePic %>" alt="profile pic" class="suggested-profile">
               </div>
               <div class="col-6">
                 <div class="user-info">
