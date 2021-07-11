@@ -101,7 +101,7 @@ function challenge(e, id, ongoingClashes, ongoingVideos, ongoingParticipantsList
                 return (
                   `
                     <div class="col" onclick="console.log(this)" style="text-align: center">
-                      <img class="profile_image" src=${participant.profilePic} class="p1" />
+                      <img class="profile_image" src=/image/${participant.profilePic} class="p1" />
                       <h6 style="font-size: 0.7rem" class="name">${participant.username}</h6>
                     </div>
                   `
@@ -326,7 +326,7 @@ const sendUsernameToInputField = (username) => {
 }
 
 const appendSearchResults = (data, searchResultBlock) => {
-  const html = `<li class="searchResults-listItem" onclick="sendUsernameToInputField('${data.username}')"><img src=${data.profilePic} alt="user"> <h6>${data.username}</h6> </li>`;
+  const html = `<li class="searchResults-listItem" onclick="sendUsernameToInputField('${data.username}')"><img src=/image/${data.profilePic} alt="user"> <h6>${data.username}</h6> </li>`;
   searchResultBlock.insertAdjacentHTML('beforeend', html);
 };
 
