@@ -54,7 +54,7 @@
                     <%for(let i=0;i<count;i++){%>   
                         <% if (participantsDetails[i].value !== null) { %>
                             <div class="col">
-                                <img src="<%= participantsDetails[i].value.profilePic %>" class="participantProfile">
+                                <img src="/image/<%= participantsDetails[i].value.profilePic %>" class="participantProfile">
                                 <p class="p11"><%= participantsDetails[i].value.username %></p>
                             </div>
                         <%} else {%>

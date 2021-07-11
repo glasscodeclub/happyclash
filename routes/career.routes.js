@@ -7,6 +7,8 @@ var { isLoggedIn } = require("../middlewares/auth.middleware");
 const Userdetail = require("../models/userdetails.models")
 const Video = require("../models/video.models")
 const url = require("url")
+var _=require("lodash")
+var fs=require("fs")
 const { career, editForm, updateDetails, profile, postPage, loadMore, adminControls, searchFrnds, addParticipants } = require("../controllers/career.controller")
 
 router.route("/")
@@ -43,5 +45,28 @@ router.route("/post")
 
 router.route("/load-more")
     .post(isLoggedIn, loadMore)
+
+router.post("/edit/delete",isLoggedIn,function(req,res){
+    Userdetail.findOneAndUpdate({username:req.user.username},{ profilePic:"sample"},(err,doc)=>{
+
+        if(err){
+            console.log(err)
+            res.json({success:false})
+        }
+        else if(_.isEmpty(doc)){
+            res.json({success:false})
+        }
+        else{
+            const path = './img/' + doc._id + '.jpeg'
+            fs.unlink(path, (err) => {
+                if (err) {
+                    console.error(err)
+                }
+            })
+            res.json({success:true})
+        }
+    })
+    
+})
 
 module.exports = router;

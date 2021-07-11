@@ -61,7 +61,7 @@
                     </div>
                 </div>
                 <div class="col" id="div1">
-                    <img src="<%= user.profilePic %>" id="img1">
+                    <img src="/image/<%= user.profilePic %>" id="img1">
                     <div style="text-align: center;">
                         <a href="#" style="padding: .2rem 1.5rem;" class="btn btn-light btn1" tabindex="-1" 
                             role="button" aria-disabled="true">
@@ -124,7 +124,7 @@
                 <% comments.forEach((comment, index) => { %>
                     <% if(index < 4) { %>
                         <div class="row mb">
-                        <img src="<%= comment.profilePic %>" class="img2">
+                        <img src="/image/<%= comment.profilePic %>" class="img2">
                         <div class="col">
                             <p id="p7"><%= comment.c.username %> (<%= new Date(comment.c.time).toDateString() %>)</p>
                             <p id="p8"><%= comment.c.message %> </p>
@@ -162,7 +162,7 @@
                 <div class="row">
                     <% participants.forEach(p => { %>
                         <div class="col">
-                            <img src="<%= p.profilePic %>">
+                            <img src="/image/<%= p.profilePic %>">
                             <p class="p11"><%= p.username %></p>
                         </div>
                     <% }) %> 
