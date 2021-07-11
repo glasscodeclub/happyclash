@@ -75,7 +75,7 @@ hr{
 
 .choose-friends input:focus{
   outline: none;
-  box-shadow: 0px 1px 7.000000476837158px 0px #00000026;
+  /* box-shadow: 0px 1px 7.000000476837158px 0px #00000026; */
 }
 
 .choose-friends button{
@@ -288,16 +288,20 @@ p{
 
 .searchResults {
   box-shadow: 0px 1px 7.000000476837158px 0px #00000026;
-  border-radius: 5rem;
-  border-radius: 1rem;
-  padding: 1rem 0 !important;
+  padding: 0.25rem 0 !important;
   margin-top: -10px;
+  background-color: #fff;
   max-height: 204px;
   overflow-y: auto;
 }
 
 .searchResultsContainer {
-  position: relative;
+  position: absolute;
+  top: 25%;
+  width: 20rem;
+  opacity: 1;
+  background-color: #fff;
+  z-index: 1;
 }
 
 .searchResults-list {
