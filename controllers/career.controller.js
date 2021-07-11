@@ -143,3 +143,148 @@ module.exports.loadMore = async (req, res) => {
         }))
     }
 }
+
+module.exports.adminControls = async (req, res) => {
+    try {
+        if(!req.user) throw "You need to be loggedIn."
+        const today = new Date()
+        const ongoingClashes = []
+        const prevClashes = []
+
+        const { followers } = await Userdetail.findOne({ username: { $eq: req.user.username } })
+        const followersData = await Userdetail.find({ username: { $in: followers } })
+        const clashs = await Clash.find({ username: { $eq: req.user.username } })
+
+        clashs.forEach(clash => {
+            let startDate = new Date(clash.startDate)
+            let endDate = new Date(clash.endDate)
+            if (today >= startDate && today <= endDate) ongoingClashes.push(clash)
+            else if (today > endDate) prevClashes.push(clash)
+        })
+
+        // Collecting data for ongoing clashes
+        let ongoingVideos = ongoingClashes.map(async clash => {
+            return await Video.findOne({ _id: { $eq: clash.videos[0] } })
+        })
+        ongoingVideos = await Promise.all(ongoingVideos)
+
+        let ongoingParticipantsList = ongoingClashes.map(async clash => {
+            return await Userdetail.find({ username: { $in: clash.participants } })
+        })
+        ongoingParticipantsList = await Promise.all(ongoingParticipantsList)
+
+        // Collecting data for previous clash
+        let prevVideos = prevClashes.map(async clash => {
+            return await Video.findOne({ _id: { $eq: clash.videos[0] } })
+        })
+        prevVideos = await Promise.all(prevVideos)
+
+        let prevParticipantsList = prevClashes.map(async clash => {
+            return await Userdetail.find({ username: { $in: clash.participants } })
+        })
+        prevParticipantsList = await Promise.all(prevParticipantsList)
+
+        res.render("./careermodule/admincontrols", { url: req.url, ongoingClashes, ongoingVideos, ongoingParticipantsList, prevClashes, prevVideos, prevParticipantsList, followersData })
+    } catch (err) {
+        console.log(err)
+        res.redirect(url.format({
+            pathname: "/error",
+            query: {
+                message: err ? err : err.message,
+                status: 404
+            }
+        }))
+    }
+}
+
+module.exports.searchFrnds = async (req, res) => {
+    try {
+        if (!req.body) throw "Their is no input"
+        const { value } = req.body;
+
+        const filter = value.split('').includes('@') ? { email: { $regex: value, $options: '$i' } } : { username: { $regex: value, $options: "$i" } }
+
+        const data = await Userdetail.find(filter)
+        res.status(200).send(data)
+    } catch (err) {
+        console.log(err)
+        res.redirect(url.format({
+            pathname: "/error",
+            query: {
+                message: err ? err : err.message,
+                status: 404
+            }
+        }))
+    }
+}
+
+module.exports.addParticipants = async (req, res) => {
+    if (!req.body) throw "Their is no payload."
+    if (!req.params) throw "Reference id is required."
+        
+    try {
+        let newParticipantsArray = [], isSelectedAllFollowers;
+
+        if (req.body.isAllSelected && req.body.isAllSelected === true && req.body.newParticipantsArray && req.body.newParticipantsArray.length === 0) {
+            const { followers } = await Userdetail.findOne({ username: req.user.username });
+            newParticipantsArray = followers;
+            isSelectedAllFollowers = true;
+        } else if (!req.body.isAllSelected && req.body.newParticipantsArray && req.body.newParticipantsArray.length > 0) {
+            newParticipantsArray = req.body.newParticipantsArray;
+            isSelectedAllFollowers = false;
+        } else if (req.body.byInvite && req.body.byInvite === true && (req.body.username || req.body.email)) {
+
+            if ((req.body.email === req.user.email) || (req.body.username === req.user.username)) return res.status(406).json({ status: 'Not Acceptable', message: 'Can Not Request To Self' });
+
+            const { participants } = await Clash.findOne({ _id: req.params.id, username: req.user.username });
+            const { followers } = await Userdetail.findOne({ username: req.user.username });
+
+            let user;
+
+            if (req.body.username) {
+
+                // Checking if a user is already a participant or a follower
+                if (participants.includes(req.body.username)) return res.status(406).json({ status: 'Not Acceptable', message: 'Already A Participant' });
+                if (followers.includes(req.body.username)) return res.status(406).json({ status: 'Not Acceptable', message: 'Inorder to select your followers click on "See All" button' });
+
+                user = await User.findOne({ username: req.body.username });
+                if (user === null) return res.status(406).json({ status: 'Not Found', message: 'User Not Found' });
+                newParticipantsArray = [user.username];
+
+            } else if (req.body.email) {
+
+                user = await User.findOne({ email: req.body.email });
+                if (user === null) return res.status(404).json({ status: 'Not Found', message: 'User Not Found' });
+
+                // Checking if a user is already a participant
+                if (participants.includes(user.username)) return res.status(406).json({ status: 'Not Acceptable', message: 'Already A Participant' });
+                if (followers.includes(user.username)) return res.status(406).json({ status: 'Not Acceptable', message: 'Inorder to select your followers click on "See All" button' });
+
+                newParticipantsArray = [user.username];
+            }
+        }
+
+        if (!newParticipantsArray.length) throw "Select atleast one follower inorder to save changes."
+
+        //5) Updating the document
+        const clash = await Clash.findOne({ _id: { $eq: req.params.id } })
+        clash.participants = [...new Set([...clash.participants, ...newParticipantsArray])]
+        clash.view = [...new Set([...clash.view, ...newParticipantsArray])]
+        clash.isSelectedAllFollowers = isSelectedAllFollowers
+        await clash.save()
+
+        res.status(201).json({
+            status: 'success',
+            clash
+        });
+    } catch (err) {
+        console.log(err)
+        res.redirect(url.format({
+            pathname: "/error",
+            query: {
+                message: err ? err : err.message,
+                status: 404
+            }
+        }))
+    }
+}

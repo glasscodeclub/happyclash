@@ -275,15 +275,16 @@ module.exports.follow = async (req, res) => {
 }
 
 module.exports.participants = async (req, res) => {
-
     try {
-        const clash = await Clash.findOne({ _id: req.params.clashId });
+        //
+        const clash = await Clash.findOne({ _id: req.params.clashId, $or: [{ username: req.user.username }, { view: req.user.username }] });
 
         if (_.isEmpty(clash)) return res.redirect(`/error?errorMessage=Clash Not Found`);
 
         let participantsDetailsPromiseArray = []; // followerDetails should be name
 
         //3) Now we need full details of follwers in order to render over page
+        participantsDetailsPromiseArray.push(Userdetail.findOne({ username: clash.username }));
         clash.participants.forEach(el => {
             participantsDetailsPromiseArray.push(Userdetail.findOne({ username: el }));
         })

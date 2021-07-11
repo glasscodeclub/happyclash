@@ -3,128 +3,125 @@
 
 let divElem = {};
 let popupElem = {};
+let ptsList
 
-function challenge(e, id) {
-  console.log(e);
+function challenge(e, id, ongoingClashes, ongoingVideos, ongoingParticipantsList, prevClashes, prevVideos, prevParticipantsList) {
+  let clash, video, participants, isPrev = false
+
+  if (id <= ongoingClashes.length) {
+    let index = id - 1
+    clash = ongoingClashes[index]
+    video = ongoingVideos[index]
+    participants = ongoingParticipantsList[index]
+    ptsList = clash.participants
+  } else {
+    isPrev = true
+    let index = id - ongoingClashes.length - 1
+    clash = prevClashes[index]
+    video = prevVideos[index]
+    participants = prevParticipantsList[index]
+    ptsList = clash.participants
+  }
+
+  document.getElementById("clashId").value = clash._id
+
   const div = document.createElement("div");
   div.innerHTML = `
-  <div class="div1">
-    <div class="mt-4 mb-1 keyword">
-      Clash details
-    </div>
-    <div style="line-height: 1.2rem; color: black;" class="keyword">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas
-      debitis fuga aspernatur unde, in nesciunt, laborum voluptatibus
-      nobis consectetur dolorum enim quisquam porro delectus minus
-      <div class="mt-4 keyword">
-        Ends on
+    <div class="div1">
+      <div class="mt-4 mb-1 keyword">
+        Clash details
       </div>
-      <div style="font-size: 0.9rem; color: #000">15/05/2021</div>
-    </div>
-  </div>
-  <hr />
-  <div class="div1">
-    <div style="display: flex; align-items: center; justify-content: space-between; width:300px; margin:auto;">
-      <div style="font-size: 1rem">Your Video</div>
-      <div>
-        <button
-          style="color: white; background-color: #ef5757; font-size: 0.7rem; border: none; width: 60px; padding: 3px; border-radius: 3px;"
-          onclick="del()"
-        >
-          Delete
-        </button>
+      <div style="line-height: 1.2rem; color: black;" class="keyword">
+        ${clash.description}
+        <div class="mt-4 keyword">
+          Ends on
+        </div>
+        <div style="font-size: 0.9rem; color: #000">${new Date(clash.endDate).toDateString()}</div>
       </div>
     </div>
-    <div class="container mt-2">
-      <div class="row">
-          <div class="col d-flex justify-content-center mb-2">
-              <video width="400px" muted autoplay loop>
-                  <source src="/Video/sample" type="video/mp4">
-              </video>
-              <div class="overlay d-flex justify-content-between flex-column">
+    <hr />
+    <div class="div1">
+      <div style="display: flex; align-items: center; justify-content: space-between; width:300px; margin:auto;">
+        <div style="font-size: 1rem">Your Video</div>
+        <div>
+          <button
+            style="color: white; background-color: #ef5757; font-size: 0.7rem; border: none; width: 60px; padding: 3px; border-radius: 3px;"
+            onclick="del()"
+          >
+            Delete
+          </button>
+        </div>
+      </div>
+      <div class="container mt-2">
+        <div class="row">
+            <div class="col d-flex justify-content-center mb-2">
+                <video width="400px" muted autoplay loop>
+                    <source src="/Video/${video._id}" type="video/mp4">
+                </video>
+                <div class="overlay d-flex justify-content-between flex-column">
                   <div class="d-flex justify-content-between">
-                      <p>Rank 3/40</p>
-                      <p>1:20</p>
+                    <p>Rank 3/40</p>
+                    <p>1:20</p>
                   </div>
                   <div>
-                      <p>2h ago</p>
-                      <h2 class="mb-0">Dance Challenge</h2>
-                      <p>Started by Wade Warren</p>
-                      <div class="d-flex justify-content-around mt-3">
-                          <p>72 Likes</p>
-                          <p>23 Comments</p>
-                          <p>40 Participants</p>
-                      </div>
+                    <p>${new Date(clash.startDate).toTimeString().slice(0, 8)}</p>
+                    <h2 class="mb-0">${clash.title}</h2>
+                    <p>Started by ${clash.username}</p>
+                    <div class="d-flex justify-content-around mt-3">
+                      <p>${video.likes.length} Likes</p>
+                      <p>${video.comments.length} Comments</p>
+                      <p>${participants.length} Participants</p>
+                    </div>
                   </div>
-              </div>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+    <hr />
+    <div class="div1">
+      <div style="display: flex; align-items: center; justify-content: space-between;">
+        <div style="display: flex; align-items: baseline; margin-top: 0.5rem;">
+          <div style="font-size: 0.9rem">Participants (${participants.length})</div>
+          <div>
+            <a class="a1" href="/clashDetails/participants/${clash._id}" onclick="console.log(this)">See All&nbsp;&nbsp;<i class="fas fa-angle-right"></i> </a>
           </div>
+        </div>
+        ${isPrev
+          ? ''
+          : `<div data-target-add="#add-friends" onclick="test()"  style="font-size: 2rem; cursor:pointer; margin-top: -0.7rem; ">+</div>`
+        }
+      </div>
+      <div>
+        <div class="row mt-2">
+          ${!participants.length
+            ? `<h5 style="display: flex; justify-content: center;">No Participants</h5>`
+            : participants.map((participant, index) => {
+              if (index < 4) {
+                return (
+                  `
+                    <div class="col" onclick="console.log(this)" style="text-align: center">
+                      <img class="profile_image" src=${participant.profilePic} class="p1" />
+                      <h6 style="font-size: 0.7rem" class="name">${participant.username}</h6>
+                    </div>
+                  `
+                )
+              }
+            }).join('')
+          }
+        </div>
+        ${isPrev
+          ? ''
+          : `<div class="mt-2 mb-2" style="display: flex; align-items: center; justify-content: center;">
+            <button onclick="saveChanges()"
+              style="background: linear-gradient(81.23deg, #7c49f6 9.3%, #ff53b7 51.61%, #ffd458 97.6%); border: none; font-size: 0.9rem;"
+              class="btn btn-dark submit"
+            > Save Changes </button>
+          </div>`
+        }
       </div>
     </div>
-  </div>
-  <hr />
-  <div class="div1">
-    <div
-      style="
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-      "
-    >
-      <div style="display: flex; align-items: baseline; margin-top: 0.5rem;">
-        <div style="font-size: 0.9rem">Participants (70)</div>
-        
-        <div>
-        <p class="a1" onclick="console.log(this)">See All&nbsp;&nbsp;<i class="fas fa-angle-right"></i> </a>
-        </div>
-      </div>
-      <div data-target-add="#add-friends" onclick="test()"  style="font-size: 2rem; cursor:pointer; margin-top: -0.7rem; ">+</div>
-    </div>
-    <div>
-      <div class="row">
-        <div class="col" onclick="console.log(this)" style="text-align: center">
-          <img class="profile_image" src="/img/profile.png" class="p1" />
-          <h6 style="font-size: 0.7rem" class="name">Jane Cooper</h6>
-        </div>
-        <div class="col" onclick="console.log(this)" style="text-align: center">
-          <img class="profile_image" src="/img/profile1.png" class="p1" />
-          <h6 style="font-size: 0.7rem" class="name">Jane Cooper</h6>
-        </div>
-        <div class="col" onclick="console.log(this)" style="text-align: center">
-          <img class="profile_image" src="/img/profile2.png" class="p1" />
-          <h6 style="font-size: 0.7rem" class="name">Jane Cooper</h6>
-        </div>
-        <div class="col" onclick="console.log(this)" style="text-align: center">
-          <img class="profile_image" src="/img/profile3.png" class="p1" />
-          <h6 style="font-size: 0.7rem" class="name">Jane Cooper</h6>
-        </div>
-      </div>
-      <div
-        class="mt-4 mb-2"
-        style="
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        "
-      >
-        <button
-          onclick="console.log(this)"
-          style="
-            background: linear-gradient(
-              81.23deg,
-              #7c49f6 9.3%,
-              #ff53b7 51.61%,
-              #ffd458 97.6%
-            );
-            border: none;
-            font-size: 0.9rem;
-          "
-          class="btn btn-dark submit"
-        >
-          Save Changes
-        </button>
-      </div>
-    </div>
-  </div>`;
+  `;
 
   if (divElem[id]) {
     const details = e.closest(".row")
@@ -176,6 +173,210 @@ window.addEventListener("load", ()=> {
   }))
 
 })
+
+/* ==================================================================================== */
+// Selecting followers 
+function selectAdd(e) {
+  const check = e.querySelector(".selected")
+  check.classList.add("select")
+}
+
+function selectRemove(e) {
+  const check = e.querySelector(".selected")
+  check.classList.remove("select")
+}
+
+// FOR SELECTING ALL FOLLOWERS
+let newParticipantsArray = [];
+let allFollowersOnScreen = [];
+
+function selectAll() {
+  const allFollowBtn = document.querySelector('#select-all');
+  const allFollowers = document.querySelectorAll("[data-select]");
+  allFollowBtn.classList.toggle("all-selected")
+  if (allFollowBtn.classList.contains("all-selected")) {
+    allFollowBtn.innerHTML = "All Selected";
+    allFollowers.forEach(follower => {
+      selectAdd(follower);
+    })
+  }
+  else {
+    allFollowBtn.innerHTML = "Select All";
+    allFollowers.forEach(follower => {
+      selectRemove(follower);
+    })
+  }
+  if (newParticipantsArray.length > 0) {
+    newParticipantsArray = [];
+  }
+}
+
+// Updating newParticipants array
+function updateParticipantArray(participant, command) {
+  if (command === 'add') {
+    newParticipantsArray.push(participant);
+  } else if (command === 'remove') {
+    newParticipantsArray = newParticipantsArray.filter(el => el !== participant);
+  }
+}
+
+// Adding participants
+function select(e, id) {
+  const check = e.querySelector(".selected")
+  check.classList.toggle("select")
+
+  const checkArray = Array.prototype.slice.call(check.classList);
+  const participant = document.getElementById(id).innerText
+
+  if (checkArray.includes('select')) {
+    updateParticipantArray(participant, 'add')
+  } else {
+    updateParticipantArray(participant, 'remove')
+  }
+}
+
+const saveChanges = async () => {
+  const selectAllButtons = Array.prototype.slice.call(document.querySelector('#select-all').classList);
+
+  let data = { newParticipantsArray: newParticipantsArray };
+
+  if (selectAllButtons.includes("all-selected")) data = { newParticipantsArray: [], view: [], isAllSelected: true };
+
+  try {
+    const updatedClash = await axios({
+      method: 'POST',
+      url: `/career/addParticipants/${document.getElementById("clashId").value}`,
+      data: data
+    });
+
+    if (updatedClash.data.status === 'success') window.location.href = `/career/admincontrols`;
+
+  } catch (err) {
+    console.log(err);
+  }
+}
+/* ==================================================================================== */
+
+
+/* ==================================================================================== */
+// Send request functionality
+const searchBar = document.querySelector('.invitation-bar');
+const searchResultBlock = document.querySelector('.searchResults-list');
+const searchResultsContainer = document.querySelector('.searchResultsContainer')
+
+const send = async (e) => {
+  const invitationTo = searchBar.value.trim();
+
+  if (invitationTo === '') return false;
+
+  const data = invitationTo.split('').includes('@') ? { email: invitationTo, byInvite: true } : { username: invitationTo, byInvite: true };
+
+  try {
+    const updatedClash = await axios({
+      method: 'POST',
+      url: `/career/addParticipants/${document.getElementById("clashId").value}`,
+      data: data
+    });
+
+    if (updatedClash.data.status === 'success') {
+      document.querySelector('.invitation-bar').value = '';
+      showAlert('Success', 'Request Sent');
+    }
+
+  } catch (err) {
+    document.querySelector('.invitation-bar').value = '';
+    showAlert('Error', err.response.data.message);
+  }
+}
+
+const showAlert = (type, message) => {
+  let el;
+  if (type === 'Success') el = `<h5 class="notify-text" style="font-size:16px; color:cadetblue;">${message}</h5>`;
+  if (type === 'Error') el = `<h5 class="notify-text" style="font-size:16px; color:red";">${message}</h5>`;
+
+  document.querySelector('.choose-friend-headline').insertAdjacentHTML('afterend', el);
+  window.setTimeout(hideAlert, 1000 * 5);
+};
+
+const hideAlert = () => {
+  const el = document.querySelector('.notify-text');
+  if (el) el.parentElement.removeChild(el);
+};
+/* ==================================================================================== */
+
+
+/* ==================================================================================== */
+// Search functionality
+const searchResults = async searchKey => {
+  try {
+    let users = await axios.post("/career/admincontrols", { value: searchKey })
+    if (users.statusText === 'OK') {
+      users = users.data.filter(user => !ptsList.includes(user.username))
+      if (users.length >= 4) return [users[0], users[1], users[2]]
+      else return users
+    }
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+const sendUsernameToInputField = (username) => {
+  searchResultsContainer.classList.remove('addMe');
+  document.querySelector('.invitation-bar').value = username;
+}
+
+const appendSearchResults = (data, searchResultBlock) => {
+  const html = `<li class="searchResults-listItem" onclick="sendUsernameToInputField('${data.username}')"><img src=${data.profilePic} alt="user"> <h6>${data.username}</h6> </li>`;
+  searchResultBlock.insertAdjacentHTML('beforeend', html);
+};
+
+const appendLoadingSpinner = searchResultBlock => {
+  const html = `<div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>`;
+  searchResultBlock.insertAdjacentHTML('afterbegin', html);
+};
+
+const appendFailureMessage = searchResultBlock => {
+  const html = `<h4 class="noResultsFound">User not found!! 🥱🥱</h4>`;
+  searchResultBlock.insertAdjacentHTML('afterbegin', html);
+};
+
+const search = async (searchKey, searchResultBlock) => {
+
+  if (searchKey.split('').length === 0) return false;
+
+  searchResultBlock.innerHTML = '';
+
+  appendLoadingSpinner(searchResultBlock);
+
+  try {
+    appendLoadingSpinner(searchResultBlock);
+    const users = await searchResults(searchKey);
+
+    searchResultBlock.innerHTML = '';
+
+    if (users.length !== 0) {
+      users.forEach(el => {
+        appendSearchResults(el, searchResultBlock);
+      });
+    } else if (users.length === 0) {
+      appendFailureMessage(searchResultBlock);
+    }
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+searchBar.addEventListener('focus', () => {
+  document.addEventListener('keyup', async e => {
+    if (e.target.value.trim().split('').length === 0 && Array.prototype.slice.call(document.querySelector('.searchResultsContainer').classList).includes('addMe')) {
+      document.querySelector('.searchResultsContainer').classList.remove('addMe');
+    } else if (e.target.value.trim().split('').length !== 0) {
+      document.querySelector('.searchResultsContainer').classList.add('addMe');
+    }
+    await search(e.target.value.trim(), searchResultBlock);
+  });
+})
+/* ==================================================================================== */
 
 // function addParticipants(e, id) {
 //   console.log(e);
