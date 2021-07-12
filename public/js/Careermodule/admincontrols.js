@@ -55,7 +55,7 @@ function challenge(e, id, ongoingClashes, ongoingVideos, ongoingParticipantsList
       <div class="container mt-2">
         <div class="row">
             <div class="col d-flex justify-content-center mb-2">
-                <video width="400px" muted autoplay loop>
+                <video width="400px" style="height: 400px; background-color: black;" muted autoplay loop>
                     <source src="/Video/${video._id}" type="video/mp4">
                 </video>
                 <div class="overlay d-flex justify-content-between flex-column">
@@ -88,37 +88,37 @@ function challenge(e, id, ongoingClashes, ongoingVideos, ongoingParticipantsList
           </div>
         </div>
         ${isPrev
-          ? ''
-          : `<div data-target-add="#add-friends" onclick="test()"  style="font-size: 2rem; cursor:pointer; margin-top: -0.7rem; ">+</div>`
-        }
+      ? ''
+      : `<div data-target-add="#add-friends" onclick="test()"  style="font-size: 2rem; cursor:pointer; margin-top: -0.7rem; ">+</div>`
+    }
       </div>
       <div>
         <div class="row mt-2">
           ${!participants.length
-            ? `<h5 style="display: flex; justify-content: center;">No Participants</h5>`
-            : participants.map((participant, index) => {
-              if (index < 4) {
-                return (
-                  `
-                    <div class="col" onclick="console.log(this)" style="text-align: center">
-                      <img class="profile_image" src=/image/${participant.profilePic} class="p1" />
-                      <h6 style="font-size: 0.7rem" class="name">${participant.username}</h6>
-                    </div>
-                  `
-                )
-              }
-            }).join('')
-          }
+      ? `<h5 style="display: flex; justify-content: center;">No Participants</h5>`
+      : participants.map((participant, index) => {
+        if (index < 4) {
+          return (
+            `
+              <div class="col" onclick="console.log(this)" style="text-align: center">
+                <img class="profile_image" src=/image/${participant.profilePic} class="p1" />
+                <h6 style="font-size: 0.7rem" class="name">${participant.username}</h6>
+              </div>
+            `
+          )
+        }
+      }).join('')
+    }
         </div>
         ${isPrev
-          ? ''
-          : `<div class="mt-2 mb-2" style="display: flex; align-items: center; justify-content: center;">
+      ? ''
+      : `<div class="mt-2 mb-2" style="display: flex; align-items: center; justify-content: center;">
             <button onclick="saveChanges()"
               style="background: linear-gradient(81.23deg, #7c49f6 9.3%, #ff53b7 51.61%, #ffd458 97.6%); border: none; font-size: 0.9rem;"
               class="btn btn-dark submit"
             > Save Changes </button>
           </div>`
-        }
+    }
       </div>
     </div>
   `;
@@ -136,6 +136,15 @@ function challenge(e, id, ongoingClashes, ongoingVideos, ongoingParticipantsList
     document.getElementById(`song-details-${id}`).appendChild(div);
     divElem[id] = div;
   }
+
+  // make followers grey if already participating
+  const users = document.querySelectorAll(".user-info")
+  users.forEach(user => {
+    let currUser = user.children[0].innerText
+    if (ptsList.includes(currUser)) {
+      user.parentNode.parentNode.classList.add('disable')
+    }
+  })
 }
 
 function play() {
@@ -163,15 +172,15 @@ function playVideo(e) {
   console.log("This will play the video");
 }
 
-window.addEventListener("load", ()=> {
+window.addEventListener("load", () => {
   const buttons = document.querySelectorAll(".p1")
-  const color = ['#67A3A3', '#66C07F', '#9F7CDE', '#58A6E4']
-  var count = 0;
   buttons.forEach((button => {
-    button.style.backgroundColor = color[count];
-    count++;
+    let r = Math.floor(Math.random() * 256);
+    let g = Math.floor(Math.random() * 256);
+    let b = Math.floor(Math.random() * 256);
+    let rgb = `rgb(${r}, ${g}, ${b})`
+    button.style.backgroundColor = rgb;
   }))
-
 })
 
 /* ==================================================================================== */
