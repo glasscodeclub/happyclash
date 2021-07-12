@@ -34,12 +34,15 @@ const Imgstorage = multer.diskStorage({
                         cb(null, filename)
                         }
                   })
-                  const path = './img/' + data.id + '.jpeg'
-                  fs.unlink(path, (err) => {
-                      if (err) {
-                          console.error(err)
-                      }
-                  })
+                  //error
+                  if(data.id!="sample"){
+                    const path = './img/' + data.id + '.jpeg'
+                    fs.unlink(path, (err) => {
+                        if (err) {
+                            console.error(err)
+                        }
+                    })
+                 }
               }
           })
     }
