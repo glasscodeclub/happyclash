@@ -22,6 +22,7 @@ const Imgstorage = multer.diskStorage({
               }
               else{
                   data.id=doc._id;
+                  data.profilePic=doc.profilePic;
                 const filename=`${doc._id}.${file.mimetype.split("/")[1]}`; 
                   Userdetail.updateOne({username:req.user.username},{ profilePic:doc._id},(err,doc)=>{
                         if(err){
@@ -30,19 +31,18 @@ const Imgstorage = multer.diskStorage({
                         else if(_.isEmpty(doc)){
                         console.log("user not found")
                         }
-                        else{  
-                        cb(null, filename)
+                        else{ 
+                            if(data.profilePic!="sample"){
+                                const path = './img/' + data.id + '.jpeg'
+                                fs.unlink(path, (err) => {
+                                    if (err) {
+                                        console.error(err)
+                                    }
+                                })
+                             } 
+                          cb(null, filename)
                         }
                   })
-                  //error
-                  if(data.id!="sample"){
-                    const path = './img/' + data.id + '.jpeg'
-                    fs.unlink(path, (err) => {
-                        if (err) {
-                            console.error(err)
-                        }
-                    })
-                 }
               }
           })
     }
