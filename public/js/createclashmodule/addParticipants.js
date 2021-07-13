@@ -219,7 +219,7 @@ const searchResults = async searchKey => {
 
 
 const appendSearchResults = (data, searchResultBlock) => {
-    const html = `<li class="searchResults-listItem" onclick="sendUsernameToInputField('${data.username}')"><img src=${data.profilePic} alt="user"> <h6>${data.username}</h6> </li>`;
+    const html = `<li class="searchResults-listItem" onclick="sendUsernameToInputField('${data.username}')"><img src="/image/${data.profilePic}" alt="user"> <h6>${data.username}</h6> </li>`;
     searchResultBlock.insertAdjacentHTML('beforeend', html);
   };
   

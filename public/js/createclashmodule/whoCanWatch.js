@@ -8,6 +8,20 @@ function send(e) {
     console.log("Clicked on send...");
 }
 
+function checkState(){
+    let box = document.querySelector('#everyone #square');
+    let checked = document.querySelector('#everyone #checked-square');
+
+    if(box.style.display !== 'none'){
+        box.style.display = "none";
+        checked.style.display = "block";
+    }
+    else{
+        checked.style.display = "none";
+        box.style.display = "block";
+    }
+}
+
 // To select each checkbox on click
 // passed this pointer as argument to select only perticular followers
 
@@ -115,8 +129,8 @@ function select(e) {
 }
 
 function selectEveryone(e) {
-    const check = e.querySelector(".selected");
-    check.classList.toggle("select");
+    // const check = e.querySelector(".selected");
+    // check.classList.toggle("select");
 
     const followers = document.querySelector('.followers');
     const chooseFriends = document.querySelector('.choose-friends');

@@ -38,13 +38,16 @@
 
     <div class="container" style="margin-bottom: 5.5rem !important;">
         <div class="container everyone">
-            <div class="row d-flex justify-content-center" onclick="selectEveryone(this)">
+            <div class="row d-flex justify-content-center" onclick="selectEveryone(this)" >
                 <div class="col" align='center'>
                     <p style="margin-bottom: 0;">Everyone</p>
                 </div>
-                <div class="col selected" id="everyone">
-                    <i class=" far fa-check-square"></i>
+
+                <div class="col selected select" id="everyone" onclick="checkState()">
+                    <i class="far fa-square" id = "square"></i>
+                    <i class=" far fa-check-square" id="checked-square" style="display: none;" ></i>
                 </div>
+
             </div>
         </div>
         <hr>

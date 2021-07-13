@@ -15,10 +15,10 @@ exports.getCreateNewClashPage = (req, res) => {
    tomorrow.setDate(tomorrow.getDate() + 1);
    tomorrow = tomorrow.toLocaleDateString().split('/');
 
-   const date = tomorrow[1].split('').length === 1 ? `0${tomorrow[1]}` : tomorrow[1];
-   const month = tomorrow[0].split('').length === 1 ? `0${tomorrow[0]}` : tomorrow[0];
+   const month = tomorrow[1].split('').length === 1 ? `0${tomorrow[1]}` : tomorrow[1];
+   const date = tomorrow[0].split('').length === 1 ? `0${tomorrow[0]}` : tomorrow[0];
    const year = tomorrow[2];
-
+   
    tomorrow = `${year}-${month}-${date}`;
 
    res.render("createclashmodule/newClash", { url: req.url, tomorrow});

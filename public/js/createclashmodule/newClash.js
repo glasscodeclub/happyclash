@@ -87,12 +87,15 @@ createClashForm.addEventListener('submit', async (e) => {
    }
 })
 
+// console.log(document.getElementById('video-not-uploaded').innerHTML)
+
 const showAlert = (type, message) => {
-   let el;
-   if (type === 'Success') el = `<h5 class="notify-text" style="font-size:16px; color:cadetblue; margin-top: 10px;">${message}</h5>`;
-   if (type === 'Error') el = `<h5 class="notify-text" style="font-size:16px; color:red; margin-top:16px;">${message}</h5>`;
+   let el = document.getElementById('video-not-uploaded');
+   // if()
+   if (type === 'Success') el.innerHTML = `${message}`;
+   if (type === 'Error') el.innerHTML = `${message}`;
    
-   document.querySelector('.check').insertAdjacentHTML('afterend', el);
+   // document.querySelector('.check').insertAdjacentHTML('afterend', el);
    window.setTimeout(hideAlert, 30000);
 };
 
