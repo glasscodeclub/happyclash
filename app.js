@@ -57,6 +57,10 @@ app.set('view engine', 'ejs');
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(express.static("public"));
+app.use((req, res, next) => {
+    res.locals.moment = require("moment")
+    next()
+})
 
 passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
