@@ -230,11 +230,11 @@ body{
 
 .vid {
   text-align: center;
-  width: 90%;
+  width: 320px;
   border-radius: 5.76px;
   box-shadow: -3px 3px 10px rgba(0, 0, 0, 0.25), inset 0px -30px 50px #000000;
-  background-color: #fff !important;
-  height: auto;
+  background-color: black;
+  height: 320px;
 }
 
 .challenge-title{

@@ -5,13 +5,19 @@ var User = require("../models/user.models");
 const { isLoggedIn} = require("../middlewares/auth.middleware");
 
 const homeController = require('./../controllers/home.controller');
+const { home, loadMore, getRandomVideos } = require("../controllers/home.controller")
 
 router.get("/videomode", function (req, res) {
     res.render("Homemodule/videomode",{page:"Video Mode"});
 })
-router.get('/homefeed',(req,res)=> {
-    res.render("Homemodule/feedhome",{page:"HappyClash homefeed",url:req.url})
-})
+router.route('/homefeed')
+    .get(isLoggedIn, home)
+
+router.route("/load-more")
+    .post(isLoggedIn, loadMore)
+
+router.route("/get-random-videos")
+    .post(isLoggedIn, getRandomVideos)
 
 router.route('/challenge/:clashId').get(isLoggedIn, homeController.getChallengePage);
 
