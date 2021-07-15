@@ -70,8 +70,8 @@ body{
 
 .post-video{
     position: relative;
-    width: 80%;
-    margin: 0% 10% 8%;
+    /* width: 80%; */
+    margin: 4% auto;
     border-radius: 10px;
 }
 
