@@ -197,6 +197,11 @@ body{
 .post-container{
   display: flex;
   justify-content:space-between;
+  margin: 1.2rem auto 0.5rem;
+}
+
+.row{
+  width: 100%;
 }
 
 .video-container{
@@ -207,6 +212,7 @@ body{
 .myvideo {
   border-radius: 6px;
   max-width:320px;
+  width: 320px;
   height: 320px;
   background-color: black;
   box-shadow: -5.03451px 5.03451px 16.7817px rgba(0, 0, 0, 0.25), inset 0px -45.4817px 75.8028px #000000;
@@ -217,9 +223,9 @@ body{
   right:10px;
 }
 
-.video-body{
+/* .video-body{
   margin: 1.2rem 0.5rem 0.5rem;
-}
+} */
 
 @media only screen and (min-width:768px){
   .video-body{
